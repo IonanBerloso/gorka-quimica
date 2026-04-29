@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>Formulario · Química · Gorka</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:14.5px;line-height:1.6}
+.wrap{max-width:1200px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+
+.head{
+  margin-bottom:22px;padding:18px 22px;
+  background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);
+  border:1px solid var(--line-v);border-left:3px solid var(--violet);
+  border-radius:0 12px 12px 0;
+}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.6em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+
+/* Layout multi-columna para imprimir como chuleta */
+.cols{column-count:2;column-gap:22px}
+@media(max-width:900px){.cols{column-count:1}}
+
+.box{
+  break-inside:avoid;page-break-inside:avoid;
+  background:var(--s1);border:1px solid var(--line);
+  border-left:3px solid var(--blue);
+  border-radius:8px;padding:14px 16px;margin-bottom:14px;
+}
+.box-violet{border-left-color:var(--violet)}
+.box-cyan{border-left-color:var(--cyan)}
+.box-amber{border-left-color:var(--amber)}
+.box-rose{border-left-color:var(--rose)}
+.box-green{border-left-color:var(--green)}
+
+.box h3{
+  font-family:var(--ui);font-size:.94em;font-weight:700;
+  color:var(--blue);margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.box-violet h3{color:var(--violet)}
+.box-cyan h3{color:var(--cyan)}
+.box-amber h3{color:var(--amber)}
+.box-rose h3{color:var(--rose)}
+.box-green h3{color:var(--green)}
+.box h3 .num{
+  font-family:var(--mono);font-size:.75em;
+  background:rgba(255,255,255,.05);
+  padding:2px 7px;border-radius:10px;
+  color:var(--txt3);font-weight:600;
+}
+.box ul{margin:6px 0 6px 16px;color:#cbd5e1;font-size:.92em}
+.box li{margin:3px 0}
+.box p{margin:5px 0;color:#cbd5e1;font-size:.92em}
+.box b,.box strong{color:#f1f5f9}
+.box .katex{font-size:1em}
+
+.tbl{width:100%;border-collapse:collapse;margin:6px 0;font-size:.86em}
+.tbl th,.tbl td{padding:5px 8px;border:1px solid var(--line);text-align:left}
+.tbl th{background:rgba(var(--vr),.1);color:var(--violet);font-weight:600}
+.tbl td{color:#cbd5e1}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Inicio
+  </a>
+  <span class="topbar-title">Química · <em>Formulario</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📐 Recurso · Formulario</div>
+    <h1>Formulario completo de Química</h1>
+    <div class="sub">Constantes universales · Ecuaciones por tema · Conversiones</div>
+  </div>
+
+  <div class="cols">
+
+    <!-- Constantes -->
+    <div class="box box-violet">
+      <h3>🌍 Constantes universales</h3>
+      <ul>
+        <li>$N_A = 6{,}022\cdot10^{23}\ \text{mol}^{-1}$ &nbsp;(Avogadro)</li>
+        <li>$R = 8{,}314\ \text{J/(mol·K)} = 0{,}082\ \text{atm·L/(mol·K)}$</li>
+        <li>$k_B = 1{,}381\cdot10^{-23}\ \text{J/K}$ &nbsp;(Boltzmann)</li>
+        <li>$F = 96\,485\ \text{C/mol}$ &nbsp;(Faraday)</li>
+        <li>$h = 6{,}626\cdot10^{-34}\ \text{J·s}$ &nbsp;(Planck)</li>
+        <li>$c = 3{,}00\cdot10^{8}\ \text{m/s}$ &nbsp;(luz)</li>
+        <li>$g = 9{,}8\ \text{m/s}^2$</li>
+      </ul>
+    </div>
+
+    <!-- Conversiones -->
+    <div class="box box-cyan">
+      <h3>🔁 Conversiones útiles</h3>
+      <ul>
+        <li>$1\ \text{atm} = 101\,325\ \text{Pa} = 1{,}013\ \text{bar} = 760\ \text{mmHg}$</li>
+        <li>$1\ \text{cal} = 4{,}184\ \text{J}$</li>
+        <li>$T(\text{K}) = T(\text{°C}) + 273{,}15$</li>
+        <li>$1\ \text{L} = 1\ \text{dm}^3 = 10^{-3}\ \text{m}^3$</li>
+        <li>$1\ \text{kgf/cm}^2 = 98\,000\ \text{Pa}$</li>
+      </ul>
+    </div>
+
+    <!-- T1 -->
+    <div class="box">
+      <h3><span class="num">T1</span> Conceptos generales</h3>
+      <p>Mol y masa: $\;n = \dfrac{m}{M_m}$ &nbsp;(M en g/mol)</p>
+      <p>Número de partículas: $\;N = n \cdot N_A$</p>
+      <p>Composición centesimal: $\;\%X = \dfrac{n_X\,M_X}{M_{compuesto}}\cdot 100$</p>
+      <p>Riqueza: $\;m_{puro} = m_{muestra}\cdot \dfrac{\%}{100}$</p>
+    </div>
+
+    <!-- T2 -->
+    <div class="box">
+      <h3><span class="num">T2</span> Estructura atómica</h3>
+      <p>Energía del fotón: $\;E = h\nu = \dfrac{hc}{\lambda}$</p>
+      <p>Bohr (átomos hidrogenoides): $\;E_n = -2{,}18\cdot 10^{-18}\,\dfrac{Z^2}{n^2}\ \text{J}$</p>
+      <p>De Broglie: $\;\lambda = \dfrac{h}{m\,v}$</p>
+      <p>Heisenberg: $\;\Delta x\,\Delta p \geq \dfrac{h}{4\pi}$</p>
+      <p>Números cuánticos: $n,\ \ell\in[0,n-1],\ m_\ell\in[-\ell,\ell],\ m_s=\pm\tfrac12$</p>
+    </div>
+
+    <!-- T3 -->
+    <div class="box">
+      <h3><span class="num">T3</span> Enlace químico</h3>
+      <p><strong>Iónico</strong> — energía reticular (Born-Landé):</p>
+      $$U=-\dfrac{N_A\,M\,z^+z^-e^2}{4\pi\varepsilon_0\,r_0}\!\left(1-\dfrac{1}{n}\right)$$
+      <p><strong>Ciclo de Born-Haber</strong>: $\Delta H_f = \Delta H_{sub} + \tfrac12 D + EI + AE + U$</p>
+      <p><strong>Covalente</strong> — momento dipolar: $\;\mu = q\cdot d$ (debyes)</p>
+      <p><strong>Intermoleculares</strong>: London &lt; dipolo-dipolo &lt; puente de hidrógeno</p>
+    </div>
+
+    <!-- T4 -->
+    <div class="box box-amber">
+      <h3><span class="num">T4</span> Estados de la materia</h3>
+      <p><strong>Gas ideal</strong>: $\;pV = nRT$</p>
+      <p><strong>Densidad de gas</strong>: $\;\rho = \dfrac{p\,M_m}{RT}$</p>
+      <p><strong>Mezclas</strong>: $\;p_i = x_i\,p_{tot}$ &nbsp;(Dalton)</p>
+      <p><strong>Boyle</strong>: $p_1V_1 = p_2V_2$ &nbsp;(T cte)</p>
+      <p><strong>Charles</strong>: $V_1/T_1 = V_2/T_2$ &nbsp;(p cte)</p>
+      <p><strong>Cambio de estado</strong>: $\;Q = n\,\Delta H_{transición}$</p>
+      <p><strong>Curva de calentamiento</strong>: $Q_{sensible} = m\,c\,\Delta T$ + $Q_{latente} = n\,\Delta H_{trans}$</p>
+    </div>
+
+    <!-- T5 -->
+    <div class="box box-violet">
+      <h3><span class="num">T5</span> Termodinámica</h3>
+      <p><strong>1ª Ley</strong>: $\;\Delta U = Q + W$</p>
+      <p><strong>Trabajo</strong> (gas):</p>
+      <ul>
+        <li>Isobárico: $W = -p\,\Delta V$</li>
+        <li>Isotermo rev.: $W = -nRT\ln(V_2/V_1)$</li>
+        <li>Isocoro: $W = 0$</li>
+      </ul>
+      <p><strong>Calor</strong>: $\;Q = m\,c\,\Delta T = n\,C\,\Delta T$</p>
+      <p><strong>Mayer (gas ideal)</strong>: $\;C_p - C_V = R$</p>
+      <p><strong>Entalpía</strong>: $\;H = U + pV$, $\Delta H = Q_p$</p>
+      <p><strong>Relación</strong>: $\;\Delta H = \Delta U + \Delta n_{gas}\,RT$</p>
+      <p><strong>Adiabático</strong>: $\;pV^\gamma = $ cte, con $\gamma = C_p/C_V$</p>
+    </div>
+
+    <!-- T6 -->
+    <div class="box box-violet">
+      <h3><span class="num">T6</span> Termoquímica</h3>
+      <p><strong>Entalpía de reacción estándar</strong>:</p>
+      $$\Delta H^\circ_r = \sum n_p\,\Delta H^\circ_{f,p} - \sum n_r\,\Delta H^\circ_{f,r}$$
+      <p><strong>Ley de Hess</strong>: $\Delta H$ es función de estado.</p>
+      <p><strong>Combustión</strong>: $C_xH_y + O_2 \to CO_2 + H_2O$ con $\Delta H_c < 0$</p>
+      <p><strong>Variación con T (Kirchhoff)</strong>:</p>
+      $$\Delta H(T_2) = \Delta H(T_1) + \int_{T_1}^{T_2}\!\Delta C_p\,dT$$
+      <p><strong>Bomba calorimétrica</strong>: $\;Q_{liberado} = (m_{agua}c_{agua}+C_{cal})\,\Delta T$</p>
+    </div>
+
+    <!-- T7 -->
+    <div class="box box-rose">
+      <h3><span class="num">T7</span> Espontaneidad · Gibbs</h3>
+      <p><strong>Entropía</strong> (Clausius): $\;\Delta S = \dfrac{Q_{rev}}{T}$</p>
+      <p><strong>2ª Ley</strong>: $\;\Delta S_{universo} \geq 0$</p>
+      <p><strong>Entropía de reacción</strong>:</p>
+      $$\Delta S^\circ_r = \sum n_p\,S^\circ_p - \sum n_r\,S^\circ_r$$
+      <p><strong>Energía libre de Gibbs</strong>: $\;G = H - TS$</p>
+      <p>$$\Delta G = \Delta H - T\Delta S$$</p>
+      <p><strong>Criterio</strong>:</p>
+      <ul>
+        <li>$\Delta G < 0$: espontáneo</li>
+        <li>$\Delta G = 0$: equilibrio</li>
+        <li>$\Delta G > 0$: no espontáneo</li>
+      </ul>
+      <p><strong>Temperatura crítica</strong>: $T = \Delta H/\Delta S$ &nbsp;(cambio de espontaneidad)</p>
+    </div>
+
+    <!-- T8 -->
+    <div class="box box-green">
+      <h3><span class="num">T8</span> Cinética · Equilibrio</h3>
+      <p><strong>Velocidad</strong>: $\;v = k\,[A]^a[B]^b$</p>
+      <p><strong>Arrhenius</strong>: $\;k = A\,e^{-E_a/RT}$</p>
+      <p><strong>Equilibrio (concentraciones)</strong>:</p>
+      $$K_c = \dfrac{[C]^c[D]^d}{[A]^a[B]^b}$$
+      <p><strong>Equilibrio (presiones)</strong>: $\;K_p = K_c(RT)^{\Delta n}$</p>
+      <p><strong>Cociente de reacción</strong> $Q$: si $Q < K$ → →, $Q > K$ ← ←, $Q = K$ equilibrio.</p>
+      <p><strong>Le Châtelier</strong>: el equilibrio responde oponiéndose a la perturbación (presión, concentración, temperatura).</p>
+      <p><strong>Van't Hoff</strong>: $\;\ln\!\dfrac{K_2}{K_1} = -\dfrac{\Delta H^\circ}{R}\!\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)$</p>
+    </div>
+
+    <!-- T9 -->
+    <div class="box box-cyan">
+      <h3><span class="num">T9</span> Equilibrio ácido-base</h3>
+      <p><strong>pH</strong>: $\;pH = -\log[H_3O^+]$, $\;pOH = -\log[OH^-]$</p>
+      <p><strong>Producto iónico</strong>: $\;K_w = [H_3O^+][OH^-] = 10^{-14}$ (25 °C)</p>
+      <p>$\;pH + pOH = 14$</p>
+      <p><strong>Ácido débil HA</strong>: $\;K_a = \dfrac{[H_3O^+][A^-]}{[HA]}$, $\;pK_a = -\log K_a$</p>
+      <p><strong>Base débil B</strong>: $\;K_b = \dfrac{[BH^+][OH^-]}{[B]}$</p>
+      <p><strong>Pares conjugados</strong>: $\;K_a\cdot K_b = K_w \implies pK_a + pK_b = 14$</p>
+      <p><strong>Ácido fuerte</strong>: $\;[H_3O^+] = c_0$ &nbsp;($\alpha = 1$)</p>
+      <p><strong>Ácido débil</strong>: $\;[H_3O^+] \approx \sqrt{K_a\,c_0}$ (si $\alpha < 5\%$)</p>
+      <p><strong>Henderson-Hasselbalch (tampón)</strong>:</p>
+      $$pH = pK_a + \log\!\dfrac{[A^-]}{[HA]}$$
+      <p><strong>Punto de equivalencia</strong> (valoración):</p>
+      $$n_{ácido} = n_{base}\Rightarrow V_a c_a = V_b c_b$$
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body,{
+    delimiters:[
+      {left:'$$',right:'$$',display:true},
+      {left:'\\[',right:'\\]',display:true},
+      {left:'$',right:'$',display:false},
+      {left:'\\(',right:'\\)',display:false}
+    ],throwOnError:false
+  });
+}
+document.addEventListener('DOMContentLoaded',initKatex);
+</script>
+</body>
+</html>

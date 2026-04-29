@@ -1,0 +1,238 @@
+/* ══════════════════════════════════════════════════
+   QUÍMICA · GORKA — Skin azul/violeta
+   Inspirado en EHU·LAB pero con paleta diferenciada
+   para el proyecto de Química 1º Grado
+══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ── Tokens de color ── */
+:root{
+  --blue:#5b6ee8;       --br:91,110,232;
+  --violet:#b47fff;     --vr:180,127,255;
+  --indigo:#6366f1;     --ir:99,102,241;
+  --cyan:#67e8f9;       --cr:103,232,249;
+  --amber:#f5b942;      --ar:245,185,66;
+  --rose:#fb7185;       --rr:251,113,133;
+  --green:#34d399;
+  --bg:#0a0e1a; --s1:#0f1422; --s2:#161b2c; --s3:#1d2238;
+  --line:rgba(255,255,255,0.06);
+  --line-b:rgba(91,110,232,0.18);
+  --line-v:rgba(180,127,255,0.22);
+  --txt:#e2e8f0; --txt2:#94a3b8; --txt3:#64748b;
+  --mono:'JetBrains Mono',monospace;
+  --ui:'Space Grotesk',sans-serif;
+}
+
+/* ── Fade-in ── */
+@keyframes qg-fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+body {
+  background-color: var(--bg) !important;
+  animation: qg-fadein .22s ease-out both;
+  font-family: var(--ui);
+  color: var(--txt);
+}
+
+/* ── Topbar ── */
+.topbar {
+  position: fixed; top:0; left:0; right:0; z-index:300;
+  height: 52px;
+  background: rgba(10,14,26,.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line-b);
+  display: flex; align-items: center; padding: 0 20px;
+}
+.topbar::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(var(--cr),.55) 25%,
+    rgba(var(--vr),.75) 55%,
+    rgba(var(--br),.55) 75%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+.topbar-back {
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 16px; height: 100%;
+  color: rgba(var(--vr),.65);
+  font-family: var(--mono);
+  font-size: .68em;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border-right: 1px solid var(--line);
+  text-decoration: none;
+  transition: color .2s;
+  font-weight: 600;
+}
+.topbar-back:hover { color: var(--violet); text-decoration: none; }
+.topbar-title {
+  padding: 0 16px; flex: 1;
+  font-family: var(--mono);
+  font-size: .82em;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.topbar-title em {
+  color: var(--violet);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ── Tema picker (selector dentro del topbar) ── */
+.tema-picker { position: relative; margin-right: 12px; }
+.tema-picker-btn {
+  background: rgba(var(--vr),.12);
+  border: 1px solid var(--line-v);
+  border-radius: 20px;
+  padding: 4px 13px;
+  font-size: .72em;
+  font-weight: 700;
+  color: var(--violet);
+  cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--mono);
+  letter-spacing: .05em;
+  transition: .15s;
+}
+.tema-picker-btn:hover { background: rgba(var(--vr),.22); }
+.tema-dropdown {
+  display: none; position: absolute; right: 0; top: calc(100% + 8px);
+  background: rgba(10,14,26,.98);
+  border: 1px solid var(--line-v);
+  border-radius: 10px;
+  padding: 6px;
+  min-width: 240px;
+  z-index: 300;
+  box-shadow: 0 8px 32px rgba(0,0,0,.85);
+}
+.tema-picker.open .tema-dropdown { display: block; }
+.td-item {
+  display: block;
+  padding: 7px 11px;
+  border-radius: 6px;
+  font-size: .79em;
+  text-decoration: none;
+  font-weight: 500;
+  color: #e2e8f0;
+  font-family: var(--ui);
+  transition: .15s;
+}
+.td-item:hover { background: rgba(var(--vr),.12); color: var(--violet); }
+.td-item.td-active {
+  color: var(--violet);
+  background: rgba(var(--vr),.16);
+  font-weight: 700;
+  pointer-events: none;
+}
+.td-num {
+  display: inline-block;
+  width: 30px;
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--blue);
+}
+.td-active .td-num { color: var(--violet); }
+
+/* ── Cards genéricas ── */
+.card {
+  background: var(--s1);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: .18s;
+}
+.card:hover {
+  border-color: var(--line-v);
+  background: var(--s2);
+}
+
+/* ── Botones ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px;
+  background: rgba(var(--vr),.12);
+  border: 1px solid var(--line-v);
+  border-radius: 8px;
+  color: var(--violet);
+  font-family: var(--mono);
+  font-size: .82em;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .15s;
+}
+.btn:hover {
+  background: rgba(var(--vr),.22);
+  text-decoration: none;
+}
+.btn-primary {
+  background: rgba(var(--br),.16);
+  border-color: rgba(var(--br),.32);
+  color: var(--blue);
+}
+.btn-primary:hover { background: rgba(var(--br),.28); }
+
+/* ── Scrollbars ── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--vr),.18);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(var(--vr),.35); }
+
+/* ── KaTeX overrides ── */
+.katex { font-size: 1.04em; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+
+/* ── Botón móvil de recarga ── */
+#mobile-reload-btn {
+  display: none;
+  position: fixed; bottom: 20px; right: 20px;
+  z-index: 99999;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(45,45,75,.94);
+  border: 1.5px solid rgba(var(--vr),.55);
+  color: #f1f5f9;
+  cursor: pointer;
+  align-items: center; justify-content: center;
+  padding: 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,.6),
+              0 0 0 1px rgba(255,255,255,.04) inset,
+              0 0 20px rgba(var(--vr),.18);
+  backdrop-filter: blur(12px);
+  transition: transform .15s, background .15s;
+}
+#mobile-reload-btn:active {
+  transform: scale(.88);
+  background: rgba(60,60,90,.98);
+}
+#mobile-reload-btn svg { display: block; pointer-events: none; }
+@media (max-width: 900px) {
+  #mobile-reload-btn { display: flex; }
+}
+
+/* ── Footer ── */
+.qg-footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--txt3);
+  font-size: .72em;
+  font-family: var(--mono);
+  letter-spacing: .05em;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+}
+.qg-footer a { color: var(--violet); text-decoration: none; }
+.qg-footer a:hover { text-decoration: underline; }

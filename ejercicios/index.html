@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>Ejercicios · Química · Gorka</title>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:15px;line-height:1.6}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+
+.head{
+  margin-bottom:22px;padding:18px 22px;
+  background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);
+  border:1px solid var(--line-v);border-left:3px solid var(--violet);
+  border-radius:0 12px 12px 0;
+}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.6em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:14px;
+}
+.t-card{
+  background:var(--s1);border:1px solid var(--line);
+  border-radius:10px;padding:16px 18px;
+  transition:.2s;text-decoration:none;display:block;
+  position:relative;overflow:hidden;
+}
+.t-card:hover{
+  border-color:var(--line-v);background:var(--s2);
+  transform:translateY(-2px);
+}
+.t-card::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+  background:linear-gradient(180deg,var(--blue),var(--violet));
+  opacity:.5;transition:opacity .2s;
+}
+.t-card:hover::before{opacity:1}
+.t-card.disabled{opacity:.45;pointer-events:none}
+.t-card.disabled::before{background:var(--txt3)}
+.tc-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:5px}
+.tc-title{font-family:var(--ui);font-size:1em;font-weight:600;color:#f1f5f9;margin-bottom:5px}
+.tc-meta{font-family:var(--mono);font-size:.66em;color:var(--txt2)}
+.tc-cnt{
+  position:absolute;top:14px;right:14px;
+  font-family:var(--mono);font-size:.62em;
+  background:rgba(var(--vr),.12);color:var(--violet);
+  padding:2px 8px;border-radius:10px;font-weight:700;
+}
+.tc-soon{
+  position:absolute;top:14px;right:14px;
+  font-family:var(--mono);font-size:.6em;
+  background:rgba(var(--ar),.12);color:var(--amber);
+  padding:2px 8px;border-radius:10px;
+  border:1px solid rgba(var(--ar),.25);font-weight:700;
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="../index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Inicio
+  </a>
+  <span class="topbar-title">Química · <em>Ejercicios</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📝 Recurso · Ejercicios resueltos</div>
+    <h1>Ejercicios resueltos</h1>
+    <div class="sub">Selecciona un tema. Cada ejercicio incluye enunciado, datos, demostración y resolución paso a paso.</div>
+  </div>
+
+  <div class="grid">
+    <a href="tema1.html" class="t-card disabled">
+      <div class="tc-num">TEMA 01</div>
+      <div class="tc-title">Conceptos generales</div>
+      <div class="tc-meta">Mol · Estequiometría</div>
+      <span class="tc-soon">próximo</span>
+    </a>
+    <a href="tema2.html" class="t-card disabled">
+      <div class="tc-num">TEMA 02</div>
+      <div class="tc-title">Estructura atómica</div>
+      <div class="tc-meta">Configuración · Periódicas</div>
+      <span class="tc-soon">próximo</span>
+    </a>
+    <a href="tema3.html" class="t-card disabled">
+      <div class="tc-num">TEMA 03</div>
+      <div class="tc-title">Enlace químico</div>
+      <div class="tc-meta">Iónico · Covalente</div>
+      <span class="tc-soon">próximo</span>
+    </a>
+    <a href="tema4.html" class="t-card disabled">
+      <div class="tc-num">TEMA 04</div>
+      <div class="tc-title">Estados de la materia</div>
+      <div class="tc-meta">Gases · Cambios de estado</div>
+      <span class="tc-soon">próximo</span>
+    </a>
+    <a href="tema5.html" class="t-card">
+      <div class="tc-num">TEMA 05</div>
+      <div class="tc-title">Termodinámica</div>
+      <div class="tc-meta">W · Q · ΔU · ΔH</div>
+      <span class="tc-cnt">3 ej</span>
+    </a>
+    <a href="tema6.html" class="t-card disabled">
+      <div class="tc-num">TEMA 06</div>
+      <div class="tc-title">Termoquímica</div>
+      <div class="tc-meta">Hess · Combustión</div>
+      <span class="tc-soon">próximo</span>
+    </a>
+    <a href="tema7.html" class="t-card disabled">
+      <div class="tc-num">TEMA 07</div>
+      <div class="tc-title">Espontaneidad</div>
+      <div class="tc-meta">Entropía · Gibbs</div>
+      <span class="tc-soon">próximo</span>
+    </a>
+    <a href="tema8.html" class="t-card disabled">
+      <div class="tc-num">TEMA 08</div>
+      <div class="tc-title">Cinética y equilibrio</div>
+      <div class="tc-meta">Kp/Kc · Le Châtelier</div>
+      <span class="tc-soon">próximo</span>
+    </a>
+    <a href="tema9.html" class="t-card disabled">
+      <div class="tc-num">TEMA 09</div>
+      <div class="tc-title">Ácido-base</div>
+      <div class="tc-meta">pH · Tampones</div>
+      <span class="tc-soon">próximo</span>
+    </a>
+  </div>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+</body>
+</html>

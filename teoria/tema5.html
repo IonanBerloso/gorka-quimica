@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>T5 · Termodinámica · Química</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;min-height:100vh;overflow-x:hidden;font-size:15px;line-height:1.65}
+.layout{display:flex;min-height:calc(100vh - 52px)}
+
+/* Sidebar */
+.sidebar{
+  width:260px;flex-shrink:0;
+  position:fixed;top:52px;left:0;bottom:0;
+  background:rgba(255,255,255,.025);
+  border-right:1px solid var(--line);
+  overflow-y:auto;
+  padding:12px 8px;
+}
+.sb-head{padding:8px 12px 12px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.sb-subtitle{font-family:var(--mono);font-size:.62em;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--txt3);margin-bottom:4px}
+.sb-current{font-size:.78em;font-weight:600;color:var(--violet)}
+.sb-section{padding:6px 10px;font-family:var(--mono);font-size:.62em;font-weight:700;color:var(--txt3);letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+.sb-link{
+  display:block;padding:7px 10px;
+  font-size:.82em;color:var(--txt2);
+  border-radius:6px;text-decoration:none;
+  margin-bottom:1px;border-left:2px solid transparent;
+  transition:.15s;
+}
+.sb-link:hover{background:rgba(255,255,255,.04);color:var(--txt);text-decoration:none}
+.sb-link.active{background:rgba(var(--vr),.12);color:var(--violet);border-left-color:var(--violet);font-weight:600}
+
+/* Content */
+.content{flex:1;margin-left:260px;padding:32px 48px 60px;max-width:1100px}
+@media(max-width:900px){
+  .sidebar{display:none}
+  .content{margin-left:0;padding:20px 16px 40px}
+}
+
+/* Header del tema */
+.t-head{
+  margin-bottom:28px;padding:18px 22px;
+  background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);
+  border:1px solid var(--line-v);border-left:3px solid var(--violet);
+  border-radius:0 12px 12px 0;
+}
+.t-tag{font-family:var(--mono);font-size:.66em;font-weight:700;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;margin-bottom:4px}
+.t-title{font-family:var(--ui);font-size:1.6em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.t-meta{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+
+/* Sección de teoría */
+section.sec{
+  margin-bottom:28px;
+  background:var(--s1);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:18px 22px;
+}
+section.sec h2{
+  font-family:var(--ui);font-size:1.15em;font-weight:700;color:#f1f5f9;
+  margin-bottom:12px;padding-bottom:8px;
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:10px;
+}
+section.sec h2::before{
+  content:'';display:inline-block;width:4px;height:18px;
+  background:linear-gradient(180deg,var(--blue),var(--violet));
+  border-radius:2px;
+}
+section.sec h3{
+  font-family:var(--ui);font-size:1em;font-weight:600;color:var(--violet);
+  margin:14px 0 8px;
+}
+section.sec p{margin:8px 0;color:#cbd5e1}
+section.sec ul,section.sec ol{margin:8px 0 8px 20px;color:#cbd5e1}
+section.sec li{margin:4px 0}
+section.sec b,section.sec strong{color:#f1f5f9;font-weight:600}
+
+/* Concepto destacado */
+.concept{
+  background:rgba(var(--br),.08);
+  border-left:3px solid var(--blue);
+  border-radius:6px;
+  padding:12px 16px;
+  margin:12px 0;
+}
+.concept-label{
+  font-family:var(--mono);font-size:.66em;
+  color:var(--blue);font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:4px;
+}
+
+/* Fórmula destacada */
+.formula{
+  background:rgba(var(--vr),.06);
+  border-left:3px solid var(--violet);
+  border-radius:6px;
+  padding:10px 16px;
+  margin:10px 0;
+}
+.formula-label{
+  font-family:var(--mono);font-size:.66em;
+  color:var(--violet);font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:4px;
+}
+
+/* Nota */
+.note{
+  background:rgba(var(--ar),.08);
+  border:1px solid rgba(var(--ar),.22);
+  border-left:3px solid var(--amber);
+  border-radius:6px;
+  padding:10px 14px;
+  margin:10px 0;
+  font-size:.92em;
+  color:#fed7aa;
+  font-style:italic;
+}
+.note strong{color:#fcd34d;font-style:normal}
+
+/* Tabla */
+.tabla{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em}
+.tabla th{
+  background:rgba(var(--vr),.12);color:var(--violet);
+  padding:8px 10px;text-align:left;
+  border:1px solid var(--line-v);font-weight:600;
+}
+.tabla td{padding:8px 10px;border:1px solid var(--line);color:#cbd5e1}
+.tabla tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="../index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Inicio
+  </a>
+  <span class="topbar-title">Química · T5 <em>· Termodinámica química</em></span>
+</nav>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sb-head">
+      <div class="sb-subtitle">Tema actual</div>
+      <div class="sb-current">T5 · Termodinámica</div>
+    </div>
+    <div class="sb-section">Secciones</div>
+    <a class="sb-link active" href="#sec-1">5.1 · Sistemas y entorno</a>
+    <a class="sb-link" href="#sec-2">5.2 · Variables termodinámicas</a>
+    <a class="sb-link" href="#sec-3">5.3 · Trabajo y calor</a>
+    <a class="sb-link" href="#sec-4">5.4 · 1ª Ley de la termodinámica</a>
+    <a class="sb-link" href="#sec-5">5.5 · Entalpía</a>
+    <a class="sb-link" href="#sec-6">5.6 · Procesos en gases ideales</a>
+    <div class="sb-section">Otros temas</div>
+    <a class="sb-link" href="tema4.html">← T4 Estados de la materia</a>
+    <a class="sb-link" href="tema6.html">→ T6 Termoquímica</a>
+    <div class="sb-section">Recursos</div>
+    <a class="sb-link" href="../formulario.html">📐 Formulario</a>
+    <a class="sb-link" href="../ejercicios/tema5.html">📝 Ejercicios T5</a>
+  </aside>
+
+  <main class="content">
+
+    <div class="t-head">
+      <div class="t-tag">Tema 05</div>
+      <h1 class="t-title">Termodinámica química</h1>
+      <div class="t-meta">Sistemas · Trabajo · Calor · Energía interna · Entalpía · Gases ideales</div>
+    </div>
+
+    <!-- 5.1 Sistemas -->
+    <section class="sec" id="sec-1">
+      <h2>5.1. Sistemas termodinámicos y entorno</h2>
+      <p>Un <strong>sistema termodinámico</strong> es la porción del universo objeto de estudio. Todo lo que está fuera del sistema y puede interaccionar con él es el <strong>entorno</strong>.</p>
+
+      <h3>Tipos de sistema</h3>
+      <ul>
+        <li><strong>Abierto</strong>: intercambia materia y energía con el entorno (un vaso destapado).</li>
+        <li><strong>Cerrado</strong>: intercambia energía pero no materia (un termo cerrado).</li>
+        <li><strong>Aislado</strong>: no intercambia ni materia ni energía (un calorímetro adiabático ideal).</li>
+      </ul>
+
+      <div class="concept">
+        <div class="concept-label">Convenio de signos (IUPAC)</div>
+        <p>Tomamos el sistema como referencia: lo que <em>entra</em> al sistema es <strong>positivo</strong> y lo que <em>sale</em> es <strong>negativo</strong>.</p>
+        <ul>
+          <li>$Q > 0$: el sistema absorbe calor (endotérmico).</li>
+          <li>$Q < 0$: el sistema cede calor (exotérmico).</li>
+          <li>$W > 0$: se hace trabajo <em>sobre</em> el sistema (compresión).</li>
+          <li>$W < 0$: el sistema hace trabajo (expansión contra el entorno).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5.2 Variables termodinámicas -->
+    <section class="sec" id="sec-2">
+      <h2>5.2. Variables y funciones de estado</h2>
+      <p>Las <strong>variables de estado</strong> describen el sistema en un instante: presión $p$, volumen $V$, temperatura $T$ y número de moles $n$.</p>
+      <p>Una <strong>función de estado</strong> depende solo del estado inicial y final del sistema, no del camino seguido. Ejemplos: $U$ (energía interna), $H$ (entalpía), $S$ (entropía), $G$ (Gibbs).</p>
+      <p>El <strong>trabajo</strong> $W$ y el <strong>calor</strong> $Q$ <em>NO</em> son funciones de estado: dependen del camino.</p>
+
+      <div class="note"><strong>Clave:</strong> $\Delta U = U_f - U_i$ se calcula igual sea cual sea el camino. Pero $W$ y $Q$ pueden ser distintos en cada camino, aunque su <em>suma</em> $W+Q=\Delta U$ sí es la misma.</div>
+
+      <h3>Procesos típicos</h3>
+      <table class="tabla">
+        <tr><th>Proceso</th><th>Condición</th><th>Notación</th></tr>
+        <tr><td>Isotermo</td><td>Temperatura constante</td><td>$\Delta T = 0$</td></tr>
+        <tr><td>Isobárico</td><td>Presión constante</td><td>$\Delta p = 0$</td></tr>
+        <tr><td>Isocoro</td><td>Volumen constante</td><td>$\Delta V = 0$</td></tr>
+        <tr><td>Adiabático</td><td>Sin intercambio de calor</td><td>$Q = 0$</td></tr>
+        <tr><td>Cíclico</td><td>Vuelve al estado inicial</td><td>$\Delta U = 0$</td></tr>
+      </table>
+    </section>
+
+    <!-- 5.3 Trabajo y calor -->
+    <section class="sec" id="sec-3">
+      <h2>5.3. Trabajo y calor</h2>
+
+      <h3>Trabajo de expansión-compresión</h3>
+      <p>Para un gas que cambia de volumen contra una presión externa $p_{ext}$:</p>
+      <div class="formula">
+        <div class="formula-label">Trabajo (general, gas)</div>
+        $$W = -\int_{V_1}^{V_2} p_{ext}\,dV$$
+      </div>
+      <p>El signo menos refleja el convenio: si el gas se expande ($dV>0$), el sistema hace trabajo y $W<0$.</p>
+
+      <h3>Casos particulares</h3>
+      <ul>
+        <li><strong>Proceso isobárico</strong> ($p_{ext}=p=$ cte): $\;W = -p\,\Delta V = -p(V_2 - V_1)$.</li>
+        <li><strong>Proceso isocoro</strong> ($\Delta V = 0$): $\;W = 0$.</li>
+        <li><strong>Proceso isotermo reversible (gas ideal)</strong>: $\;W = -nRT\ln\dfrac{V_2}{V_1} = -nRT\ln\dfrac{p_1}{p_2}$.</li>
+        <li><strong>Expansión libre</strong> ($p_{ext}=0$): $\;W=0$.</li>
+      </ul>
+
+      <h3>Calor</h3>
+      <p>El calor sensible asociado a un cambio de temperatura sin cambio de fase:</p>
+      <div class="formula">
+        <div class="formula-label">Calor sensible</div>
+        $$Q = m\,c\,\Delta T = n\,C\,\Delta T$$
+      </div>
+      <p>$c$ es la capacidad calorífica específica (J/g·K) y $C$ la molar (J/mol·K). En gases conviene distinguir:</p>
+      <ul>
+        <li>$C_V$: a volumen constante.</li>
+        <li>$C_p$: a presión constante.</li>
+        <li>Relación de Mayer (gas ideal): $\;C_p - C_V = R$.</li>
+      </ul>
+    </section>
+
+    <!-- 5.4 Primera ley -->
+    <section class="sec" id="sec-4">
+      <h2>5.4. Primera ley de la termodinámica</h2>
+      <p>Es el principio de conservación de la energía aplicado a sistemas termodinámicos:</p>
+      <div class="formula">
+        <div class="formula-label">1ª Ley</div>
+        $$\boxed{\;\Delta U = Q + W\;}$$
+      </div>
+      <p>La variación de energía interna del sistema es igual al calor absorbido más el trabajo realizado <em>sobre</em> el sistema.</p>
+
+      <div class="concept">
+        <div class="concept-label">Para un proceso isocoro</div>
+        Como $W=0$: $\;\Delta U = Q_V$. El calor a volumen constante mide directamente la variación de energía interna.
+      </div>
+    </section>
+
+    <!-- 5.5 Entalpía -->
+    <section class="sec" id="sec-5">
+      <h2>5.5. Entalpía</h2>
+      <p>La <strong>entalpía</strong> es una función de estado definida como:</p>
+      <div class="formula">
+        <div class="formula-label">Definición</div>
+        $$H = U + pV$$
+      </div>
+
+      <h3>¿Por qué existe la entalpía?</h3>
+      <p>En procesos a <strong>presión constante</strong> (lo habitual en química, atmósfera abierta), el calor intercambiado vale:</p>
+      $$Q_p = \Delta U + p\Delta V = \Delta(U + pV) = \Delta H$$
+      <p>Por tanto, $\Delta H = Q_p$ es directamente medible como el calor a presión constante. Es la magnitud natural en termoquímica.</p>
+
+      <h3>Relación entre $\Delta H$ y $\Delta U$</h3>
+      <p>Para reacciones con gases ideales a $T$ constante, usando $pV = nRT$:</p>
+      <div class="formula">
+        $$\Delta H = \Delta U + \Delta n_{gas}\,RT$$
+      </div>
+      <p>$\Delta n_{gas}$ es la variación del número de moles gaseosos entre productos y reactivos. Si no hay gases o $\Delta n_{gas}=0$: $\Delta H \approx \Delta U$.</p>
+    </section>
+
+    <!-- 5.6 Procesos en gases ideales -->
+    <section class="sec" id="sec-6">
+      <h2>5.6. Procesos termodinámicos en gases ideales</h2>
+
+      <p>Para un gas ideal $U$ depende solo de $T$. Esto simplifica el cálculo de $\Delta U$ y $\Delta H$:</p>
+      <ul>
+        <li>$\Delta U = nC_V\,\Delta T$ &nbsp;(siempre, sea cual sea el proceso).</li>
+        <li>$\Delta H = nC_p\,\Delta T$ &nbsp;(siempre).</li>
+      </ul>
+
+      <table class="tabla">
+        <tr><th>Proceso</th><th>$W$</th><th>$Q$</th><th>$\Delta U$</th><th>$\Delta H$</th></tr>
+        <tr><td>Isocoro</td><td>$0$</td><td>$nC_V\Delta T$</td><td>$nC_V\Delta T$</td><td>$nC_p\Delta T$</td></tr>
+        <tr><td>Isobárico</td><td>$-p\Delta V$</td><td>$nC_p\Delta T$</td><td>$nC_V\Delta T$</td><td>$nC_p\Delta T$</td></tr>
+        <tr><td>Isotermo (rev.)</td><td>$-nRT\ln\frac{V_2}{V_1}$</td><td>$nRT\ln\frac{V_2}{V_1}$</td><td>$0$</td><td>$0$</td></tr>
+        <tr><td>Adiabático</td><td>$nC_V\Delta T$</td><td>$0$</td><td>$nC_V\Delta T$</td><td>$nC_p\Delta T$</td></tr>
+      </table>
+
+      <div class="note"><strong>Verificación rápida:</strong> en un isotermo de gas ideal $\Delta U = 0$, así que por la 1ª ley $Q = -W$. Tiene sentido: el calor que entra se gasta íntegro en hacer trabajo de expansión.</div>
+    </section>
+
+  </main>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body, {
+    delimiters:[
+      {left:'$$',right:'$$',display:true},
+      {left:'\\[',right:'\\]',display:true},
+      {left:'$',right:'$',display:false},
+      {left:'\\(',right:'\\)',display:false}
+    ],throwOnError:false
+  });
+}
+document.addEventListener('DOMContentLoaded', initKatex);
+
+// Sidebar active state al hacer scroll
+const links = document.querySelectorAll('.sb-link[href^="#"]');
+const sections = document.querySelectorAll('section.sec');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    const top = s.offsetTop - 80;
+    if (window.scrollY >= top) current = s.id;
+  });
+  links.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+</body>
+</html>
