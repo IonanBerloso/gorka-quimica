@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>T1 · Ejercicios · Conceptos generales</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:15px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
+.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
+.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
+.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
+.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
+.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
+.ex.open .ex-arrow{transform:rotate(180deg)}
+.ex-body{display:none;padding:16px 20px}
+.ex.open .ex-body{display:block}
+.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
+.sec-btn .sarr{transition:.2s}
+.sec-open .sec-btn .sarr{transform:rotate(180deg)}
+.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-open .sec-body{display:block}
+.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
+.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
+.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
+.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
+.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
+.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
+.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
+.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
+.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
+.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
+.tdatos td{color:#cbd5e1}
+.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
+.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:#fb923c;font-style:normal}
+.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
+.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
+.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
+.demo .step{color:#fed7aa;margin-top:8px}
+.demo .step b{color:#fb923c}
+.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
+.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
+.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ejercicios
+  </a>
+  <span class="topbar-title">Química · T1 <em>· Ejercicios resueltos</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📝 Tema 1 · Conceptos generales</div>
+    <h1>Ejercicios resueltos · Tema 1</h1>
+    <div class="sub">Materia · Mol · Composición · Estequiometría</div>
+  </div>
+
+  <div class="jump">
+    <a class="jl" href="#ex1">Ej 1 — Cálculo del número de moléculas y átomos</a>
+    <a class="jl" href="#ex2">Ej 2 — Composición porcentual y fórmula empírica</a>
+    <a class="jl" href="#ex3">Ej 3 — Reactivo limitante y rendimiento</a>
+  </div>
+
+  <article class="ex open" id="ex1">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 1</div>
+        <div class="ex-title">Cálculo del número de moléculas y átomos</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular cuántas moléculas y cuántos átomos de cada elemento hay en <b>50 g de glucosa</b> (C$_6$H$_{12}$O$_6$). Datos: $M_C=12$, $M_H=1$, $M_O=16$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $1{,}67\cdot 10^{23}$ moléculas; $1{,}00\cdot 10^{24}$ átomos C; $2{,}01\cdot 10^{24}$ átomos H; $1{,}00\cdot 10^{24}$ átomos O.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa de glucosa</td><td>$m=50\ \text{g}$</td></tr>
+            <tr><td>Fórmula molecular</td><td>$\text{C}_6\text{H}_{12}\text{O}_6$</td></tr>
+            <tr><td>Masas atómicas</td><td>$M_C=12$, $M_H=1$, $M_O=16$ g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — De dónde sale $N = n\cdot N_A$</div>
+            
+<p>Por <b>definición de mol</b>, una cantidad de sustancia $n$ contiene $n\cdot N_A$ partículas, donde $N_A=6{,}022\cdot 10^{23}$ es el número de Avogadro.</p>
+<p>Para los átomos de cada elemento dentro de una molécula, multiplicamos por el subíndice del elemento en la fórmula:</p>
+$$N_{\text{átomos elem.}} = N_{\text{moléculas}}\cdot (\text{subíndice})$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Masa molar de la glucosa</div>
+            <p class="porque"><b>¿Por qué?</b> Sumamos las masas atómicas pesadas por subíndices.</p>
+            $$M = 6\cdot 12 + 12\cdot 1 + 6\cdot 16 = 72 + 12 + 96 = 180\ \text{g/mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Moles de glucosa</div>
+            <p class="porque"><b>¿Por qué?</b> $n = m/M$ es la relación fundamental.</p>
+            $$n = \dfrac{50}{180} = 0{,}2778\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Moléculas de glucosa</div>
+            <p class="porque"><b>¿Por qué?</b> Multiplico moles por $N_A$.</p>
+            $$N = 0{,}2778\cdot 6{,}022\cdot 10^{23} = 1{,}673\cdot 10^{23}\ \text{moléculas}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — Átomos de cada elemento</div>
+            <p class="porque"><b>¿Por qué?</b> Cada molécula tiene 6 C, 12 H y 6 O.</p>
+            $$N_C = 6N = 1{,}004\cdot 10^{24}$$
+$$N_H = 12N = 2{,}008\cdot 10^{24}$$
+$$N_O = 6N = 1{,}004\cdot 10^{24}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$1{,}67\cdot 10^{23}$ moléculas · $\sum$ átomos $= N_C+N_H+N_O = 4{,}016\cdot 10^{24}$.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Los moles de C = 6·0,2778 = 1,667 mol → $1{,}667\cdot 6{,}022\cdot 10^{23}=1{,}004\cdot 10^{24}$ átomos C. ✓ Coincide con el cálculo anterior.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex2">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 2</div>
+        <div class="ex-title">Composición porcentual y fórmula empírica</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Un compuesto contiene <b>40,0% C, 6,7% H y 53,3% O</b> en masa, y su masa molar es $180\ \text{g/mol}$. Determinar la fórmula empírica y la fórmula molecular.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Empírica: CH$_2$O · Molecular: C$_6$H$_{12}$O$_6$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>% en masa</td><td>40,0% C; 6,7% H; 53,3% O</td></tr>
+            <tr><td>Masa molar</td><td>$M = 180\ \text{g/mol}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Procedimiento empírica → molecular</div>
+            
+<p>Tomamos como base <b>100 g</b> de compuesto. Así los porcentajes se convierten directamente en gramos. Dividiendo por la masa atómica, obtenemos moles de cada elemento.</p>
+<p>La <b>fórmula empírica</b> es la relación entera más simple entre esos moles. Para encontrarla, dividimos todos por el menor.</p>
+<p>La <b>fórmula molecular</b> es múltiplo entero de la empírica:</p>
+$$n = \dfrac{M_{\text{molecular}}}{M_{\text{empírica}}} \implies \text{Molecular}=(\text{empírica})_n$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Moles de cada elemento (base 100 g)</div>
+            <p class="porque"><b>¿Por qué?</b> Cada % se convierte directo a gramos sobre 100 g.</p>
+            $$n_C=\dfrac{40{,}0}{12}=3{,}33\quad n_H=\dfrac{6{,}7}{1}=6{,}7\quad n_O=\dfrac{53{,}3}{16}=3{,}33$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Relación entera (dividir por el menor)</div>
+            <p class="porque"><b>¿Por qué?</b> Divido todo entre 3,33.</p>
+            $$C:1\qquad H:2{,}01\approx 2\qquad O:1$$
+<p>Fórmula empírica: <b>CH$_2$O</b> con $M_e = 12+2+16 = 30$ g/mol.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Fórmula molecular</div>
+            <p class="porque"><b>¿Por qué?</b> $n = M/M_e$.</p>
+            $$n = \dfrac{180}{30} = 6 \implies \text{Molecular} = (\text{CH}_2\text{O})_6 = \text{C}_6\text{H}_{12}\text{O}_6$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Empírica: <b>CH$_2$O</b> · Molecular: <b>C$_6$H$_{12}$O$_6$</b> (glucosa, fructosa…).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación: $M(\text{C}_6\text{H}_{12}\text{O}_6)=72+12+96=180$ g/mol. ✓ Coincide con el dato.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex3">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 3</div>
+        <div class="ex-title">Reactivo limitante y rendimiento</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Se hacen reaccionar <b>10 g de Al</b> con <b>40 g de Cl$_2$</b> para formar AlCl$_3$. Calcular: (a) el reactivo limitante, (b) la masa teórica de AlCl$_3$, (c) el rendimiento si se obtienen experimentalmente 45 g del producto. Datos: $M_{Al}=27$, $M_{Cl}=35{,}5$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) Al es el limitante; (b) $m_{\text{teórica}}=49{,}4$ g; (c) $\eta=91{,}1\%$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Reacción</td><td>$2\,\text{Al} + 3\,\text{Cl}_2 \to 2\,\text{AlCl}_3$</td></tr>
+            <tr><td>Masas</td><td>$m_{Al}=10$ g; $m_{Cl_2}=40$ g</td></tr>
+            <tr><td>Masa molar Cl$_2$</td><td>$71$ g/mol</td></tr>
+            <tr><td>Masa molar AlCl$_3$</td><td>$27+3\cdot 35{,}5=133{,}5$ g/mol</td></tr>
+            <tr><td>Producto experimental</td><td>$45$ g</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Identificación del limitante</div>
+            
+<p>Para cada reactivo, calculamos $n/\nu$ (moles dividido entre coeficiente estequiométrico). Ese cociente representa cuántas <em>"unidades de reacción"</em> aporta cada reactivo. <b>El menor</b> es el limitante porque se acaba primero.</p>
+$$\xi_i = \dfrac{n_i}{\nu_i}\;\;,\;\;\text{limitante} \Leftrightarrow \min(\xi_i)$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Moles de cada reactivo</div>
+            <p class="porque"><b>¿Por qué?</b> $n=m/M$.</p>
+            $$n_{Al}=\dfrac{10}{27}=0{,}370\ \text{mol}\qquad n_{Cl_2}=\dfrac{40}{71}=0{,}563\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Cociente estequiométrico $\xi$</div>
+            <p class="porque"><b>¿Por qué?</b> Coeficientes: $\nu_{Al}=2$, $\nu_{Cl_2}=3$.</p>
+            $$\xi_{Al}=\dfrac{0{,}370}{2}=0{,}185\qquad \xi_{Cl_2}=\dfrac{0{,}563}{3}=0{,}188$$
+<p>$\xi_{Al}<\xi_{Cl_2}$ ⟹ <b>el aluminio es el limitante</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Masa teórica de AlCl$_3$</div>
+            <p class="porque"><b>¿Por qué?</b> Por estequiometría: 2 mol Al → 2 mol AlCl$_3$, así que $n_{AlCl_3}=n_{Al}=0{,}370$ mol.</p>
+            $$m_{\text{teórica}} = 0{,}370\cdot 133{,}5 = 49{,}4\ \text{g}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — Rendimiento</div>
+            <p class="porque"><b>¿Por qué?</b> Comparo experimental con teórico.</p>
+            $$\eta = \dfrac{45}{49{,}4}\cdot 100 = 91{,}1\%$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Limitante: <b>Al</b> · Teórico: <b>49,4 g</b> · Rendimiento: <b>91,1%</b>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Cl$_2$ consumido = $1{,}5\cdot n_{Al}=0{,}555$ mol → $0{,}555\cdot 71 = 39{,}4$ g. Sobran $40-39{,}4=0{,}6$ g de Cl$_2$ ✓ (consistente con que Al es el limitante).</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+}
+document.addEventListener('DOMContentLoaded',initKatex);
+</script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>T4 · Ejercicios · Estados de la materia</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:15px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
+.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
+.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
+.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
+.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
+.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
+.ex.open .ex-arrow{transform:rotate(180deg)}
+.ex-body{display:none;padding:16px 20px}
+.ex.open .ex-body{display:block}
+.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
+.sec-btn .sarr{transition:.2s}
+.sec-open .sec-btn .sarr{transform:rotate(180deg)}
+.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-open .sec-body{display:block}
+.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
+.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
+.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
+.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
+.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
+.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
+.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
+.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
+.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
+.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
+.tdatos td{color:#cbd5e1}
+.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
+.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:#fb923c;font-style:normal}
+.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
+.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
+.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
+.demo .step{color:#fed7aa;margin-top:8px}
+.demo .step b{color:#fb923c}
+.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
+.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
+.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ejercicios
+  </a>
+  <span class="topbar-title">Química · T4 <em>· Ejercicios resueltos</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📝 Tema 4 · Estados de la materia</div>
+    <h1>Ejercicios resueltos · Tema 4</h1>
+    <div class="sub">Sólidos · Líquidos · Gases · Cambios de estado · Diagramas de fases</div>
+  </div>
+
+  <div class="jump">
+    <a class="jl" href="#ex1">Ej 1 — Ley de los gases ideales: hallar volumen</a>
+    <a class="jl" href="#ex2">Ej 2 — Mezcla de gases: ley de Dalton</a>
+    <a class="jl" href="#ex3">Ej 3 — Calor para fundir y calentar hielo</a>
+  </div>
+
+  <article class="ex open" id="ex1">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 1</div>
+        <div class="ex-title">Ley de los gases ideales: hallar volumen</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el volumen que ocupan <b>2,5 mol de N$_2$</b> a <b>27 °C</b> y <b>2 atm</b> de presión, suponiendo comportamiento ideal. ¿Cuál sería ese volumen en condiciones normales (0 °C, 1 atm)?</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $V_1=30{,}77$ L; $V_{CN}=56{,}0$ L.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Moles</td><td>$n=2{,}5\ \text{mol}$</td></tr>
+            <tr><td>Temperatura</td><td>$T_1=300\ \text{K}$ (27 °C)</td></tr>
+            <tr><td>Presión</td><td>$p_1=2\ \text{atm}$</td></tr>
+            <tr><td>$R$</td><td>$0{,}082\ \text{atm·L/(mol·K)}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — De $pV=nRT$ a las condiciones normales</div>
+            
+<p>La ecuación $pV=nRT$ permite encontrar cualquier variable conocidas las otras tres. Para un proceso entre dos estados con $n$ constante:</p>
+$$\dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2}$$
+<p>En <b>condiciones normales (CN)</b>: $T=273{,}15$ K, $p=1$ atm. 1 mol de gas ideal ocupa <b>22,4 L</b>.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Volumen a 27 °C, 2 atm</div>
+            <p class="porque"><b>¿Por qué?</b> Despejo $V$ de $pV=nRT$.</p>
+            $$V_1 = \dfrac{nRT_1}{p_1} = \dfrac{2{,}5\cdot 0{,}082\cdot 300}{2} = 30{,}75\ \text{L}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Volumen en CN</div>
+            <p class="porque"><b>¿Por qué?</b> En CN, 1 mol = 22,4 L.</p>
+            $$V_{CN} = 2{,}5\cdot 22{,}4 = 56{,}0\ \text{L}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$V_1 = 30{,}75$ L · $V_{CN}=56{,}0$ L.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación con $pV=nRT$ en CN: $V=2{,}5\cdot 0{,}082\cdot 273{,}15/1 = 56{,}0$ L. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex2">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 2</div>
+        <div class="ex-title">Mezcla de gases: ley de Dalton</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>En un recipiente de <b>10 L</b> a <b>27 °C</b> se mezclan <b>4 g de He</b>, <b>14 g de N$_2$</b> y <b>32 g de O$_2$</b>. Calcular: (a) la presión parcial de cada gas; (b) la presión total. Datos: $M_{He}=4$, $M_{N_2}=28$, $M_{O_2}=32$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $p_{He}=2{,}46$ atm; $p_{N_2}=1{,}23$ atm; $p_{O_2}=2{,}46$ atm; $p_T=6{,}15$ atm.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Volumen</td><td>$V=10\ \text{L}$</td></tr>
+            <tr><td>Temperatura</td><td>$T=300\ \text{K}$</td></tr>
+            <tr><td>Masas</td><td>He: 4 g · N$_2$: 14 g · O$_2$: 32 g</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Ley de Dalton de presiones parciales</div>
+            
+<p>En una mezcla de gases ideales que no reaccionan, cada gas se comporta como si ocupara solo el recipiente. Su <b>presión parcial</b> es la que ejercería en solitario:</p>
+$$p_i = \dfrac{n_i RT}{V}$$
+<p>La <b>presión total</b> es la suma de las parciales:</p>
+$$p_T = \sum_i p_i = \dfrac{(\sum_i n_i)RT}{V} = \dfrac{n_T RT}{V}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Moles de cada gas</div>
+            <p class="porque"><b>¿Por qué?</b> $n=m/M$.</p>
+            $$n_{He}=\dfrac{4}{4}=1\ \text{mol}\quad n_{N_2}=\dfrac{14}{28}=0{,}5\ \text{mol}\quad n_{O_2}=\dfrac{32}{32}=1\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Presiones parciales</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico $p_i=n_i RT/V$ con $RT/V=0{,}082\cdot 300/10=2{,}46$.</p>
+            $$p_{He}=1\cdot 2{,}46=2{,}46\ \text{atm}$$
+$$p_{N_2}=0{,}5\cdot 2{,}46=1{,}23\ \text{atm}$$
+$$p_{O_2}=1\cdot 2{,}46=2{,}46\ \text{atm}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Presión total</div>
+            <p class="porque"><b>¿Por qué?</b> Suma de parciales (= Dalton).</p>
+            $$p_T = 2{,}46 + 1{,}23 + 2{,}46 = 6{,}15\ \text{atm}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$p_{He}=2{,}46$ atm · $p_{N_2}=1{,}23$ atm · $p_{O_2}=2{,}46$ atm · $p_T=6{,}15$ atm.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>$n_T=2{,}5$ mol → $p_T=n_T RT/V = 2{,}5\cdot 0{,}082\cdot 300/10=6{,}15$ atm ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex3">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 3</div>
+        <div class="ex-title">Calor para fundir y calentar hielo</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el calor necesario para transformar <b>50 g de hielo a –10 °C</b> en <b>agua líquida a 25 °C</b>. Datos: $c_{hielo}=2{,}09$ J/(g·K), $c_{agua}=4{,}18$ J/(g·K), $L_f=334$ J/g.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $Q\approx 22{,}0$ kJ.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa</td><td>$m=50\ \text{g}$</td></tr>
+            <tr><td>Temperatura inicial</td><td>$T_1=-10$ °C</td></tr>
+            <tr><td>Temperatura final</td><td>$T_2=25$ °C</td></tr>
+            <tr><td>Calor específico hielo</td><td>$c_h=2{,}09$ J/(g·K)</td></tr>
+            <tr><td>Calor específico agua</td><td>$c_a=4{,}18$ J/(g·K)</td></tr>
+            <tr><td>Calor latente de fusión</td><td>$L_f=334$ J/g</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Tres etapas: calor sensible + cambio de fase + calor sensible</div>
+            
+<p>El proceso <b>−10 °C hielo → 0 °C hielo → 0 °C agua → 25 °C agua</b> consta de tres etapas en las que el calor se invierte de forma distinta:</p>
+<ol>
+  <li>Calentar el hielo de −10 a 0 °C: $Q_1=m\,c_h\,\Delta T$ (calor sensible).</li>
+  <li>Fundir el hielo a 0 °C: $Q_2=m\,L_f$ (calor latente, $T$ fija).</li>
+  <li>Calentar el agua de 0 a 25 °C: $Q_3=m\,c_a\,\Delta T$.</li>
+</ol>
+<p>El calor total es $Q=Q_1+Q_2+Q_3$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calentar hielo</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta T = 0-(-10)=10$ K.</p>
+            $$Q_1 = 50\cdot 2{,}09\cdot 10 = 1\,045\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Fundir el hielo</div>
+            <p class="porque"><b>¿Por qué?</b> $T$ se mantiene en 0 °C durante la fusión.</p>
+            $$Q_2 = 50\cdot 334 = 16\,700\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Calentar el agua líquida</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta T = 25-0=25$ K.</p>
+            $$Q_3 = 50\cdot 4{,}18\cdot 25 = 5\,225\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — Calor total</div>
+            <p class="porque"><b>¿Por qué?</b> Suma de las tres etapas.</p>
+            $$Q = 1\,045 + 16\,700 + 5\,225 = 22\,970\ \text{J}\approx \boxed{23{,}0\ \text{kJ}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$Q \approx 23{,}0$ kJ — la mayor parte del calor (16,7 kJ ≈ 73%) se gasta en <em>fundir</em> el hielo, no en calentarlo.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación de proporción: con la misma masa, fundir hielo (16,7 kJ) equivale a calentar agua líquida 80 K, mucho más que los 35 K reales del proceso. Esto refleja el alto $L_f$ del agua. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+}
+document.addEventListener('DOMContentLoaded',initKatex);
+</script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>T9 · Ejercicios · Equilibrio ácido-base</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:15px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
+.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
+.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
+.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
+.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
+.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
+.ex.open .ex-arrow{transform:rotate(180deg)}
+.ex-body{display:none;padding:16px 20px}
+.ex.open .ex-body{display:block}
+.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
+.sec-btn .sarr{transition:.2s}
+.sec-open .sec-btn .sarr{transform:rotate(180deg)}
+.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-open .sec-body{display:block}
+.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
+.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
+.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
+.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
+.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
+.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
+.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
+.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
+.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
+.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
+.tdatos td{color:#cbd5e1}
+.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
+.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:#fb923c;font-style:normal}
+.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
+.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
+.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
+.demo .step{color:#fed7aa;margin-top:8px}
+.demo .step b{color:#fb923c}
+.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
+.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
+.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ejercicios
+  </a>
+  <span class="topbar-title">Química · T9 <em>· Ejercicios resueltos</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📝 Tema 9 · Equilibrio ácido-base</div>
+    <h1>Ejercicios resueltos · Tema 9</h1>
+    <div class="sub">Definiciones · pH · $K_a/K_b$ · Hidrólisis · Tampones · Valoraciones</div>
+  </div>
+
+  <div class="jump">
+    <a class="jl" href="#ex1">Ej 1 — pH de un ácido débil: ácido acético</a>
+    <a class="jl" href="#ex2">Ej 2 — Tampón acético/acetato (Henderson-Hasselbalch)</a>
+    <a class="jl" href="#ex3">Ej 3 — Hidrólisis de una sal</a>
+  </div>
+
+  <article class="ex open" id="ex1">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 1</div>
+        <div class="ex-title">pH de un ácido débil: ácido acético</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el pH y el grado de disociación $\alpha$ de una disolución <b>0,100 M</b> de ácido acético (CH$_3$COOH). $K_a = 1{,}8\cdot 10^{-5}$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> pH = 2,87; $\alpha=1{,}34\%$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$C_a$</td><td>0,100 M</td></tr>
+            <tr><td>$K_a$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Tabla ICE y aproximación $C\gg K_a$</div>
+            
+<p>El equilibrio de disociación es:</p>
+$$\text{CH}_3\text{COOH}+\text{H}_2\text{O}\rightleftharpoons\text{CH}_3\text{COO}^- + \text{H}_3\text{O}^+$$
+<p>Tabla ICE con $x = [\text{H}_3\text{O}^+]_{eq}$:</p>
+<table class="tdatos">
+<tr><th></th><th>HA</th><th>A$^-$</th><th>H$_3$O$^+$</th></tr>
+<tr><td>Inicial</td><td>0,100</td><td>0</td><td>~0</td></tr>
+<tr><td>Cambio</td><td>$-x$</td><td>$+x$</td><td>$+x$</td></tr>
+<tr><td>Equilibrio</td><td>$0{,}1-x$</td><td>$x$</td><td>$x$</td></tr>
+</table>
+<p>$K_a = x^2/(0{,}1-x)$. Si $x\ll 0{,}1$ (válido si $C_a/K_a > 100$): $K_a\approx x^2/0{,}1$, así que $x\approx \sqrt{K_a\cdot C_a}$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Comprobar la aproximación</div>
+            <p class="porque"><b>¿Por qué?</b> $C_a/K_a = 0{,}1/1{,}8\cdot 10^{-5}=5\,556 > 100$ ⟹ se puede aproximar.</p>
+            $$x \approx \sqrt{K_a\cdot C_a}=\sqrt{1{,}8\cdot 10^{-5}\cdot 0{,}1}=\sqrt{1{,}8\cdot 10^{-6}}=1{,}342\cdot 10^{-3}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calcular el pH</div>
+            <p class="porque"><b>¿Por qué?</b> $\text{pH}=-\log[\text{H}_3\text{O}^+]$.</p>
+            $$\text{pH} = -\log(1{,}342\cdot 10^{-3}) = \boxed{2{,}87}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Grado de disociación</div>
+            <p class="porque"><b>¿Por qué?</b> $\alpha = x/C_a$.</p>
+            $$\alpha = \dfrac{1{,}342\cdot 10^{-3}}{0{,}100}=0{,}0134=\boxed{1{,}34\%}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">pH = 2,87 · $\alpha = 1{,}34\%$ — solo un 1,3% del ácido se disocia (ácido débil).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Verificación de la aproximación: $x=1{,}3\cdot 10^{-3}\ll 0{,}1$. Sustituyendo sin aproximar: $K_a=(1{,}34\cdot 10^{-3})^2/(0{,}0987)=1{,}82\cdot 10^{-5}$ ✓ (vs 1,8·10⁻⁵).</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex2">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 2</div>
+        <div class="ex-title">Tampón acético/acetato (Henderson-Hasselbalch)</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el pH de una disolución que contiene <b>0,20 mol</b> de ácido acético y <b>0,30 mol</b> de acetato sódico en <b>1,0 L</b>. ¿Cómo cambia el pH al añadir <b>0,01 mol</b> de HCl (suponiendo $V$ constante)? $K_a = 1{,}8\cdot 10^{-5}$, p$K_a=4{,}74$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> pH inicial = 4,92; pH tras HCl = 4,89 (apenas cambia).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>[HA]</td><td>0,20 M</td></tr>
+            <tr><td>[A$^-$]</td><td>0,30 M</td></tr>
+            <tr><td>p$K_a$</td><td>4,74</td></tr>
+            <tr><td>HCl añadido</td><td>0,01 mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Henderson-Hasselbalch y respuesta a la perturbación</div>
+            
+<p>En un tampón, partiendo del equilibrio $K_a=[\text{A}^-][\text{H}^+]/[\text{HA}]$ y tomando logaritmos:</p>
+$$-\log K_a = -\log\dfrac{[\text{A}^-]}{[\text{HA}]} - \log[\text{H}^+]\implies \text{pH}=\text{p}K_a + \log\dfrac{[\text{A}^-]}{[\text{HA}]}$$
+<p>Cuando añadimos un ácido fuerte (HCl), parte del A$^-$ se convierte en HA según:</p>
+$$\text{A}^- + \text{H}^+ \to \text{HA}$$
+<p>Las nuevas concentraciones se sustituyen en Henderson-Hasselbalch. Como ambos cambios son pequeños frente a las cantidades del tampón, el pH apenas se altera.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — pH inicial</div>
+            <p class="porque"><b>¿Por qué?</b> Aplicar Henderson-Hasselbalch directamente.</p>
+            $$\text{pH} = 4{,}74 + \log\!\dfrac{0{,}30}{0{,}20} = 4{,}74 + 0{,}176 = \boxed{4{,}92}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Cantidades tras añadir HCl</div>
+            <p class="porque"><b>¿Por qué?</b> 0,01 mol H$^+$ consume 0,01 mol A$^-$ y produce 0,01 mol HA.</p>
+            $$[\text{HA}]_{nuevo} = 0{,}20+0{,}01 = 0{,}21\ \text{M}$$
+$$[\text{A}^-]_{nuevo} = 0{,}30-0{,}01 = 0{,}29\ \text{M}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — pH tras la perturbación</div>
+            <p class="porque"><b>¿Por qué?</b> Misma fórmula, nuevas concentraciones.</p>
+            $$\text{pH} = 4{,}74 + \log\!\dfrac{0{,}29}{0{,}21} = 4{,}74 + 0{,}140 = \boxed{4{,}88}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">pH inicial = 4,92 → pH final = 4,88. Cambio de solo 0,04 unidades.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comparación: añadir 0,01 mol HCl a <b>agua pura</b> (1 L) daría pH = 2 → cambio de 5 unidades. El tampón reduce el cambio en un factor de $\sim 100$. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex3">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 3</div>
+        <div class="ex-title">Hidrólisis de una sal</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el pH de una disolución <b>0,10 M</b> de acetato sódico (NaCH$_3$COO). $K_a$ del ácido acético = $1{,}8\cdot 10^{-5}$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> pH = 8,87 (carácter básico).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$C_{sal}$</td><td>0,10 M</td></tr>
+            <tr><td>$K_a$ acético</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
+            <tr><td>$K_w$</td><td>$1{,}0\cdot 10^{-14}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Hidrólisis del anión</div>
+            
+<p>El acetato es la base conjugada de un ácido débil, así que <em>hidroliza</em> en agua:</p>
+$$\text{A}^- + \text{H}_2\text{O}\rightleftharpoons \text{HA}+\text{OH}^-$$
+<p>La constante de hidrólisis (= $K_b$ del anión) se relaciona con $K_a$ del ácido conjugado:</p>
+$$K_b = K_h = \dfrac{K_w}{K_a}$$
+<p>El catión Na$^+$ es inerte (no hidroliza). El pH lo determina la hidrólisis del A$^-$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calcular $K_b$</div>
+            <p class="porque"><b>¿Por qué?</b> Aplicando la relación.</p>
+            $$K_b = \dfrac{K_w}{K_a}=\dfrac{1{,}0\cdot 10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{-10}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calcular [OH$^-$]</div>
+            <p class="porque"><b>¿Por qué?</b> Como $C_{sal}/K_b\gg 100$, aproximación: $[\text{OH}^-]\approx\sqrt{K_b C_{sal}}$.</p>
+            $$[\text{OH}^-]=\sqrt{5{,}56\cdot 10^{-10}\cdot 0{,}10}=\sqrt{5{,}56\cdot 10^{-11}}=7{,}45\cdot 10^{-6}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — pH a partir de pOH</div>
+            <p class="porque"><b>¿Por qué?</b> $\text{pH}=14-\text{pOH}$.</p>
+            $$\text{pOH}=-\log(7{,}45\cdot 10^{-6})=5{,}13\implies \text{pH}=14-5{,}13=\boxed{8{,}87}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">pH = 8,87 — disolución <b>básica</b>, como corresponde a una sal de ácido débil + base fuerte.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Coherencia: el acetato es la base conjugada del ácido acético; al ser su $K_a$ pequeño, $K_b$ es relativamente grande (en su escala) y la hidrólisis genera un pH netamente básico. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+}
+document.addEventListener('DOMContentLoaded',initKatex);
+</script>
+</body>
+</html>

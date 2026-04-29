@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>T8 · Ejercicios · Cinética y equilibrio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:15px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
+.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
+.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
+.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
+.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
+.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
+.ex.open .ex-arrow{transform:rotate(180deg)}
+.ex-body{display:none;padding:16px 20px}
+.ex.open .ex-body{display:block}
+.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
+.sec-btn .sarr{transition:.2s}
+.sec-open .sec-btn .sarr{transform:rotate(180deg)}
+.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-open .sec-body{display:block}
+.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
+.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
+.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
+.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
+.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
+.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
+.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
+.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
+.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
+.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
+.tdatos td{color:#cbd5e1}
+.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
+.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:#fb923c;font-style:normal}
+.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
+.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
+.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
+.demo .step{color:#fed7aa;margin-top:8px}
+.demo .step b{color:#fb923c}
+.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
+.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
+.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ejercicios
+  </a>
+  <span class="topbar-title">Química · T8 <em>· Ejercicios resueltos</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📝 Tema 8 · Cinética y equilibrio</div>
+    <h1>Ejercicios resueltos · Tema 8</h1>
+    <div class="sub">Velocidad · Ley de Arrhenius · Equilibrio · $K_c$ y $K_p$ · Le Châtelier</div>
+  </div>
+
+  <div class="jump">
+    <a class="jl" href="#ex1">Ej 1 — Cinética de primer orden: tiempo de vida media</a>
+    <a class="jl" href="#ex2">Ej 2 — Energía de activación con la ecuación de Arrhenius</a>
+    <a class="jl" href="#ex3">Ej 3 — Equilibrio: cálculo de concentraciones a partir de $K_c$</a>
+  </div>
+
+  <article class="ex open" id="ex1">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 1</div>
+        <div class="ex-title">Cinética de primer orden: tiempo de vida media</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>La descomposición de N$_2$O$_5$ a 65 °C sigue cinética de primer orden con $k=5{,}2\cdot 10^{-3}\ \text{s}^{-1}$. Calcular: (a) el tiempo de vida media $t_{1/2}$; (b) el tiempo necesario para que se descomponga el 75% de la muestra inicial.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $t_{1/2}=133$ s; (b) $t=267$ s.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Orden</td><td>Primer orden</td></tr>
+            <tr><td>$k$</td><td>$5{,}2\cdot 10^{-3}\ \text{s}^{-1}$</td></tr>
+            <tr><td>$\%$ descompuesto</td><td>75% (queda 25%)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Ecuación integrada y vida media</div>
+            
+<p>En cinética de primer orden, $-d[A]/dt=k[A]$. Integrando entre $[A]_0$ y $[A]$:</p>
+$$\ln\!\dfrac{[A]_0}{[A]}=k\,t \implies [A]=[A]_0\,e^{-kt}$$
+<p>El <b>tiempo de vida media</b> es el tiempo en que se descompone la mitad de la muestra:</p>
+$$\dfrac{[A]_0}{[A]_0/2}=2 \implies \ln 2 = k\,t_{1/2} \implies \boxed{\;t_{1/2}=\dfrac{\ln 2}{k}\;}$$
+<p>Notable: $t_{1/2}$ es <b>independiente de la concentración inicial</b> en cinética de primer orden.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Vida media</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico la fórmula directa.</p>
+            $$t_{1/2} = \dfrac{\ln 2}{k} = \dfrac{0{,}693}{5{,}2\cdot 10^{-3}} = 133{,}3\ \text{s}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Tiempo para descomponer el 75%</div>
+            <p class="porque"><b>¿Por qué?</b> Si se descompone el 75%, queda el 25%, es decir $[A]/[A]_0=0{,}25$.</p>
+            $$\ln\!\dfrac{1}{0{,}25}=k\,t \implies t = \dfrac{\ln 4}{k} = \dfrac{1{,}386}{5{,}2\cdot 10^{-3}}=266{,}5\ \text{s}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$t_{1/2}=133$ s · $t_{75\%}=267$ s.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>75% desaparecido = 2 vidas medias (½·½=¼ queda). Por tanto $t_{75\%} = 2\,t_{1/2} = 266$ s ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex2">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 2</div>
+        <div class="ex-title">Energía de activación con la ecuación de Arrhenius</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Una reacción duplica su velocidad al pasar de 25 °C a 35 °C. Calcular su energía de activación $E_a$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $E_a \approx 52{,}9$ kJ/mol.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$T_1$</td><td>298 K</td></tr>
+            <tr><td>$T_2$</td><td>308 K</td></tr>
+            <tr><td>$k_2/k_1$</td><td>2</td></tr>
+            <tr><td>$R$</td><td>$8{,}314$ J/(mol·K)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Forma diferencial de Arrhenius (dos puntos)</div>
+            
+<p>Tomando logaritmos en $k=A e^{-E_a/RT}$ y restando para dos temperaturas distintas:</p>
+$$\ln\!\dfrac{k_2}{k_1} = -\dfrac{E_a}{R}\!\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right) = \dfrac{E_a}{R}\cdot\dfrac{T_2-T_1}{T_1 T_2}$$
+<p>Despejando $E_a$:</p>
+$$E_a = \dfrac{R\,T_1\,T_2}{T_2-T_1}\,\ln\!\dfrac{k_2}{k_1}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Sustituir valores</div>
+            <p class="porque"><b>¿Por qué?</b> Con $\ln 2=0{,}693$.</p>
+            $$E_a = \dfrac{8{,}314\cdot 298\cdot 308}{308-298}\cdot 0{,}693$$
+$$E_a = \dfrac{8{,}314\cdot 91\,784}{10}\cdot 0{,}693$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Cálculo final</div>
+            <p class="porque"><b>¿Por qué?</b> Multiplicación y división.</p>
+            $$E_a = 76\,309{,}9\cdot 0{,}693 = 52\,900\ \text{J/mol}\approx \boxed{52{,}9\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$E_a \approx 52{,}9$ kJ/mol — un valor típico para reacciones que doblan velocidad cada $\sim 10$ °C.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Regla práctica empírica: si $E_a\approx 50$ kJ/mol, una subida de 10 K duplica $k$ alrededor de la temperatura ambiente. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex3">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 3</div>
+        <div class="ex-title">Equilibrio: cálculo de concentraciones a partir de $K_c$</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción $\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons 2\text{HI}(g)$, $K_c=54{,}3$ a 425 °C. Si se introducen <b>0,500 mol</b> de H$_2$ y <b>0,500 mol</b> de I$_2$ en un recipiente de <b>1,00 L</b>, calcular las concentraciones en el equilibrio.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $[\text{H}_2]=[\text{I}_2]=0{,}107$ M; $[\text{HI}]=0{,}786$ M.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$K_c$</td><td>54,3 a 425 °C</td></tr>
+            <tr><td>Iniciales</td><td>$[\text{H}_2]_0=[\text{I}_2]_0=0{,}500$ M</td></tr>
+            <tr><td>Inicial HI</td><td>$[\text{HI}]_0=0$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Tabla ICE y resolución</div>
+            
+<p>Llamemos $x$ a los moles/L de H$_2$ que reaccionan. Por estequiometría reaccionan también $x$ de I$_2$ y se forman $2x$ de HI:</p>
+<table class="tdatos">
+<tr><th></th><th>H$_2$</th><th>I$_2$</th><th>HI</th></tr>
+<tr><td>Inicial</td><td>0,500</td><td>0,500</td><td>0</td></tr>
+<tr><td>Cambio</td><td>$-x$</td><td>$-x$</td><td>$+2x$</td></tr>
+<tr><td>Equilibrio</td><td>$0{,}5-x$</td><td>$0{,}5-x$</td><td>$2x$</td></tr>
+</table>
+<p>Sustituyendo en $K_c$:</p>
+$$K_c = \dfrac{(2x)^2}{(0{,}5-x)^2} = 54{,}3$$
+<p>Como tanto numerador como denominador son cuadrados perfectos, podemos sacar raíz cuadrada:</p>
+$$\dfrac{2x}{0{,}5-x}=\sqrt{54{,}3}=7{,}37$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Resolver para $x$</div>
+            <p class="porque"><b>¿Por qué?</b> Despejo de $2x = 7{,}37(0{,}5-x)$.</p>
+            $$2x = 3{,}685 - 7{,}37x$$
+$$9{,}37x = 3{,}685 \implies x = 0{,}393\ \text{M}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Concentraciones de equilibrio</div>
+            <p class="porque"><b>¿Por qué?</b> Sustituyo $x$ en la tabla ICE.</p>
+            $$[\text{H}_2]=[\text{I}_2]=0{,}500-0{,}393=0{,}107\ \text{M}$$
+$$[\text{HI}]=2\cdot 0{,}393=0{,}786\ \text{M}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Verificar $K_c$</div>
+            <p class="porque"><b>¿Por qué?</b> Comprobación numérica.</p>
+            $$K_c = \dfrac{(0{,}786)^2}{(0{,}107)^2}=\dfrac{0{,}618}{0{,}01145}=54{,}0\;\;✓$$
+<p>Coincide con el dato ($\approx 54{,}3$, diferencia por redondeos).</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$[\text{H}_2]=[\text{I}_2]=0{,}107$ M, $[\text{HI}]=0{,}786$ M.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En el equilibrio: 78,6% del HI formado. Como $K_c$ es alto y la mezcla inicial es estequiométrica, hay un alto rendimiento hacia productos. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+}
+document.addEventListener('DOMContentLoaded',initKatex);
+</script>
+</body>
+</html>

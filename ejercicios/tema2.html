@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>T2 · Ejercicios · Estructura atómica</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:15px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
+.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
+.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
+.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
+.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
+.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
+.ex.open .ex-arrow{transform:rotate(180deg)}
+.ex-body{display:none;padding:16px 20px}
+.ex.open .ex-body{display:block}
+.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
+.sec-btn .sarr{transition:.2s}
+.sec-open .sec-btn .sarr{transform:rotate(180deg)}
+.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-open .sec-body{display:block}
+.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
+.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
+.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
+.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
+.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
+.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
+.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
+.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
+.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
+.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
+.tdatos td{color:#cbd5e1}
+.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
+.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:#fb923c;font-style:normal}
+.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
+.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
+.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
+.demo .step{color:#fed7aa;margin-top:8px}
+.demo .step b{color:#fb923c}
+.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
+.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
+.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ejercicios
+  </a>
+  <span class="topbar-title">Química · T2 <em>· Ejercicios resueltos</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📝 Tema 2 · Estructura atómica</div>
+    <h1>Ejercicios resueltos · Tema 2</h1>
+    <div class="sub">Modelos · Cuántica · Orbitales · Configuración electrónica · Tabla periódica</div>
+  </div>
+
+  <div class="jump">
+    <a class="jl" href="#ex1">Ej 1 — Configuración electrónica del Fe y del Cu</a>
+    <a class="jl" href="#ex2">Ej 2 — Longitud de onda de De Broglie de un electrón</a>
+    <a class="jl" href="#ex3">Ej 3 — Energía del fotón emitido en un salto en el átomo de H</a>
+  </div>
+
+  <article class="ex open" id="ex1">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 1</div>
+        <div class="ex-title">Configuración electrónica del Fe y del Cu</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Escribir la configuración electrónica completa del <b>Fe ($Z=26$)</b> y del <b>Cu ($Z=29$)</b>. Indicar los electrones desapareados en el estado fundamental.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Fe: $[Ar]\,4s^2\,3d^6$ → 4 desapareados. Cu: $[Ar]\,4s^1\,3d^{10}$ → 1 desapareado.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$Z$ Fe</td><td>26</td></tr>
+            <tr><td>$Z$ Cu</td><td>29</td></tr>
+            <tr><td>Capacidad de cada subnivel</td><td>$s$:2, $p$:6, $d$:10, $f$:14</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Aufbau, Hund y Pauli</div>
+            
+<p>El llenado sigue la regla de Madelung. Para los metales de transición de la primera serie, el subnivel $4s$ se llena <em>antes</em> que $3d$, pero una vez ocupado, los electrones de $3d$ pueden estabilizar configuraciones especialmente estables ($d^5$, $d^{10}$). Eso explica las excepciones del Cr y del Cu.</p>
+<p>Hund: en un mismo subnivel ($p$, $d$, $f$) los electrones se distribuyen primero <em>desapareados</em> con espines paralelos antes de aparearse.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Hierro: aplico orden Madelung</div>
+            <p class="porque"><b>¿Por qué?</b> 26 e<sup>−</sup> repartidos siguiendo el orden estándar.</p>
+            $$1s^2\,2s^2\,2p^6\,3s^2\,3p^6\,4s^2\,3d^6 = [Ar]\,4s^2\,3d^6$$
+<p>El subnivel 3d tiene 6 electrones en 5 orbitales. Por Hund: <b>5 desapareados + 1 emparejado</b>:</p>
+<p style="font-family:monospace">↑↓ ↑ ↑ ↑ ↑ → 4 electrones desapareados.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Cobre: excepción a Aufbau</div>
+            <p class="porque"><b>¿Por qué?</b> 29 e<sup>−</sup>. La configuración Aufbau predice $[Ar]4s^2 3d^9$, pero la real es $[Ar]4s^1 3d^{10}$ porque $d^{10}$ es más estable.</p>
+            $$\text{Cu}: [Ar]\,4s^1\,3d^{10}$$
+<p>El 4s queda con 1 electrón solo, el 3d completamente lleno:</p>
+<p style="font-family:monospace">4s: ↑   3d: ↑↓ ↑↓ ↑↓ ↑↓ ↑↓ → <b>1 electrón desapareado</b> (en 4s).</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Fe: $[Ar]\,4s^2\,3d^6$ con 4 e<sup>−</sup> desapareados (paramagnético, ferromagnético). Cu: $[Ar]\,4s^1\,3d^{10}$ con 1 e<sup>−</sup> desapareado.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Suma de e<sup>−</sup> Fe: $2+2+6+2+6+2+6=26$ ✓. Cu: $2+2+6+2+6+1+10=29$ ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex2">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 2</div>
+        <div class="ex-title">Longitud de onda de De Broglie de un electrón</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la longitud de onda asociada a un electrón acelerado a través de una diferencia de potencial de <b>100 V</b>. Datos: $m_e=9{,}11\cdot 10^{-31}$ kg, $h=6{,}626\cdot 10^{-34}$ J·s, $e=1{,}602\cdot 10^{-19}$ C.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\lambda \approx 1{,}23\cdot 10^{-10}$ m $=1{,}23$ Å.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Diferencia de potencial</td><td>$V=100\ \text{V}$</td></tr>
+            <tr><td>Masa del electrón</td><td>$m_e=9{,}11\cdot 10^{-31}\ \text{kg}$</td></tr>
+            <tr><td>Constante de Planck</td><td>$h=6{,}626\cdot 10^{-34}\ \text{J·s}$</td></tr>
+            <tr><td>Carga del electrón</td><td>$e=1{,}602\cdot 10^{-19}\ \text{C}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Encadenando energía cinética y De Broglie</div>
+            
+<p>El electrón acelerado por una diferencia de potencial $V$ adquiere una energía cinética igual al trabajo eléctrico:</p>
+$$E_c = \tfrac{1}{2}m\,v^2 = e\,V \implies v = \sqrt{\dfrac{2eV}{m}}$$
+<p>La longitud de onda de De Broglie depende del momento $p=mv$:</p>
+$$\lambda = \dfrac{h}{p} = \dfrac{h}{m\,v} = \dfrac{h}{\sqrt{2\,m\,e\,V}}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Velocidad del electrón</div>
+            <p class="porque"><b>¿Por qué?</b> Igualando trabajo eléctrico y energía cinética.</p>
+            $$v=\sqrt{\dfrac{2\cdot 1{,}602\cdot 10^{-19}\cdot 100}{9{,}11\cdot 10^{-31}}}=5{,}93\cdot 10^{6}\ \text{m/s}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Longitud de onda</div>
+            <p class="porque"><b>¿Por qué?</b> $\lambda = h/(mv)$.</p>
+            $$\lambda = \dfrac{6{,}626\cdot 10^{-34}}{9{,}11\cdot 10^{-31}\cdot 5{,}93\cdot 10^{6}} = 1{,}228\cdot 10^{-10}\ \text{m}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\lambda \approx 1{,}23\ \text{Å}$ — del orden de las distancias interatómicas (por eso el electrón es útil en difracción de cristales).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación con la fórmula directa: $\lambda=h/\sqrt{2meV}=6{,}626\cdot 10^{-34}/\sqrt{2\cdot 9{,}11\cdot 10^{-31}\cdot 1{,}602\cdot 10^{-19}\cdot 100}=1{,}23\cdot 10^{-10}$ m ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex3">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 3</div>
+        <div class="ex-title">Energía del fotón emitido en un salto en el átomo de H</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la longitud de onda del fotón emitido cuando un electrón del átomo de hidrógeno salta del nivel <b>$n=3$</b> al <b>$n=2$</b> (línea $H_\alpha$ de la serie de Balmer). Constante de Rydberg $R_H=1{,}097\cdot 10^{7}\ \text{m}^{-1}$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\lambda \approx 656\ \text{nm}$ (rojo visible).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Salto</td><td>$n_i=3 \to n_f=2$</td></tr>
+            <tr><td>Constante de Rydberg</td><td>$R_H=1{,}097\cdot 10^{7}\ \text{m}^{-1}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Fórmula de Rydberg</div>
+            
+<p>La energía de un nivel $n$ del H es $E_n = -R_H\,hc/n^2$. Al saltar de $n_i$ a $n_f$ con $n_f<n_i$, se emite un fotón:</p>
+$$\Delta E = E_{n_i} - E_{n_f} = R_H\,hc\!\left(\dfrac{1}{n_f^2}-\dfrac{1}{n_i^2}\right)$$
+<p>Como $E_{fotón}=hc/\lambda$, obtenemos la <b>fórmula de Rydberg</b>:</p>
+$$\dfrac{1}{\lambda} = R_H\!\left(\dfrac{1}{n_f^2}-\dfrac{1}{n_i^2}\right)$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Sustitución</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico la fórmula con $n_f=2$, $n_i=3$.</p>
+            $$\dfrac{1}{\lambda}=1{,}097\cdot 10^{7}\!\left(\dfrac{1}{4}-\dfrac{1}{9}\right)=1{,}097\cdot 10^{7}\cdot\dfrac{5}{36}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Cálculo</div>
+            <p class="porque"><b>¿Por qué?</b> Desarrollo numérico.</p>
+            $$\dfrac{1}{\lambda}=1{,}524\cdot 10^{6}\ \text{m}^{-1}\implies\lambda=6{,}56\cdot 10^{-7}\ \text{m}=656\ \text{nm}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\lambda = 656$ nm — luz <b>roja</b> visible. Es la línea $H_\alpha$ de la serie de Balmer.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>656 nm cae en el rojo del espectro visible (620–750 nm). Coincide con el dato experimental tabulado para la línea $H_\alpha$ ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+}
+document.addEventListener('DOMContentLoaded',initKatex);
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>T6 · Ejercicios · Termoquímica</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:15px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
+.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
+.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
+.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
+.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
+.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
+.ex.open .ex-arrow{transform:rotate(180deg)}
+.ex-body{display:none;padding:16px 20px}
+.ex.open .ex-body{display:block}
+.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
+.sec-btn .sarr{transition:.2s}
+.sec-open .sec-btn .sarr{transform:rotate(180deg)}
+.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-open .sec-body{display:block}
+.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
+.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
+.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
+.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
+.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
+.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
+.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
+.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
+.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
+.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
+.tdatos td{color:#cbd5e1}
+.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
+.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:#fb923c;font-style:normal}
+.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
+.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
+.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
+.demo .step{color:#fed7aa;margin-top:8px}
+.demo .step b{color:#fb923c}
+.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
+.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
+.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ejercicios
+  </a>
+  <span class="topbar-title">Química · T6 <em>· Ejercicios resueltos</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📝 Tema 6 · Termoquímica</div>
+    <h1>Ejercicios resueltos · Tema 6</h1>
+    <div class="sub">Calores de reacción · Ley de Hess · Energías de enlace · Calorimetría</div>
+  </div>
+
+  <div class="jump">
+    <a class="jl" href="#ex1">Ej 1 — Entalpía de combustión del metano por entalpías de formación</a>
+    <a class="jl" href="#ex2">Ej 2 — Ley de Hess: combustión de carbono → CO</a>
+    <a class="jl" href="#ex3">Ej 3 — Calorimetría a presión constante</a>
+  </div>
+
+  <article class="ex open" id="ex1">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 1</div>
+        <div class="ex-title">Entalpía de combustión del metano por entalpías de formación</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular $\Delta H°_{rxn}$ de la combustión del metano: $\text{CH}_4(g)+2\text{O}_2(g)\to\text{CO}_2(g)+2\text{H}_2\text{O}(l)$. Datos $\Delta H°_f$ (kJ/mol): CH$_4$(g) = −74,8; CO$_2$(g) = −393,5; H$_2$O(l) = −285,8.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta H°_{rxn} = -890{,}3$ kJ/mol.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Reacción</td><td>$\text{CH}_4 + 2\,\text{O}_2 \to \text{CO}_2 + 2\,\text{H}_2\text{O}(l)$</td></tr>
+            <tr><td>$\Delta H°_f$ CH$_4$(g)</td><td>$-74{,}8$ kJ/mol</td></tr>
+            <tr><td>$\Delta H°_f$ CO$_2$(g)</td><td>$-393{,}5$ kJ/mol</td></tr>
+            <tr><td>$\Delta H°_f$ H$_2$O(l)</td><td>$-285{,}8$ kJ/mol</td></tr>
+            <tr><td>$\Delta H°_f$ O$_2$(g)</td><td>$0$ (elemento)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Por qué $\Delta H_{rxn}=\sum H_f^{prod}-\sum H_f^{reac}$</div>
+            
+<p>Para cualquier reacción, podemos imaginar dos caminos termodinámicamente equivalentes:</p>
+<ol>
+  <li><b>Directo</b>: reactivos → productos con $\Delta H_{rxn}$.</li>
+  <li><b>Indirecto</b>: reactivos → elementos puros → productos.</li>
+</ol>
+<p>La etapa "elementos → productos" libera $+\sum H_f^{prod}$. La etapa "reactivos → elementos" libera $-\sum H_f^{reac}$ (es la inversa de la formación). Como $H$ es función de estado, los dos caminos dan lo mismo:</p>
+$$\Delta H_{rxn} = \sum\nu_i\Delta H_f^{prod} - \sum\nu_i\Delta H_f^{reac}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Identificar coeficientes y aplicar la fórmula</div>
+            <p class="porque"><b>¿Por qué?</b> Coeficientes: 1 CH$_4$, 2 O$_2$, 1 CO$_2$, 2 H$_2$O.</p>
+            $$\Delta H°_{rxn} = [1\cdot\Delta H°_f(\text{CO}_2) + 2\cdot\Delta H°_f(\text{H}_2\text{O})] - [1\cdot\Delta H°_f(\text{CH}_4) + 2\cdot 0]$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Sustituir valores</div>
+            <p class="porque"><b>¿Por qué?</b> Cuidado con los signos negativos.</p>
+            $$\Delta H°_{rxn} = [(-393{,}5) + 2\cdot(-285{,}8)] - [(-74{,}8)] $$
+$$= -393{,}5 - 571{,}6 + 74{,}8 = \boxed{-890{,}3\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta H°_{rxn} = -890{,}3$ kJ/mol — fuertemente exotérmica (combustible).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Por mol de O$_2$ liberado: $-890{,}3/2 = -445$ kJ/mol O$_2$. Es del orden de los $-470$ kJ/mol O$_2$ típicos de combustiones de hidrocarburos. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex2">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 2</div>
+        <div class="ex-title">Ley de Hess: combustión de carbono → CO</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular $\Delta H°$ de $\text{C(s)} + \tfrac{1}{2}\text{O}_2(g) \to \text{CO}(g)$ a partir de: (1) $\text{C}+\text{O}_2\to\text{CO}_2$, $\Delta H_1=-393{,}5$ kJ. (2) $\text{CO}+\tfrac{1}{2}\text{O}_2\to\text{CO}_2$, $\Delta H_2=-283{,}0$ kJ.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta H = -110{,}5$ kJ.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Reacción 1</td><td>$\text{C}+\text{O}_2\to\text{CO}_2$, $\Delta H_1=-393{,}5$ kJ</td></tr>
+            <tr><td>Reacción 2</td><td>$\text{CO}+\tfrac{1}{2}\text{O}_2\to\text{CO}_2$, $\Delta H_2=-283{,}0$ kJ</td></tr>
+            <tr><td>Objetivo</td><td>$\text{C}+\tfrac{1}{2}\text{O}_2\to\text{CO}$, $\Delta H=?$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Combinación lineal de las dos reacciones</div>
+            
+<p>Buscamos una combinación de las reacciones (1) y (2) cuya suma sea exactamente la objetivo. Dado que la objetivo tiene CO como <em>producto</em>, debemos <b>invertir</b> la reacción (2) (que tiene CO como reactivo):</p>
+<p>(1) C + O$_2$ → CO$_2$ &nbsp;&nbsp;($\Delta H_1$)<br>
+(−2) CO$_2$ → CO + ½ O$_2$ &nbsp;&nbsp;($-\Delta H_2$)</p>
+<p>Sumando: C + ½ O$_2$ → CO. Coincide con la objetivo. Por tanto $\Delta H=\Delta H_1-\Delta H_2$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Plantear la combinación</div>
+            <p class="porque"><b>¿Por qué?</b> (1) directa + (2) invertida.</p>
+            <table class="tdatos">
+<tr><th>Reacción</th><th>$\Delta H$ (kJ)</th></tr>
+<tr><td>C + O$_2$ → CO$_2$</td><td>$-393{,}5$</td></tr>
+<tr><td>CO$_2$ → CO + ½ O$_2$</td><td>$+283{,}0$</td></tr>
+<tr><td><b>C + ½ O$_2$ → CO</b></td><td><b>?</b></td></tr>
+</table>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Sumar</div>
+            <p class="porque"><b>¿Por qué?</b> Las CO$_2$ se cancelan; queda la objetivo.</p>
+            $$\Delta H = -393{,}5 + 283{,}0 = \boxed{-110{,}5\ \text{kJ}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta H = -110{,}5$ kJ/mol — exotérmica (combustión incompleta).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>$\Delta H_f$(CO,g) tabulado = $-110{,}5$ kJ/mol. ✓ Coincide exactamente.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex3">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 3</div>
+        <div class="ex-title">Calorimetría a presión constante</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Al añadir <b>50 mL de NaOH 1,0 M</b> a <b>50 mL de HCl 1,0 M</b> en un calorímetro de taza, la temperatura sube de <b>20,5 °C a 27,3 °C</b>. Calcular el calor de neutralización por mol de agua formada. Suponer que la disolución tiene la densidad y el calor específico del agua, y despreciar la capacidad calorífica del calorímetro.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta H_{neut} \approx -56{,}9$ kJ/mol — coincide con el valor estándar para ácido y base fuertes ($-57{,}3$ kJ/mol).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Volumen total</td><td>$V = 100\ \text{mL}$</td></tr>
+            <tr><td>Densidad</td><td>$\rho = 1\ \text{g/mL}$</td></tr>
+            <tr><td>Calor específico</td><td>$c=4{,}18\ \text{J/(g·K)}$</td></tr>
+            <tr><td>$\Delta T$</td><td>$27{,}3-20{,}5=6{,}8$ K</td></tr>
+            <tr><td>Moles</td><td>$n_{HCl}=n_{NaOH}=0{,}050\cdot 1{,}0=0{,}050$ mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Balance de calor en el calorímetro</div>
+            
+<p>El calor liberado por la reacción se invierte en calentar la disolución:</p>
+$$Q_{rxn} = -Q_{disol} = -m\,c\,\Delta T$$
+<p>El signo negativo refleja que la reacción libera calor (exotérmica). Para obtener la entalpía molar dividimos por los moles de agua formada (= moles del limitante):</p>
+$$\Delta H = \dfrac{Q_{rxn}}{n_{H_2O}}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calor absorbido por la disolución</div>
+            <p class="porque"><b>¿Por qué?</b> Masa = 100 g (densidad 1 g/mL).</p>
+            $$Q_{disol} = m\,c\,\Delta T = 100\cdot 4{,}18\cdot 6{,}8 = 2\,842\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calor de la reacción</div>
+            <p class="porque"><b>¿Por qué?</b> $Q_{rxn}=-Q_{disol}$ (lo que pierde la reacción lo gana la disolución).</p>
+            $$Q_{rxn} = -2\,842\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Entalpía molar</div>
+            <p class="porque"><b>¿Por qué?</b> Dividir entre los 0,050 mol de H$_2$O formados.</p>
+            $$\Delta H_{neut} = \dfrac{-2\,842}{0{,}050} = -56\,840\ \text{J/mol} \approx \boxed{-56{,}8\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta H_{neut} \approx -56{,}8$ kJ/mol.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valor de bibliografía para HCl + NaOH: $-57{,}3$ kJ/mol. La pequeña diferencia (≈ 1 %) se debe a despreciar la capacidad calorífica del calorímetro y suponer densidad/calor específico del agua para la disolución 0,5 M. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+}
+document.addEventListener('DOMContentLoaded',initKatex);
+</script>
+</body>
+</html>

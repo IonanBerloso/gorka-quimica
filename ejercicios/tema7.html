@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>T7 · Ejercicios · Espontaneidad y energía libre</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="initKatex && initKatex()"></script>
+<link rel="stylesheet" href="../shared/quimica.css">
+<style>
+body{padding-top:52px;font-size:15px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
+@media(max-width:900px){.wrap{padding:18px 14px 40px}}
+.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
+.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
+.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
+.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
+.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
+.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
+.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
+.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
+.ex.open .ex-arrow{transform:rotate(180deg)}
+.ex-body{display:none;padding:16px 20px}
+.ex.open .ex-body{display:block}
+.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
+.sec-btn .sarr{transition:.2s}
+.sec-open .sec-btn .sarr{transform:rotate(180deg)}
+.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-open .sec-body{display:block}
+.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
+.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
+.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
+.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
+.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
+.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
+.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
+.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
+.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
+.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
+.tdatos td{color:#cbd5e1}
+.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
+.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:#fb923c;font-style:normal}
+.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
+.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
+.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
+.demo .step{color:#fed7aa;margin-top:8px}
+.demo .step b{color:#fb923c}
+.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
+.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
+.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Ejercicios
+  </a>
+  <span class="topbar-title">Química · T7 <em>· Ejercicios resueltos</em></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">📝 Tema 7 · Espontaneidad y energía libre</div>
+    <h1>Ejercicios resueltos · Tema 7</h1>
+    <div class="sub">2ª Ley · Entropía · Energía libre de Gibbs · Equilibrio</div>
+  </div>
+
+  <div class="jump">
+    <a class="jl" href="#ex1">Ej 1 — $\Delta G°$ a partir de $\Delta H°$ y $\Delta S°$</a>
+    <a class="jl" href="#ex2">Ej 2 — Constante de equilibrio a partir de $\Delta G°$</a>
+    <a class="jl" href="#ex3">Ej 3 — $\Delta S$ de un cambio de fase</a>
+  </div>
+
+  <article class="ex open" id="ex1">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 1</div>
+        <div class="ex-title">$\Delta G°$ a partir de $\Delta H°$ y $\Delta S°$</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción $2\text{NO}(g)+\text{O}_2(g)\to 2\text{NO}_2(g)$ se conocen $\Delta H°=-114{,}1$ kJ/mol y $\Delta S°=-146{,}5$ J/(mol·K). Calcular $\Delta G°$ a 298 K y discutir su espontaneidad. ¿A qué temperatura deja de ser espontánea?</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta G°=-70{,}45$ kJ/mol a 298 K (espontánea). Deja de serlo a $T>779$ K.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$\Delta H°$</td><td>$-114{,}1$ kJ/mol</td></tr>
+            <tr><td>$\Delta S°$</td><td>$-146{,}5$ J/(mol·K) $=-0{,}1465$ kJ/(mol·K)</td></tr>
+            <tr><td>Temperatura</td><td>$T=298$ K</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Criterio $\Delta G = \Delta H - T\Delta S$ y temperatura de cambio</div>
+            
+<p>La espontaneidad a $p$,$T$ constantes la decide el signo de $\Delta G = \Delta H - T\Delta S$. Cuando $\Delta H$ y $\Delta S$ son del <em>mismo signo</em>, hay una <b>temperatura de inversión</b> $T^*$ en la que $\Delta G=0$:</p>
+$$T^* = \dfrac{\Delta H}{\Delta S}$$
+<p>Por encima/debajo de $T^*$ el signo de $\Delta G$ se invierte. En este caso $\Delta H<0$ y $\Delta S<0$, así que el proceso es espontáneo a baja $T$ (cuando domina $\Delta H$) y deja de serlo cuando $T$ es alta (domina $-T\Delta S$).</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calcular $\Delta G°$ a 298 K</div>
+            <p class="porque"><b>¿Por qué?</b> Cuidado: $\Delta S$ pasa a kJ/(mol·K) para que las unidades cuadren.</p>
+            $$\Delta G° = -114{,}1 - 298\cdot(-0{,}1465) = -114{,}1 + 43{,}66 = \boxed{-70{,}44\ \text{kJ/mol}}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Espontaneidad</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta G°<0$ ⟹ espontánea a 298 K. Predominio del término entálpico.</p>
+            <p>El proceso es <b>exotérmico</b> y ordena el sistema (menos moles gaseosos): $\Delta H$ favorece, $\Delta S$ desfavorece. A 298 K $\Delta H$ gana.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Temperatura de inversión</div>
+            <p class="porque"><b>¿Por qué?</b> $T^* = \Delta H/\Delta S$.</p>
+            $$T^* = \dfrac{-114{,}1}{-0{,}1465} = 779\ \text{K}$$
+<p>Para $T>779$ K, $\Delta G > 0$ y la reacción <b>deja de ser espontánea</b>: el equilibrio se desplaza hacia NO + O$_2$.</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta G°(298\,\text{K})=-70{,}44$ kJ/mol (espontánea). $T^*=779$ K (≈ 506 °C).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación a $T=779$ K: $\Delta G = -114{,}1 - 779\cdot(-0{,}1465) = -114{,}1 + 114{,}1 = 0$. ✓ Coherente con $T^*$.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex2">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 2</div>
+        <div class="ex-title">Constante de equilibrio a partir de $\Delta G°$</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción $\text{N}_2(g)+3\text{H}_2(g)\rightleftharpoons 2\text{NH}_3(g)$ se sabe que $\Delta G°(298\,\text{K})=-32{,}9$ kJ/mol. Calcular la constante de equilibrio $K_p$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $K_p\approx 5{,}73\cdot 10^{5}$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$\Delta G°$</td><td>$-32{,}9$ kJ/mol $=-32\,900$ J/mol</td></tr>
+            <tr><td>$T$</td><td>298 K</td></tr>
+            <tr><td>$R$</td><td>$8{,}314$ J/(mol·K)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Relación $\Delta G° = -RT\ln K$</div>
+            
+<p>En el equilibrio, $\Delta G=0$ y $Q=K$. Sustituyendo en $\Delta G=\Delta G°+RT\ln Q$:</p>
+$$0 = \Delta G° + RT\ln K \implies \boxed{\;K = e^{-\Delta G°/(RT)}\;}$$
+<p>Si $\Delta G°<0$ entonces $K>1$ (equilibrio favorable a productos). Si $\Delta G°>0$, $K<1$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Despejar $K$</div>
+            <p class="porque"><b>¿Por qué?</b> $K = e^{-\Delta G°/(RT)}$.</p>
+            $$K = \exp\!\left(-\dfrac{-32\,900}{8{,}314\cdot 298}\right) = \exp\!\left(\dfrac{32\,900}{2\,477{,}6}\right)=e^{13{,}28}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calcular el valor</div>
+            <p class="porque"><b>¿Por qué?</b> Cálculo del exponencial.</p>
+            $$K_p = e^{13{,}28} \approx \boxed{5{,}79\cdot 10^{5}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$K_p \approx 5{,}8\cdot 10^{5}$ — el equilibrio está fuertemente desplazado hacia el NH$_3$ a 298 K.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Sin embargo, la cinética a temperatura ambiente es muy lenta (proceso Haber-Bosch usa 400 °C y catalizador). El alto $K_p$ <em>termodinámico</em> no implica una reacción rápida. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex3">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 3</div>
+        <div class="ex-title">$\Delta S$ de un cambio de fase</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la entropía de vaporización del agua a 100 °C, sabiendo que $\Delta H_{vap}=40{,}66$ kJ/mol y que el proceso es reversible a $T_{eb}$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta S_{vap} = +109{,}0$ J/(mol·K).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$\Delta H_{vap}$</td><td>$40\,660$ J/mol</td></tr>
+            <tr><td>$T_{eb}$</td><td>$373{,}15$ K</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Cambio de fase reversible</div>
+            
+<p>Un cambio de fase ocurre a $p$ y $T$ constantes. Como las dos fases coexisten en equilibrio, el proceso es <em>reversible</em>. Para un proceso reversible isotermo:</p>
+$$\Delta S = \dfrac{Q_{rev}}{T} = \dfrac{\Delta H_{vap}}{T_{eb}}$$
+<p>$\Delta H>0$ y $T>0$ ⟹ $\Delta S>0$: la fase gas tiene mucha más entropía que la líquida (más microestados accesibles, mayor desorden).</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Aplicar la fórmula</div>
+            <p class="porque"><b>¿Por qué?</b> Sustituyendo los valores.</p>
+            $$\Delta S_{vap} = \dfrac{40\,660}{373{,}15} = 108{,}96\ \text{J/(mol·K)}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta S_{vap} \approx +109$ J/(mol·K) — coherente con la <b>regla de Trouton</b> ($\sim 88$ J/(mol·K) para líquidos no asociados; el agua queda por encima por sus puentes de H).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En el equilibrio líquido-gas a 100 °C: $\Delta G = \Delta H - T\Delta S = 40\,660 - 373{,}15\cdot 109 = 0$ ✓. Coherente con el equilibrio.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</div>
+
+<footer class="qg-footer">
+  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
+</footer>
+
+<script>
+function initKatex(){
+  if(typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+}
+document.addEventListener('DOMContentLoaded',initKatex);
+</script>
+</body>
+</html>
