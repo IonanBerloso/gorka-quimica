@@ -85,6 +85,13 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
     <a class="jl" href="#ex1">Ej 1 — Entalpía de combustión del metano por entalpías de formación</a>
     <a class="jl" href="#ex2">Ej 2 — Ley de Hess: combustión de carbono → CO</a>
     <a class="jl" href="#ex3">Ej 3 — Calorimetría a presión constante</a>
+    <a class="jl" href="#ex4">Ej 4 — Energías de enlace para una hidrogenación</a>
+    <a class="jl" href="#ex5">Ej 5 — Bomba calorimétrica (volumen constante)</a>
+    <a class="jl" href="#ex6">Ej 6 — Ley de Hess con tres reacciones</a>
+    <a class="jl" href="#ex7">Ej 7 — Calor de neutralización ácido fuerte + base fuerte</a>
+    <a class="jl" href="#ex8">Ej 8 — Combustión: comparar metano y etano por gramo</a>
+    <a class="jl" href="#ex9">Ej 9 — $\Delta H$ vs $\Delta U$ con cambio del número de moles gas</a>
+    <a class="jl" href="#ex10">Ej 10 — Síntesis: entalpía de formación a partir de combustión</a>
   </div>
 
   <article class="ex open" id="ex1">
@@ -155,7 +162,6 @@ $$= -393{,}5 - 571{,}6 + 74{,}8 = \boxed{-890{,}3\ \text{kJ/mol}}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -234,7 +240,6 @@ $$= -393{,}5 - 571{,}6 + 74{,}8 = \boxed{-890{,}3\ \text{kJ/mol}}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -315,13 +320,532 @@ $$\Delta H = \dfrac{Q_{rxn}}{n_{H_2O}}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
           <p>Valor de bibliografía para HCl + NaOH: $-57{,}3$ kJ/mol. La pequeña diferencia (≈ 1 %) se debe a despreciar la capacidad calorífica del calorímetro y suponer densidad/calor específico del agua para la disolución 0,5 M. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex4">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 4</div>
+        <div class="ex-title">Energías de enlace para una hidrogenación</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Estimar el $\Delta H$ de la reacción $\text{C}_2\text{H}_4(g)+\text{H}_2(g)\to\text{C}_2\text{H}_6(g)$ usando energías de enlace medias (kJ/mol): $E(\text{C=C})=614$, $E(\text{C-C})=348$, $E(\text{C-H})=413$, $E(\text{H-H})=436$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta H \approx -124$ kJ/mol — exotérmica.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Enlaces rotos</td><td>1 C=C + 1 H–H</td></tr>
+            <tr><td>Enlaces formados</td><td>1 C–C + 2 C–H</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Análisis enlace por enlace</div>
+            
+<p>En una hidrogenación, un enlace π (C=C → C–C) y un enlace H–H se rompen, y se forman dos nuevos enlaces C–H. Solo cambian estos enlaces; las cuatro C–H originales del C$_2$H$_4$ permanecen en el C$_2$H$_6$ y se cancelan en el balance.</p>
+$$\Delta H \approx \sum E_{\text{rotos}} - \sum E_{\text{formados}}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Enlaces rotos</div>
+            <p class="porque"><b>¿Por qué?</b> 1 C=C (rompemos completo) + 1 H–H. No contamos las 4 C–H del eteno: están en el etano también.</p>
+            $$\Sigma_{rotos}=614+436=1\,050\ \text{kJ}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Enlaces formados</div>
+            <p class="porque"><b>¿Por qué?</b> 1 nuevo C–C (el C=C se queda como simple) + 2 C–H nuevos.</p>
+            $$\Sigma_{form}=348+2\cdot 413=348+826=1\,174\ \text{kJ}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — $\Delta H$</div>
+            <p class="porque"><b>¿Por qué?</b> Diferencia.</p>
+            $$\Delta H = 1\,050-1\,174=\boxed{-124\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta H \approx -124$ kJ/mol — exotérmica, como toda hidrogenación de alquenos.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valor experimental: $\Delta H = -137$ kJ/mol. Aproximación con error de ~10%, típico del método de energías de enlace. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex5">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 5</div>
+        <div class="ex-title">Bomba calorimétrica (volumen constante)</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Se quema completamente <b>0,500 g</b> de glucosa (C$_6$H$_{12}$O$_6$) en una bomba calorimétrica de capacidad $C_{cal}=8\,250$ J/K. La temperatura sube <b>0,950 K</b>. Calcular el calor de combustión por mol de glucosa, $\Delta U_{comb}$. $M_{C_6H_{12}O_6}=180{,}2$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta U_{comb} = -2\,824$ kJ/mol.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa</td><td>$m=0{,}500$ g</td></tr>
+            <tr><td>$C_{cal}$</td><td>8 250 J/K</td></tr>
+            <tr><td>$\Delta T$</td><td>0,950 K</td></tr>
+            <tr><td>$M$</td><td>180,2 g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Bomba calorimétrica mide $\Delta U$</div>
+            
+<p>Una bomba calorimétrica trabaja a <b>volumen constante</b> (paredes rígidas). Como $\Delta V=0$, no hay trabajo de expansión, y por la 1ª ley:</p>
+$$Q_V = \Delta U$$
+<p>Por tanto, el calor medido es directamente la <em>variación de energía interna</em>, no la entalpía. Para reportar $\Delta H$ habría que añadir $\Delta n_{gas}\,RT$.</p>
+$$Q_{rxn} = -C_{cal}\,\Delta T$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calor liberado</div>
+            <p class="porque"><b>¿Por qué?</b> $|Q|=C_{cal}\Delta T$.</p>
+            $$|Q_{rxn}|=8\,250\cdot 0{,}950=7\,838\ \text{J}=7{,}838\ \text{kJ}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Por mol de glucosa</div>
+            <p class="porque"><b>¿Por qué?</b> Moles quemados: $n=m/M$.</p>
+            $$n=\dfrac{0{,}500}{180{,}2}=2{,}774\cdot 10^{-3}\ \text{mol}$$
+$$\Delta U_{comb}=\dfrac{-7{,}838}{2{,}774\cdot 10^{-3}}=\boxed{-2\,825\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta U_{comb}\approx -2\,825$ kJ/mol.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valor tabulado: $\Delta H_{comb}(\text{glucosa})=-2\,803$ kJ/mol. Para esta reacción $\Delta n_{gas}=6-6=0$, así que $\Delta H \approx \Delta U$. La diferencia con la tabla (~1%) es por la precisión de los datos. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex6">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 6</div>
+        <div class="ex-title">Ley de Hess con tres reacciones</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular $\Delta H$ de $\text{C(s)} + 2\,\text{H}_2(g)\to \text{CH}_4(g)$ a partir de: (1) C(s)+O$_2$→CO$_2$, $\Delta H_1=-393{,}5$ kJ. (2) H$_2$+½O$_2$→H$_2$O(l), $\Delta H_2=-285{,}8$ kJ. (3) CH$_4$+2O$_2$→CO$_2$+2H$_2$O(l), $\Delta H_3=-890{,}3$ kJ.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta H = -74{,}8$ kJ/mol — coincide con $\Delta H_f(\text{CH}_4)$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>(1)</td><td>C+O$_2$→CO$_2$, $-393{,}5$</td></tr>
+            <tr><td>(2)</td><td>H$_2$+½O$_2$→H$_2$O(l), $-285{,}8$</td></tr>
+            <tr><td>(3)</td><td>CH$_4$+2O$_2$→CO$_2$+2H$_2$O(l), $-890{,}3$</td></tr>
+            <tr><td>Objetivo</td><td>C+2H$_2$→CH$_4$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Combinación con (1) + 2(2) − (3)</div>
+            
+<p>Buscamos una combinación lineal que dé exactamente la objetivo: <b>C + 2 H$_2$ → CH$_4$</b>.</p>
+<p>En (1) aparece C → CO$_2$ ✓ (queremos consumir C). Aparece CO$_2$ como producto → no queremos en la final, así que necesitamos cancelarla.</p>
+<p>En (2) aparece H$_2$ → H$_2$O ✓ (queremos consumir H$_2$). Necesitamos $2\times$.</p>
+<p>En (3) aparece CH$_4$ como reactivo → al <em>invertirla</em> aparece como producto (lo que queremos). Y al invertirla, CO$_2$ y 2 H$_2$O pasan al lado de los reactivos, cancelando los productos de (1) y (2).</p>
+$$\text{Objetivo}=(1)+2\cdot(2)-(3)$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Combinación lineal</div>
+            <p class="porque"><b>¿Por qué?</b> Tabla de comprobación.</p>
+            <table class="tdatos">
+<tr><th>Reacción</th><th>$\Delta H$ (kJ)</th></tr>
+<tr><td>(1) C+O$_2$→CO$_2$</td><td>$-393{,}5$</td></tr>
+<tr><td>2(2) 2 H$_2$+O$_2$→2 H$_2$O(l)</td><td>$2\cdot(-285{,}8)=-571{,}6$</td></tr>
+<tr><td>−(3) CO$_2$+2 H$_2$O→CH$_4$+2 O$_2$</td><td>$+890{,}3$</td></tr>
+<tr><td><b>Suma: C+2 H$_2$→CH$_4$</b></td><td><b>?</b></td></tr>
+</table>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Suma de las contribuciones</div>
+            <p class="porque"><b>¿Por qué?</b> Aritmética.</p>
+            $$\Delta H = -393{,}5-571{,}6+890{,}3=\boxed{-74{,}8\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta H = -74{,}8$ kJ/mol = $\Delta H_f(\text{CH}_4,g)$ tabulado.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valor de tablas $\Delta H_f(\text{CH}_4,g) = -74{,}87$ kJ/mol ✓ — coincide al céntimo.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex7">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 7</div>
+        <div class="ex-title">Calor de neutralización ácido fuerte + base fuerte</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Se mezclan <b>100 mL de HCl 1,0 M</b> con <b>100 mL de NaOH 1,0 M</b>, ambos inicialmente a <b>20,0 °C</b>. La temperatura final es <b>26,8 °C</b>. Calcular: (a) el calor de neutralización por mol de agua formada; (b) el % de error respecto al valor estándar $-57{,}3$ kJ/mol. Suponer la disolución con $\rho=1{,}0$ g/mL y $c=4{,}18$ J/(g·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $\Delta H_{neut}=-56{,}8$ kJ/mol; (b) error 0,9%.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$V$ total</td><td>200 mL</td></tr>
+            <tr><td>$\rho$</td><td>1,0 g/mL</td></tr>
+            <tr><td>$c$</td><td>4,18 J/(g·K)</td></tr>
+            <tr><td>$\Delta T$</td><td>6,8 K</td></tr>
+            <tr><td>$n_{H_2O}$</td><td>0,100 mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calor absorbido por la disolución</div>
+            <p class="porque"><b>¿Por qué?</b> Masa = 200 g.</p>
+            $$Q_{disol}=200\cdot 4{,}18\cdot 6{,}8=5\,684\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calor de la reacción</div>
+            <p class="porque"><b>¿Por qué?</b> $Q_{rxn}=-Q_{disol}$.</p>
+            $$Q_{rxn}=-5\,684\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Por mol de agua formada</div>
+            <p class="porque"><b>¿Por qué?</b> Moles formados = $0{,}100\cdot 1{,}0=0{,}100$ mol H$_2$O.</p>
+            $$\Delta H_{neut}=\dfrac{-5\,684}{0{,}100}=-56\,840\ \text{J/mol}\approx \boxed{-56{,}8\ \text{kJ/mol}}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — % de error</div>
+            <p class="porque"><b>¿Por qué?</b> Comparación con valor de bibliografía.</p>
+            $$\%\text{error}=\dfrac{|-57{,}3-(-56{,}8)|}{57{,}3}\cdot 100=0{,}87\%$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta H_{neut}\approx -56{,}8$ kJ/mol con un error inferior al 1%. Coherente con el valor universal para HF + BF.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Universalidad: cualquier neutralización HF + BF en agua da el mismo $\Delta H_{neut}\approx-57$ kJ/mol porque la reacción neta es siempre la misma: H$^+$ + OH$^-$ → H$_2$O. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex8">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 8</div>
+        <div class="ex-title">Combustión: comparar metano y etano por gramo</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Comparar la energía liberada <b>por gramo</b> en la combustión completa del <b>metano</b> y del <b>etano</b>. Datos $\Delta H_c$ (kJ/mol): CH$_4$ = $-890$; C$_2$H$_6$ = $-1\,560$. Masas molares: $M_{CH_4}=16$, $M_{C_2H_6}=30$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> CH$_4$: −55,6 kJ/g; C$_2$H$_6$: −52,0 kJ/g. CH$_4$ libera ~7% más por gramo.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$\Delta H_c$ CH$_4$</td><td>$-890$ kJ/mol</td></tr>
+            <tr><td>$\Delta H_c$ C$_2$H$_6$</td><td>$-1\,560$ kJ/mol</td></tr>
+            <tr><td>$M_{CH_4}$</td><td>16 g/mol</td></tr>
+            <tr><td>$M_{C_2H_6}$</td><td>30 g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Calor por gramo vs. por mol</div>
+            
+<p>El calor por mol favorece moléculas grandes (más enlaces que romper); pero por <em>gramo</em> manda el contenido relativo de hidrógeno: el H tiene mayor poder calorífico específico que el C porque su producto (H$_2$O) tiene $\Delta H_f$ por gramo mayor.</p>
+$$\Delta H_c\text{ por gramo} = \dfrac{\Delta H_c\text{ por mol}}{M}$$
+<p>Por eso el H$_2$ puro es el combustible con mayor poder calorífico por kg, y el metano supera a los hidrocarburos más pesados por gramo.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calor por gramo del metano</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta H_c/M$.</p>
+            $$\dfrac{-890}{16}=-55{,}6\ \text{kJ/g}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calor por gramo del etano</div>
+            <p class="porque"><b>¿Por qué?</b> Mismo cálculo.</p>
+            $$\dfrac{-1\,560}{30}=-52{,}0\ \text{kJ/g}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Diferencia relativa</div>
+            <p class="porque"><b>¿Por qué?</b> $|\Delta|/\Delta_{etano}$.</p>
+            $$\dfrac{55{,}6-52{,}0}{52{,}0}\cdot 100=6{,}9\%$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">CH$_4$ libera <b>55,6 kJ/g</b>, etano <b>52,0 kJ/g</b>. El metano supera al etano en un ~7% por gramo.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Razón física: la fracción másica de H en CH$_4$ es 4/16 = 25%; en C$_2$H$_6$ es 6/30 = 20%. Mayor % de H ⟹ mayor calor por gramo. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex9">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 9</div>
+        <div class="ex-title">$\Delta H$ vs $\Delta U$ con cambio del número de moles gas</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción $\text{N}_2(g)+3\,\text{H}_2(g)\to 2\,\text{NH}_3(g)$, $\Delta H = -92{,}2$ kJ/mol a 25 °C. Calcular $\Delta U$. ¿En qué dirección cambia el signo respecto a $\Delta H$?</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta U = -87{,}2$ kJ/mol — menos negativo que $\Delta H$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$\Delta H$</td><td>$-92{,}2$ kJ/mol</td></tr>
+            <tr><td>$T$</td><td>298 K</td></tr>
+            <tr><td>$\Delta n_{gas}$</td><td>$2-(1+3)=-2$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calcular $\Delta n_{gas}\cdot RT$</div>
+            <p class="porque"><b>¿Por qué?</b> $RT = 2{,}478$ kJ/mol a 298 K.</p>
+            $$\Delta n_{gas}\cdot RT = -2\cdot 2{,}478=-4{,}956\ \text{kJ/mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Aplicar $\Delta H = \Delta U + \Delta n_{gas}RT$</div>
+            <p class="porque"><b>¿Por qué?</b> Despejo $\Delta U$.</p>
+            $$\Delta U = \Delta H - \Delta n_{gas}RT = -92{,}2-(-4{,}956)=\boxed{-87{,}2\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta U = -87{,}2$ kJ/mol. Como $\Delta n_{gas}<0$, el sistema se contrae y el entorno hace trabajo sobre él ⟹ $\Delta U > \Delta H$ (menos negativo).</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Diferencia $\Delta H - \Delta U = -4{,}96$ kJ/mol — el trabajo de compresión por cada 2 mol de gas eliminado a 298 K. Es exactamente lo esperado por $\Delta n RT$. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex10">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 10</div>
+        <div class="ex-title">Síntesis: entalpía de formación a partir de combustión</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular $\Delta H_f$ del <b>etanol líquido</b> (C$_2$H$_5$OH) a partir de su calor de combustión $\Delta H_c=-1\,367$ kJ/mol y los $\Delta H_f$ de CO$_2$(g) ($-393{,}5$) y H$_2$O(l) ($-285{,}8$).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta H_f(\text{C}_2\text{H}_5\text{OH},l) \approx -277{,}7$ kJ/mol.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Combustión</td><td>C$_2$H$_5$OH + 3 O$_2$ → 2 CO$_2$ + 3 H$_2$O(l)</td></tr>
+            <tr><td>$\Delta H_c$</td><td>$-1\,367$ kJ/mol</td></tr>
+            <tr><td>$\Delta H_f$ CO$_2$(g)</td><td>$-393{,}5$</td></tr>
+            <tr><td>$\Delta H_f$ H$_2$O(l)</td><td>$-285{,}8$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — $\Delta H_c = \Sigma H_f^{prod} - \Sigma H_f^{reac}$</div>
+            
+<p>Aplicamos la fórmula general a la combustión, sabiendo que $\Delta H_f(\text{O}_2)=0$:</p>
+$$\Delta H_c = [2\,\Delta H_f(\text{CO}_2)+3\,\Delta H_f(\text{H}_2\text{O})] - [\Delta H_f(\text{C}_2\text{H}_5\text{OH})]$$
+<p>Despejando $\Delta H_f$ del etanol — la incógnita.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Suma de productos</div>
+            <p class="porque"><b>¿Por qué?</b> 2 mol CO$_2$ + 3 mol H$_2$O.</p>
+            $$\Sigma_{prod}=2\cdot(-393{,}5)+3\cdot(-285{,}8)=-787{,}0-857{,}4=-1\,644{,}4\ \text{kJ/mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Despejar $\Delta H_f$ del etanol</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta H_f = \Sigma_{prod} - \Delta H_c$.</p>
+            $$\Delta H_f(\text{C}_2\text{H}_5\text{OH})=-1\,644{,}4-(-1\,367)=\boxed{-277{,}4\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta H_f(\text{C}_2\text{H}_5\text{OH},l)\approx-277{,}4$ kJ/mol. El etanol líquido es estable termodinámicamente respecto a sus elementos.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valor tabulado: $\Delta H_f(\text{C}_2\text{H}_5\text{OH},l)=-277{,}69$ kJ/mol ✓ — diferencia de $\sim 0{,}1\%$ por redondeos en los datos de partida.</p>
         </div>
       </div>
 

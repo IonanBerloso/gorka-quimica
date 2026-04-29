@@ -85,6 +85,13 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
     <a class="jl" href="#ex1">Ej 1 — Configuración electrónica del Fe y del Cu</a>
     <a class="jl" href="#ex2">Ej 2 — Longitud de onda de De Broglie de un electrón</a>
     <a class="jl" href="#ex3">Ej 3 — Energía del fotón emitido en un salto en el átomo de H</a>
+    <a class="jl" href="#ex4">Ej 4 — Identificar conjuntos de números cuánticos válidos</a>
+    <a class="jl" href="#ex5">Ej 5 — Configuración electrónica de iones de transición</a>
+    <a class="jl" href="#ex6">Ej 6 — Energía de un fotón a partir de la longitud de onda</a>
+    <a class="jl" href="#ex7">Ej 7 — Línea de la serie de Lyman (UV) del hidrógeno</a>
+    <a class="jl" href="#ex8">Ej 8 — Comparación cualitativa de propiedades periódicas</a>
+    <a class="jl" href="#ex9">Ej 9 — Frecuencia de un haz láser</a>
+    <a class="jl" href="#ex10">Ej 10 — Configuración electrónica del As y de su anión</a>
   </div>
 
   <article class="ex open" id="ex1">
@@ -151,7 +158,6 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -226,7 +232,6 @@ $$\lambda = \dfrac{h}{p} = \dfrac{h}{m\,v} = \dfrac{h}{\sqrt{2\,m\,e\,V}}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -299,13 +304,538 @@ $$\dfrac{1}{\lambda} = R_H\!\left(\dfrac{1}{n_f^2}-\dfrac{1}{n_i^2}\right)$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
           <p>656 nm cae en el rojo del espectro visible (620–750 nm). Coincide con el dato experimental tabulado para la línea $H_\alpha$ ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex4">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 4</div>
+        <div class="ex-title">Identificar conjuntos de números cuánticos válidos</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Indicar cuáles de los siguientes conjuntos $(n,\ell,m_\ell,m_s)$ son <b>permitidos</b> para un electrón. Justificar los que no lo sean: (a) $(2,1,-1,+\tfrac12)$; (b) $(3,3,0,-\tfrac12)$; (c) $(4,2,-2,+\tfrac12)$; (d) $(2,0,1,-\tfrac12)$; (e) $(1,0,0,0)$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Permitidos: (a) y (c). No permitidos: (b), (d), (e).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Reglas</td><td>$n\ge 1$; $0\le\ell\le n-1$; $-\ell\le m_\ell\le +\ell$; $m_s=\pm\tfrac12$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Restricciones de los números cuánticos</div>
+            
+<p>Los números cuánticos de la solución de Schrödinger para el átomo de H se relacionan jerárquicamente:</p>
+<ul>
+  <li>$n$ es entero $\ge 1$ (nivel principal).</li>
+  <li>$\ell$ va de 0 a $n-1$ (forma del orbital). Por tanto $\ell$ <em>nunca</em> puede igualar o superar a $n$.</li>
+  <li>$m_\ell$ va de $-\ell$ a $+\ell$ en pasos enteros ($2\ell+1$ valores). Indica orientación.</li>
+  <li>$m_s$ solo toma $+\tfrac12$ o $-\tfrac12$ (espín).</li>
+</ul>
+<p>Cualquier conjunto que viole estas reglas describe un estado <em>inexistente</em> para un electrón.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Analizar cada conjunto</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico las reglas a cada caso.</p>
+            <table class="tdatos">
+<tr><th>Caso</th><th>$(n,\ell,m_\ell,m_s)$</th><th>¿Válido?</th><th>Motivo</th></tr>
+<tr><td>(a)</td><td>(2,1,−1,+½)</td><td>✅</td><td>Orbital 2p, $m_\ell=-1$ correcto</td></tr>
+<tr><td>(b)</td><td>(3,3,0,−½)</td><td>❌</td><td>$\ell=3$ requiere $n\ge 4$</td></tr>
+<tr><td>(c)</td><td>(4,2,−2,+½)</td><td>✅</td><td>Orbital 4d, $-\ell\le m_\ell\le \ell$</td></tr>
+<tr><td>(d)</td><td>(2,0,1,−½)</td><td>❌</td><td>Si $\ell=0$, $m_\ell$ solo puede ser 0</td></tr>
+<tr><td>(e)</td><td>(1,0,0,0)</td><td>❌</td><td>$m_s$ solo $\pm\tfrac12$, nunca 0</td></tr>
+</table>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Permitidos: <b>(a)</b> y <b>(c)</b>. Los demás violan alguna regla.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Los conjuntos (a) y (c) corresponden a orbitales reales (2p y 4d). Los demás describen estados imposibles. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex5">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 5</div>
+        <div class="ex-title">Configuración electrónica de iones de transición</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Escribir la configuración electrónica del <b>Fe$^{3+}$ ($Z=26$)</b> y del <b>Cu$^{2+}$ ($Z=29$)</b>. Indicar el número de electrones desapareados en cada uno.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Fe$^{3+}$: $[Ar]\,3d^5$ → 5 desapareados. Cu$^{2+}$: $[Ar]\,3d^9$ → 1 desapareado.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Fe neutro</td><td>$[Ar]\,4s^2\,3d^6$</td></tr>
+            <tr><td>Cu neutro</td><td>$[Ar]\,4s^1\,3d^{10}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Cómo se ionizan los metales de transición</div>
+            
+<p>Hay una <b>regla muy importante</b> para los metales de transición: aunque el orbital 4s se llena <em>antes</em> que el 3d (Aufbau), al ionizar el átomo se pierden <em>primero</em> los electrones del 4s y <em>después</em> los del 3d.</p>
+<p>Razón física: una vez ocupados los 3d, su energía baja por debajo de la 4s. Así que en el ion, el orden energético real es 3d &lt; 4s.</p>
+<p>Por tanto, las configuraciones de cationes de la primera serie de transición se escriben sin rastro del 4s.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Fe$^{3+}$</div>
+            <p class="porque"><b>¿Por qué?</b> El Fe neutro es $[Ar]\,4s^2\,3d^6$. Pierdo 3 e<sup>−</sup>: primero los dos del 4s, luego uno del 3d.</p>
+            $$\text{Fe}^{3+}: [Ar]\,3d^5$$
+<p>5 electrones en 5 orbitales d → todos desapareados (Hund).</p>
+<p style="font-family:monospace">3d: ↑ ↑ ↑ ↑ ↑ → <b>5 desapareados</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Cu$^{2+}$</div>
+            <p class="porque"><b>¿Por qué?</b> El Cu neutro es $[Ar]\,4s^1\,3d^{10}$. Pierdo 2 e<sup>−</sup>: primero el del 4s, luego uno del 3d.</p>
+            $$\text{Cu}^{2+}: [Ar]\,3d^9$$
+<p>9 electrones en 5 orbitales d: cuatro pares + uno desapareado.</p>
+<p style="font-family:monospace">3d: ↑↓ ↑↓ ↑↓ ↑↓ ↑ → <b>1 desapareado</b>.</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Fe$^{3+}$: $[Ar]\,3d^5$ con <b>5</b> e<sup>−</sup> desapareados (alta paramagnetismo). Cu$^{2+}$: $[Ar]\,3d^9$ con <b>1</b> desapareado (color azul típico de sus complejos).</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Suma de e<sup>−</sup>: Fe$^{3+}$ tiene $26-3=23$ e<sup>−</sup>: $[Ar]=18$ + $3d^5=5$ → 23 ✓. Cu$^{2+}$ tiene $29-2=27$ e<sup>−</sup>: $[Ar]=18$ + $3d^9=9$ → 27 ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex6">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 6</div>
+        <div class="ex-title">Energía de un fotón a partir de la longitud de onda</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la <b>energía de un fotón</b> de luz violeta de $\lambda=400$ nm. Expresar el resultado en julios y en electronvoltios. Datos: $h=6{,}626\cdot 10^{-34}$ J·s, $c=3{,}0\cdot 10^{8}$ m/s, $1\ \text{eV}=1{,}602\cdot 10^{-19}$ J.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $E=4{,}97\cdot 10^{-19}$ J $=3{,}10$ eV.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Longitud de onda</td><td>$\lambda=400\ \text{nm}=4{,}00\cdot 10^{-7}\ \text{m}$</td></tr>
+            <tr><td>$h$</td><td>$6{,}626\cdot 10^{-34}$ J·s</td></tr>
+            <tr><td>$c$</td><td>$3{,}0\cdot 10^{8}$ m/s</td></tr>
+            <tr><td>Conversión eV</td><td>$1\ \text{eV}=1{,}602\cdot 10^{-19}$ J</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Relación de Planck-Einstein</div>
+            
+<p>Un fotón es un cuanto de luz cuya energía depende solo de su frecuencia (Planck, 1900):</p>
+$$E = h\nu$$
+<p>Como $c=\lambda\nu$, podemos expresar la energía en función de $\lambda$:</p>
+$$E = \dfrac{hc}{\lambda}$$
+<p>Esta es la relación que usaremos.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Energía en julios</div>
+            <p class="porque"><b>¿Por qué?</b> Sustituyendo en $E=hc/\lambda$.</p>
+            $$E = \dfrac{6{,}626\cdot 10^{-34}\cdot 3{,}0\cdot 10^{8}}{4{,}00\cdot 10^{-7}}$$
+$$E = \dfrac{1{,}988\cdot 10^{-25}}{4{,}00\cdot 10^{-7}} = 4{,}97\cdot 10^{-19}\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Conversión a eV</div>
+            <p class="porque"><b>¿Por qué?</b> Dividir entre la equivalencia.</p>
+            $$E(\text{eV})=\dfrac{4{,}97\cdot 10^{-19}}{1{,}602\cdot 10^{-19}}=3{,}10\ \text{eV}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$E=4{,}97\cdot 10^{-19}$ J $=3{,}10$ eV.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Regla rápida: $E(\text{eV})\approx 1240/\lambda(\text{nm})$. Aplicando: $1240/400=3{,}10$ eV ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex7">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 7</div>
+        <div class="ex-title">Línea de la serie de Lyman (UV) del hidrógeno</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la longitud de onda del fotón emitido en la transición $n=2\to n=1$ del átomo de hidrógeno (primera línea de la serie de Lyman). $R_H=1{,}097\cdot 10^{7}$ m$^{-1}$. ¿En qué región del espectro cae?</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\lambda \approx 121{,}5$ nm. Región del ultravioleta.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Salto</td><td>$n_i=2\to n_f=1$</td></tr>
+            <tr><td>$R_H$</td><td>$1{,}097\cdot 10^{7}$ m$^{-1}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Fórmula de Rydberg</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico con $n_f=1$, $n_i=2$.</p>
+            $$\dfrac{1}{\lambda}=R_H\!\left(\dfrac{1}{1^2}-\dfrac{1}{2^2}\right)=R_H\cdot\dfrac{3}{4}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Cálculo</div>
+            <p class="porque"><b>¿Por qué?</b> Sustitución.</p>
+            $$\dfrac{1}{\lambda}=1{,}097\cdot 10^{7}\cdot 0{,}75=8{,}228\cdot 10^{6}\ \text{m}^{-1}$$
+$$\lambda=1{,}215\cdot 10^{-7}\ \text{m}\approx 121{,}5\ \text{nm}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Región del espectro</div>
+            <p class="porque"><b>¿Por qué?</b> El visible es 380–750 nm. Por debajo de 380 nm es UV.</p>
+            <p>121,5 nm ≪ 380 nm ⟹ <b>ultravioleta lejano</b> (UV-C).</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\lambda \approx 121{,}5$ nm — UV invisible al ojo humano.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Toda la serie de Lyman ($n_f=1$) cae en el UV; la serie de Balmer ($n_f=2$) en el visible y la de Paschen ($n_f=3$) en el infrarrojo. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex8">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 8</div>
+        <div class="ex-title">Comparación cualitativa de propiedades periódicas</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Ordenar de menor a mayor: (a) <b>radio atómico</b> de Li, Na, K, Be, Mg; (b) <b>energía de ionización</b> de Na, Mg, Al, Si; (c) <b>electronegatividad</b> de F, Cl, Br, I.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) Be < Mg < Li < Na < K. (b) Na < Al < Mg < Si. (c) I < Br < Cl < F.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Tendencias</td><td>Radio: ↑ en grupo, ↓ en período. EI/EN: ↓ en grupo, ↑ en período.</td></tr>
+            <tr><td>Excepciones EI</td><td>Al < Mg (subnivel 3p frente a 3s lleno)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Razonamiento por posición</div>
+            
+<p>Las tendencias surgen del balance entre <b>carga nuclear efectiva</b> ($Z_{ef}$) y <b>número de capas</b> ($n$):</p>
+<ul>
+  <li>Subir $Z_{ef}$ (avanzar en período) → mayor atracción del núcleo → menor radio, mayor EI/EN.</li>
+  <li>Subir $n$ (bajar en grupo) → más capas → mayor radio, menor EI/EN.</li>
+</ul>
+<p>Las <b>excepciones</b> aparecen cuando se rompe una configuración estable: Al (3s²3p¹) tiene EI menor que Mg (3s²) porque el primer p es más fácil de quitar.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Apartado (a) Radio atómico</div>
+            <p class="porque"><b>¿Por qué?</b> Be, Mg en grupo 2. Li, Na, K en grupo 1. Bajar y avanzar el período.</p>
+            $$Be < Mg < Li < Na < K$$
+<p>Be y Mg son menores que Li y Na por estar en período 2 y 3 grupo 2 (más Z). En cada grupo, baja → mayor radio.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Apartado (b) Energía de ionización</div>
+            <p class="porque"><b>¿Por qué?</b> Subiendo en período aumenta, salvo la anomalía Al < Mg.</p>
+            $$Na < Al < Mg < Si$$
+<p>Na bajo (alcalino, fácil ionizar). Al menor que Mg por la excepción del 3p. Si el más alto.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Apartado (c) Electronegatividad</div>
+            <p class="porque"><b>¿Por qué?</b> Mismo grupo (halógenos), bajar → menor EN.</p>
+            $$I < Br < Cl < F$$
+<p>F es el elemento más electronegativo de todos (4,0 Pauling).</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">(a) Be<Mg<Li<Na<K. (b) Na<Al<Mg<Si. (c) I<Br<Cl<F.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valores tabulados (radio en pm): Be 112, Mg 160, Li 152, Na 186, K 227 ✓ (con la pequeña inversión Mg-Li que sí ocurre). EI (kJ/mol): Na 496, Al 577, Mg 738, Si 786 ✓. EN (Pauling): I 2,7, Br 3,0, Cl 3,2, F 4,0 ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex9">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 9</div>
+        <div class="ex-title">Frecuencia de un haz láser</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Un láser de helio-neón emite luz roja de longitud de onda $\lambda=632{,}8$ nm con potencia $P=2{,}0$ mW. Calcular: (a) la frecuencia de la radiación; (b) el número de fotones emitidos por segundo. Datos: $h=6{,}626\cdot 10^{-34}$ J·s, $c=3{,}0\cdot 10^{8}$ m/s.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $\nu=4{,}74\cdot 10^{14}$ Hz; (b) $N/t=6{,}37\cdot 10^{15}$ fotones/s.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$\lambda$</td><td>$632{,}8\ \text{nm}=6{,}328\cdot 10^{-7}$ m</td></tr>
+            <tr><td>$P$</td><td>$2{,}0\cdot 10^{-3}$ W</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Frecuencia</div>
+            <p class="porque"><b>¿Por qué?</b> $c=\lambda\nu$.</p>
+            $$\nu=\dfrac{c}{\lambda}=\dfrac{3{,}0\cdot 10^{8}}{6{,}328\cdot 10^{-7}}=4{,}74\cdot 10^{14}\ \text{Hz}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Energía de un fotón</div>
+            <p class="porque"><b>¿Por qué?</b> $E_f=h\nu$.</p>
+            $$E_f=6{,}626\cdot 10^{-34}\cdot 4{,}74\cdot 10^{14}=3{,}14\cdot 10^{-19}\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Número de fotones por segundo</div>
+            <p class="porque"><b>¿Por qué?</b> $P$ = energía total emitida por segundo. Dividiendo por la energía de un fotón sale el número.</p>
+            $$\dfrac{N}{t}=\dfrac{P}{E_f}=\dfrac{2{,}0\cdot 10^{-3}}{3{,}14\cdot 10^{-19}}=6{,}37\cdot 10^{15}\ \text{fotones/s}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\nu=4{,}74\cdot 10^{14}$ Hz · $\sim 6{,}4\cdot 10^{15}$ fotones cada segundo.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En 1 minuto el láser emite $\sim 4\cdot 10^{17}$ fotones — número astronómico, coherente con que la luz parezca un flujo continuo. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex10">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 10</div>
+        <div class="ex-title">Configuración electrónica del As y de su anión</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para el arsénico ($Z=33$): (a) escribir su configuración electrónica completa; (b) indicar a qué grupo y período pertenece; (c) escribir la configuración del anión <b>As$^{3-}$</b> y compararla con la del Kr.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $[Ar]\,4s^2\,3d^{10}\,4p^3$; (b) Grupo 15, período 4; (c) As$^{3-}=[Ar]\,4s^2\,3d^{10}\,4p^6=[Kr]$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$Z_{As}$</td><td>33</td></tr>
+            <tr><td>$Z_{Kr}$</td><td>36</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Posición y configuración</div>
+            
+<p>El número atómico fija la configuración electrónica vía Aufbau. La <em>posición</em> en la tabla periódica se deduce directamente de la configuración:</p>
+<ul>
+  <li><b>Período</b> = mayor valor de $n$ ocupado.</li>
+  <li><b>Grupo</b> = electrones de valencia (capa más externa).</li>
+</ul>
+<p>Los aniones se forman ganando electrones hasta alcanzar configuración de gas noble — los <b>isoelectrónicos</b> al gas noble más próximo son especialmente estables.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Configuración del As neutro</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico Madelung hasta llegar a 33 e<sup>−</sup>.</p>
+            $$1s^2\,2s^2\,2p^6\,3s^2\,3p^6\,4s^2\,3d^{10}\,4p^3 = [Ar]\,4s^2\,3d^{10}\,4p^3$$
+<p>Suma: $18 + 2 + 10 + 3 = 33$ ✓</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Período y grupo</div>
+            <p class="porque"><b>¿Por qué?</b> $n_{max}=4$ ⟹ período 4. Valencia = $4s^2\,4p^3$ ⟹ 5 e<sup>−</sup> en la última capa ⟹ grupo 15 (nitrogenoideos).</p>
+            <p>El As es <b>período 4, grupo 15</b> (familia del nitrógeno).</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Configuración del As$^{3-}$</div>
+            <p class="porque"><b>¿Por qué?</b> Gana 3 e<sup>−</sup> que entran en el 4p para completarlo.</p>
+            $$\text{As}^{3-}: [Ar]\,4s^2\,3d^{10}\,4p^6$$
+<p>Total: $18+2+10+6=36$ e<sup>−</sup> = $Z_{Kr}$. <b>El As$^{3-}$ es isoelectrónico con el Kr</b>: tiene la misma configuración pero diferente carga nuclear.</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">As: $[Ar]\,4s^2\,3d^{10}\,4p^3$ (grupo 15, período 4). As$^{3-}$ es isoelectrónico con Kr.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Coherencia: el As tiene 5 e<sup>−</sup> de valencia (típico de grupo 15: N, P, As, Sb), gana 3 para alcanzar el octeto ⟹ As$^{3-}$. ✓ Esto explica que en arsenuros aparezca como ion 3−.</p>
         </div>
       </div>
 

@@ -85,6 +85,13 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
     <a class="jl" href="#ex1">Ej 1 — Cinética de primer orden: tiempo de vida media</a>
     <a class="jl" href="#ex2">Ej 2 — Energía de activación con la ecuación de Arrhenius</a>
     <a class="jl" href="#ex3">Ej 3 — Equilibrio: cálculo de concentraciones a partir de $K_c$</a>
+    <a class="jl" href="#ex4">Ej 4 — Determinación del orden por velocidades iniciales</a>
+    <a class="jl" href="#ex5">Ej 5 — Mecanismo y ley de velocidad: paso lento</a>
+    <a class="jl" href="#ex6">Ej 6 — Relación entre $K_p$ y $K_c$</a>
+    <a class="jl" href="#ex7">Ej 7 — Cociente $Q$ vs $K$: predecir el sentido</a>
+    <a class="jl" href="#ex8">Ej 8 — Le Châtelier cualitativo: análisis sistemático</a>
+    <a class="jl" href="#ex9">Ej 9 — Equilibrio heterogéneo: descomposición del CaCO$_3$</a>
+    <a class="jl" href="#ex10">Ej 10 — Catalizador: efecto sobre $E_a$ y $k$</a>
   </div>
 
   <article class="ex open" id="ex1">
@@ -150,7 +157,6 @@ $$\dfrac{[A]_0}{[A]_0/2}=2 \implies \ln 2 = k\,t_{1/2} \implies \boxed{\;t_{1/2}
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -226,7 +232,6 @@ $$E_a = \dfrac{8{,}314\cdot 91\,784}{10}\cdot 0{,}693$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -315,13 +320,532 @@ $$[\text{HI}]=2\cdot 0{,}393=0{,}786\ \text{M}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
           <p>En el equilibrio: 78,6% del HI formado. Como $K_c$ es alto y la mezcla inicial es estequiométrica, hay un alto rendimiento hacia productos. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex4">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 4</div>
+        <div class="ex-title">Determinación del orden por velocidades iniciales</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción $A+B\to P$ se obtienen los siguientes datos:<br>Exp 1: $[A]_0=0{,}10$ M, $[B]_0=0{,}10$ M, $v_0=2{,}5\cdot 10^{-3}$ M/s.<br>Exp 2: $[A]_0=0{,}20$ M, $[B]_0=0{,}10$ M, $v_0=1{,}0\cdot 10^{-2}$ M/s.<br>Exp 3: $[A]_0=0{,}10$ M, $[B]_0=0{,}20$ M, $v_0=2{,}5\cdot 10^{-3}$ M/s. Determinar la ecuación de velocidad y la constante $k$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $v=k[A]^2[B]^0$ con $k=0{,}25$ M$^{-1}$s$^{-1}$. Orden total = 2.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Forma general</td><td>$v=k[A]^m[B]^n$</td></tr>
+            <tr><td>Exp 1 → 2</td><td>$[A]$ se duplica, $[B]$ fija</td></tr>
+            <tr><td>Exp 1 → 3</td><td>$[B]$ se duplica, $[A]$ fija</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Aislar el efecto de cada concentración</div>
+            
+<p>El método de las velocidades iniciales se basa en hacer experimentos cambiando la concentración de un solo reactivo a la vez. Si $[A]$ se duplica y la velocidad se multiplica por $2^m$, entonces $m$ es el orden parcial respecto de $A$:</p>
+$$\dfrac{v_2}{v_1}=\!\left(\dfrac{[A]_2}{[A]_1}\right)^m$$
+<p>Aplicado a las parejas de experimentos, los exponentes $m$ y $n$ salen directamente.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Orden respecto a A</div>
+            <p class="porque"><b>¿Por qué?</b> Comparando exp 1 y 2.</p>
+            $$\dfrac{v_2}{v_1}=\dfrac{1{,}0\cdot 10^{-2}}{2{,}5\cdot 10^{-3}}=4=2^m \implies m=2$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Orden respecto a B</div>
+            <p class="porque"><b>¿Por qué?</b> Comparando exp 1 y 3.</p>
+            $$\dfrac{v_3}{v_1}=\dfrac{2{,}5\cdot 10^{-3}}{2{,}5\cdot 10^{-3}}=1=2^n \implies n=0$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Constante de velocidad</div>
+            <p class="porque"><b>¿Por qué?</b> Aplicando la ley a Exp 1.</p>
+            $$k = \dfrac{v_0}{[A]^2}=\dfrac{2{,}5\cdot 10^{-3}}{(0{,}10)^2}=0{,}25\ \text{M}^{-1}\text{s}^{-1}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Ley de velocidad: $v=0{,}25\,[A]^2$. La reacción es de orden 2 en $A$ y orden 0 en $B$. Orden total = 2.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación con Exp 2: $v=0{,}25\cdot(0{,}20)^2=0{,}25\cdot 0{,}04=10^{-2}$ M/s ✓ — coincide con el dato.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex5">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 5</div>
+        <div class="ex-title">Mecanismo y ley de velocidad: paso lento</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción global $2\,\text{NO}_2+\text{F}_2\to 2\,\text{NO}_2\text{F}$ se propone el siguiente mecanismo en dos pasos:<br><b>(1)</b> NO$_2$ + F$_2$ → NO$_2$F + F (lento, $k_1$)<br><b>(2)</b> NO$_2$ + F → NO$_2$F (rápido, $k_2$)<br>Determinar la ecuación de velocidad predicha por el mecanismo. ¿Qué orden y constante experimental se esperan?</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $v=k_1[\text{NO}_2][\text{F}_2]$. Orden total = 2.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Paso lento</td><td>(1) bimolecular</td></tr>
+            <tr><td>Paso rápido</td><td>(2) bimolecular</td></tr>
+            <tr><td>Intermedio</td><td>F (átomo)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — El paso lento determina la velocidad</div>
+            
+<p>En un mecanismo en serie, la velocidad global está limitada por la <b>etapa más lenta</b>: cada paso posterior consume el producto del lento tan rápido como aparece, así que el cuello de botella manda.</p>
+<p>Por tanto, la ley de velocidad observada coincide con la del paso lento — pero solo intervienen las especies presentes <em>antes</em> del paso lento, es decir, los reactivos elementales (no los intermedios).</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Identificar el paso lento</div>
+            <p class="porque"><b>¿Por qué?</b> El paso (1) es lento. Su ley elemental se aplica.</p>
+            $$v_{(1)}=k_1[\text{NO}_2][\text{F}_2]$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Comprobar que solo aparecen reactivos</div>
+            <p class="porque"><b>¿Por qué?</b> El paso (1) consume directamente los reactivos NO$_2$ y F$_2$. No hay intermedios.</p>
+            <p>$v=k_1[\text{NO}_2][\text{F}_2]$ ⟹ orden 1 en cada reactivo, orden total <b>2</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Predicción experimental</div>
+            <p class="porque"><b>¿Por qué?</b> $k_{exp}$ se identifica con $k_1$.</p>
+            <p>El experimento debería dar:</p>
+<ul>
+  <li>Orden 1 al duplicar [NO$_2$] (manteniendo [F$_2$]).</li>
+  <li>Orden 1 al duplicar [F$_2$].</li>
+  <li>Constante $k_{exp}=k_1$.</li>
+</ul>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$v = k_1[\text{NO}_2][\text{F}_2]$. Mecanismo coherente con orden 2.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Experimentalmente, esta reacción muestra orden 1+1 = 2 a temperaturas moderadas, validando el mecanismo. Si la cinética observada fuera de orden 2 en NO$_2$, el mecanismo propuesto sería falso. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex6">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 6</div>
+        <div class="ex-title">Relación entre $K_p$ y $K_c$</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción $\text{N}_2(g)+3\,\text{H}_2(g)\rightleftharpoons 2\,\text{NH}_3(g)$, la constante $K_c$ a 500 K vale $0{,}65$. Calcular $K_p$ a la misma temperatura. $R=0{,}082$ atm·L/(mol·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $K_p \approx 3{,}9\cdot 10^{-4}$ atm$^{-2}$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$K_c$</td><td>0,65</td></tr>
+            <tr><td>$T$</td><td>500 K</td></tr>
+            <tr><td>$\Delta n_{gas}$</td><td>$2-(1+3)=-2$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Conversión $K_c \leftrightarrow K_p$</div>
+            
+<p>Para reacciones gaseosas, $K_p$ usa presiones parciales y $K_c$ concentraciones. Como $p_i = c_i RT$ para gas ideal:</p>
+$$K_p = K_c\,(RT)^{\Delta n_{gas}}$$
+<p>$\Delta n_{gas}$ = (moles gas productos) − (moles gas reactivos). Si $\Delta n_{gas}=0$, $K_p=K_c$. Si $\Delta n_{gas}<0$, $K_p<K_c$.</p>
+<p>Las unidades de $RT$ deben ser coherentes con las usadas para $p$ y $c$ (típicamente atm·L/(mol·K) si $p$ en atm y $c$ en mol/L).</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calcular $RT$</div>
+            <p class="porque"><b>¿Por qué?</b> Con $R$ en atm·L/(mol·K).</p>
+            $$RT = 0{,}082\cdot 500=41{,}0\ \text{atm·L/mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Aplicar la fórmula</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta n_{gas}=-2$.</p>
+            $$K_p = K_c\cdot(RT)^{-2}=\dfrac{0{,}65}{(41{,}0)^2}=\dfrac{0{,}65}{1\,681}=\boxed{3{,}87\cdot 10^{-4}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$K_p \approx 3{,}9\cdot 10^{-4}$ — mucho menor que $K_c$ porque hay contracción de gas y se multiplica por $(RT)^{-2}$.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Cuando $\Delta n_{gas}<0$, $K_p$ disminuye por mayor presión exigida para alcanzar el equilibrio. Esto explica por qué la síntesis de amoniaco se favorece a altas presiones (~200 atm en proceso Haber-Bosch). ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex7">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 7</div>
+        <div class="ex-title">Cociente $Q$ vs $K$: predecir el sentido</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción $\text{H}_2(g)+\text{I}_2(g)\rightleftharpoons 2\,\text{HI}(g)$, $K_c=54{,}3$ a 425 °C. En un recipiente se introducen $[\text{H}_2]=0{,}50$ M, $[\text{I}_2}]=0{,}50$ M y $[\text{HI}]=4{,}0$ M. ¿En qué sentido evolucionará el sistema hasta alcanzar el equilibrio?</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $Q=64>K$ ⟹ retrocede hacia reactivos (descompone HI).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$K_c$</td><td>54,3</td></tr>
+            <tr><td>$[\text{H}_2]_0$</td><td>0,50 M</td></tr>
+            <tr><td>$[\text{I}_2]_0$</td><td>0,50 M</td></tr>
+            <tr><td>$[\text{HI}]_0$</td><td>4,0 M</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Comparación $Q$ con $K$</div>
+            
+<p>El <b>cociente de reacción</b> $Q$ tiene la misma forma matemática que $K$ pero se evalúa con las concentraciones <em>actuales</em>, sin importar si el sistema está o no en equilibrio:</p>
+$$Q = \dfrac{[HI]^2}{[H_2][I_2]}$$
+<p>Comparándolo con $K$:</p>
+<ul>
+  <li>$Q < K$: faltan productos ⟹ avanza hacia productos (→).</li>
+  <li>$Q = K$: equilibrio.</li>
+  <li>$Q > K$: sobran productos ⟹ retrocede hacia reactivos (←).</li>
+</ul>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calcular $Q$</div>
+            <p class="porque"><b>¿Por qué?</b> Sustituyo en la fórmula.</p>
+            $$Q = \dfrac{(4{,}0)^2}{0{,}50\cdot 0{,}50}=\dfrac{16}{0{,}25}=64$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Comparar con $K$</div>
+            <p class="porque"><b>¿Por qué?</b> $Q=64$, $K=54{,}3$.</p>
+            <p>$Q > K$ ⟹ hay <b>exceso de productos</b> respecto del equilibrio. El sistema descompondrá HI para volver al equilibrio.</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$Q=64>K=54{,}3$ ⟹ el sistema evolucionará <b>hacia la izquierda</b>: parte del HI se descompone en H$_2$ + I$_2$.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En el equilibrio: $[H_2]_{eq}=[I_2]_{eq}=0{,}50+x$, $[HI]_{eq}=4{,}0-2x$. Resolviendo $K_c=54{,}3$ se obtiene $x\approx 0{,}068$ ⟹ HI baja a 3,86 M (consistente con la retroceso). ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex8">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 8</div>
+        <div class="ex-title">Le Châtelier cualitativo: análisis sistemático</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para el equilibrio exotérmico $2\,\text{SO}_2(g)+\text{O}_2(g)\rightleftharpoons 2\,\text{SO}_3(g)$, predecir cualitativamente cómo afecta al equilibrio cada una de las siguientes perturbaciones: (a) añadir SO$_2$; (b) eliminar SO$_3$; (c) aumentar la presión total comprimiendo; (d) subir la temperatura; (e) añadir un catalizador.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) →; (b) →; (c) →; (d) ←; (e) sin efecto sobre la posición.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Reacción</td><td>exotérmica</td></tr>
+            <tr><td>$\Delta n_{gas}$</td><td>$2-3=-1$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="paso">
+            <div class="paso-titulo">Análisis de cada caso</div>
+            <p class="porque"><b>¿Por qué?</b> Aplicar el principio de Le Châtelier.</p>
+            <table class="tdatos">
+<tr><th>Perturbación</th><th>Sistema reacciona</th><th>Sentido</th></tr>
+<tr><td>(a) Añadir SO$_2$</td><td>Consumir el extra de SO$_2$</td><td>→ (más SO$_3$)</td></tr>
+<tr><td>(b) Eliminar SO$_3$</td><td>Reponer SO$_3$</td><td>→</td></tr>
+<tr><td>(c) ↑$p$ comprimiendo</td><td>Reducir nº de moles gas</td><td>→ (productos: 2 mol gas vs 3)</td></tr>
+<tr><td>(d) ↑$T$</td><td>Absorber calor (endo dirección)</td><td>← (la inversa es endotérmica)</td></tr>
+<tr><td>(e) Catalizador</td><td>Acelera ambas direcciones por igual</td><td>Sin desplazar (acorta el tiempo, no el equilibrio)</td></tr>
+</table>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">(a) → · (b) → · (c) → · (d) ← · (e) sin efecto.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Coherente con la práctica industrial: el proceso del SO$_3$ (fabricación de H$_2$SO$_4$) opera a ≤450 °C (no demasiado para no perjudicar el equilibrio) y con catalizador V$_2$O$_5$ para acelerar sin cambiar la posición del equilibrio. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex9">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 9</div>
+        <div class="ex-title">Equilibrio heterogéneo: descomposición del CaCO$_3$</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para el equilibrio $\text{CaCO}_3(s)\rightleftharpoons\text{CaO}(s)+\text{CO}_2(g)$, $K_p=0{,}1$ atm a 850 °C. En un recipiente cerrado de 10 L que contiene CaCO$_3$ y CaO sólidos, calcular: (a) la presión parcial de CO$_2$ en el equilibrio; (b) los moles de CO$_2$. $R=0{,}082$ atm·L/(mol·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $p_{CO_2}=0{,}1$ atm; (b) $n=0{,}0108$ mol.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$K_p$</td><td>0,1 atm</td></tr>
+            <tr><td>$T$</td><td>1 123 K</td></tr>
+            <tr><td>$V$</td><td>10 L</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Sólidos y líquidos puros NO entran en $K$</div>
+            
+<p>En un equilibrio heterogéneo (involucra varias fases), los sólidos y líquidos <em>puros</em> tienen actividad constante (≈ 1) y <b>no aparecen en la expresión de $K$</b>. Solo gases y especies en disolución cuentan.</p>
+<p>Para esta reacción, la única especie no-sólida es CO$_2$(g), así que:</p>
+$$K_p = p_{CO_2}$$
+<p>Por tanto, la presión de CO$_2$ en el equilibrio es independiente de las cantidades de CaCO$_3$ y CaO (siempre que ambos estén presentes).</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Presión parcial de CO$_2$</div>
+            <p class="porque"><b>¿Por qué?</b> Igualdad directa.</p>
+            $$p_{CO_2}=K_p=0{,}1\ \text{atm}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Moles de CO$_2$</div>
+            <p class="porque"><b>¿Por qué?</b> $n=pV/RT$.</p>
+            $$n=\dfrac{0{,}1\cdot 10}{0{,}082\cdot 1\,123}=\dfrac{1{,}0}{92{,}1}=0{,}01086\ \text{mol}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$p_{CO_2}=0{,}1$ atm · $n_{CO_2}\approx 0{,}011$ mol.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Si añadimos más CaCO$_3$ o CaO, el equilibrio NO cambia: $p_{CO_2}$ se mantiene en 0,1 atm. Solo cambiar $T$ o el volumen del recipiente afecta $p_{CO_2}$. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex10">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 10</div>
+        <div class="ex-title">Catalizador: efecto sobre $E_a$ y $k$</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>La descomposición del H$_2$O$_2$ tiene una energía de activación de <b>75 kJ/mol</b> sin catalizador. Con la enzima catalasa, $E_a$ baja a <b>8 kJ/mol</b>. Calcular en cuántas veces se acelera la reacción a 25 °C.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Factor $\sim 1{,}3\cdot 10^{12}$ — un billón de veces más rápida.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$E_a$ sin catalizador</td><td>75 000 J/mol</td></tr>
+            <tr><td>$E_a$ con catalasa</td><td>8 000 J/mol</td></tr>
+            <tr><td>$T$</td><td>298 K</td></tr>
+            <tr><td>$R$</td><td>8,314 J/(mol·K)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Razón de constantes según Arrhenius</div>
+            
+<p>Si suponemos que el factor preexponencial $A$ es similar en ambos casos (cosa habitual cuando el catalizador no cambia drásticamente la geometría del estado de transición), la razón de velocidades es:</p>
+$$\dfrac{k_{cat}}{k_{nc}}=\exp\!\left(\dfrac{E_{a,nc}-E_{a,cat}}{RT}\right)$$
+<p>Como el exponente puede ser grande, factores de aceleración de 10⁶-10¹² son comunes en catálisis enzimática.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Diferencia de $E_a$ y exponente</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta E_a / RT$.</p>
+            $$\Delta E_a = 75\,000-8\,000=67\,000\ \text{J/mol}$$
+$$\dfrac{\Delta E_a}{RT}=\dfrac{67\,000}{8{,}314\cdot 298}=27{,}05$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Razón de velocidades</div>
+            <p class="porque"><b>¿Por qué?</b> Exponencial.</p>
+            $$\dfrac{k_{cat}}{k_{nc}}=e^{27{,}05}=5{,}6\cdot 10^{11}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Con catalasa la reacción es <b>~$5\cdot 10^{11}$ veces más rápida</b> — pasa de durar años a milisegundos.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Esto explica por qué nuestras células pueden eliminar peróxido de hidrógeno tóxico instantáneamente: la catalasa es uno de los catalizadores más rápidos conocidos, con número de recambio (turnover) ~10⁶ s⁻¹. ✓</p>
         </div>
       </div>
 

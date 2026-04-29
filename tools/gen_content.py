@@ -6,11 +6,18 @@ Genera HTML con el mismo skin que tema5 (referencia).
 
 Uso: python tools/gen_content.py
 """
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TEORIA = ROOT / "teoria"
 EJ = ROOT / "ejercicios"
+
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from ejercicios_extra import EJERCICIOS_EXTRA
+except ImportError:
+    EJERCICIOS_EXTRA = {}
 
 # ─────────────────────────────────────────────────────────────────────
 # CONTENIDO POR TEMA — Un dict gigante con todo
@@ -1910,13 +1917,16 @@ def render_teoria(n, data):
 
 
 def render_ejercicios(n, data):
+    extra = EJERCICIOS_EXTRA.get(n, [])
+    todos_ej = list(data["ej"]) + list(extra)
+
     jumps = "\n".join(
         f'    <a class="jl" href="#ex{i+1}">Ej {i+1} — {ej["title"]}</a>'
-        for i, ej in enumerate(data["ej"])
+        for i, ej in enumerate(todos_ej)
     )
 
     ejs_html = []
-    for i, ej in enumerate(data["ej"]):
+    for i, ej in enumerate(todos_ej):
         idx = i + 1
         datos_rows = "\n".join(
             f"            <tr><td>{lbl}</td><td>{val}</td></tr>"
@@ -1930,6 +1940,25 @@ def render_ejercicios(n, data):
           </div>"""
             for p in ej["pasos"]
         )
+        demo_html = ""
+        if ej.get("demo"):
+            demo_html = f"""          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — {ej["demo"]["title"]}</div>
+            {ej["demo"]["body"]}
+          </div>
+
+"""
+        verif_html = ""
+        if ej.get("verificacion"):
+            verif_html = f"""
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>{ej["verificacion"]}</p>
+        </div>
+      </div>"""
         open_class = " open" if i == 0 else ""
         ejs_html.append(f"""  <article class="ex{open_class}" id="ex{idx}">
     <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
@@ -1964,28 +1993,14 @@ def render_ejercicios(n, data):
         </button>
         <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — {ej["demo"]["title"]}</div>
-            {ej["demo"]["body"]}
-          </div>
-
-{pasos_html}
+{demo_html}{pasos_html}
 
           <div class="resf">
             <div class="resf-lbl">Resultado</div>
             <div class="resf-val">{ej["resultado"]}</div>
           </div>
         </div>
-      </div>
-
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>{ej["verificacion"]}</p>
-        </div>
-      </div>
+      </div>{verif_html}
 
     </div>
   </article>""")

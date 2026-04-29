@@ -85,6 +85,13 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
     <a class="jl" href="#ex1">Ej 1 — Ley de los gases ideales: hallar volumen</a>
     <a class="jl" href="#ex2">Ej 2 — Mezcla de gases: ley de Dalton</a>
     <a class="jl" href="#ex3">Ej 3 — Calor para fundir y calentar hielo</a>
+    <a class="jl" href="#ex4">Ej 4 — Densidad de un gas ideal</a>
+    <a class="jl" href="#ex5">Ej 5 — Ley de Graham: efusión de gases</a>
+    <a class="jl" href="#ex6">Ej 6 — Gas real: comparación con la ecuación de van der Waals</a>
+    <a class="jl" href="#ex7">Ej 7 — Clausius-Clapeyron: presión de vapor a otra temperatura</a>
+    <a class="jl" href="#ex8">Ej 8 — Calor para vaporizar agua</a>
+    <a class="jl" href="#ex9">Ej 9 — Mezcla de gases húmedos: ley de Dalton con vapor de agua</a>
+    <a class="jl" href="#ex10">Ej 10 — Diagrama de fases: identificar la fase</a>
   </div>
 
   <article class="ex open" id="ex1">
@@ -149,7 +156,6 @@ $$\dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -230,7 +236,6 @@ $$p_{O_2}=1\cdot 2{,}46=2{,}46\ \text{atm}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -320,13 +325,531 @@ $$p_{O_2}=1\cdot 2{,}46=2{,}46\ \text{atm}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
           <p>Comprobación de proporción: con la misma masa, fundir hielo (16,7 kJ) equivale a calentar agua líquida 80 K, mucho más que los 35 K reales del proceso. Esto refleja el alto $L_f$ del agua. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex4">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 4</div>
+        <div class="ex-title">Densidad de un gas ideal</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la densidad del <b>O$_2$</b> a 25 °C y 1 atm. ¿Y a 100 °C? Datos: $M_{O_2}=32{,}0$ g/mol, $R=0{,}082$ atm·L/(mol·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\rho(25°\text{C})=1{,}308$ g/L; $\rho(100°\text{C})=1{,}045$ g/L.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$M_{O_2}$</td><td>32,0 g/mol</td></tr>
+            <tr><td>$T_1$, $T_2$</td><td>298 K; 373 K</td></tr>
+            <tr><td>$p$</td><td>1 atm</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Densidad a partir de $pV=nRT$</div>
+            
+<p>Para un gas ideal, $pV=nRT$. Si llamamos $m$ a la masa, $n=m/M$, así que:</p>
+$$pV = \dfrac{m}{M}RT \implies \dfrac{m}{V}=\dfrac{pM}{RT}$$
+<p>Pero $m/V=\rho$ es justamente la densidad:</p>
+$$\boxed{\;\rho=\dfrac{pM}{RT}\;}$$
+<p>Esto muestra que la densidad de un gas <b>aumenta</b> con la presión y disminuye con la temperatura, en contraste con sólidos y líquidos donde la dependencia es mucho más débil.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Densidad a 25 °C</div>
+            <p class="porque"><b>¿Por qué?</b> Sustitución directa.</p>
+            $$\rho_1 = \dfrac{1\cdot 32{,}0}{0{,}082\cdot 298}=\dfrac{32{,}0}{24{,}44}=1{,}308\ \text{g/L}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Densidad a 100 °C</div>
+            <p class="porque"><b>¿Por qué?</b> Misma fórmula, $T_2=373$ K.</p>
+            $$\rho_2 = \dfrac{32{,}0}{0{,}082\cdot 373}=\dfrac{32{,}0}{30{,}59}=1{,}045\ \text{g/L}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\rho_{25°C}=1{,}308$ g/L · $\rho_{100°C}=1{,}045$ g/L. La densidad del gas baja al subir $T$.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Razón inversa: $\rho_1/\rho_2=T_2/T_1=373/298=1{,}252$. Comprobación: $1{,}308/1{,}045=1{,}252$ ✓ — coincide exactamente.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex5">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 5</div>
+        <div class="ex-title">Ley de Graham: efusión de gases</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>El amoniaco (NH$_3$) y el cloruro de hidrógeno (HCl) se introducen simultáneamente en los extremos opuestos de un tubo de 1,00 m de largo. Determinar a qué distancia del extremo del NH$_3$ se forma el anillo blanco de NH$_4$Cl(s) cuando ambos gases se encuentran. Datos: $M_{NH_3}=17$, $M_{HCl}=36{,}5$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Distancia desde el NH$_3$ ≈ 59 cm.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Longitud del tubo</td><td>$L=1{,}00$ m</td></tr>
+            <tr><td>$M_{NH_3}$</td><td>17 g/mol</td></tr>
+            <tr><td>$M_{HCl}$</td><td>36,5 g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Ley de Graham</div>
+            
+<p>La <b>ley de Graham</b> establece que la velocidad de efusión (o difusión) de un gas es inversamente proporcional a la raíz cuadrada de su masa molar:</p>
+$$\dfrac{v_A}{v_B}=\sqrt{\dfrac{M_B}{M_A}}$$
+<p>Físicamente: a la misma temperatura, todos los gases tienen la misma energía cinética media $\tfrac12 M v^2$, así que el más ligero se mueve más rápido.</p>
+<p>Si dos gases parten al mismo tiempo desde extremos opuestos de un tubo de longitud $L$, se encontrarán cuando $d_A + d_B = L$, con $d_A/d_B = v_A/v_B$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Razón de velocidades</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico Graham con $A=$NH$_3$, $B=$HCl.</p>
+            $$\dfrac{v_{NH_3}}{v_{HCl}}=\sqrt{\dfrac{M_{HCl}}{M_{NH_3}}}=\sqrt{\dfrac{36{,}5}{17}}=\sqrt{2{,}147}=1{,}465$$
+<p>El NH$_3$ es ~1,5 veces más rápido por ser más ligero.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Posición del encuentro</div>
+            <p class="porque"><b>¿Por qué?</b> $d_{NH_3} + d_{HCl} = 1{,}00$ m, con $d_{NH_3}/d_{HCl}=1{,}465$.</p>
+            $$d_{NH_3} = 1{,}465\,d_{HCl}\implies 1{,}465\,d_{HCl}+d_{HCl}=1{,}00$$
+$$d_{HCl} = \dfrac{1{,}00}{2{,}465}=0{,}4057\ \text{m}$$
+$$d_{NH_3} = 1{,}00 - 0{,}406 = 0{,}594\ \text{m}\approx \boxed{59{,}4\ \text{cm}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">El anillo blanco de NH$_4$Cl(s) aparece a <b>59,4 cm</b> del extremo del NH$_3$ (40,6 cm del extremo del HCl).</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Razón experimental medida en laboratorio: $\sim 60$ cm. ✓ Pequeñas desviaciones por convección y geometría real del tubo.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex6">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 6</div>
+        <div class="ex-title">Gas real: comparación con la ecuación de van der Waals</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la presión de <b>2,0 mol</b> de CO$_2$ encerrados en <b>1,0 L</b> a <b>300 K</b>: (a) suponiendo gas ideal; (b) usando la ecuación de van der Waals. Constantes para CO$_2$: $a=3{,}59\ \text{atm·L}^2/\text{mol}^2$, $b=0{,}0427$ L/mol. $R=0{,}082$ atm·L/(mol·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $p_{ideal}=49{,}2$ atm; (b) $p_{vdW}=39{,}3$ atm.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$n$</td><td>2,0 mol</td></tr>
+            <tr><td>$V$</td><td>1,0 L</td></tr>
+            <tr><td>$T$</td><td>300 K</td></tr>
+            <tr><td>$a, b$ (CO$_2$)</td><td>3,59 atm·L²/mol²; 0,0427 L/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Por qué van der Waals corrige al ideal</div>
+            
+<p>La ecuación de gas ideal supone que las moléculas son puntos sin interacción. Van der Waals añade dos correcciones físicas:</p>
+<ul>
+  <li><b>Volumen propio</b>: las moléculas ocupan espacio, así que el volumen "libre" disponible es $V-nb$ en vez de $V$.</li>
+  <li><b>Atracciones</b>: las moléculas se atraen ligeramente, lo que reduce la presión real respecto al ideal en una cantidad $an^2/V^2$.</li>
+</ul>
+$$\left(p+\dfrac{an^2}{V^2}\right)(V-nb)=nRT \implies p=\dfrac{nRT}{V-nb}-\dfrac{an^2}{V^2}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Presión ideal</div>
+            <p class="porque"><b>¿Por qué?</b> $p=nRT/V$.</p>
+            $$p_{ideal}=\dfrac{2{,}0\cdot 0{,}082\cdot 300}{1{,}0}=49{,}2\ \text{atm}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Presión van der Waals</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico la fórmula con corrección.</p>
+            $$p_{vdW}=\dfrac{2{,}0\cdot 0{,}082\cdot 300}{1{,}0-2{,}0\cdot 0{,}0427}-\dfrac{3{,}59\cdot (2{,}0)^2}{(1{,}0)^2}$$
+$$p_{vdW}=\dfrac{49{,}2}{0{,}9146}-14{,}36=53{,}79-14{,}36=39{,}43\ \text{atm}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Diferencia y factor de compresibilidad</div>
+            <p class="porque"><b>¿Por qué?</b> $Z=p_{vdW}V/(nRT)$.</p>
+            $$Z=\dfrac{39{,}43\cdot 1{,}0}{2{,}0\cdot 0{,}082\cdot 300}=0{,}80$$
+<p>$Z<1$ ⟹ a esta densidad y $T$ <b>dominan las atracciones</b> sobre el efecto del volumen propio.</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$p_{ideal}=49{,}2$ atm vs $p_{vdW}=39{,}3$ atm. Diferencia ≈ 20%.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>A presiones más bajas ($p<5$ atm) y/o temperaturas más altas, $Z\to 1$ y los modelos coinciden. La discrepancia aquí es grande porque la densidad es alta (2 mol en 1 L = $\rho\approx 88$ g/L). ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex7">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 7</div>
+        <div class="ex-title">Clausius-Clapeyron: presión de vapor a otra temperatura</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>El agua tiene una presión de vapor de <b>23,8 mmHg a 25 °C</b>. Calcular su presión de vapor a <b>50 °C</b> usando la ecuación de Clausius-Clapeyron. $\Delta H_{vap}=44{,}0$ kJ/mol, $R=8{,}314$ J/(mol·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $p_2 \approx 92{,}2$ mmHg.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$T_1$</td><td>298 K</td></tr>
+            <tr><td>$p_1$</td><td>23,8 mmHg</td></tr>
+            <tr><td>$T_2$</td><td>323 K</td></tr>
+            <tr><td>$\Delta H_{vap}$</td><td>44 000 J/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Clausius-Clapeyron integrada</div>
+            
+<p>Integrando la ecuación diferencial de Clausius-Clapeyron entre dos temperaturas, suponiendo $\Delta H_{vap}$ constante en el rango:</p>
+$$\ln\!\dfrac{p_2}{p_1}=-\dfrac{\Delta H_{vap}}{R}\!\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)$$
+<p>Predice cómo crece exponencialmente la presión de vapor con $T$. Para el agua, una subida de 25 K casi cuatriplica $p_v$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Diferencia $1/T$</div>
+            <p class="porque"><b>¿Por qué?</b> Cuidado con el signo y unidades.</p>
+            $$\dfrac{1}{T_2}-\dfrac{1}{T_1}=\dfrac{1}{323}-\dfrac{1}{298}=3{,}096\cdot 10^{-3}-3{,}356\cdot 10^{-3}=-2{,}600\cdot 10^{-4}\ \text{K}^{-1}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Logaritmo del cociente</div>
+            <p class="porque"><b>¿Por qué?</b> Sustituyendo en la fórmula.</p>
+            $$\ln\!\dfrac{p_2}{p_1}=-\dfrac{44\,000}{8{,}314}\cdot(-2{,}600\cdot 10^{-4})=1{,}376$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Despejar $p_2$</div>
+            <p class="porque"><b>¿Por qué?</b> Exponencial.</p>
+            $$\dfrac{p_2}{p_1}=e^{1{,}376}=3{,}96$$
+$$p_2 = 23{,}8\cdot 3{,}96=\boxed{94{,}2\ \text{mmHg}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$p_2 \approx 94$ mmHg.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valor experimental tabulado: 92,5 mmHg a 50 °C. La pequeña diferencia (~2%) viene de suponer $\Delta H_{vap}$ rigurosamente constante (en realidad disminuye un poco con $T$). ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex8">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 8</div>
+        <div class="ex-title">Calor para vaporizar agua</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el calor necesario para vaporizar <b>500 g de agua a 100 °C</b> a presión atmosférica. ¿Qué energía absorbe (en %) frente a la necesaria para calentar la misma agua de 0 °C a 100 °C? Datos: $L_v=2\,260$ J/g; $c_a=4{,}18$ J/(g·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $Q_{vap}=1\,130$ kJ. Es 5,4 veces más que calentarla de 0 a 100 °C.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa</td><td>500 g</td></tr>
+            <tr><td>$L_v$</td><td>2 260 J/g</td></tr>
+            <tr><td>$c_a$</td><td>4,18 J/(g·K)</td></tr>
+            <tr><td>$\Delta T_{0\to 100}$</td><td>100 K</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calor de vaporización</div>
+            <p class="porque"><b>¿Por qué?</b> $Q=m\,L_v$.</p>
+            $$Q_{vap}=500\cdot 2\,260=1{,}13\cdot 10^{6}\ \text{J}=\boxed{1\,130\ \text{kJ}}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calor para calentar de 0 a 100 °C</div>
+            <p class="porque"><b>¿Por qué?</b> $Q=mc\Delta T$.</p>
+            $$Q_{calent}=500\cdot 4{,}18\cdot 100=209\,000\ \text{J}=209\ \text{kJ}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Razón</div>
+            <p class="porque"><b>¿Por qué?</b> Comparar las dos energías.</p>
+            $$\dfrac{Q_{vap}}{Q_{calent}}=\dfrac{1\,130}{209}=5{,}41$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$Q_{vap}=1\,130$ kJ — <b>5,4 veces más</b> que calentar la misma agua de 0 a 100 °C.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Esto explica por qué la transpiración es tan eficaz para refrigerar: vaporizar una pequeña cantidad de sudor disipa mucha más energía que calentar otros tantos gramos de agua corporal varios grados. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex9">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 9</div>
+        <div class="ex-title">Mezcla de gases húmedos: ley de Dalton con vapor de agua</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Se recoge <b>O$_2$</b> sobre agua a <b>22 °C</b>. La presión total leída en el barómetro es <b>755 mmHg</b>. La presión de vapor del agua a 22 °C es <b>20 mmHg</b>. Calcular el volumen de O$_2$ <b>seco</b> en condiciones normales (0 °C, 760 mmHg) si el gas húmedo recogido ocupa 250 mL.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $V_{seco,CN}=224$ mL.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$V$ húmedo</td><td>250 mL</td></tr>
+            <tr><td>$T$</td><td>22 °C = 295 K</td></tr>
+            <tr><td>$p_{total}$</td><td>755 mmHg</td></tr>
+            <tr><td>$p_{H_2O}$ a 22 °C</td><td>20 mmHg</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Recogida sobre agua</div>
+            
+<p>Cuando se recoge un gas burbujeándolo a través de agua, el gas final es una <b>mezcla</b>: el O$_2$ original más el vapor de agua que se ha incorporado. Por la ley de Dalton:</p>
+$$p_{total} = p_{O_2}+p_{H_2O}\implies p_{O_2}=p_{total}-p_{H_2O}$$
+<p>Para hallar el volumen del gas seco en condiciones normales, aplicamos la ley general $p_1V_1/T_1=p_2V_2/T_2$ usando como $p_1$ la <em>presión parcial</em> del O$_2$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Presión parcial del O$_2$ seco</div>
+            <p class="porque"><b>¿Por qué?</b> Restando la presión de vapor.</p>
+            $$p_{O_2}=755-20=735\ \text{mmHg}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Volumen del O$_2$ a CN</div>
+            <p class="porque"><b>¿Por qué?</b> Ley combinada de los gases.</p>
+            $$V_{CN}=V_1\cdot\dfrac{p_1}{p_{CN}}\cdot\dfrac{T_{CN}}{T_1}=250\cdot\dfrac{735}{760}\cdot\dfrac{273}{295}$$
+$$V_{CN}=250\cdot 0{,}9671\cdot 0{,}9254=\boxed{224\ \text{mL}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$V_{O_2,\text{seco,CN}}\approx 224$ mL — el ~10% menor que el volumen húmedo medido por la presencia de vapor y diferencia de temperatura.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Coherencia: corregir la presión de vapor reduce un ~3%, y pasar de 22 °C a 0 °C reduce un ~7%. Producto $\approx 10\%$ ✓ — coincide con la diferencia entre 250 y 224 mL.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex10">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 10</div>
+        <div class="ex-title">Diagrama de fases: identificar la fase</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para el agua, indicar en qué fase (sólido, líquido, gas, supercrítico, equilibrio) se encuentra una muestra en cada uno de estos puntos: (a) 50 °C y 1 atm; (b) 0,01 °C y 4,58 mmHg; (c) 200 °C y 0,1 atm; (d) 400 °C y 250 atm. Datos: punto triple = (0,01 °C; 4,58 mmHg); punto crítico = (374 °C; 218 atm).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) líquido; (b) punto triple (las 3 fases coexisten); (c) gas; (d) supercrítico.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Punto triple</td><td>0,01 °C; 4,58 mmHg</td></tr>
+            <tr><td>Punto crítico</td><td>374 °C; 218 atm</td></tr>
+            <tr><td>$p$ atmosférica</td><td>1 atm = 760 mmHg</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="paso">
+            <div class="paso-titulo">Análisis caso por caso</div>
+            <p class="porque"><b>¿Por qué?</b> Comparo $T$ y $p$ con los puntos clave.</p>
+            <table class="tdatos">
+<tr><th>Caso</th><th>$T$, $p$</th><th>Posición</th><th>Fase</th></tr>
+<tr><td>(a)</td><td>50 °C, 1 atm</td><td>Por encima de fusión, debajo de ebullición</td><td>Líquido</td></tr>
+<tr><td>(b)</td><td>0,01 °C, 4,58 mmHg</td><td>Justo en el punto triple</td><td>Sólido + líquido + gas en equilibrio</td></tr>
+<tr><td>(c)</td><td>200 °C, 0,1 atm</td><td>$p_v$ del agua a 200 °C ≈ 15 atm $> 0{,}1$ atm</td><td>Gas (vapor)</td></tr>
+<tr><td>(d)</td><td>400 °C, 250 atm</td><td>$T>374$ °C y $p>218$ atm</td><td>Supercrítico</td></tr>
+</table>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">(a) líquido · (b) <b>punto triple</b>: las tres fases coexisten en equilibrio · (c) gas · (d) <b>fluido supercrítico</b> (más allá del punto crítico, no se distingue líquido de gas).</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En (d), el agua supercrítica es un disolvente potente usado industrialmente para descafeinar café (con CO$_2$ supercrítico), oxidar residuos peligrosos y generación geotérmica. ✓</p>
         </div>
       </div>
 

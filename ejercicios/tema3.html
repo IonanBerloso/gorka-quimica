@@ -85,6 +85,13 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
     <a class="jl" href="#ex1">Ej 1 — Estructura de Lewis y geometría VSEPR del NH$_3$</a>
     <a class="jl" href="#ex2">Ej 2 — Energía de red por la fórmula de Born-Landé</a>
     <a class="jl" href="#ex3">Ej 3 — Identificar fuerzas intermoleculares dominantes</a>
+    <a class="jl" href="#ex4">Ej 4 — Estructura de Lewis del ion carbonato (resonancia)</a>
+    <a class="jl" href="#ex5">Ej 5 — Geometría e hibridación de SF$_6$ y PCl$_5$</a>
+    <a class="jl" href="#ex6">Ej 6 — Polaridad de moléculas tetraédricas</a>
+    <a class="jl" href="#ex7">Ej 7 — Energía de enlace en una reacción de combustión</a>
+    <a class="jl" href="#ex8">Ej 8 — Ciclo de Born-Haber simplificado para LiF</a>
+    <a class="jl" href="#ex9">Ej 9 — Tipo de sólido y propiedades físicas</a>
+    <a class="jl" href="#ex10">Ej 10 — Comparación de fuerzas intermoleculares en isómeros</a>
   </div>
 
   <article class="ex open" id="ex1">
@@ -156,7 +163,6 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -234,7 +240,6 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -317,13 +322,549 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
           <p>El H$_2$O puede formar 2 puentes de H por molécula (los dos H y los dos pares libres del O) → red 3D extensa → mayor $T_{eb}$. ✓ El HF solo aporta 1 H, por eso queda por debajo del metanol pese a tener mayor diferencia de electronegatividad.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex4">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 4</div>
+        <div class="ex-title">Estructura de Lewis del ion carbonato (resonancia)</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Determinar la estructura de Lewis del ion <b>CO$_3^{2-}$</b>, identificar las estructuras resonantes y determinar la geometría VSEPR del ion. ¿Es polar?</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> 3 estructuras resonantes equivalentes; geometría trigonal plana (120°); apolar por simetría.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$e^-$ valencia C</td><td>4</td></tr>
+            <tr><td>$e^-$ valencia O</td><td>6</td></tr>
+            <tr><td>Carga del ion</td><td>−2 (añade 2 e<sup>−</sup>)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Resonancia y deslocalización</div>
+            
+<p>Cuando una estructura de Lewis no puede dibujarse con un único patrón fijo de enlaces y pares, decimos que el sistema tiene <b>resonancia</b>: la realidad es una <em>superposición</em> (híbrido) de varias estructuras equivalentes.</p>
+<p>Conteo de electrones de valencia totales: $4 + 3\cdot 6 + 2 = 24$ e<sup>−</sup> (los 2 de la carga negativa cuentan).</p>
+<p>El C es central (menos electronegativo). Los 3 O lo rodean. Una de las uniones C–O es doble; las otras dos simples (con cargas formales en los O).</p>
+<p>Como los 3 O son equivalentes por simetría, hay <b>3 estructuras resonantes</b> que difieren solo en cuál es el doble enlace.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Estructuras resonantes</div>
+            <p class="porque"><b>¿Por qué?</b> El doble enlace puede estar en cualquiera de los 3 O.</p>
+            <p style="font-family:monospace;text-align:center;font-size:1.05em">
+[O−C(=O)−O]²⁻ ↔ [O=C(−O)−O]²⁻ ↔ [O−C(−O)=O]²⁻</p>
+<p>Las 3 estructuras son <b>equivalentes</b>: el ion real es un híbrido en el que cada enlace C–O tiene <b>orden de enlace 4/3</b> (intermedio entre simple y doble).</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Geometría VSEPR</div>
+            <p class="porque"><b>¿Por qué?</b> El C tiene 3 grupos de electrones (3 enlaces, sin pares libres).</p>
+            <p>3 dominios electrónicos sin pares libres ⟹ <b>geometría trigonal plana</b>, ángulos de 120°.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Polaridad</div>
+            <p class="porque"><b>¿Por qué?</b> Aunque cada enlace C–O es polar, los 3 dipolos están dispuestos a 120° y se cancelan vectorialmente.</p>
+            <p>Suma de dipolos = 0 ⟹ <b>el ion CO$_3^{2-}$ es apolar</b> (la carga sí es −2, pero no hay momento dipolar neto).</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">3 resonancias equivalentes · geometría <b>trigonal plana</b> (120°) · momento dipolar nulo (apolar por simetría).</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Las 3 distancias C–O en el CO$_3^{2-}$ se miden experimentalmente <b>iguales</b> (1,29 Å), intermedias entre el simple (1,43 Å) y el doble (1,20 Å). Confirma la deslocalización ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex5">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 5</div>
+        <div class="ex-title">Geometría e hibridación de SF$_6$ y PCl$_5$</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para las moléculas <b>SF$_6$</b> y <b>PCl$_5$</b>, determinar: (a) la estructura de Lewis; (b) la geometría VSEPR; (c) la hibridación del átomo central.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> SF$_6$: octaédrica, sp$^3$d$^2$. PCl$_5$: bipirámide trigonal, sp$^3$d.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$e^-$ valencia S</td><td>6</td></tr>
+            <tr><td>$e^-$ valencia P</td><td>5</td></tr>
+            <tr><td>$e^-$ valencia F, Cl</td><td>7 (cada uno)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Octeto expandido y hibridación con orbitales d</div>
+            
+<p>Los elementos del <b>tercer período en adelante</b> (P, S, Cl, Br, I…) pueden tener más de 8 e<sup>−</sup> en su capa de valencia ("octeto expandido") porque disponen de orbitales $d$ de su mismo nivel cuántico para acomodar electrones extra.</p>
+<p>La hibridación se obtiene mezclando 1 orbital $s$, 3 orbitales $p$ y los $d$ necesarios para alcanzar el número total de pares electrónicos:</p>
+<ul>
+  <li>5 pares ⟹ sp$^3$d (1+3+1 = 5 orbitales híbridos).</li>
+  <li>6 pares ⟹ sp$^3$d$^2$ (1+3+2 = 6).</li>
+</ul>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — SF$_6$</div>
+            <p class="porque"><b>¿Por qué?</b> S central, 6 enlaces S–F. Conteo: $6+6\cdot 7=48$ e<sup>−</sup> de valencia. 6 pares enlazantes en S.</p>
+            <p>Geometría VSEPR: 6 dominios electrónicos, sin pares libres ⟹ <b>octaédrica</b>, ángulos 90°.</p>
+<p>Hibridación del S: 6 orbitales híbridos ⟹ <b>sp$^3$d$^2$</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — PCl$_5$</div>
+            <p class="porque"><b>¿Por qué?</b> P central, 5 enlaces P–Cl. Conteo: $5+5\cdot 7=40$ e<sup>−</sup>. 5 pares enlazantes en P.</p>
+            <p>Geometría VSEPR: 5 dominios electrónicos, sin pares libres ⟹ <b>bipirámide trigonal</b>, ángulos 90° (axial-ecuatorial) y 120° (ecuatorial-ecuatorial).</p>
+<p>Hibridación del P: 5 orbitales híbridos ⟹ <b>sp$^3$d</b>.</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">SF$_6$: octaédrica · sp$^3$d$^2$. PCl$_5$: bipirámide trigonal · sp$^3$d.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En PCl$_5$ los enlaces axiales son ligeramente más largos (2,12 Å) que los ecuatoriales (2,02 Å), lo que se explica por la mayor repulsión de los enlaces axiales con los 3 ecuatoriales (90° vs 120°). ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex6">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 6</div>
+        <div class="ex-title">Polaridad de moléculas tetraédricas</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>De las siguientes moléculas tetraédricas, determinar cuáles son <b>polares</b> y cuáles <b>apolares</b>: (a) CH$_4$; (b) CH$_3$Cl; (c) CCl$_4$; (d) CHCl$_3$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Apolares: CH$_4$, CCl$_4$. Polares: CH$_3$Cl, CHCl$_3$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Geometría</td><td>Todas son tetraédricas</td></tr>
+            <tr><td>Electronegatividades</td><td>$\chi_C=2{,}5$; $\chi_H=2{,}1$; $\chi_{Cl}=3{,}0$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Cancelación vectorial de dipolos</div>
+            
+<p>En una molécula tetraédrica AX$_4$ con los 4 X iguales, los 4 vectores dipolo C→X tienen igual módulo y apuntan en direcciones simétricas, lo que da una <b>suma vectorial nula</b> ⟹ molécula <b>apolar</b>.</p>
+<p>Si uno o más X son distintos, la simetría se rompe y aparece un momento dipolar neto. La regla práctica:</p>
+<ul>
+  <li>AX$_4$ (X iguales) ⟹ apolar.</li>
+  <li>AX$_3$Y, AX$_2$Y$_2$, AX Y$_3$ ⟹ polar.</li>
+</ul>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Análisis de cada molécula</div>
+            <p class="porque"><b>¿Por qué?</b> Comparar átomos enlazados al carbono.</p>
+            <table class="tdatos">
+<tr><th>Molécula</th><th>Sustituyentes</th><th>Polaridad</th></tr>
+<tr><td>CH$_4$</td><td>4 H iguales</td><td>Apolar (dipolos se cancelan)</td></tr>
+<tr><td>CH$_3$Cl</td><td>3 H + 1 Cl</td><td><b>Polar</b> (asimetría)</td></tr>
+<tr><td>CCl$_4$</td><td>4 Cl iguales</td><td>Apolar (dipolos se cancelan)</td></tr>
+<tr><td>CHCl$_3$</td><td>1 H + 3 Cl</td><td><b>Polar</b> (asimetría)</td></tr>
+</table>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Apolares: <b>CH$_4$, CCl$_4$</b>. Polares: <b>CH$_3$Cl, CHCl$_3$</b>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Momentos dipolares medidos: CH$_4$ = 0 D, CH$_3$Cl = 1,87 D, CCl$_4$ = 0 D, CHCl$_3$ = 1,04 D. ✓ Coincide con la predicción.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex7">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 7</div>
+        <div class="ex-title">Energía de enlace en una reacción de combustión</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Estimar el $\Delta H$ de la reacción $\text{CH}_4 + 2\,\text{O}_2 \to \text{CO}_2 + 2\,\text{H}_2\text{O}(g)$ usando energías de enlace medias (kJ/mol): $E(\text{C-H})=413$, $E(\text{O=O})=498$, $E(\text{C=O})=799$ (en CO$_2$), $E(\text{O-H})=463$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta H \approx -698$ kJ/mol — exotérmica.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Enlaces rotos</td><td>4 C–H + 2 O=O</td></tr>
+            <tr><td>Enlaces formados</td><td>2 C=O (en CO$_2$) + 4 O–H</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Romper consume, formar libera</div>
+            
+<p>Romper enlaces consume energía (entra al sistema) y formar enlaces libera energía (sale del sistema):</p>
+$$\Delta H \approx \sum E(\text{rotos}) - \sum E(\text{formados})$$
+<p>El signo se interpreta así: $\Delta H<0$ → la reacción libera calor (forma enlaces más fuertes que los rotos).</p>
+<p>Importante: las energías de enlace son <em>medias tabuladas</em>; el método da una <b>aproximación</b> con desviaciones de ~5-15 kJ/mol respecto al $\Delta H_f$ exacto.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Energía total de enlaces rotos</div>
+            <p class="porque"><b>¿Por qué?</b> 4 C–H del metano + 2 O=O del oxígeno.</p>
+            $$\sum E_{\text{rotos}} = 4\cdot 413 + 2\cdot 498 = 1\,652 + 996 = 2\,648\ \text{kJ}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Energía total de enlaces formados</div>
+            <p class="porque"><b>¿Por qué?</b> 2 enlaces C=O en CO$_2$ + 4 O–H en 2 H$_2$O.</p>
+            $$\sum E_{\text{form}} = 2\cdot 799 + 4\cdot 463 = 1\,598 + 1\,852 = 3\,450\ \text{kJ}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — $\Delta H$</div>
+            <p class="porque"><b>¿Por qué?</b> Diferencia con su signo.</p>
+            $$\Delta H = 2\,648 - 3\,450 = \boxed{-802\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta H \approx -802$ kJ/mol — combustión fuertemente exotérmica.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valor experimental con H$_2$O(g): $\Delta H = -802{,}3$ kJ/mol. La aproximación por energías de enlace ha sido casi exacta. ✓ (Para H$_2$O líquida hay que añadir el calor de condensación, $-44$ kJ/mol por mol de agua.)</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex8">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 8</div>
+        <div class="ex-title">Ciclo de Born-Haber simplificado para LiF</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la energía de red del LiF aplicando el ciclo de Born-Haber. Datos (kJ/mol): $\Delta H_f(\text{LiF})=-616$; sublimación Li(s)→Li(g) = $+159$; ionización Li(g)→Li$^+$(g) = $+520$; disociación ½ F$_2$(g)→F(g) = $+79$; afinidad electrónica F(g)→F$^-$(g) = $-328$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $U = -1\,046$ kJ/mol.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$\Delta H_f(\text{LiF})$</td><td>$-616$ kJ/mol</td></tr>
+            <tr><td>Sublimación Li</td><td>$+159$</td></tr>
+            <tr><td>Ionización Li</td><td>$+520$</td></tr>
+            <tr><td>Disociación ½F$_2$</td><td>$+79$</td></tr>
+            <tr><td>Afinidad electrónica F</td><td>$-328$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Ley de Hess aplicada al ciclo</div>
+            
+<p>El ciclo de Born-Haber descompone la formación del cristal iónico en pasos individuales medibles. Aplicando la ley de Hess al ciclo cerrado:</p>
+$$\Delta H_f = \Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE + U$$
+<p>Despejando la <b>energía de red</b> $U$ (única magnitud no medible directamente):</p>
+$$U = \Delta H_f - (\Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE)$$
+<p>$U$ es <em>siempre</em> negativa (la formación de la red es exotérmica).</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Suma de los pasos en fase gas</div>
+            <p class="porque"><b>¿Por qué?</b> Sublimación + ionización + disociación + afinidad.</p>
+            $$\Sigma = 159 + 520 + 79 + (-328) = 430\ \text{kJ/mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Despejar $U$</div>
+            <p class="porque"><b>¿Por qué?</b> $U = \Delta H_f - \Sigma$.</p>
+            $$U = -616 - 430 = \boxed{-1\,046\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$U(\text{LiF}) = -1\,046$ kJ/mol.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valor tabulado experimental: $U_{exp}(\text{LiF})=-1\,047$ kJ/mol. Coincidencia excelente. ✓ La alta energía de red confirma la fortaleza de la red iónica del LiF (el más estable de los haluros alcalinos).</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex9">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 9</div>
+        <div class="ex-title">Tipo de sólido y propiedades físicas</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Clasificar como sólido <b>iónico, molecular, covalente o metálico</b> a las siguientes sustancias y predecir si son: (i) buenos conductores eléctricos en estado sólido, (ii) solubles en agua. Sustancias: NaCl, diamante (C), cobre (Cu), hielo (H$_2$O), I$_2$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Ver tabla.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Tipos posibles</td><td>iónico · molecular · covalente · metálico</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Propiedades macro a partir del enlace micro</div>
+            
+<p>El tipo de sólido determina sus propiedades:</p>
+<table class="tdatos">
+<tr><th>Tipo</th><th>Conductor sólido</th><th>Soluble en H$_2$O</th></tr>
+<tr><td>Iónico</td><td>NO</td><td>SÍ (en general)</td></tr>
+<tr><td>Molecular</td><td>NO</td><td>Polar SÍ, apolar NO</td></tr>
+<tr><td>Covalente</td><td>NO (excepto grafito)</td><td>NO</td></tr>
+<tr><td>Metálico</td><td>SÍ</td><td>NO (excepto reactivos)</td></tr>
+</table>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Análisis caso por caso</div>
+            <p class="porque"><b>¿Por qué?</b> Identificar el tipo y aplicar la tabla.</p>
+            <table class="tdatos">
+<tr><th>Sustancia</th><th>Tipo</th><th>Conductor</th><th>Soluble H$_2$O</th></tr>
+<tr><td>NaCl</td><td>Iónico</td><td>NO (sí fundido o disuelto)</td><td>SÍ</td></tr>
+<tr><td>Diamante (C)</td><td>Covalente reticular</td><td>NO</td><td>NO</td></tr>
+<tr><td>Cu</td><td>Metálico</td><td>SÍ (excelente)</td><td>NO</td></tr>
+<tr><td>Hielo (H$_2$O)</td><td>Molecular (puente H)</td><td>NO</td><td>—</td></tr>
+<tr><td>I$_2$</td><td>Molecular (London)</td><td>NO</td><td>Poco (apolar)</td></tr>
+</table>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">NaCl iónico · diamante covalente · Cu metálico · hielo molecular · I$_2$ molecular. Solo Cu conduce; solo NaCl es bien soluble en agua.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Esta clasificación predice correctamente que el grafito (otro sólido covalente del C) es <em>conductor</em> por sus electrones π deslocalizados — la única excepción importante. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex10">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 10</div>
+        <div class="ex-title">Comparación de fuerzas intermoleculares en isómeros</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Predecir cuál tiene mayor punto de ebullición: <b>n-pentano</b> (C$_5$H$_{12}$, lineal) o <b>neopentano</b> (C(CH$_3$)$_4$, ramificado). Ambos tienen la misma masa molar (72 g/mol). Justificar.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> n-pentano: $T_{eb}=36$ °C. Neopentano: $T_{eb}=10$ °C. Mayor el lineal.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa molar</td><td>$M=72$ g/mol (ambos)</td></tr>
+            <tr><td>$T_{eb}$ medidos</td><td>n-pentano: 36 °C; neopentano: 10 °C</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Forma molecular y fuerzas de London</div>
+            
+<p>Ambos compuestos son apolares: las únicas fuerzas intermoleculares disponibles son las <b>fuerzas de dispersión de London</b>. Su intensidad depende de:</p>
+<ul>
+  <li>El número de electrones (≈ masa molar) — igual en ambos.</li>
+  <li>La <b>forma</b> de la molécula: las moléculas alargadas tienen mayor superficie de contacto con las vecinas → más fuerzas de dispersión → mayor $T_{eb}$.</li>
+</ul>
+<p>El neopentano es casi esférico y el n-pentano es alargado, por lo que el lineal interactúa más fuertemente.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Comparación geométrica</div>
+            <p class="porque"><b>¿Por qué?</b> n-pentano = cadena recta, longitud ≈ 6 Å. Neopentano = cuasi-esférico, diámetro ≈ 5 Å.</p>
+            <p>El n-pentano tiene mayor superficie de contacto cuando se aproxima a otra molécula (puede estar "tumbado" pegado a otra). El neopentano solo puede tocar por su superficie esférica.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Predicción del orden de ebullición</div>
+            <p class="porque"><b>¿Por qué?</b> Mayor superficie ⟹ mayores fuerzas de London ⟹ mayor $T_{eb}$.</p>
+            <p>$T_{eb}(\text{n-pentano}) > T_{eb}(\text{neopentano})$</p>
+<p>$36$ °C > $10$ °C ✓</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val"><b>n-pentano</b> ebulle a 36 °C (más alto) que el neopentano (10 °C), pese a tener idéntica masa molar — efecto puro de la forma molecular sobre las fuerzas de dispersión.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Resultado generalizable: en una serie de isómeros del mismo $C_n H_{2n+2}$, el más ramificado siempre tiene menor $T_{eb}$. ✓ Ej: 2-metilbutano (28 °C) intermedio entre n-pentano y neopentano.</p>
         </div>
       </div>
 

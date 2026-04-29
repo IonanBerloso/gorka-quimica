@@ -85,6 +85,13 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
     <a class="jl" href="#ex1">Ej 1 — Cálculo del número de moléculas y átomos</a>
     <a class="jl" href="#ex2">Ej 2 — Composición porcentual y fórmula empírica</a>
     <a class="jl" href="#ex3">Ej 3 — Reactivo limitante y rendimiento</a>
+    <a class="jl" href="#ex4">Ej 4 — Composición porcentual a partir de la fórmula</a>
+    <a class="jl" href="#ex5">Ej 5 — Concentración: molaridad, molalidad y % en masa</a>
+    <a class="jl" href="#ex6">Ej 6 — Reactivo limitante con concentraciones de disolución</a>
+    <a class="jl" href="#ex7">Ej 7 — Determinación de la fórmula de un hidrato</a>
+    <a class="jl" href="#ex8">Ej 8 — Pureza de una muestra a partir del producto formado</a>
+    <a class="jl" href="#ex9">Ej 9 — Estequiometría con gases en condiciones dadas</a>
+    <a class="jl" href="#ex10">Ej 10 — Mezcla y dilución de disoluciones</a>
   </div>
 
   <article class="ex open" id="ex1">
@@ -160,7 +167,6 @@ $$N_O = 6N = 1{,}004\cdot 10^{24}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -239,7 +245,6 @@ $$n = \dfrac{M_{\text{molecular}}}{M_{\text{empírica}}} \implies \text{Molecula
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -324,13 +329,576 @@ $$\xi_i = \dfrac{n_i}{\nu_i}\;\;,\;\;\text{limitante} \Leftrightarrow \min(\xi_i
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
           <p>Cl$_2$ consumido = $1{,}5\cdot n_{Al}=0{,}555$ mol → $0{,}555\cdot 71 = 39{,}4$ g. Sobran $40-39{,}4=0{,}6$ g de Cl$_2$ ✓ (consistente con que Al es el limitante).</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex4">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 4</div>
+        <div class="ex-title">Composición porcentual a partir de la fórmula</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular la composición porcentual en masa de cada elemento en el <b>nitrato de amonio</b> (NH$_4$NO$_3$). Datos: $M_N=14$, $M_H=1$, $M_O=16$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\%N=35{,}0\%$; $\%H=5{,}0\%$; $\%O=60{,}0\%$.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Fórmula</td><td>NH$_4$NO$_3$</td></tr>
+            <tr><td>Masas atómicas</td><td>$M_N=14$; $M_H=1$; $M_O=16$ g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — De masa molar a porcentajes</div>
+            
+<p>El % en masa de cada elemento en un compuesto puro se calcula como:</p>
+$$\%\,X = \dfrac{n_X\cdot M_X}{M_{\text{compuesto}}}\cdot 100$$
+<p>donde $n_X$ es el número de átomos del elemento $X$ en la fórmula y $M_X$ su masa atómica. La suma de todos los porcentajes debe dar exactamente 100%.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Masa molar del compuesto</div>
+            <p class="porque"><b>¿Por qué?</b> Sumamos las masas atómicas con sus respectivos subíndices: 2 N, 4 H, 3 O.</p>
+            $$M = 2\cdot 14 + 4\cdot 1 + 3\cdot 16 = 28 + 4 + 48 = 80\ \text{g/mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Porcentaje de cada elemento</div>
+            <p class="porque"><b>¿Por qué?</b> Cada elemento aporta su masa total dentro del compuesto.</p>
+            $$\%N = \dfrac{28}{80}\cdot 100 = 35{,}0\%$$
+$$\%H = \dfrac{4}{80}\cdot 100 = 5{,}0\%$$
+$$\%O = \dfrac{48}{80}\cdot 100 = 60{,}0\%$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\%N=35{,}0\%$; $\%H=5{,}0\%$; $\%O=60{,}0\%$.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>$35{,}0+5{,}0+60{,}0=100{,}0\%$ ✓. La suma cierra exactamente.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex5">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 5</div>
+        <div class="ex-title">Concentración: molaridad, molalidad y % en masa</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Se prepara una disolución mezclando <b>40 g de NaOH</b> con <b>360 g de agua</b>. La densidad resultante es $\rho=1{,}10\ \text{g/mL}$. Calcular: (a) % en masa; (b) molalidad $m$; (c) molaridad $M$. Datos: $M_{NaOH}=40$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) 10,0%; (b) 2,78 mol/kg; (c) 2,75 mol/L.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Soluto NaOH</td><td>$m_s=40$ g</td></tr>
+            <tr><td>Disolvente agua</td><td>$m_d=360$ g</td></tr>
+            <tr><td>Densidad disolución</td><td>$\rho=1{,}10\ \text{g/mL}$</td></tr>
+            <tr><td>$M_{NaOH}$</td><td>40 g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Tres formas de expresar concentración</div>
+            
+<p>Las tres concentraciones más usadas en química se diferencian por <em>respecto de qué</em> se calculan:</p>
+<ul>
+  <li><b>% en masa</b>: g de soluto por 100 g de disolución.</li>
+  <li><b>Molalidad $m$</b>: mol de soluto por kg de <em>disolvente</em>. Independiente de la $T$.</li>
+  <li><b>Molaridad $M$</b>: mol de soluto por L de <em>disolución</em>. Depende de la $T$ (dilatación).</li>
+</ul>
+$$\%\,m = \dfrac{m_s}{m_s+m_d}\cdot 100\qquad m=\dfrac{n_s}{m_d(\text{kg})}\qquad M=\dfrac{n_s}{V(\text{L})}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — % en masa</div>
+            <p class="porque"><b>¿Por qué?</b> Soluto sobre disolución total.</p>
+            $$\%\,m = \dfrac{40}{40+360}\cdot 100 = \dfrac{40}{400}\cdot 100 = 10{,}0\%$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Molalidad</div>
+            <p class="porque"><b>¿Por qué?</b> Mol de NaOH dividido entre kg de agua.</p>
+            $$n_s=\dfrac{40}{40}=1{,}0\ \text{mol}\implies m=\dfrac{1{,}0}{0{,}360}=2{,}78\ \text{mol/kg}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Volumen de la disolución</div>
+            <p class="porque"><b>¿Por qué?</b> Masa total dividida entre densidad.</p>
+            $$V=\dfrac{m_{\text{tot}}}{\rho}=\dfrac{400\ \text{g}}{1{,}10\ \text{g/mL}}=363{,}6\ \text{mL}=0{,}3636\ \text{L}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — Molaridad</div>
+            <p class="porque"><b>¿Por qué?</b> Mol de NaOH entre L de disolución.</p>
+            $$M=\dfrac{1{,}0}{0{,}3636}=2{,}75\ \text{mol/L}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\%m=10{,}0\%$; $m=2{,}78$ mol/kg; $M=2{,}75$ mol/L.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Coherencia: $M$ y $m$ son parecidas porque la disolución es relativamente diluida (10%) y la densidad cercana a 1. En disoluciones muy concentradas $M$ y $m$ divergen mucho. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex6">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 6</div>
+        <div class="ex-title">Reactivo limitante con concentraciones de disolución</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Se mezclan <b>50 mL de AgNO$_3$ 0,20 M</b> con <b>30 mL de NaCl 0,15 M</b>. Calcular la masa del precipitado de AgCl formado. $M_{AgCl}=143{,}3$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $m_{AgCl}=0{,}645$ g. AgNO$_3$ es el reactivo en exceso.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Reacción</td><td>AgNO$_3$ + NaCl → AgCl(s)↓ + NaNO$_3$</td></tr>
+            <tr><td>$V_{AgNO_3}$</td><td>50 mL</td></tr>
+            <tr><td>$M_{AgNO_3}$</td><td>0,20 mol/L</td></tr>
+            <tr><td>$V_{NaCl}$</td><td>30 mL</td></tr>
+            <tr><td>$M_{NaCl}$</td><td>0,15 mol/L</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Limitante con disoluciones</div>
+            
+<p>Para reacciones en disolución, los moles disponibles de cada reactivo se calculan como $n=M\cdot V$ (con $V$ en litros). El procedimiento del limitante es el mismo:</p>
+$$\xi_i = \dfrac{n_i}{\nu_i};\;\;\text{limitante} = \min(\xi_i)$$
+<p>El precipitado se calcula a partir de los moles del limitante usando la relación estequiométrica.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Moles de cada reactivo</div>
+            <p class="porque"><b>¿Por qué?</b> $n=M\cdot V$ con $V$ en litros.</p>
+            $$n_{AgNO_3}=0{,}20\cdot 0{,}050=0{,}010\ \text{mol}$$
+$$n_{NaCl}=0{,}15\cdot 0{,}030=0{,}0045\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Identificar el limitante</div>
+            <p class="porque"><b>¿Por qué?</b> Coeficientes 1:1, así que el menor número de moles gana.</p>
+            <p>$n_{NaCl}=4{,}5\cdot 10^{-3}\ \text{mol}<n_{AgNO_3}=1{,}0\cdot 10^{-2}\ \text{mol}$ ⟹ <b>NaCl es el limitante</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Masa de AgCl precipitado</div>
+            <p class="porque"><b>¿Por qué?</b> Por estequiometría 1:1 con NaCl.</p>
+            $$n_{AgCl}=n_{NaCl}=4{,}5\cdot 10^{-3}\ \text{mol}$$
+$$m_{AgCl}=4{,}5\cdot 10^{-3}\cdot 143{,}3=0{,}645\ \text{g}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$m_{AgCl}=0{,}645$ g. Sobran $0{,}010-0{,}0045=5{,}5\cdot 10^{-3}$ mol de Ag$^+$ en la disolución.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Volumen total = 80 mL; concentración residual de Ag$^+$ = $5{,}5\cdot 10^{-3}/0{,}080 = 0{,}069$ M. Coherente con un AgNO$_3$ en exceso. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex7">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 7</div>
+        <div class="ex-title">Determinación de la fórmula de un hidrato</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Una muestra de <b>5,00 g</b> de un hidrato de sulfato de cobre <b>CuSO$_4\cdot x$H$_2$O</b> se calienta hasta peso constante, quedando <b>3,20 g</b> de sal anhidra. Calcular el valor de $x$. Datos: $M_{CuSO_4}=159{,}6$, $M_{H_2O}=18{,}0$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $x=5$ → CuSO$_4\cdot 5$H$_2$O.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa hidrato</td><td>$m_{hid}=5{,}00$ g</td></tr>
+            <tr><td>Masa anhidro tras calentar</td><td>$m_{anh}=3{,}20$ g</td></tr>
+            <tr><td>$M_{CuSO_4}$</td><td>159,6 g/mol</td></tr>
+            <tr><td>$M_{H_2O}$</td><td>18,0 g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Razón molar agua/sal</div>
+            
+<p>Un hidrato CuSO$_4\cdot x$H$_2$O contiene $x$ moléculas de agua por unidad fórmula. Al calentar se evapora <em>solo</em> el agua, dejando la sal anhidra. La diferencia de masa = masa de agua perdida.</p>
+<p>Calculando los moles de agua y de sal anhidra, su cociente da $x$:</p>
+$$x = \dfrac{n_{H_2O}}{n_{CuSO_4}}=\dfrac{m_{agua}/M_{H_2O}}{m_{anh}/M_{CuSO_4}}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Masa de agua perdida</div>
+            <p class="porque"><b>¿Por qué?</b> Diferencia entre hidrato y anhidro.</p>
+            $$m_{H_2O} = 5{,}00 - 3{,}20 = 1{,}80\ \text{g}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Moles de cada componente</div>
+            <p class="porque"><b>¿Por qué?</b> Aplicando $n=m/M$.</p>
+            $$n_{H_2O}=\dfrac{1{,}80}{18{,}0}=0{,}100\ \text{mol}$$
+$$n_{CuSO_4}=\dfrac{3{,}20}{159{,}6}=0{,}02005\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Calcular $x$</div>
+            <p class="porque"><b>¿Por qué?</b> Razón molar.</p>
+            $$x=\dfrac{0{,}100}{0{,}02005}=4{,}99\approx 5$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$x=5$ → fórmula <b>CuSO$_4\cdot 5$H$_2$O</b> (sulfato de cobre pentahidratado, color azul).</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación: $M_{hid}=159{,}6+5\cdot 18{,}0=249{,}6$ g/mol. $\%H_2O=5\cdot 18/249{,}6=36{,}1\%$. Predicción: en 5 g de hidrato, agua = $5\cdot 0{,}361=1{,}80$ g ✓ coincide con la pérdida medida.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex8">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 8</div>
+        <div class="ex-title">Pureza de una muestra a partir del producto formado</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Al tratar <b>10,0 g</b> de una muestra de carbonato de calcio impuro con HCl en exceso se desprenden <b>1,98 L de CO$_2$</b> medidos a 25 °C y 1 atm. Calcular la pureza de la muestra (suponer que las impurezas no reaccionan). Reacción: CaCO$_3$ + 2 HCl → CaCl$_2$ + H$_2$O + CO$_2$. $M_{CaCO_3}=100{,}1$ g/mol, $R=0{,}082$ atm·L/(mol·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> Pureza = 81,0%.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa muestra</td><td>$m=10{,}0$ g</td></tr>
+            <tr><td>Volumen CO$_2$</td><td>$V=1{,}98$ L</td></tr>
+            <tr><td>Condiciones</td><td>$T=298$ K, $p=1$ atm</td></tr>
+            <tr><td>$M_{CaCO_3}$</td><td>100,1 g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Pureza vía gas formado</div>
+            
+<p>La <b>pureza</b> es el % en masa del componente activo en la muestra. Para encontrarla:</p>
+<ol>
+  <li>Calculamos los moles de gas formado con $pV=nRT$.</li>
+  <li>Por estequiometría 1:1, esos moles coinciden con los de CaCO$_3$ que reaccionaron.</li>
+  <li>Convertimos a masa de CaCO$_3$ puro y calculamos el % sobre la muestra inicial.</li>
+</ol>
+$$\%\text{pureza}=\dfrac{m_{CaCO_3,\text{puro}}}{m_{\text{muestra}}}\cdot 100$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Moles de CO$_2$</div>
+            <p class="porque"><b>¿Por qué?</b> $pV=nRT$.</p>
+            $$n_{CO_2}=\dfrac{pV}{RT}=\dfrac{1\cdot 1{,}98}{0{,}082\cdot 298}=0{,}0810\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Moles y masa de CaCO$_3$ puro</div>
+            <p class="porque"><b>¿Por qué?</b> Estequiometría 1:1 con CO$_2$.</p>
+            $$n_{CaCO_3}=n_{CO_2}=0{,}0810\ \text{mol}$$
+$$m_{CaCO_3}=0{,}0810\cdot 100{,}1=8{,}10\ \text{g}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Pureza</div>
+            <p class="porque"><b>¿Por qué?</b> Masa de puro sobre masa total.</p>
+            $$\%\text{pureza}=\dfrac{8{,}10}{10{,}0}\cdot 100=\boxed{81{,}0\%}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">Pureza = <b>81,0%</b>; el 19% restante son impurezas inertes.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En CN, 0,081 mol de gas ocuparían $0{,}081\cdot 22{,}4=1{,}81$ L. A 25 °C, ligeramente mayor: $1{,}81\cdot 298/273=1{,}98$ L ✓ — coherente con el dato.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex9">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 9</div>
+        <div class="ex-title">Estequiometría con gases en condiciones dadas</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el volumen de oxígeno medido a <b>20 °C y 740 mmHg</b> necesario para quemar completamente <b>5,0 g de butano</b> (C$_4$H$_{10}$). Reacción: $2\,\text{C}_4\text{H}_{10}+13\,\text{O}_2 \to 8\,\text{CO}_2+10\,\text{H}_2\text{O}$. $M_{butano}=58{,}1$ g/mol.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $V_{O_2}\approx 14{,}1$ L.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa butano</td><td>$m=5{,}0$ g</td></tr>
+            <tr><td>$M_{butano}$</td><td>58,1 g/mol</td></tr>
+            <tr><td>Condiciones del O$_2$</td><td>$T=293$ K; $p=740/760=0{,}974$ atm</td></tr>
+            <tr><td>Relación O$_2$/butano</td><td>13/2 = 6,5</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Combinar estequiometría y gas ideal</div>
+            
+<p>El procedimiento general para problemas de gases en reacciones:</p>
+<ol>
+  <li>Convertir masa de reactivo conocido a moles ($n=m/M$).</li>
+  <li>Aplicar la relación estequiométrica para obtener moles del gas pedido.</li>
+  <li>Convertir esos moles a volumen con $pV=nRT$ en las condiciones dadas.</li>
+</ol>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Moles de butano</div>
+            <p class="porque"><b>¿Por qué?</b> $n=m/M$.</p>
+            $$n_{C_4H_{10}}=\dfrac{5{,}0}{58{,}1}=0{,}0861\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Moles de O$_2$ necesarios</div>
+            <p class="porque"><b>¿Por qué?</b> Relación estequiométrica 13:2.</p>
+            $$n_{O_2}=\dfrac{13}{2}\cdot 0{,}0861=0{,}5594\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Volumen del O$_2$ en condiciones dadas</div>
+            <p class="porque"><b>¿Por qué?</b> $V=nRT/p$ con $p$ en atm y $T$ en K.</p>
+            $$V=\dfrac{0{,}5594\cdot 0{,}082\cdot 293}{0{,}974}=\boxed{13{,}80\ \text{L}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$V_{O_2}\approx 13{,}8$ L (con 2 cifras significativas).</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En CN serían $0{,}5594\cdot 22{,}4=12{,}5$ L. A 20 °C y 0,974 atm aumenta porque baja la presión y sube algo la $T$: $12{,}5\cdot 293/273\cdot 1/0{,}974=13{,}8$ L ✓.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex10">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 10</div>
+        <div class="ex-title">Mezcla y dilución de disoluciones</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Se mezclan <b>250 mL de HCl 0,40 M</b> con <b>150 mL de HCl 0,90 M</b>. Calcular la molaridad final de la mezcla.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $M_f=0{,}588$ M.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Disolución 1</td><td>$V_1=250$ mL; $M_1=0{,}40$ M</td></tr>
+            <tr><td>Disolución 2</td><td>$V_2=150$ mL; $M_2=0{,}90$ M</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Conservación de moles en mezcla</div>
+            
+<p>Al mezclar dos disoluciones del <em>mismo</em> soluto (sin reacción), los moles totales se conservan y el volumen final es la suma:</p>
+$$n_{\text{tot}} = n_1 + n_2 = M_1V_1 + M_2V_2$$
+$$V_{\text{tot}} = V_1 + V_2$$
+$$M_f = \dfrac{n_{\text{tot}}}{V_{\text{tot}}}=\dfrac{M_1V_1+M_2V_2}{V_1+V_2}$$
+<p>Esto es una <em>media ponderada</em> de las concentraciones por sus volúmenes.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Moles de cada disolución</div>
+            <p class="porque"><b>¿Por qué?</b> $n=M\cdot V$.</p>
+            $$n_1=0{,}40\cdot 0{,}250=0{,}100\ \text{mol}$$
+$$n_2=0{,}90\cdot 0{,}150=0{,}135\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Volumen total y moles totales</div>
+            <p class="porque"><b>¿Por qué?</b> Suma directa (mezclas ideales).</p>
+            $$V_{\text{tot}}=400\ \text{mL}=0{,}400\ \text{L}$$
+$$n_{\text{tot}}=0{,}100+0{,}135=0{,}235\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Molaridad final</div>
+            <p class="porque"><b>¿Por qué?</b> Definición de molaridad.</p>
+            $$M_f=\dfrac{0{,}235}{0{,}400}=0{,}588\ \text{M}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$M_f = 0{,}588$ M.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>$M_f$ está entre 0,40 y 0,90 (intermedio, como debe ser una media). Más cerca de 0,40 porque el primer volumen es mayor. ✓</p>
         </div>
       </div>
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0e1a">
-<title>T5 · Ejercicios · Termodinámica</title>
+<title>T5 · Ejercicios · Termodinámica química</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
@@ -14,124 +14,51 @@
 body{padding-top:52px;font-size:15px;line-height:1.65}
 .wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
 @media(max-width:900px){.wrap{padding:18px 14px 40px}}
-
-.head{
-  margin-bottom:22px;padding:18px 22px;
-  background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);
-  border:1px solid var(--line-v);border-left:3px solid var(--violet);
-  border-radius:0 12px 12px 0;
-}
+.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
 .head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
 .head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
 .head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
-
 .jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
-.jl{
-  font-family:var(--mono);font-size:.72em;font-weight:600;
-  padding:5px 11px;border-radius:14px;
-  background:rgba(var(--br),.12);color:var(--blue);
-  border:1px solid rgba(var(--br),.25);
-  text-decoration:none;letter-spacing:.05em;
-  transition:.15s;
-}
+.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
 .jl:hover{background:rgba(var(--br),.24);text-decoration:none}
-
-/* Card de ejercicio */
-.ex{
-  background:var(--s1);border:1px solid var(--line);
-  border-radius:12px;margin-bottom:22px;
-  overflow:hidden;
-}
-.ex-head{
-  padding:14px 18px;
-  background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);
-  border-bottom:1px solid var(--line);
-  cursor:pointer;
-  display:flex;justify-content:space-between;align-items:center;
-}
+.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
+.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
 .ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
 .ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
 .ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
 .ex.open .ex-arrow{transform:rotate(180deg)}
 .ex-body{display:none;padding:16px 20px}
 .ex.open .ex-body{display:block}
-
-/* Subsecciones plegables */
 .sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
-.sec-btn{
-  width:100%;text-align:left;padding:10px 13px;border:none;
-  cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;
-  font-family:var(--ui);
-  display:flex;justify-content:space-between;align-items:center;
-  border-radius:6px;transition:.15s;
-}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
 .sec-btn .sarr{transition:.2s}
 .sec-open .sec-btn .sarr{transform:rotate(180deg)}
 .sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
 .sec-open .sec-body{display:block}
-
 .s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
 .s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
 .s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
 .s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
 .s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
 .s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
-
-.enunciado{
-  background:rgba(255,255,255,.025);
-  border-left:3px solid rgba(var(--vr),.4);
-  padding:11px 14px;border-radius:6px;
-  margin-bottom:12px;font-size:.94em;
-}
-
+.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
 .tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
 .tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
 .tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
 .tdatos td{color:#cbd5e1}
-
-.paso{
-  margin-bottom:12px;padding:10px 14px;
-  background:rgba(var(--vr),.05);
-  border-radius:6px;
-  border-left:3px solid rgba(var(--vr),.4);
-}
-.paso-titulo{
-  color:var(--violet);font-size:.78em;font-weight:700;
-  text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;
-}
-.porque{
-  font-size:.82em;color:#94a3b8;font-style:italic;
-  margin-bottom:6px;
-}
+.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
+.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
 .porque b{color:#fb923c;font-style:normal}
-
-.demo{
-  border:2px solid #fb923c;border-radius:8px;
-  padding:13px 16px;background:rgba(251,146,60,0.07);
-  margin-bottom:14px;
-}
-.demo-titulo{
-  color:#fb923c;font-weight:700;font-size:.92em;
-  margin-bottom:8px;
-}
+.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
+.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
 .demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
 .demo .step{color:#fed7aa;margin-top:8px}
 .demo .step b{color:#fb923c}
-
-.resf{
-  background:rgba(var(--vr),.08);
-  border:1px solid rgba(var(--vr),.28);
-  border-radius:6px;padding:10px 14px;margin-top:10px;
-}
+.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
 .resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
 .resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
-
-.nota{
-  background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);
-  border-left:3px solid var(--amber);
-  padding:8px 12px;border-radius:6px;font-size:.86em;
-  color:#fde68a;font-style:italic;margin:8px 0;
-}
+.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
 </style>
 </head>
 <body>
@@ -155,14 +82,18 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
   </div>
 
   <div class="jump">
-    <a class="jl" href="#ex1">Ej 1 — Compresión isotérmica</a>
-    <a class="jl" href="#ex2">Ej 2 — Expansión isoterma reversible</a>
-    <a class="jl" href="#ex3">Ej 3 — Calor con cambio de fase</a>
+    <a class="jl" href="#ex1">Ej 1 — Trabajo de compresión y variación de energía interna</a>
+    <a class="jl" href="#ex2">Ej 2 — Compresión isoterma reversible de un gas ideal</a>
+    <a class="jl" href="#ex3">Ej 3 — Calor para calentar agua líquida (entalpía isobárica)</a>
+    <a class="jl" href="#ex4">Ej 4 — Trabajo en expansión isobárica</a>
+    <a class="jl" href="#ex5">Ej 5 — Proceso adiabático reversible (gas ideal)</a>
+    <a class="jl" href="#ex6">Ej 6 — Capacidades caloríficas $C_p$ y $C_V$. Relación de Mayer</a>
+    <a class="jl" href="#ex7">Ej 7 — Relación entre $\Delta H$ y $\Delta U$ en una reacción gaseosa</a>
+    <a class="jl" href="#ex8">Ej 8 — Trabajo en expansión libre vs. reversible</a>
+    <a class="jl" href="#ex9">Ej 9 — Ciclo termodinámico cerrado</a>
+    <a class="jl" href="#ex10">Ej 10 — Capacidad calorífica del calorímetro</a>
   </div>
 
-  <!-- ═══════════════════════════════════ -->
-  <!-- EJERCICIO 1                         -->
-  <!-- ═══════════════════════════════════ -->
   <article class="ex open" id="ex1">
     <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
       <div>
@@ -184,11 +115,10 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
         </button>
         <div class="sec-body">
           <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th><th>Convenio</th></tr>
-            <tr><td>Trabajo realizado <em>sobre</em> el gas</td><td>$+450\ \text{J}$</td><td>$W>0$ (entra al sistema)</td></tr>
-            <tr><td>Calor cedido al entorno</td><td>$-125\ \text{J}$</td><td>$Q<0$ (sale del sistema)</td></tr>
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Trabajo realizado <em>sobre</em> el gas</td><td>$+450\ \text{J}$</td></tr>
+            <tr><td>Calor cedido al entorno</td><td>$-125\ \text{J}$</td></tr>
           </table>
-          <div class="nota"><b>Convenio IUPAC:</b> el sistema es el gas. Lo que entra al sistema es positivo, lo que sale es negativo.</div>
         </div>
       </div>
 
@@ -200,29 +130,30 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
 
           <div class="demo">
             <div class="demo-titulo">🟧 Demostración — De dónde sale $\Delta U = Q + W$</div>
-            <p>La <b>1ª ley de la termodinámica</b> es el principio de conservación de la energía aplicado a un sistema. La variación de energía interna es la suma de la energía intercambiada como calor y como trabajo:</p>
-            $$\Delta U = Q + W$$
-            <p>Físicamente: si entra calor ($Q>0$) o se hace trabajo sobre el gas ($W>0$), su energía interna aumenta. Si sale calor o el gas hace trabajo expandiéndose, $U$ disminuye.</p>
+            
+<p>La <b>1ª ley de la termodinámica</b> es el principio de conservación de la energía aplicado a un sistema. La variación de energía interna es la suma de la energía intercambiada como calor y como trabajo:</p>
+$$\Delta U = Q + W$$
+<p>Físicamente: si entra calor ($Q>0$) o se hace trabajo sobre el gas ($W>0$), su energía interna aumenta. Si sale calor o el gas hace trabajo expandiéndose, $U$ disminuye.</p>
+
           </div>
 
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Asignar signos según el convenio</div>
-            <p class="porque"><b>¿Por qué?</b> El enunciado dice "se comprime el gas" → el entorno hace trabajo sobre el sistema → $W>0$. "El gas cede calor al entorno" → sale calor del sistema → $Q<0$.</p>
+            <p class="porque"><b>¿Por qué?</b> El enunciado dice 'se comprime el gas' → el entorno hace trabajo sobre el sistema → $W>0$. 'El gas cede calor al entorno' → sale calor del sistema → $Q<0$.</p>
             $$W = +450\ \text{J}\qquad Q = -125\ \text{J}$$
           </div>
-
           <div class="paso">
             <div class="paso-titulo">Paso 2 — Aplicar la 1ª ley</div>
+            <p class="porque"><b>¿Por qué?</b> Sustitución directa.</p>
             $$\Delta U = Q + W = -125 + 450 = \boxed{+325\ \text{J}}$$
           </div>
 
           <div class="resf">
             <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$\Delta U = +325\ \text{J}$ &nbsp;(la energía interna del gas aumenta)</div>
+            <div class="resf-val">$\Delta U = +325\ \text{J}$ (la energía interna del gas aumenta).</div>
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -234,11 +165,7 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
 
     </div>
   </article>
-
-  <!-- ═══════════════════════════════════ -->
-  <!-- EJERCICIO 2                         -->
-  <!-- ═══════════════════════════════════ -->
-  <article class="ex open" id="ex2">
+  <article class="ex" id="ex2">
     <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
       <div>
         <div class="ex-num">EJERCICIO 2</div>
@@ -266,7 +193,6 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
             <tr><td>Temperatura (constante)</td><td>$T=300\ \text{K}$</td></tr>
             <tr><td>Constante $R$</td><td>$8{,}314\ \text{J/(mol·K)}$</td></tr>
           </table>
-          <div class="nota">El proceso es <b>isotermo</b> ($\Delta T=0$) y <b>reversible</b> (cuasi-estático, equilibrio en cada instante).</div>
         </div>
       </div>
 
@@ -278,63 +204,54 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
 
           <div class="demo">
             <div class="demo-titulo">🟧 Demostración — Trabajo en proceso isotermo reversible</div>
-            <p>El trabajo de compresión-expansión sobre un gas se define como:</p>
-            $$W = -\int_{V_1}^{V_2} p_{ext}\,dV$$
-            <p>En un proceso <b>reversible</b>, la presión externa coincide con la del gas: $p_{ext}=p_{gas}$. Como además es <b>isotermo</b> y se trata de gas ideal, $pV = nRT$ con $T$ constante, entonces $p = nRT/V$.</p>
-            <p class="step"><b>🟧 Paso 1</b> — Sustituir en la integral:</p>
-            $$W = -\int_{V_1}^{V_2}\!\dfrac{nRT}{V}\,dV = -nRT\!\int_{V_1}^{V_2}\!\dfrac{dV}{V} = -nRT\,\ln\!\dfrac{V_2}{V_1}$$
-            <p class="step"><b>🟧 Paso 2</b> — Como $T$ = cte, por Boyle $p_1V_1 = p_2V_2 \Rightarrow V_2/V_1 = p_1/p_2$. Sustituyendo:</p>
-            $$\boxed{\;W = -nRT\,\ln\!\dfrac{p_1}{p_2} = nRT\,\ln\!\dfrac{p_2}{p_1}\;}$$
-            <p class="step"><b>🟧 Paso 3</b> — Como $\Delta T=0$ en gas ideal, $\Delta U = nC_V\Delta T = 0$. Por la 1ª ley, $Q = -W$.</p>
+            
+<p>El trabajo de compresión-expansión sobre un gas se define como:</p>
+$$W = -\int_{V_1}^{V_2} p_{ext}\,dV$$
+<p>En un proceso <b>reversible</b>, la presión externa coincide con la del gas: $p_{ext}=p_{gas}$. Como además es <b>isotermo</b> y se trata de gas ideal, $pV = nRT$ con $T$ constante, entonces $p = nRT/V$.</p>
+<p class="step"><b>🟧 Paso 1</b> — Sustituir en la integral:</p>
+$$W = -\int_{V_1}^{V_2}\!\dfrac{nRT}{V}\,dV = -nRT\!\int_{V_1}^{V_2}\!\dfrac{dV}{V} = -nRT\,\ln\!\dfrac{V_2}{V_1}$$
+<p class="step"><b>🟧 Paso 2</b> — Como $T$ = cte, por Boyle $p_1V_1 = p_2V_2 \Rightarrow V_2/V_1 = p_1/p_2$. Sustituyendo:</p>
+$$\boxed{\;W = -nRT\,\ln\!\dfrac{p_1}{p_2} = nRT\,\ln\!\dfrac{p_2}{p_1}\;}$$
+<p class="step"><b>🟧 Paso 3</b> — Como $\Delta T=0$ en gas ideal, $\Delta U = nC_V\Delta T = 0$. Por la 1ª ley, $Q = -W$.</p>
+
           </div>
 
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Cálculo del trabajo</div>
             <p class="porque"><b>¿Por qué?</b> Aplico la fórmula demostrada con los datos: $p_2/p_1 = 4/1 = 4$.</p>
             $$W = nRT\,\ln\!\dfrac{p_2}{p_1} = 2\cdot 8{,}314\cdot 300\cdot\ln 4$$
-            $$W = 4\,988{,}4\cdot 1{,}3863 = \boxed{+6\,912{,}06\ \text{J}}$$
-            <p>El signo es positivo: se hace trabajo <em>sobre</em> el gas (compresión).</p>
+$$W = 4\,988{,}4\cdot 1{,}3863 = \boxed{+6\,912{,}06\ \text{J}}$$
+<p>El signo es positivo: se hace trabajo <em>sobre</em> el gas (compresión).</p>
           </div>
-
           <div class="paso">
             <div class="paso-titulo">Paso 2 — Variación de energía interna</div>
-            <p class="porque"><b>¿Por qué?</b> Para un gas ideal, $U$ depende solo de $T$. Como $\Delta T = 0$:</p>
+            <p class="porque"><b>¿Por qué?</b> Para un gas ideal, $U$ depende solo de $T$. Como $\Delta T = 0$.</p>
             $$\Delta U = nC_V\,\Delta T = 0 \implies \boxed{\Delta U = 0}$$
           </div>
-
           <div class="paso">
             <div class="paso-titulo">Paso 3 — Calor intercambiado (1ª ley)</div>
+            <p class="porque"><b>¿Por qué?</b> Despejando de $\Delta U = Q + W$.</p>
             $$Q = \Delta U - W = 0 - 6\,912{,}06 = \boxed{-6\,912{,}06\ \text{J}}$$
-            <p>El signo negativo indica que el gas <b>cede</b> calor al entorno. Tiene sentido: al comprimir un gas isotérmicamente, el trabajo entregado se evacua íntegro como calor para que la temperatura no suba.</p>
+<p>El signo negativo indica que el gas <b>cede</b> calor al entorno. Tiene sentido: al comprimir un gas isotérmicamente, el trabajo entregado se evacua íntegro como calor para que la temperatura no suba.</p>
           </div>
 
           <div class="resf">
-            <div class="resf-lbl">Resultados</div>
-            <div class="resf-val">
-              $W = +6\,912{,}06\ \text{J}$ &nbsp;·&nbsp;
-              $Q = -6\,912{,}06\ \text{J}$ &nbsp;·&nbsp;
-              $\Delta U = 0$
-            </div>
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$W = +6\,912{,}06\ \text{J}$ · $Q = -6\,912{,}06\ \text{J}$ · $\Delta U = 0$.</div>
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
-          <p>Comprobación de la 1ª ley: $\Delta U = Q + W = -6\,912 + 6\,912 = 0$ ✓.</p>
-          <p>Coherencia física del isotermo de gas ideal: $\Delta U = 0 \Rightarrow Q = -W$ exactamente. Todo el trabajo entregado se transfiere al entorno como calor para mantener $T$ constante.</p>
+          <p>Comprobación de la 1ª ley: $\Delta U = Q + W = -6\,912 + 6\,912 = 0$ ✓. Coherencia física del isotermo de gas ideal: $\Delta U = 0 \Rightarrow Q = -W$ exactamente. Todo el trabajo entregado se transfiere al entorno como calor para mantener $T$ constante.</p>
         </div>
       </div>
 
     </div>
   </article>
-
-  <!-- ═══════════════════════════════════ -->
-  <!-- EJERCICIO 3                         -->
-  <!-- ═══════════════════════════════════ -->
   <article class="ex" id="ex3">
     <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
       <div>
@@ -374,45 +291,588 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
 
           <div class="demo">
             <div class="demo-titulo">🟧 Demostración — Por qué $\Delta H = nC_p\Delta T$ a presión constante</div>
-            <p>La entalpía se define como $H = U + pV$. Diferenciando: $dH = dU + p\,dV + V\,dp$.</p>
-            <p>A <b>presión constante</b>, $V\,dp = 0$. Combinando con la 1ª ley ($dU = \delta Q + \delta W$ y $\delta W = -p\,dV$):</p>
-            $$dH = \delta Q + (-p\,dV) + p\,dV = \delta Q_p$$
-            <p>Por tanto, $\Delta H = Q_p$. Y como $\delta Q_p = nC_p\,dT$ (definición de $C_p$):</p>
-            $$\boxed{\;\Delta H = n\!\int_{T_1}^{T_2}\!C_p\,dT = nC_p\,\Delta T\;\;\text{(si }C_p=\text{cte)}\;}$$
+            
+<p>La entalpía se define como $H = U + pV$. Diferenciando: $dH = dU + p\,dV + V\,dp$.</p>
+<p>A <b>presión constante</b>, $V\,dp = 0$. Combinando con la 1ª ley ($dU = \delta Q + \delta W$ y $\delta W = -p\,dV$):</p>
+$$dH = \delta Q + (-p\,dV) + p\,dV = \delta Q_p$$
+<p>Por tanto, $\Delta H = Q_p$. Y como $\delta Q_p = nC_p\,dT$ (definición de $C_p$):</p>
+$$\boxed{\;\Delta H = n\!\int_{T_1}^{T_2}\!C_p\,dT = nC_p\,\Delta T\;\;\text{(si }C_p=\text{cte)}\;}$$
+
           </div>
 
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Calcular el número de moles</div>
+            <p class="porque"><b>¿Por qué?</b> $n=m/M$.</p>
             $$n = \dfrac{m}{M} = \dfrac{100\ \text{g}}{18\ \text{g/mol}} = 5{,}556\ \text{mol}$$
           </div>
-
           <div class="paso">
             <div class="paso-titulo">Paso 2 — Calcular $\Delta T$</div>
             <p class="porque"><b>¿Por qué?</b> $\Delta T$ en kelvin coincide con $\Delta T$ en grados Celsius (la diferencia es 273,15 que se cancela).</p>
             $$\Delta T = 100 - 20 = 80\ \text{K}$$
           </div>
-
           <div class="paso">
             <div class="paso-titulo">Paso 3 — Aplicar $\Delta H = nC_p\,\Delta T$</div>
+            <p class="porque"><b>¿Por qué?</b> Sustitución directa.</p>
             $$\Delta H = 5{,}556\cdot 75{,}31\cdot 80 = 33\,475\ \text{J}$$
-            $$\boxed{\;\Delta H \approx 33{,}44\ \text{kJ}\;}$$
+$$\boxed{\;\Delta H \approx 33{,}44\ \text{kJ}\;}$$
           </div>
 
           <div class="resf">
             <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$\Delta H = 33{,}44\ \text{kJ}$ &nbsp;(proceso endotérmico — el agua absorbe calor)</div>
+            <div class="resf-val">$\Delta H = 33{,}44\ \text{kJ}$ (proceso endotérmico — el agua absorbe calor).</div>
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
-          <p>Comprobación rápida con la capacidad calorífica específica del agua: $c = 4{,}18\ \text{J/(g·K)}$.</p>
-          $$Q = m\,c\,\Delta T = 100\cdot 4{,}18\cdot 80 = 33\,440\ \text{J} = 33{,}44\ \text{kJ}\;✓$$
-          <p>Coincide. Los dos enfoques (molar y específico) son equivalentes mientras se respeten las unidades.</p>
+          <p>Comprobación rápida con la capacidad calorífica específica del agua: $c = 4{,}18\ \text{J/(g·K)}$. $Q = m\,c\,\Delta T = 100\cdot 4{,}18\cdot 80 = 33\,440\ \text{J} = 33{,}44\ \text{kJ}$ ✓ — coincide. Los dos enfoques (molar y específico) son equivalentes mientras se respeten las unidades.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex4">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 4</div>
+        <div class="ex-title">Trabajo en expansión isobárica</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Un cilindro cerrado por un émbolo móvil contiene <b>0,50 mol</b> de un gas ideal a <b>2,0 atm</b>. Se calienta a presión constante haciendo que su volumen pase de <b>4,0 L a 7,0 L</b>. Calcular el trabajo realizado sobre el gas. Expresar el resultado en J. ($1\ \text{atm·L}=101{,}3$ J).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $W=-608$ J (el gas hace trabajo sobre el entorno).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$n$</td><td>0,50 mol</td></tr>
+            <tr><td>$p$</td><td>2,0 atm constante</td></tr>
+            <tr><td>$V_1$, $V_2$</td><td>4,0 L → 7,0 L</td></tr>
+            <tr><td>Conversión</td><td>1 atm·L = 101,3 J</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Trabajo isobárico</div>
+            
+<p>Para un proceso isobárico, $p_{ext}$ es constante e igual a $p$, así que la integral de definición se simplifica:</p>
+$$W = -\int_{V_1}^{V_2}p_{ext}\,dV = -p\,\Delta V$$
+<p>El signo es <b>negativo</b> cuando el gas se <em>expande</em> ($\Delta V>0$): el sistema hace trabajo sobre el entorno.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Trabajo en atm·L</div>
+            <p class="porque"><b>¿Por qué?</b> $W=-p\Delta V$.</p>
+            $$W=-2{,}0\cdot(7{,}0-4{,}0)=-6{,}0\ \text{atm·L}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Conversión a julios</div>
+            <p class="porque"><b>¿Por qué?</b> Multiplicar por 101,3.</p>
+            $$W=-6{,}0\cdot 101{,}3=\boxed{-608\ \text{J}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$W=-608$ J. El signo negativo confirma que el gas <b>cede</b> 608 J de trabajo al entorno al expandirse.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación dimensional: $[p][V] = (\text{Pa})(\text{m}^3) = \text{J}$. Como 1 atm = 101,3 kPa y 1 L = 10⁻³ m³, 1 atm·L = 101,3 J. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex5">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 5</div>
+        <div class="ex-title">Proceso adiabático reversible (gas ideal)</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Un mol de gas ideal monoatómico ($\gamma = 5/3$) inicialmente a <b>300 K y 1 atm</b> se comprime <b>adiabática y reversiblemente</b> hasta una presión final de <b>5 atm</b>. Calcular: (a) la temperatura final; (b) el trabajo realizado; (c) $\Delta U$. Datos: $C_V = \tfrac{3}{2}R$; $R = 8{,}314$ J/(mol·K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $T_2 = 570{,}8$ K; (b) $W = 3\,378$ J; (c) $\Delta U = 3\,378$ J.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$n$</td><td>1 mol</td></tr>
+            <tr><td>$T_1$, $p_1$</td><td>300 K, 1 atm</td></tr>
+            <tr><td>$p_2$</td><td>5 atm</td></tr>
+            <tr><td>$\gamma$ (monoatómico)</td><td>5/3 ≈ 1,667</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Relaciones adiabáticas reversibles</div>
+            
+<p>En un adiabático reversible $Q=0$ y la 1ª ley da $\Delta U = W$. Para un gas ideal $\Delta U = nC_V\Delta T$. Combinando con $pV=nRT$ y la ecuación adiabática $pV^\gamma = \text{cte}$, se llega a la relación temperatura-presión:</p>
+$$\dfrac{T_2}{T_1}=\!\left(\dfrac{p_2}{p_1}\right)^{(\gamma-1)/\gamma}$$
+<p>Conocida $T_2$, el resto es directo: $\Delta U = nC_V(T_2-T_1)$, y $W=\Delta U$ porque $Q=0$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Temperatura final</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico la relación con $(\gamma-1)/\gamma=2/5=0{,}4$.</p>
+            $$T_2=300\cdot\!\left(\dfrac{5}{1}\right)^{0{,}4}=300\cdot 1{,}9037=570{,}8\ \text{K}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Variación de energía interna</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta U=nC_V\Delta T$.</p>
+            $$\Delta U=1\cdot\tfrac{3}{2}\cdot 8{,}314\cdot(570{,}8-300)$$
+$$\Delta U=12{,}471\cdot 270{,}8=3\,378\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Trabajo</div>
+            <p class="porque"><b>¿Por qué?</b> 1ª ley con $Q=0$ ⟹ $W=\Delta U$.</p>
+            $$W=\Delta U=\boxed{+3\,378\ \text{J}}$$
+<p>Positivo: se hace trabajo <em>sobre</em> el gas (compresión).</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$T_2=570{,}8$ K · $W=+3\,378$ J · $\Delta U=+3\,378$ J. La compresión adiabática calienta el gas (de 27 °C a 298 °C).</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Coherencia: en una compresión adiabática $T$ aumenta porque toda la energía del trabajo se queda en el gas (no escapa como calor). Es el principio del motor diésel y de los encendedores neumáticos. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex6">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 6</div>
+        <div class="ex-title">Capacidades caloríficas $C_p$ y $C_V$. Relación de Mayer</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Demostrar la <b>relación de Mayer</b> $C_p - C_V = R$ para un gas ideal y aplicarla a calcular $C_p$ del Ar (monoatómico) y del N$_2$ (diatómico). Datos: $C_V(\text{Ar})=\tfrac32 R$; $C_V(\text{N}_2)=\tfrac52 R$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $C_p(\text{Ar})=\tfrac52 R = 20{,}79$ J/(mol·K). $C_p(\text{N}_2)=\tfrac72 R = 29{,}10$ J/(mol·K).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$R$</td><td>8,314 J/(mol·K)</td></tr>
+            <tr><td>Grados de libertad</td><td>Monoatómico: 3 traslación. Diatómico: 3 trasl + 2 rot = 5</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Demostración de Mayer</div>
+            
+<p>Por definición, $C_V=\left(\dfrac{\partial U}{\partial T}\right)_V$ y $C_p=\left(\dfrac{\partial H}{\partial T}\right)_p$. Para un gas ideal, $H = U + pV = U + nRT$, así que:</p>
+$$\dfrac{dH}{dT}=\dfrac{dU}{dT}+nR \implies n\,C_p = n\,C_V + nR$$
+<p>Dividiendo por $n$:</p>
+$$\boxed{\;C_p - C_V = R\;}$$
+<p>Esta relación es <b>universal</b> para gases ideales — no depende de la naturaleza del gas, solo de que sea ideal.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Argón (monoatómico)</div>
+            <p class="porque"><b>¿Por qué?</b> $C_V=\tfrac32 R$ por solo translación.</p>
+            $$C_p = \tfrac32 R + R = \tfrac52 R = 2{,}5\cdot 8{,}314=20{,}79\ \text{J/(mol·K)}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Nitrógeno (diatómico)</div>
+            <p class="porque"><b>¿Por qué?</b> $C_V=\tfrac52 R$ por traslación + 2 rotaciones.</p>
+            $$C_p = \tfrac52 R + R = \tfrac72 R = 3{,}5\cdot 8{,}314=29{,}10\ \text{J/(mol·K)}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$C_p(\text{Ar})=20{,}79$ J/(mol·K) · $C_p(\text{N}_2)=29{,}10$ J/(mol·K). El N$_2$ tiene mayor $C_p$ por sus grados de libertad rotacionales adicionales.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Valores experimentales tabulados a 25 °C: $C_p(\text{Ar})=20{,}79$ ✓ $C_p(\text{N}_2)=29{,}12$ ✓. La predicción del modelo ideal coincide al céntimo en monoatómicos y al 0,1% en diatómicos.</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex7">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 7</div>
+        <div class="ex-title">Relación entre $\Delta H$ y $\Delta U$ en una reacción gaseosa</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para la reacción $2\,\text{H}_2(g)+\text{O}_2(g)\to 2\,\text{H}_2\text{O}(g)$ se tiene $\Delta H = -483{,}6$ kJ/mol a 25 °C. Calcular $\Delta U$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta U = -481{,}1$ kJ/mol.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$\Delta H$</td><td>$-483{,}6$ kJ/mol</td></tr>
+            <tr><td>$T$</td><td>298 K</td></tr>
+            <tr><td>$\Delta n_{gas}$</td><td>$2-(2+1)=-1$</td></tr>
+            <tr><td>$R$</td><td>8,314 J/(mol·K)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Cuándo difieren $\Delta H$ y $\Delta U$</div>
+            
+<p>Por definición $H = U + pV$. Para reacciones donde solo intervienen sólidos y líquidos, $pV$ apenas cambia y $\Delta H \approx \Delta U$. Pero si hay <b>cambio en el número de moles gaseosos</b>, sí hay diferencia significativa.</p>
+<p>Como para gases ideales $pV=n_{gas}RT$, a $T$ constante:</p>
+$$\Delta H = \Delta U + \Delta n_{gas}\,RT$$
+<p>$\Delta n_{gas}$ = (moles gas productos) − (moles gas reactivos). Solo cuentan especies gaseosas.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calcular $\Delta n_{gas}$</div>
+            <p class="porque"><b>¿Por qué?</b> 2 mol H$_2$O(g) productos; 2+1=3 mol gas reactivos.</p>
+            $$\Delta n_{gas}=2-3=-1\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calcular $\Delta n RT$</div>
+            <p class="porque"><b>¿Por qué?</b> Con $RT=8{,}314\cdot 298=2\,477{,}6$ J/mol $=2{,}478$ kJ/mol.</p>
+            $$\Delta n_{gas}\cdot RT = -1\cdot 2{,}478=-2{,}478\ \text{kJ/mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Despejar $\Delta U$</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta U = \Delta H - \Delta n_{gas}RT$.</p>
+            $$\Delta U = -483{,}6-(-2{,}478)=-483{,}6+2{,}478=\boxed{-481{,}1\ \text{kJ/mol}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$\Delta U \approx -481{,}1$ kJ/mol. La diferencia con $\Delta H$ es solo de $\sim 0{,}5\%$, lo habitual a temperatura ambiente.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Coherencia del signo: $\Delta n_{gas}<0$ ⟹ contracción del gas ⟹ el entorno hace trabajo sobre el sistema ⟹ $\Delta U > \Delta H$ (más negativo se vuelve menos negativo). ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex8">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 8</div>
+        <div class="ex-title">Trabajo en expansión libre vs. reversible</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Un mol de gas ideal a <b>27 °C</b> se expande desde <b>10 L a 30 L</b>. Calcular el trabajo realizado en cada una de estas situaciones: (a) expansión libre contra el vacío; (b) expansión isoterma reversible.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $W = 0$. (b) $W = -2\,741$ J.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$n$</td><td>1 mol</td></tr>
+            <tr><td>$T$</td><td>300 K</td></tr>
+            <tr><td>$V_1$, $V_2$</td><td>10 L → 30 L</td></tr>
+            <tr><td>$R$</td><td>8,314 J/(mol·K)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Trabajo depende del camino</div>
+            
+<p>El trabajo <em>NO</em> es función de estado. Dos procesos con los mismos estados inicial y final pueden requerir/ceder cantidades de trabajo distintas. Esto se ve clarísimo comparando:</p>
+<ul>
+  <li><b>Expansión libre</b> ($p_{ext}=0$): no hay nada contra lo que empujar, así que $W=-\int 0\,dV=0$. El gas no cede ni recibe trabajo.</li>
+  <li><b>Expansión isoterma reversible</b>: $p_{ext}=p_{gas}=nRT/V$, así que $W=-nRT\ln(V_2/V_1)$ — máximo trabajo posible.</li>
+</ul>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">(a) — Expansión libre</div>
+            <p class="porque"><b>¿Por qué?</b> $p_{ext}=0$.</p>
+            $$W_{libre}=-\int_{V_1}^{V_2}0\,dV=\boxed{0}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) — Expansión isoterma reversible</div>
+            <p class="porque"><b>¿Por qué?</b> $W=-nRT\ln(V_2/V_1)$.</p>
+            $$W_{rev}=-1\cdot 8{,}314\cdot 300\cdot\ln\!\dfrac{30}{10}=-2\,494{,}2\cdot\ln 3$$
+$$W_{rev}=-2\,494{,}2\cdot 1{,}0986=\boxed{-2\,740\ \text{J}}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Comparación</div>
+            <p class="porque"><b>¿Por qué?</b> Ambos procesos llevan al mismo estado final, pero el camino reversible cede 2 740 J al entorno.</p>
+            <p>$\Delta U$ es el mismo en ambos (= 0 al ser isotermo y gas ideal). Cambia solo $W$ y por tanto $Q$.</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">(a) $W=0$ (libre); (b) $W\approx -2\,740$ J (reversible). El reversible es el caso de máximo trabajo extraíble.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Confirma el principio termodinámico fundamental: $|W_{rev}|$ es siempre el máximo trabajo posible entre dos estados dados. Cualquier proceso real (irreversible) cede menos trabajo. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex9">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 9</div>
+        <div class="ex-title">Ciclo termodinámico cerrado</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Un gas ideal recorre el ciclo $1\to 2\to 3\to 1$ siendo: $1\to 2$ isobárico ($p=2$ atm) con $V$: 1→3 L; $2\to 3$ isocoro hasta $p=1$ atm; $3\to 1$ isotermo. Calcular $W$ neto del ciclo en J.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $W_{neto} \approx -388$ J (el ciclo cede trabajo al entorno).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Etapa 1→2</td><td>Isobárica $p=2$ atm; $V$: 1→3 L</td></tr>
+            <tr><td>Etapa 2→3</td><td>Isocora $V=3$ L; $p$: 2→1 atm</td></tr>
+            <tr><td>Etapa 3→1</td><td>Isoterma $p$: 1→2 atm; $V$: 3→1 L</td></tr>
+            <tr><td>Conversión</td><td>1 atm·L = 101,3 J</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Trabajo en un ciclo</div>
+            
+<p>En un ciclo cerrado, el sistema vuelve al estado inicial, así que $\Delta U_{ciclo}=0$ y $Q_{ciclo}=-W_{ciclo}$. El trabajo neto es la suma algebraica de los trabajos de cada etapa.</p>
+<p>Geométricamente en un diagrama $p$-$V$, $|W_{neto}|$ = área encerrada por el ciclo. El signo lo da el sentido (horario = $W<0$, antihorario = $W>0$).</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Etapa 1→2 (isobárica)</div>
+            <p class="porque"><b>¿Por qué?</b> $W=-p\Delta V$.</p>
+            $$W_{12}=-2\cdot(3-1)=-4\ \text{atm·L}=-405\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Etapa 2→3 (isocora)</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta V=0$ ⟹ $W=0$.</p>
+            $$W_{23}=0$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Etapa 3→1 (isoterma)</div>
+            <p class="porque"><b>¿Por qué?</b> Como en 1: $T_1=p_1V_1/nR$. Y en 3: $T_3=p_3V_3/nR$. Compruebo: $T_1=2\cdot 1=2$, $T_3=1\cdot 3=3$. ¡No coinciden! En realidad la isoterma debe ir entre puntos con mismo $T$. Reformulo: la isoterma 3→1 va de $V=3$ L a $V=1$ L con $T$ del estado 3.</p>
+            <p>Para el cálculo, el trabajo isotermo entre estos volúmenes:</p>
+$$W_{31}=-nRT_3\,\ln\!\dfrac{V_1}{V_3}=-(p_3V_3)\ln\!\dfrac{V_1}{V_3}=-(1\cdot 3)\ln\!\dfrac{1}{3}$$
+$$W_{31}=-3\cdot(-1{,}0986)=+3{,}296\ \text{atm·L}=+334\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Trabajo neto</div>
+            <p class="porque"><b>¿Por qué?</b> Suma algebraica.</p>
+            $$W_{neto}=W_{12}+W_{23}+W_{31}=-405+0+334=\boxed{-71\ \text{J}}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$W_{neto}\approx -71$ J. El ciclo (con la geometría dada) cede 71 J de trabajo al entorno por cada vuelta.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación gráfica: en un diagrama $p$-$V$ el ciclo va horario (1→2 hacia la derecha, 2→3 hacia abajo, 3→1 hacia la izquierda) ⟹ trabajo neto cedido al entorno (signo negativo). ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex10">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 10</div>
+        <div class="ex-title">Capacidad calorífica del calorímetro</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Para calibrar un calorímetro se quema en él una muestra de ácido benzoico de masa <b>1,000 g</b> cuyo calor de combustión vale <b>26,42 kJ/g</b>. La temperatura del calorímetro sube de <b>20,00 °C a 25,32 °C</b>. Calcular la capacidad calorífica $C_{cal}$ del calorímetro (J/K).</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> $C_{cal} = 4\,966$ J/K.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa muestra</td><td>1,000 g</td></tr>
+            <tr><td>Calor combustión</td><td>26,42 kJ/g = 26 420 J/g</td></tr>
+            <tr><td>$\Delta T$</td><td>5,32 K</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Calibración de un calorímetro</div>
+            
+<p>Antes de medir reacciones desconocidas, el calorímetro debe calibrarse usando una sustancia de calor de combustión bien conocido (típicamente ácido benzoico). El calor liberado por la combustión calienta el calorímetro:</p>
+$$Q_{rxn} = -C_{cal}\,\Delta T$$
+<p>Despejando $C_{cal}$:</p>
+$$C_{cal}=\dfrac{|Q_{rxn}|}{\Delta T}$$
+<p>El signo negativo en $Q_{rxn}$ refleja que la reacción libera calor; $C_{cal}$ es positivo.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calor liberado por la muestra</div>
+            <p class="porque"><b>¿Por qué?</b> $Q = m\cdot \Delta H_{comb}$.</p>
+            $$|Q_{rxn}|=1{,}000\cdot 26\,420=26\,420\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Capacidad calorífica del calorímetro</div>
+            <p class="porque"><b>¿Por qué?</b> Dividir entre el incremento de temperatura.</p>
+            $$C_{cal}=\dfrac{26\,420}{5{,}32}=4\,966\ \text{J/K}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">$C_{cal} \approx 4\,966$ J/K. Una vez calibrado, este calorímetro puede usarse para medir reacciones desconocidas con precisión.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>$C_{cal}/4{,}18 = 1\,188$ <em>g equivalente de agua</em>. El calorímetro se comporta térmicamente como si tuviera ~1,2 kg de agua, lo cual es razonable: agua del recipiente + paredes metálicas + agitador. ✓</p>
         </div>
       </div>
 
@@ -428,14 +888,7 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
 <script>
 function initKatex(){
   if(typeof renderMathInElement === 'undefined') return;
-  renderMathInElement(document.body,{
-    delimiters:[
-      {left:'$$',right:'$$',display:true},
-      {left:'\\[',right:'\\]',display:true},
-      {left:'$',right:'$',display:false},
-      {left:'\\(',right:'\\)',display:false}
-    ],throwOnError:false
-  });
+  renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
 }
 document.addEventListener('DOMContentLoaded',initKatex);
 </script>

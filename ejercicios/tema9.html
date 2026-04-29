@@ -85,6 +85,13 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
     <a class="jl" href="#ex1">Ej 1 — pH de un ácido débil: ácido acético</a>
     <a class="jl" href="#ex2">Ej 2 — Tampón acético/acetato (Henderson-Hasselbalch)</a>
     <a class="jl" href="#ex3">Ej 3 — Hidrólisis de una sal</a>
+    <a class="jl" href="#ex4">Ej 4 — pH de un ácido fuerte muy diluido</a>
+    <a class="jl" href="#ex5">Ej 5 — Mezcla de ácido y base fuertes</a>
+    <a class="jl" href="#ex6">Ej 6 — Curva de valoración: ácido fuerte con base fuerte</a>
+    <a class="jl" href="#ex7">Ej 7 — Tampón con concentraciones diferentes</a>
+    <a class="jl" href="#ex8">Ej 8 — Hidrólisis del cloruro de amonio</a>
+    <a class="jl" href="#ex9">Ej 9 — Producto de solubilidad: solubilidad del AgCl</a>
+    <a class="jl" href="#ex10">Ej 10 — Capacidad reguladora máxima de un tampón</a>
   </div>
 
   <article class="ex open" id="ex1">
@@ -159,7 +166,6 @@ $$\text{CH}_3\text{COOH}+\text{H}_2\text{O}\rightleftharpoons\text{CH}_3\text{CO
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -241,7 +247,6 @@ $$[\text{A}^-]_{nuevo} = 0{,}30-0{,}01 = 0{,}29\ \text{M}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
@@ -321,13 +326,558 @@ $$K_b = K_h = \dfrac{K_w}{K_a}$$
           </div>
         </div>
       </div>
-
       <div class="sec-wrap s-verif sec-open">
         <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
           ✓ Verificación &nbsp;<span class="sarr">▼</span>
         </button>
         <div class="sec-body">
           <p>Coherencia: el acetato es la base conjugada del ácido acético; al ser su $K_a$ pequeño, $K_b$ es relativamente grande (en su escala) y la hidrólisis genera un pH netamente básico. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex4">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 4</div>
+        <div class="ex-title">pH de un ácido fuerte muy diluido</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el pH de una disolución <b>$1{,}0\cdot 10^{-7}$ M de HCl</b>. ¿Por qué no es directamente 7?</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> pH ≈ 6,79 (no 7 porque la autoionización del agua deja de ser despreciable).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$C_a$</td><td>$1{,}0\cdot 10^{-7}$ M</td></tr>
+            <tr><td>$K_w$</td><td>$1{,}0\cdot 10^{-14}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Cuando hay que tener en cuenta el agua</div>
+            
+<p>Para ácidos fuertes <em>concentrados</em> ($C_a\gtrsim 10^{-5}$ M), $[\text{H}_3\text{O}^+]\approx C_a$ y la contribución del agua es despreciable. Pero a concentraciones extremadamente bajas (cercanas a $10^{-7}$, que es la propia $[\text{H}_3\text{O}^+]$ del agua pura), <b>hay que sumar las dos fuentes</b>.</p>
+<p>Conservación de carga: $[\text{H}_3\text{O}^+] = [\text{OH}^-] + [\text{Cl}^-]$.<br>
+Equilibrio del agua: $[\text{H}_3\text{O}^+][\text{OH}^-]=K_w$.</p>
+<p>De la primera, $[\text{OH}^-]=[\text{H}_3\text{O}^+]-C_a$. Sustituyendo:</p>
+$$[\text{H}_3\text{O}^+]([\text{H}_3\text{O}^+]-C_a)=K_w$$
+<p>Es una ecuación cuadrática en $[\text{H}_3\text{O}^+]$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Plantear y resolver la cuadrática</div>
+            <p class="porque"><b>¿Por qué?</b> $x = [\text{H}_3\text{O}^+]$.</p>
+            $$x^2 - C_a\,x - K_w = 0$$
+$$x = \dfrac{C_a + \sqrt{C_a^2+4K_w}}{2}$$
+<p>Sustituyendo $C_a = 10^{-7}$, $K_w=10^{-14}$:</p>
+$$x = \dfrac{10^{-7}+\sqrt{10^{-14}+4\cdot 10^{-14}}}{2}=\dfrac{10^{-7}+\sqrt{5\cdot 10^{-14}}}{2}$$
+$$x = \dfrac{10^{-7}+2{,}236\cdot 10^{-7}}{2}=\dfrac{3{,}236\cdot 10^{-7}}{2}=1{,}618\cdot 10^{-7}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Calcular el pH</div>
+            <p class="porque"><b>¿Por qué?</b> $\text{pH}=-\log[\text{H}_3\text{O}^+]$.</p>
+            $$\text{pH}=-\log(1{,}618\cdot 10^{-7})=6{,}79$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">pH ≈ <b>6,79</b> — ligeramente ácido pero NO neutro pese a la baja concentración del HCl, por la contribución del agua.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Si calculásemos sin tener en cuenta el agua: pH = 7 (incorrecto) o pH = 7,3 si confundiéramos la dirección (también incorrecto). El cálculo con cuadrática garantiza el resultado físicamente válido: pH siempre $<7$ cuando se añade ácido. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex5">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 5</div>
+        <div class="ex-title">Mezcla de ácido y base fuertes</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Se mezclan <b>30 mL de HCl 0,10 M</b> con <b>20 mL de NaOH 0,20 M</b>. Calcular el pH de la disolución resultante.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> pH = 12,30 — disolución básica (NaOH en exceso).</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>HCl</td><td>30 mL · 0,10 M</td></tr>
+            <tr><td>NaOH</td><td>20 mL · 0,20 M</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Reacción y exceso</div>
+            
+<p>El HCl y el NaOH son ácido y base <em>fuertes</em>: se neutralizan estequiométricamente:</p>
+$$\text{HCl}+\text{NaOH}\to\text{NaCl}+\text{H}_2\text{O}$$
+<p>Hay que comparar moles iniciales:</p>
+<ul>
+  <li>Si $n_{HCl}>n_{NaOH}$: queda HCl libre, disolución ácida.</li>
+  <li>Si $n_{NaOH}>n_{HCl}$: queda NaOH libre, disolución básica.</li>
+  <li>Si iguales: pH = 7 (la sal NaCl no hidroliza).</li>
+</ul>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Moles iniciales</div>
+            <p class="porque"><b>¿Por qué?</b> $n=M\cdot V$ con $V$ en litros.</p>
+            $$n_{HCl}=0{,}10\cdot 0{,}030=3{,}0\cdot 10^{-3}\ \text{mol}$$
+$$n_{NaOH}=0{,}20\cdot 0{,}020=4{,}0\cdot 10^{-3}\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Tras la reacción</div>
+            <p class="porque"><b>¿Por qué?</b> El HCl se consume todo. Sobra NaOH = $n_{NaOH} - n_{HCl}$.</p>
+            $$n_{NaOH,exc}=4{,}0\cdot 10^{-3}-3{,}0\cdot 10^{-3}=1{,}0\cdot 10^{-3}\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Concentración de OH$^-$</div>
+            <p class="porque"><b>¿Por qué?</b> Volumen total = 50 mL.</p>
+            $$[\text{OH}^-]=\dfrac{1{,}0\cdot 10^{-3}}{0{,}050}=0{,}020\ \text{M}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — pH</div>
+            <p class="porque"><b>¿Por qué?</b> Vía pOH.</p>
+            $$\text{pOH}=-\log(0{,}020)=1{,}70 \implies \text{pH}=14-1{,}70=12{,}30$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">pH = <b>12,30</b> — fuertemente básica por el exceso de NaOH.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Comprobación: 30·0,10 = 3 mmol HCl y 20·0,20 = 4 mmol NaOH; el ratio 4/3 = 1,33 indica claramente exceso de base, coherente con pH > 7. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex6">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 6</div>
+        <div class="ex-title">Curva de valoración: ácido fuerte con base fuerte</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el pH en los siguientes puntos durante la valoración de <b>50,0 mL de HCl 0,100 M</b> con NaOH 0,100 M: (a) inicio (V=0); (b) tras añadir 25 mL; (c) en el punto de equivalencia (50 mL); (d) tras añadir 75 mL en total.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) 1,00; (b) 1,48; (c) 7,00; (d) 12,30.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Ácido</td><td>50,0 mL · 0,100 M HCl ⟹ 5,0 mmol</td></tr>
+            <tr><td>Base</td><td>0,100 M NaOH</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="paso">
+            <div class="paso-titulo">(a) V=0 — solo HCl</div>
+            <p class="porque"><b>¿Por qué?</b> $[\text{H}^+]=0{,}100$ M.</p>
+            $$\text{pH}=-\log(0{,}100)=1{,}00$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) V=25 mL — HCl en exceso</div>
+            <p class="porque"><b>¿Por qué?</b> Moles añadidos NaOH = 2,5 mmol; HCl restante = 5,0 − 2,5 = 2,5 mmol. Volumen total = 75 mL.</p>
+            $$[\text{H}^+]=\dfrac{2{,}5\cdot 10^{-3}}{0{,}075}=0{,}0333\ \text{M}$$
+$$\text{pH}=-\log(0{,}0333)=1{,}48$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(c) V=50 mL — punto de equivalencia</div>
+            <p class="porque"><b>¿Por qué?</b> HCl y NaOH consumidos exactamente. Solo queda NaCl (sal neutra).</p>
+            $$\text{pH}=7{,}00$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(d) V=75 mL — NaOH en exceso</div>
+            <p class="porque"><b>¿Por qué?</b> Moles NaOH = 7,5 mmol; usados 5,0 mmol; sobran 2,5 mmol. Volumen total = 125 mL.</p>
+            $$[\text{OH}^-]=\dfrac{2{,}5\cdot 10^{-3}}{0{,}125}=0{,}020\ \text{M}$$
+$$\text{pOH}=1{,}70 \implies \text{pH}=12{,}30$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">(a) 1,00 · (b) 1,48 · (c) 7,00 · (d) 12,30. Salto brusco entre 4 y 10 alrededor del punto de equivalencia.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>En valoraciones HF + BF, el punto de equivalencia está siempre a pH = 7. El indicador adecuado es uno con vire en 4-10 (fenolftaleína 8,2-10 o naranja de metilo 3,2-4,4 funcionan ambos). ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex7">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 7</div>
+        <div class="ex-title">Tampón con concentraciones diferentes</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el pH de un tampón formado por <b>0,30 M de NH$_3$</b> y <b>0,50 M de NH$_4$Cl</b>. $K_b(\text{NH}_3)=1{,}8\cdot 10^{-5}$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> pH = 9,04.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>[base]</td><td>0,30 M NH$_3$</td></tr>
+            <tr><td>[ácido]</td><td>0,50 M NH$_4^+$</td></tr>
+            <tr><td>$K_b$ NH$_3$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Henderson-Hasselbalch para tampones básicos</div>
+            
+<p>El par NH$_3$ / NH$_4^+$ es un tampón. El NH$_3$ es la base; el NH$_4^+$ su ácido conjugado. Para usar Henderson-Hasselbalch convertimos $K_b$ en $K_a$ del ácido conjugado:</p>
+$$K_a(\text{NH}_4^+)=\dfrac{K_w}{K_b}=\dfrac{10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{-10}$$
+<p>$\text{p}K_a = 9{,}26$. Aplicamos:</p>
+$$\text{pH} = \text{p}K_a + \log\!\dfrac{[\text{base}]}{[\text{ácido}]}=\text{p}K_a + \log\!\dfrac{[\text{NH}_3]}{[\text{NH}_4^+]}$$
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Cálculo directo</div>
+            <p class="porque"><b>¿Por qué?</b> Sustitución en H-H.</p>
+            $$\text{pH} = 9{,}26 + \log\!\dfrac{0{,}30}{0{,}50}=9{,}26+\log(0{,}60)=9{,}26-0{,}222=\boxed{9{,}04}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">pH = <b>9,04</b> — ligeramente ácido respecto al p$K_a$ porque hay más ácido conjugado que base.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Si las concentraciones fueran iguales, pH = p$K_a = 9{,}26$. Aquí [base]/[ácido] < 1 ⟹ pH < p$K_a$. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex8">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 8</div>
+        <div class="ex-title">Hidrólisis del cloruro de amonio</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular el pH de una disolución <b>0,10 M de NH$_4$Cl</b>. $K_b(\text{NH}_3)=1{,}8\cdot 10^{-5}$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> pH = 5,13 — disolución ácida.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$C_{sal}$</td><td>0,10 M</td></tr>
+            <tr><td>$K_b$ NH$_3$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Hidrólisis del catión</div>
+            
+<p>El NH$_4$Cl proviene de la base débil NH$_3$ y el ácido fuerte HCl. Su catión NH$_4^+$ es el ácido conjugado de la base débil — <b>hidroliza</b> en agua:</p>
+$$\text{NH}_4^+ + \text{H}_2\text{O}\rightleftharpoons \text{NH}_3 + \text{H}_3\text{O}^+$$
+<p>La constante de hidrólisis (= $K_a$ del ácido conjugado) es:</p>
+$$K_a = \dfrac{K_w}{K_b} = \dfrac{10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{-10}$$
+<p>Aplicamos la aproximación habitual: $[\text{H}_3\text{O}^+]\approx\sqrt{K_a\cdot C_{sal}}$.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calcular $K_a$</div>
+            <p class="porque"><b>¿Por qué?</b> Vía $K_w/K_b$.</p>
+            $$K_a=\dfrac{1{,}0\cdot 10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{-10}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — $[\text{H}_3\text{O}^+]$</div>
+            <p class="porque"><b>¿Por qué?</b> Aproximación válida: $C/K_a = 1{,}8\cdot 10^{8} \gg 100$.</p>
+            $$[\text{H}_3\text{O}^+]\approx\sqrt{5{,}56\cdot 10^{-10}\cdot 0{,}10}=\sqrt{5{,}56\cdot 10^{-11}}=7{,}45\cdot 10^{-6}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — pH</div>
+            <p class="porque"><b>¿Por qué?</b> $-\log$.</p>
+            $$\text{pH}=-\log(7{,}45\cdot 10^{-6})=\boxed{5{,}13}$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">pH = <b>5,13</b> — disolución ácida, como toda sal de ácido fuerte + base débil.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Coherencia: el Cl$^-$ es la base conjugada de un ácido fuerte (HCl), así que es muy débil — no hidroliza. Toda la acidez viene del NH$_4^+$. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex9">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 9</div>
+        <div class="ex-title">Producto de solubilidad: solubilidad del AgCl</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Calcular: (a) la solubilidad molar del AgCl en agua pura; (b) en una disolución de NaCl 0,10 M. $K_{ps}(\text{AgCl}) = 1{,}8\cdot 10^{-10}$.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $s = 1{,}34\cdot 10^{-5}$ M (1,93 mg/L); (b) $s' = 1{,}8\cdot 10^{-9}$ M — efecto del ion común.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$K_{ps}$ AgCl</td><td>$1{,}8\cdot 10^{-10}$</td></tr>
+            <tr><td>[Cl$^-$] en (b)</td><td>0,10 M (de NaCl)</td></tr>
+            <tr><td>$M_{AgCl}$</td><td>143,3 g/mol</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Producto de solubilidad y efecto del ion común</div>
+            
+<p>Para una sal poco soluble AgCl(s) ⇌ Ag$^+$ + Cl$^-$, el equilibrio se rige por:</p>
+$$K_{ps}=[\text{Ag}^+][\text{Cl}^-]$$
+<p>En agua pura, ambas concentraciones son iguales a la solubilidad $s$, así que $K_{ps}=s^2$ ⟹ $s=\sqrt{K_{ps}}$.</p>
+<p>Si hay <b>ion común</b> (Cl$^-$ proveniente de otra sal), $[\text{Cl}^-]$ ya está fijado por la otra fuente; entonces $s=K_{ps}/[\text{Cl}^-]$, mucho menor que en agua pura. Esto se llama <b>efecto del ion común</b>.</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">(a) En agua pura</div>
+            <p class="porque"><b>¿Por qué?</b> $s^2 = K_{ps}$.</p>
+            $$s=\sqrt{1{,}8\cdot 10^{-10}}=1{,}34\cdot 10^{-5}\ \text{M}$$
+$$s_{g/L}=1{,}34\cdot 10^{-5}\cdot 143{,}3=1{,}93\ \text{mg/L}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) En NaCl 0,10 M</div>
+            <p class="porque"><b>¿Por qué?</b> $[\text{Cl}^-]\approx 0{,}10$ M (la contribución de AgCl es despreciable). Despejo $[\text{Ag}^+]=s'$.</p>
+            $$s'=\dfrac{K_{ps}}{[\text{Cl}^-]}=\dfrac{1{,}8\cdot 10^{-10}}{0{,}10}=1{,}8\cdot 10^{-9}\ \text{M}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Comparación</div>
+            <p class="porque"><b>¿Por qué?</b> Razón entre solubilidades.</p>
+            $$\dfrac{s}{s'}=\dfrac{1{,}34\cdot 10^{-5}}{1{,}8\cdot 10^{-9}}=7\,400$$
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">En agua: $s\approx 1{,}3\cdot 10^{-5}$ M. En NaCl 0,10 M: $s'\approx 1{,}8\cdot 10^{-9}$ M. La presencia de Cl$^-$ <b>reduce la solubilidad ~7 400 veces</b>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Esto justifica la práctica analítica de <em>lavar</em> precipitados con disolución de la sal correspondiente diluida (en lugar de agua pura) — minimiza pérdidas por solubilidad. ✓</p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+  <article class="ex" id="ex10">
+    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
+      <div>
+        <div class="ex-num">EJERCICIO 10</div>
+        <div class="ex-title">Capacidad reguladora máxima de un tampón</div>
+      </div>
+      <span class="ex-arrow">▼</span>
+    </div>
+    <div class="ex-body">
+
+      <div class="enunciado">
+        <p>Justificar por qué la capacidad reguladora máxima de un tampón se alcanza cuando $[\text{base}]=[\text{ácido}]$. Calcular cuánto cambia el pH al añadir <b>0,01 mol</b> de HCl a (a) 1 L de tampón con 0,5 M HA + 0,5 M A$^-$, y (b) 1 L con 0,9 M HA + 0,1 M A$^-$. Tomar p$K_a=4{,}74$ en ambos.</p>
+        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $\Delta\text{pH}\approx 0{,}017$; (b) $\Delta\text{pH}\approx 0{,}087$. El tampón equimolar es ~5 veces más eficiente.</p>
+      </div>
+
+      <div class="sec-wrap s-datos sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          📋 Datos &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <table class="tdatos">
+            <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>p$K_a$</td><td>4,74</td></tr>
+            <tr><td>HCl añadido</td><td>0,01 mol</td></tr>
+            <tr><td>Tampón (a)</td><td>[HA]=[A$^-$]=0,5 M</td></tr>
+            <tr><td>Tampón (b)</td><td>[HA]=0,9 M, [A$^-$]=0,1 M</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec-wrap s-resol sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+
+          <div class="demo">
+            <div class="demo-titulo">🟧 Demostración — Sensibilidad al cambio en H-H</div>
+            
+<p>Henderson-Hasselbalch: $\text{pH}=\text{p}K_a+\log([A^-]/[HA])$. Al añadir un ácido fuerte, parte de A$^-$ se convierte en HA. Si las concentraciones iniciales son <em>iguales</em>, una pequeña perturbación apenas mueve el cociente $[A^-]/[HA]$ del valor 1, así que el pH apenas cambia.</p>
+<p>En cambio, si una de las dos especies está mucho más diluida, su consumo o producción tiene un impacto relativo grande.</p>
+<p>Matemáticamente, la sensibilidad $|d\text{pH}/dx|$ es mínima cuando $[\text{base}]=[\text{ácido}]$ — esto explica la "capacidad reguladora máxima".</p>
+
+          </div>
+
+          <div class="paso">
+            <div class="paso-titulo">(a) Tampón equimolar</div>
+            <p class="porque"><b>¿Por qué?</b> Tras añadir HCl: [HA]=0,51 M, [A$^-$]=0,49 M.</p>
+            $$\text{pH}_0 = 4{,}74+\log 1=4{,}74$$
+$$\text{pH}_f = 4{,}74+\log\dfrac{0{,}49}{0{,}51}=4{,}74-0{,}0173=4{,}723$$
+$$\Delta\text{pH}=0{,}017$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) Tampón asimétrico</div>
+            <p class="porque"><b>¿Por qué?</b> Tras añadir HCl: [HA]=0,91 M, [A$^-$]=0,09 M.</p>
+            $$\text{pH}_0 = 4{,}74+\log\dfrac{0{,}1}{0{,}9}=4{,}74-0{,}954=3{,}786$$
+$$\text{pH}_f = 4{,}74+\log\dfrac{0{,}09}{0{,}91}=4{,}74-1{,}004=3{,}736$$
+$$\Delta\text{pH}=0{,}050$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Comparación</div>
+            <p class="porque"><b>¿Por qué?</b> Cuanto más cerca de equimolar, menor cambio.</p>
+            <p>El tampón equimolar es <b>~3 veces</b> más eficiente. La fórmula clásica para la capacidad reguladora $\beta$ alcanza su máximo en $[A^-]=[HA]$.</p>
+          </div>
+
+          <div class="resf">
+            <div class="resf-lbl">Resultado</div>
+            <div class="resf-val">(a) $\Delta\text{pH}=0{,}017$ · (b) $\Delta\text{pH}=0{,}050$. El equimolar (relación 1:1) es óptimo.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-wrap s-verif sec-open">
+        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
+          ✓ Verificación &nbsp;<span class="sarr">▼</span>
+        </button>
+        <div class="sec-body">
+          <p>Esto explica por qué los tampones biológicos (sangre H$_2$CO$_3$/HCO$_3^-$, p$K_a=6{,}1$) están diseñados con relación cercana a 1:1 alrededor del pH fisiológico (7,4). ✓</p>
         </div>
       </div>
 

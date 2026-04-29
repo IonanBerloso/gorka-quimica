@@ -1,6 +1,6 @@
 // Service Worker · Química · Gorka
-// v2 — invalida cachés antiguas que servían los placeholders.
-const CACHE = 'quimica-gorka-v2';
+// v3 — invalida ejercicios antiguos (3) y carga nuevos (10).
+const CACHE = 'quimica-gorka-v3';
 const ASSETS = [
   './',
   './index.html',
