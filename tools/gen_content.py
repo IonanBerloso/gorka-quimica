@@ -1777,106 +1777,251 @@ EJ_TPL = r"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0e1a">
-<title>T{N} · Ejercicios · {TITULO}</title>
+<meta name="theme-color" content="#131313">
+<title>T{N} · Ejercicios · Química · {TITULO}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
   onload="initKatex && initKatex()"></script>
-<link rel="stylesheet" href="../shared/quimica.css">
 <style>
-body{padding-top:52px;font-size:15px;line-height:1.65}
-.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
-@media(max-width:900px){.wrap{padding:18px 14px 40px}}
-.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
-.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
-.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
-.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
-.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
-.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
-.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
-.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
-.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
-.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
-.ex.open .ex-arrow{transform:rotate(180deg)}
-.ex-body{display:none;padding:16px 20px}
-.ex.open .ex-body{display:block}
-.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
-.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
-.sec-btn .sarr{transition:.2s}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#131313;
+  --surface:rgba(255,255,255,.04);
+  --surface2:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.08);
+  --border2:rgba(255,255,255,.12);
+  --text:#e2e8f0;
+  --text2:#94a3b8;
+  --text3:#64748b;
+  --accent:#c084fc;
+  --accent-dim:rgba(192,132,252,.12);
+  --accent-border:rgba(192,132,252,.28);
+  --gold:#f59e0b;
+  --gold-dim:rgba(245,158,11,.1);
+  --gold-border:rgba(245,158,11,.28);
+  --green:#10b981;
+  --blue:#38bdf8;
+  --orange:#fb923c;
+  --yellow:#ffd93d;
+  --ff:'Space Grotesk',system-ui,sans-serif;
+  --ff-mono:'JetBrains Mono',monospace;
+  --radius:10px;
+  --radius-sm:6px;
+  --topbar-h:52px;
+  --sidebar-w:280px;
+  --transition:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;font-size:15px;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+b,strong{color:#f1f5f9;font-weight:600}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(19,19,19,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;height:52px}
+.topbar-back{display:flex;align-items:center;gap:8px;padding:0 18px;height:100%;color:var(--text2);font-size:.82em;font-weight:500;border-right:1px solid var(--border);transition:color var(--transition);white-space:nowrap;text-decoration:none}
+.topbar-back:hover{color:var(--accent);text-decoration:none}
+.topbar-back svg{transition:transform var(--transition)}
+.topbar-back:hover svg{transform:translateX(-3px)}
+.topbar-title{padding:0 16px;flex:1;font-size:.88em;font-weight:600;color:#f1f5f9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.tema-picker{position:relative;margin-right:16px}
+.tema-picker-btn{background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:20px;padding:4px 13px;font-size:.72em;font-weight:700;color:var(--accent);cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:.15s;font-family:var(--ff)}
+.tema-picker-btn:hover{background:rgba(192,132,252,.2)}
+.tema-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);background:rgba(19,19,19,.98);border:1px solid var(--accent-border);border-radius:10px;padding:6px;min-width:240px;z-index:300;box-shadow:0 8px 32px rgba(0,0,0,.85)}
+.tema-picker.open .tema-dropdown{display:block}
+.td-item{display:block;padding:7px 11px;border-radius:6px;font-size:.79em;text-decoration:none;transition:.15s;white-space:nowrap;font-weight:500;color:#e2e8f0}
+.td-item:hover{background:var(--accent-dim);color:var(--accent)}
+.td-item.td-active{color:var(--accent);background:var(--accent-dim);font-weight:700;pointer-events:none}
+.td-num{display:inline-block;width:28px;font-weight:700;color:var(--accent)}
+
+.layout{display:flex;padding-top:52px;min-height:calc(100vh - 52px)}
+
+.sidebar{width:var(--sidebar-w);flex-shrink:0;position:fixed;top:52px;left:0;bottom:0;background:rgba(255,255,255,.025);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.sb-head{padding:12px 12px 8px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sb-subtitle{font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--text3);margin-bottom:3px}
+.sb-current{font-size:.74em;font-weight:600;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:1.1em}
+.sb-list{flex:1;overflow-y:auto;padding:5px 5px 16px}
+.sb-item{width:100%;display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:var(--radius-sm);background:none;border:1px solid transparent;color:var(--text2);font-family:var(--ff);font-size:.78em;cursor:pointer;text-align:left;transition:all var(--transition);margin-bottom:1px}
+.sb-item:hover{background:var(--surface);color:var(--text)}
+.sb-item.active{background:var(--accent-dim);color:var(--accent);border-color:var(--accent-border)}
+.sb-tag{font-family:var(--ff-mono);font-size:.68em;font-weight:700;min-width:30px;color:inherit;opacity:.75;flex-shrink:0}
+.sb-name{flex:1;font-weight:500;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-footer{padding:7px 10px;border-top:1px solid var(--border);flex-shrink:0;display:flex;flex-direction:column;gap:5px}
+.sb-link{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:var(--radius-sm);font-size:.76em;font-weight:600;text-decoration:none;transition:background var(--transition)}
+.sb-link-purple{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent)}
+.sb-link-purple:hover{background:rgba(192,132,252,.2)}
+.sb-link-gold{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:var(--gold)}
+.sb-link-gold:hover{background:rgba(245,158,11,.15)}
+
+.content{flex:1;margin-left:var(--sidebar-w);padding:28px 40px 60px;min-width:0}
+
+.topic-panel{display:none;max-width:860px}
+.topic-panel.active{display:block;animation:tpFadeIn .18s ease forwards}
+@keyframes tpFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.panel-header{margin-bottom:24px;padding:14px 18px 16px;background:linear-gradient(135deg,rgba(192,132,252,.06) 0%,transparent 60%);border:1px solid rgba(192,132,252,.18);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.panel-tag{font-family:var(--ff-mono);font-size:.68em;font-weight:700;color:var(--accent);opacity:.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.panel-title{font-size:1.3em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em;line-height:1.3}
+.panel-meta{font-size:.78em;color:var(--text3);margin-top:5px}
+
+.read-progress{position:fixed;top:52px;left:var(--sidebar-w);right:0;height:2px;z-index:200;background:linear-gradient(90deg,var(--accent),var(--blue));transform-origin:left;transform:scaleX(0);transition:transform .08s linear}
+
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(192,132,252,.18);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(192,132,252,.35)}
+
+@media(max-width:768px){
+  body{font-size:17px}
+  .sidebar{position:static;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--border)}
+  .layout{flex-direction:column}
+  .content{margin-left:0;padding:20px 16px 40px}
+  .sb-list{max-height:200px}
+  .read-progress{left:0}
+  .katex{font-size:1.05em}
+}
+
+.section-wrap{margin-bottom:14px;border-radius:var(--radius-sm);overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;border-radius:var(--radius-sm);cursor:pointer;font-size:.86em;font-weight:600;letter-spacing:.3px;transition:var(--transition);display:flex;justify-content:space-between;align-items:center;font-family:var(--ff)}
+.sec-btn .sarr{transition:.2s;flex-shrink:0}
 .sec-open .sec-btn .sarr{transform:rotate(180deg)}
-.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-body{display:none;border-radius:0 0 var(--radius-sm) var(--radius-sm);padding:13px 15px;font-size:.86em;line-height:1.75}
 .sec-open .sec-body{display:block}
-.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
-.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
-.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
-.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
-.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
-.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
-.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
-.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
-.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
-.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
-.tdatos td{color:#cbd5e1}
-.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
-.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
-.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
-.porque b{color:#fb923c;font-style:normal}
-.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
-.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
-.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
-.demo .step{color:#fed7aa;margin-top:8px}
-.demo .step b{color:#fb923c}
-.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
-.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
-.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
-.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+
+.s-datos .sec-btn{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+.s-datos .sec-body{background:rgba(192,132,252,.04);border:1px solid var(--accent-border);border-top:none}
+.s-teoria .sec-btn{background:rgba(251,146,60,.1);color:var(--orange);border:1px solid rgba(251,146,60,.25)}
+.s-teoria .sec-body{background:rgba(251,146,60,.05);border:1px solid rgba(251,146,60,.2);border-top:none}
+.s-resolucion .sec-btn{background:rgba(16,185,129,.1);color:var(--green);border:1px solid rgba(16,185,129,.25)}
+.s-resolucion .sec-body{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-top:none}
+
+.enunciado{background:var(--surface2);border-radius:var(--radius-sm);padding:13px 15px;font-size:.87em;line-height:1.75;margin-bottom:14px;border-left:3px solid var(--accent-border)}
+
+.t-datos{width:100%;border-collapse:collapse;font-size:.84em}
+.t-datos th{background:var(--accent-dim);color:var(--accent);padding:7px 10px;text-align:left;border:1px solid var(--accent-border)}
+.t-datos td{padding:7px 10px;border:1px solid var(--border);color:var(--text2)}
+.t-datos tr:nth-child(even) td{background:rgba(192,132,252,.04)}
+
+.paso{margin-bottom:13px;padding:10px 13px;background:rgba(16,185,129,.06);border-radius:var(--radius-sm);border-left:3px solid rgba(16,185,129,.4)}
+.paso-titulo{color:var(--green);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.porque{font-size:.83em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:var(--orange);font-style:normal}
+
+.resultado-final{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);border-radius:var(--radius-sm);padding:11px 15px;margin-top:12px}
+.rf-label{font-size:.7em;color:var(--green);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;font-weight:700}
+.rf-val{color:#d1fae5;font-size:.9em;line-height:1.9}
+
+.verificacion{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.25);border-left:3px solid #38bdf8;border-radius:var(--radius-sm);padding:10px 14px;margin-top:10px;font-size:.82em;color:#bae6fd}
+.verificacion .vlabel{font-family:var(--ff-mono);font-size:.7em;color:#38bdf8;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:4px;display:block}
+
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden}
+.footer{text-align:center;padding:40px 20px;color:var(--text3);font-size:.78em}
+
+.empty-state{text-align:center;padding:80px 20px;color:var(--text3)}
 </style>
 </head>
 <body>
 
 <nav class="topbar">
   <a class="topbar-back" href="index.html">
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Ejercicios
   </a>
-  <span class="topbar-title">Química · T{N} <em>· Ejercicios resueltos</em></span>
+  <span class="topbar-title">Química · T{N} <span style="color:var(--accent)">· {TITULO}</span></span>
+  <div class="tema-picker" id="temaPicker">
+    <button class="tema-picker-btn" onclick="this.closest('.tema-picker').classList.toggle('open')">T{N} ▾</button>
+    <div class="tema-dropdown">
+{TEMA_DROPDOWN}
+    </div>
+  </div>
 </nav>
 
-<div class="wrap">
+<div class="read-progress" id="readProgress"></div>
 
-  <div class="head">
-    <div class="tag">📝 Tema {N} · {TITULO}</div>
-    <h1>Ejercicios resueltos · Tema {N}</h1>
-    <div class="sub">{SUBTITULO}</div>
-  </div>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sb-head">
+      <div class="sb-subtitle">T{N} · {TITULO}</div>
+      <div class="sb-current" id="sbCurrent"></div>
+    </div>
+    <div class="sb-list">
+{SIDEBAR_ITEMS}
+    </div>
+    <div class="sb-footer">
+      <a class="sb-link sb-link-purple" href="../teoria/tema{N}.html">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Teoría
+      </a>
+      <a class="sb-link sb-link-gold" href="../formulario.html">📐 Formulario</a>
+    </div>
+  </aside>
 
-  <div class="jump">
-{JUMP_LINKS}
-  </div>
-
-{EJERCICIOS}
-
+  <main class="content">
+{PANELES}
+  </main>
 </div>
 
-<footer class="qg-footer">
-  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
-</footer>
+<div class="footer">Química · 1.º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a></div>
 
 <script>
 function initKatex(){
-  if(typeof renderMathInElement === 'undefined') return;
+  if(typeof renderMathInElement==='undefined') return;
   renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
 }
-document.addEventListener('DOMContentLoaded',initKatex);
+
+document.addEventListener('DOMContentLoaded', function(){
+  initKatex();
+  var panels = document.querySelectorAll('.topic-panel');
+  if(panels.length>0) showEx(panels[0].id);
+});
+
+function showEx(id){
+  document.querySelectorAll('.topic-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.sb-item').forEach(function(b){b.classList.remove('active')});
+  var panel = document.getElementById(id);
+  if(panel) panel.classList.add('active');
+  var btn = document.querySelector('[data-id="'+id+'"]');
+  if(btn){
+    btn.classList.add('active');
+    var name = btn.querySelector('.sb-name');
+    var curr = document.getElementById('sbCurrent');
+    if(curr && name) curr.textContent = name.textContent;
+  }
+  window.scrollTo({top:0,behavior:'instant'});
+  updateProgress();
+}
+
+function toggleSec(btn){
+  var wrap = btn.closest('.section-wrap');
+  wrap.classList.toggle('sec-open');
+  if(wrap.classList.contains('sec-open') && typeof renderMathInElement!=='undefined'){
+    renderMathInElement(wrap,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+  }
+}
+
+function updateProgress(){
+  var bar = document.getElementById('readProgress');
+  if(!bar) return;
+  var scrolled = window.scrollY;
+  var total = document.body.scrollHeight - window.innerHeight;
+  bar.style.transform = 'scaleX('+(total>0?Math.min(scrolled/total,1):0)+')';
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
+
+document.addEventListener('click', function(e){
+  var picker = document.getElementById('temaPicker');
+  if(picker && !picker.contains(e.target)) picker.classList.remove('open');
+});
 </script>
 </body>
 </html>
 """
+
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -1916,18 +2061,63 @@ def render_teoria(n, data):
             .replace("{SECCIONES}", secciones_str))
 
 
+_TEMA_TITULOS = {
+    1: "Conceptos generales",
+    2: "Estructura atómica",
+    3: "Enlace químico",
+    4: "Estados de la materia",
+    5: "Termodinámica química",
+    6: "Termoquímica",
+    7: "Espontaneidad y energía libre",
+    8: "Cinética y equilibrio",
+    9: "Equilibrio ácido-base",
+}
+
+
+def _short_title(title, max_chars=44):
+    """Devuelve título corto para sidebar, sin LaTeX visible."""
+    import re
+    t = re.sub(r'\$[^$]*\$', '', title)
+    t = re.sub(r'\\[a-zA-Z]+', '', t)
+    t = re.sub(r'[{}_^\\]', '', t).strip()
+    if len(t) > max_chars:
+        t = t[:max_chars - 1].rstrip() + "…"
+    return t or title
+
+
 def render_ejercicios(n, data):
     extra = EJERCICIOS_EXTRA.get(n, [])
     todos_ej = list(data["ej"]) + list(extra)
+    nn = f"{n:02d}"
 
-    jumps = "\n".join(
-        f'    <a class="jl" href="#ex{i+1}">Ej {i+1} — {ej["title"]}</a>'
-        for i, ej in enumerate(todos_ej)
-    )
+    # Tema dropdown (todos los temas con el actual marcado)
+    tema_drop_lines = []
+    for k in range(1, 10):
+        cls = "td-active" if k == n else ""
+        tema_drop_lines.append(
+            f'    <a class="td-item {cls}" href="tema{k}.html"><span class="td-num">T{k}</span> {_TEMA_TITULOS[k]}</a>'
+        )
+    tema_dropdown = "\n".join(tema_drop_lines)
 
-    ejs_html = []
+    # Sidebar items
+    sidebar_lines = []
     for i, ej in enumerate(todos_ej):
         idx = i + 1
+        ex_id = f"ex{n}-{idx}"
+        sb_name = _short_title(ej["title"], max_chars=42)
+        sidebar_lines.append(
+            f'      <button class="sb-item" onclick="showEx(\'{ex_id}\')" data-id="{ex_id}">\n'
+            f'        <span class="sb-tag">{n}.{idx}</span>\n'
+            f'        <span class="sb-name">{sb_name}</span>\n'
+            f'      </button>'
+        )
+    sidebar_items = "\n".join(sidebar_lines)
+
+    # Topic panels
+    paneles = []
+    for i, ej in enumerate(todos_ej):
+        idx = i + 1
+        ex_id = f"ex{n}-{idx}"
         datos_rows = "\n".join(
             f"            <tr><td>{lbl}</td><td>{val}</td></tr>"
             for lbl, val in ej["datos"]
@@ -1940,77 +2130,73 @@ def render_ejercicios(n, data):
           </div>"""
             for p in ej["pasos"]
         )
-        demo_html = ""
-        if ej.get("demo"):
-            demo_html = f"""          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — {ej["demo"]["title"]}</div>
-            {ej["demo"]["body"]}
-          </div>
 
+        teoria_section = ""
+        if ej.get("demo"):
+            teoria_section = f"""
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — {ej["demo"]["title"]} <span class="sarr">▾</span></button>
+      <div class="sec-body">
+{ej["demo"]["body"]}
+      </div>
+    </div>
 """
+
         verif_html = ""
         if ej.get("verificacion"):
             verif_html = f"""
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>{ej["verificacion"]}</p>
-        </div>
-      </div>"""
-        open_class = " open" if i == 0 else ""
-        ejs_html.append(f"""  <article class="ex{open_class}" id="ex{idx}">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO {idx}</div>
-        <div class="ex-title">{ej["title"]}</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      {ej["verificacion"]}
+    </div>"""
+
+        meta_html = ""
+        if ej.get("esperado"):
+            meta_html = f'<div class="panel-meta">Resultado: {ej["esperado"]}</div>'
+
+        paneles.append(f"""  <div class="topic-panel" id="{ex_id}">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio {n}.{idx}</div>
+      <h1 class="panel-title">{ej["title"]}</h1>
+      {meta_html}
     </div>
-    <div class="ex-body">
 
-      <div class="enunciado">
-        <p>{ej["enunciado"]}</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> {ej["esperado"]}</p>
-      </div>
+    <div class="enunciado">
+      {ej["enunciado"]}
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
 {datos_rows}
-          </table>
+        </table>
+      </div>
+    </div>
+{teoria_section}
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+{pasos_html}
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">{ej["resultado"]}</div>
         </div>
       </div>
+    </div>{verif_html}
+  </div>""")
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-
-{demo_html}{pasos_html}
-
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">{ej["resultado"]}</div>
-          </div>
-        </div>
-      </div>{verif_html}
-
-    </div>
-  </article>""")
+    paneles_html = "\n".join(paneles)
 
     return (EJ_TPL
             .replace("{N}", str(n))
+            .replace("{NN}", nn)
             .replace("{TITULO}", data["titulo"])
-            .replace("{SUBTITULO}", data["subtitulo"])
-            .replace("{JUMP_LINKS}", jumps)
-            .replace("{EJERCICIOS}", "\n".join(ejs_html)))
+            .replace("{TEMA_DROPDOWN}", tema_dropdown)
+            .replace("{SIDEBAR_ITEMS}", sidebar_items)
+            .replace("{PANELES}", paneles_html))
 
 
 def main():

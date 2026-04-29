@@ -3,142 +3,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0e1a">
-<title>T3 · Ejercicios · Enlace químico</title>
+<meta name="theme-color" content="#131313">
+<title>T3 · Ejercicios · Química · Enlace químico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
   onload="initKatex && initKatex()"></script>
-<link rel="stylesheet" href="../shared/quimica.css">
 <style>
-body{padding-top:52px;font-size:15px;line-height:1.65}
-.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
-@media(max-width:900px){.wrap{padding:18px 14px 40px}}
-.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
-.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
-.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
-.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
-.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
-.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
-.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
-.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
-.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
-.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
-.ex.open .ex-arrow{transform:rotate(180deg)}
-.ex-body{display:none;padding:16px 20px}
-.ex.open .ex-body{display:block}
-.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
-.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
-.sec-btn .sarr{transition:.2s}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#131313;
+  --surface:rgba(255,255,255,.04);
+  --surface2:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.08);
+  --border2:rgba(255,255,255,.12);
+  --text:#e2e8f0;
+  --text2:#94a3b8;
+  --text3:#64748b;
+  --accent:#c084fc;
+  --accent-dim:rgba(192,132,252,.12);
+  --accent-border:rgba(192,132,252,.28);
+  --gold:#f59e0b;
+  --gold-dim:rgba(245,158,11,.1);
+  --gold-border:rgba(245,158,11,.28);
+  --green:#10b981;
+  --blue:#38bdf8;
+  --orange:#fb923c;
+  --yellow:#ffd93d;
+  --ff:'Space Grotesk',system-ui,sans-serif;
+  --ff-mono:'JetBrains Mono',monospace;
+  --radius:10px;
+  --radius-sm:6px;
+  --topbar-h:52px;
+  --sidebar-w:280px;
+  --transition:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;font-size:15px;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+b,strong{color:#f1f5f9;font-weight:600}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(19,19,19,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;height:52px}
+.topbar-back{display:flex;align-items:center;gap:8px;padding:0 18px;height:100%;color:var(--text2);font-size:.82em;font-weight:500;border-right:1px solid var(--border);transition:color var(--transition);white-space:nowrap;text-decoration:none}
+.topbar-back:hover{color:var(--accent);text-decoration:none}
+.topbar-back svg{transition:transform var(--transition)}
+.topbar-back:hover svg{transform:translateX(-3px)}
+.topbar-title{padding:0 16px;flex:1;font-size:.88em;font-weight:600;color:#f1f5f9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.tema-picker{position:relative;margin-right:16px}
+.tema-picker-btn{background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:20px;padding:4px 13px;font-size:.72em;font-weight:700;color:var(--accent);cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:.15s;font-family:var(--ff)}
+.tema-picker-btn:hover{background:rgba(192,132,252,.2)}
+.tema-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);background:rgba(19,19,19,.98);border:1px solid var(--accent-border);border-radius:10px;padding:6px;min-width:240px;z-index:300;box-shadow:0 8px 32px rgba(0,0,0,.85)}
+.tema-picker.open .tema-dropdown{display:block}
+.td-item{display:block;padding:7px 11px;border-radius:6px;font-size:.79em;text-decoration:none;transition:.15s;white-space:nowrap;font-weight:500;color:#e2e8f0}
+.td-item:hover{background:var(--accent-dim);color:var(--accent)}
+.td-item.td-active{color:var(--accent);background:var(--accent-dim);font-weight:700;pointer-events:none}
+.td-num{display:inline-block;width:28px;font-weight:700;color:var(--accent)}
+
+.layout{display:flex;padding-top:52px;min-height:calc(100vh - 52px)}
+
+.sidebar{width:var(--sidebar-w);flex-shrink:0;position:fixed;top:52px;left:0;bottom:0;background:rgba(255,255,255,.025);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.sb-head{padding:12px 12px 8px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sb-subtitle{font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--text3);margin-bottom:3px}
+.sb-current{font-size:.74em;font-weight:600;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:1.1em}
+.sb-list{flex:1;overflow-y:auto;padding:5px 5px 16px}
+.sb-item{width:100%;display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:var(--radius-sm);background:none;border:1px solid transparent;color:var(--text2);font-family:var(--ff);font-size:.78em;cursor:pointer;text-align:left;transition:all var(--transition);margin-bottom:1px}
+.sb-item:hover{background:var(--surface);color:var(--text)}
+.sb-item.active{background:var(--accent-dim);color:var(--accent);border-color:var(--accent-border)}
+.sb-tag{font-family:var(--ff-mono);font-size:.68em;font-weight:700;min-width:30px;color:inherit;opacity:.75;flex-shrink:0}
+.sb-name{flex:1;font-weight:500;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-footer{padding:7px 10px;border-top:1px solid var(--border);flex-shrink:0;display:flex;flex-direction:column;gap:5px}
+.sb-link{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:var(--radius-sm);font-size:.76em;font-weight:600;text-decoration:none;transition:background var(--transition)}
+.sb-link-purple{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent)}
+.sb-link-purple:hover{background:rgba(192,132,252,.2)}
+.sb-link-gold{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:var(--gold)}
+.sb-link-gold:hover{background:rgba(245,158,11,.15)}
+
+.content{flex:1;margin-left:var(--sidebar-w);padding:28px 40px 60px;min-width:0}
+
+.topic-panel{display:none;max-width:860px}
+.topic-panel.active{display:block;animation:tpFadeIn .18s ease forwards}
+@keyframes tpFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.panel-header{margin-bottom:24px;padding:14px 18px 16px;background:linear-gradient(135deg,rgba(192,132,252,.06) 0%,transparent 60%);border:1px solid rgba(192,132,252,.18);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.panel-tag{font-family:var(--ff-mono);font-size:.68em;font-weight:700;color:var(--accent);opacity:.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.panel-title{font-size:1.3em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em;line-height:1.3}
+.panel-meta{font-size:.78em;color:var(--text3);margin-top:5px}
+
+.read-progress{position:fixed;top:52px;left:var(--sidebar-w);right:0;height:2px;z-index:200;background:linear-gradient(90deg,var(--accent),var(--blue));transform-origin:left;transform:scaleX(0);transition:transform .08s linear}
+
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(192,132,252,.18);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(192,132,252,.35)}
+
+@media(max-width:768px){
+  body{font-size:17px}
+  .sidebar{position:static;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--border)}
+  .layout{flex-direction:column}
+  .content{margin-left:0;padding:20px 16px 40px}
+  .sb-list{max-height:200px}
+  .read-progress{left:0}
+  .katex{font-size:1.05em}
+}
+
+.section-wrap{margin-bottom:14px;border-radius:var(--radius-sm);overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;border-radius:var(--radius-sm);cursor:pointer;font-size:.86em;font-weight:600;letter-spacing:.3px;transition:var(--transition);display:flex;justify-content:space-between;align-items:center;font-family:var(--ff)}
+.sec-btn .sarr{transition:.2s;flex-shrink:0}
 .sec-open .sec-btn .sarr{transform:rotate(180deg)}
-.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-body{display:none;border-radius:0 0 var(--radius-sm) var(--radius-sm);padding:13px 15px;font-size:.86em;line-height:1.75}
 .sec-open .sec-body{display:block}
-.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
-.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
-.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
-.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
-.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
-.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
-.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
-.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
-.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
-.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
-.tdatos td{color:#cbd5e1}
-.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
-.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
-.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
-.porque b{color:#fb923c;font-style:normal}
-.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
-.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
-.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
-.demo .step{color:#fed7aa;margin-top:8px}
-.demo .step b{color:#fb923c}
-.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
-.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
-.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
-.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+
+.s-datos .sec-btn{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+.s-datos .sec-body{background:rgba(192,132,252,.04);border:1px solid var(--accent-border);border-top:none}
+.s-teoria .sec-btn{background:rgba(251,146,60,.1);color:var(--orange);border:1px solid rgba(251,146,60,.25)}
+.s-teoria .sec-body{background:rgba(251,146,60,.05);border:1px solid rgba(251,146,60,.2);border-top:none}
+.s-resolucion .sec-btn{background:rgba(16,185,129,.1);color:var(--green);border:1px solid rgba(16,185,129,.25)}
+.s-resolucion .sec-body{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-top:none}
+
+.enunciado{background:var(--surface2);border-radius:var(--radius-sm);padding:13px 15px;font-size:.87em;line-height:1.75;margin-bottom:14px;border-left:3px solid var(--accent-border)}
+
+.t-datos{width:100%;border-collapse:collapse;font-size:.84em}
+.t-datos th{background:var(--accent-dim);color:var(--accent);padding:7px 10px;text-align:left;border:1px solid var(--accent-border)}
+.t-datos td{padding:7px 10px;border:1px solid var(--border);color:var(--text2)}
+.t-datos tr:nth-child(even) td{background:rgba(192,132,252,.04)}
+
+.paso{margin-bottom:13px;padding:10px 13px;background:rgba(16,185,129,.06);border-radius:var(--radius-sm);border-left:3px solid rgba(16,185,129,.4)}
+.paso-titulo{color:var(--green);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.porque{font-size:.83em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:var(--orange);font-style:normal}
+
+.resultado-final{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);border-radius:var(--radius-sm);padding:11px 15px;margin-top:12px}
+.rf-label{font-size:.7em;color:var(--green);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;font-weight:700}
+.rf-val{color:#d1fae5;font-size:.9em;line-height:1.9}
+
+.verificacion{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.25);border-left:3px solid #38bdf8;border-radius:var(--radius-sm);padding:10px 14px;margin-top:10px;font-size:.82em;color:#bae6fd}
+.verificacion .vlabel{font-family:var(--ff-mono);font-size:.7em;color:#38bdf8;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:4px;display:block}
+
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden}
+.footer{text-align:center;padding:40px 20px;color:var(--text3);font-size:.78em}
+
+.empty-state{text-align:center;padding:80px 20px;color:var(--text3)}
 </style>
 </head>
 <body>
 
 <nav class="topbar">
   <a class="topbar-back" href="index.html">
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Ejercicios
   </a>
-  <span class="topbar-title">Química · T3 <em>· Ejercicios resueltos</em></span>
+  <span class="topbar-title">Química · T3 <span style="color:var(--accent)">· Enlace químico</span></span>
+  <div class="tema-picker" id="temaPicker">
+    <button class="tema-picker-btn" onclick="this.closest('.tema-picker').classList.toggle('open')">T3 ▾</button>
+    <div class="tema-dropdown">
+    <a class="td-item " href="tema1.html"><span class="td-num">T1</span> Conceptos generales</a>
+    <a class="td-item " href="tema2.html"><span class="td-num">T2</span> Estructura atómica</a>
+    <a class="td-item td-active" href="tema3.html"><span class="td-num">T3</span> Enlace químico</a>
+    <a class="td-item " href="tema4.html"><span class="td-num">T4</span> Estados de la materia</a>
+    <a class="td-item " href="tema5.html"><span class="td-num">T5</span> Termodinámica química</a>
+    <a class="td-item " href="tema6.html"><span class="td-num">T6</span> Termoquímica</a>
+    <a class="td-item " href="tema7.html"><span class="td-num">T7</span> Espontaneidad y energía libre</a>
+    <a class="td-item " href="tema8.html"><span class="td-num">T8</span> Cinética y equilibrio</a>
+    <a class="td-item " href="tema9.html"><span class="td-num">T9</span> Equilibrio ácido-base</a>
+    </div>
+  </div>
 </nav>
 
-<div class="wrap">
+<div class="read-progress" id="readProgress"></div>
 
-  <div class="head">
-    <div class="tag">📝 Tema 3 · Enlace químico</div>
-    <h1>Ejercicios resueltos · Tema 3</h1>
-    <div class="sub">Iónico · Covalente (Lewis, VSEPR, hibridación) · Metálico · Fuerzas intermoleculares</div>
-  </div>
-
-  <div class="jump">
-    <a class="jl" href="#ex1">Ej 1 — Estructura de Lewis y geometría VSEPR del NH$_3$</a>
-    <a class="jl" href="#ex2">Ej 2 — Energía de red por la fórmula de Born-Landé</a>
-    <a class="jl" href="#ex3">Ej 3 — Identificar fuerzas intermoleculares dominantes</a>
-    <a class="jl" href="#ex4">Ej 4 — Estructura de Lewis del ion carbonato (resonancia)</a>
-    <a class="jl" href="#ex5">Ej 5 — Geometría e hibridación de SF$_6$ y PCl$_5$</a>
-    <a class="jl" href="#ex6">Ej 6 — Polaridad de moléculas tetraédricas</a>
-    <a class="jl" href="#ex7">Ej 7 — Energía de enlace en una reacción de combustión</a>
-    <a class="jl" href="#ex8">Ej 8 — Ciclo de Born-Haber simplificado para LiF</a>
-    <a class="jl" href="#ex9">Ej 9 — Tipo de sólido y propiedades físicas</a>
-    <a class="jl" href="#ex10">Ej 10 — Comparación de fuerzas intermoleculares en isómeros</a>
-  </div>
-
-  <article class="ex open" id="ex1">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 1</div>
-        <div class="ex-title">Estructura de Lewis y geometría VSEPR del NH$_3$</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sb-head">
+      <div class="sb-subtitle">T3 · Enlace químico</div>
+      <div class="sb-current" id="sbCurrent"></div>
     </div>
-    <div class="ex-body">
+    <div class="sb-list">
+      <button class="sb-item" onclick="showEx('ex3-1')" data-id="ex3-1">
+        <span class="sb-tag">3.1</span>
+        <span class="sb-name">Estructura de Lewis y geometría VSEPR del…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-2')" data-id="ex3-2">
+        <span class="sb-tag">3.2</span>
+        <span class="sb-name">Energía de red por la fórmula de Born-Lan…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-3')" data-id="ex3-3">
+        <span class="sb-tag">3.3</span>
+        <span class="sb-name">Identificar fuerzas intermoleculares domi…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-4')" data-id="ex3-4">
+        <span class="sb-tag">3.4</span>
+        <span class="sb-name">Estructura de Lewis del ion carbonato (re…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-5')" data-id="ex3-5">
+        <span class="sb-tag">3.5</span>
+        <span class="sb-name">Geometría e hibridación de SF y PCl</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-6')" data-id="ex3-6">
+        <span class="sb-tag">3.6</span>
+        <span class="sb-name">Polaridad de moléculas tetraédricas</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-7')" data-id="ex3-7">
+        <span class="sb-tag">3.7</span>
+        <span class="sb-name">Energía de enlace en una reacción de comb…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-8')" data-id="ex3-8">
+        <span class="sb-tag">3.8</span>
+        <span class="sb-name">Ciclo de Born-Haber simplificado para LiF</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-9')" data-id="ex3-9">
+        <span class="sb-tag">3.9</span>
+        <span class="sb-name">Tipo de sólido y propiedades físicas</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex3-10')" data-id="ex3-10">
+        <span class="sb-tag">3.10</span>
+        <span class="sb-name">Comparación de fuerzas intermoleculares e…</span>
+      </button>
+    </div>
+    <div class="sb-footer">
+      <a class="sb-link sb-link-purple" href="../teoria/tema3.html">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Teoría
+      </a>
+      <a class="sb-link sb-link-gold" href="../formulario.html">📐 Formulario</a>
+    </div>
+  </aside>
 
-      <div class="enunciado">
-        <p>Determinar la estructura de Lewis del <b>amoniaco NH$_3$</b>, su geometría electrónica y molecular, el ángulo de enlace H–N–H y si la molécula es polar.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> Geom. electrónica tetraédrica, geom. molecular piramidal trigonal, ángulo $\approx 107°$, molécula polar.</p>
-      </div>
+  <main class="content">
+  <div class="topic-panel" id="ex3-1">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.1</div>
+      <h1 class="panel-title">Estructura de Lewis y geometría VSEPR del NH$_3$</h1>
+      <div class="panel-meta">Resultado: Geom. electrónica tetraédrica, geom. molecular piramidal trigonal, ángulo $\approx 107°$, molécula polar.</div>
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="enunciado">
+      Determinar la estructura de Lewis del <b>amoniaco NH$_3$</b>, su geometría electrónica y molecular, el ángulo de enlace H–N–H y si la molécula es polar.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Electrones de valencia N</td><td>5</td></tr>
             <tr><td>Electrones de valencia H</td><td>1</td></tr>
             <tr><td>Electronegatividades (Pauling)</td><td>$\chi_N=3{,}04$; $\chi_H=2{,}20$</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Conteo de pares y aplicación de VSEPR <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Conteo de pares y aplicación de VSEPR</div>
-            
 <p>Total de electrones de valencia: $5 + 3\cdot 1 = 8$ electrones (= 4 pares).</p>
 <p>Tres pares se usan para los enlaces N–H. El cuarto queda como <b>par libre</b> sobre el N.</p>
 <p>VSEPR cuenta <em>todos</em> los pares para definir la geometría electrónica → tetraédrica. Pero la geometría <em>molecular</em> describe la posición de los <b>átomos</b>, así que ignora el par libre y el resultado es <b>piramidal trigonal</b>.</p>
 <p>El par libre repele más que los enlazantes ⟹ comprime los ángulos H–N–H respecto del valor ideal 109,5°.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Estructura de Lewis</div>
             <p class="porque"><b>¿Por qué?</b> N central; tres H periféricos.</p>
@@ -157,70 +291,57 @@ body{padding-top:52px;font-size:15px;line-height:1.65}
 <p>$\Delta\chi=3{,}04-2{,}20=0{,}84$ ⟹ enlace polar. Los tres dipolos $+$ el par libre suman → momento dipolar neto ≠ 0 ⟹ <b>molécula polar</b> ($\mu \approx 1{,}47$ D).</p>
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">NH$_3$: 4 pares VSEPR → tetraédrica electrónica, <b>piramidal molecular</b>, ángulo $\approx 107°$, <b>polar</b>.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">NH$_3$: 4 pares VSEPR → tetraédrica electrónica, <b>piramidal molecular</b>, ángulo $\approx 107°$, <b>polar</b>.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Coherencia: el NH$_3$ disuelve bien en agua (forma puentes de H con ella) y tiene $T_{eb}=-33$ °C, alto para su masa molar (17 g/mol) — confirma la polaridad. ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex2">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 2</div>
-        <div class="ex-title">Energía de red por la fórmula de Born-Landé</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Coherencia: el NH$_3$ disuelve bien en agua (forma puentes de H con ella) y tiene $T_{eb}=-33$ °C, alto para su masa molar (17 g/mol) — confirma la polaridad. ✓
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-2">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.2</div>
+      <h1 class="panel-title">Energía de red por la fórmula de Born-Landé</h1>
+      <div class="panel-meta">Resultado: $U \approx -757$ kJ/mol (excelente coincidencia con el experimental).</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Estimar la energía de red del <b>NaCl</b> usando la aproximación de Coulomb a partir de las cargas y distancia interiónica $r_0=2{,}82$ Å. Compararla con el valor experimental $U_{exp}=-787$ kJ/mol. Datos: $k_e=8{,}988\cdot 10^{9}\ \text{N·m}^2/\text{C}^2$, $e=1{,}602\cdot 10^{-19}$ C, $N_A=6{,}022\cdot 10^{23}$, constante de Madelung $A=1{,}748$ (NaCl), $n=8$ (factor de Born).</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $U \approx -757$ kJ/mol (excelente coincidencia con el experimental).</p>
-      </div>
+    <div class="enunciado">
+      Estimar la energía de red del <b>NaCl</b> usando la aproximación de Coulomb a partir de las cargas y distancia interiónica $r_0=2{,}82$ Å. Compararla con el valor experimental $U_{exp}=-787$ kJ/mol. Datos: $k_e=8{,}988\cdot 10^{9}\ \text{N·m}^2/\text{C}^2$, $e=1{,}602\cdot 10^{-19}$ C, $N_A=6{,}022\cdot 10^{23}$, constante de Madelung $A=1{,}748$ (NaCl), $n=8$ (factor de Born).
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Cargas</td><td>Na$^+$: $+e$; Cl$^-$: $-e$</td></tr>
             <tr><td>Distancia interiónica</td><td>$r_0=2{,}82\cdot 10^{-10}\ \text{m}$</td></tr>
             <tr><td>Constante de Madelung</td><td>$A=1{,}748$</td></tr>
             <tr><td>Exponente de Born</td><td>$n=8$</td></tr>
             <tr><td>$k_e$</td><td>$8{,}988\cdot 10^{9}\ \text{N·m}^2/\text{C}^2$</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Born-Landé desde el potencial coulombiano <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Born-Landé desde el potencial coulombiano</div>
-            
 <p>La energía potencial entre dos cargas es $E=k_e q_1 q_2/r$. Sumando sobre todos los iones de la red (atractivos y repulsivos) aparece la <b>constante de Madelung</b> $A$ (depende solo del tipo de red).</p>
 <p>Born añadió un término repulsivo a corta distancia $\propto 1/r^n$ que estabiliza la red:</p>
 $$U = -\dfrac{N_A\,A\,|q_+ q_-|\,k_e}{r_0}\!\left(1-\dfrac{1}{n}\right)$$
 <p>El factor $(1-1/n)$ representa la fracción del potencial coulombiano que <em>queda</em> tras compensar la repulsión de Born.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Energía coulombiana de un par</div>
             <p class="porque"><b>¿Por qué?</b> Calcular $k_e e^2 / r_0$.</p>
@@ -234,60 +355,43 @@ $$U = -6{,}022\cdot 10^{23}\cdot 1{,}748\cdot 8{,}18\cdot 10^{-19}\cdot 0{,}875$
 $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$U_{calc}\approx -753$ kJ/mol vs $U_{exp}=-787$ kJ/mol → diferencia $\sim 4\%$.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$U_{calc}\approx -753$ kJ/mol vs $U_{exp}=-787$ kJ/mol → diferencia $\sim 4\%$.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>La pequeña discrepancia se debe a que la fórmula no incluye dispersión de London ni efectos de polarización. ✓ La aproximación es excelente para enlaces puramente iónicos.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex3">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 3</div>
-        <div class="ex-title">Identificar fuerzas intermoleculares dominantes</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      La pequeña discrepancia se debe a que la fórmula no incluye dispersión de London ni efectos de polarización. ✓ La aproximación es excelente para enlaces puramente iónicos.
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-3">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.3</div>
+      <h1 class="panel-title">Identificar fuerzas intermoleculares dominantes</h1>
+      <div class="panel-meta">Resultado: He < CH$_4$ < HF < CH$_3$OH < H$_2$O.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Ordenar de menor a mayor punto de ebullición las siguientes sustancias e indicar qué fuerza intermolecular domina en cada una: <b>CH$_4$, CH$_3$OH, H$_2$O, He, HF</b>.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> He < CH$_4$ < HF < CH$_3$OH < H$_2$O.</p>
-      </div>
+    <div class="enunciado">
+      Ordenar de menor a mayor punto de ebullición las siguientes sustancias e indicar qué fuerza intermolecular domina en cada una: <b>CH$_4$, CH$_3$OH, H$_2$O, He, HF</b>.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Sustancias</td><td>He · CH$_4$ · HF · CH$_3$OH · H$_2$O</td></tr>
             <tr><td>Recordatorio</td><td>Puentes H entre N–H, O–H, F–H y un par libre electronegativo</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Jerarquía de fuerzas intermoleculares <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Jerarquía de fuerzas intermoleculares</div>
-            
 <p>El punto de ebullición depende de cuánta energía hace falta para separar las moléculas en estado líquido. Las fuerzas relevantes son (de menor a mayor):</p>
 <ol>
   <li><b>Dispersión de London</b> (apolares; aumentan con la masa molar).</li>
@@ -296,8 +400,12 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
 </ol>
 <p>Más fuerte la fuerza ⟹ más energía para evaporar ⟹ mayor $T_{eb}$.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Clasificar cada sustancia</div>
             <p class="porque"><b>¿Por qué?</b> Examino enlaces y polaridad de cada una.</p>
@@ -316,68 +424,55 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
             $$\boxed{\;\text{He} < \text{CH}_4 < \text{HF} < \text{CH}_3\text{OH} < \text{H}_2\text{O}\;}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$T_{eb}$: <b>He < CH$_4$ < HF < CH$_3$OH < H$_2$O</b>.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$T_{eb}$: <b>He < CH$_4$ < HF < CH$_3$OH < H$_2$O</b>.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>El H$_2$O puede formar 2 puentes de H por molécula (los dos H y los dos pares libres del O) → red 3D extensa → mayor $T_{eb}$. ✓ El HF solo aporta 1 H, por eso queda por debajo del metanol pese a tener mayor diferencia de electronegatividad.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex4">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 4</div>
-        <div class="ex-title">Estructura de Lewis del ion carbonato (resonancia)</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      El H$_2$O puede formar 2 puentes de H por molécula (los dos H y los dos pares libres del O) → red 3D extensa → mayor $T_{eb}$. ✓ El HF solo aporta 1 H, por eso queda por debajo del metanol pese a tener mayor diferencia de electronegatividad.
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-4">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.4</div>
+      <h1 class="panel-title">Estructura de Lewis del ion carbonato (resonancia)</h1>
+      <div class="panel-meta">Resultado: 3 estructuras resonantes equivalentes; geometría trigonal plana (120°); apolar por simetría.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Determinar la estructura de Lewis del ion <b>CO$_3^{2-}$</b>, identificar las estructuras resonantes y determinar la geometría VSEPR del ion. ¿Es polar?</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> 3 estructuras resonantes equivalentes; geometría trigonal plana (120°); apolar por simetría.</p>
-      </div>
+    <div class="enunciado">
+      Determinar la estructura de Lewis del ion <b>CO$_3^{2-}$</b>, identificar las estructuras resonantes y determinar la geometría VSEPR del ion. ¿Es polar?
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>$e^-$ valencia C</td><td>4</td></tr>
             <tr><td>$e^-$ valencia O</td><td>6</td></tr>
             <tr><td>Carga del ion</td><td>−2 (añade 2 e<sup>−</sup>)</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Resonancia y deslocalización <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Resonancia y deslocalización</div>
-            
 <p>Cuando una estructura de Lewis no puede dibujarse con un único patrón fijo de enlaces y pares, decimos que el sistema tiene <b>resonancia</b>: la realidad es una <em>superposición</em> (híbrido) de varias estructuras equivalentes.</p>
 <p>Conteo de electrones de valencia totales: $4 + 3\cdot 6 + 2 = 24$ e<sup>−</sup> (los 2 de la carga negativa cuentan).</p>
 <p>El C es central (menos electronegativo). Los 3 O lo rodean. Una de las uniones C–O es doble; las otras dos simples (con cargas formales en los O).</p>
 <p>Como los 3 O son equivalentes por simetría, hay <b>3 estructuras resonantes</b> que difieren solo en cuál es el doble enlace.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Estructuras resonantes</div>
             <p class="porque"><b>¿Por qué?</b> El doble enlace puede estar en cualquiera de los 3 O.</p>
@@ -396,61 +491,44 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
             <p>Suma de dipolos = 0 ⟹ <b>el ion CO$_3^{2-}$ es apolar</b> (la carga sí es −2, pero no hay momento dipolar neto).</p>
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">3 resonancias equivalentes · geometría <b>trigonal plana</b> (120°) · momento dipolar nulo (apolar por simetría).</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">3 resonancias equivalentes · geometría <b>trigonal plana</b> (120°) · momento dipolar nulo (apolar por simetría).</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Las 3 distancias C–O en el CO$_3^{2-}$ se miden experimentalmente <b>iguales</b> (1,29 Å), intermedias entre el simple (1,43 Å) y el doble (1,20 Å). Confirma la deslocalización ✓.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex5">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 5</div>
-        <div class="ex-title">Geometría e hibridación de SF$_6$ y PCl$_5$</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Las 3 distancias C–O en el CO$_3^{2-}$ se miden experimentalmente <b>iguales</b> (1,29 Å), intermedias entre el simple (1,43 Å) y el doble (1,20 Å). Confirma la deslocalización ✓.
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-5">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.5</div>
+      <h1 class="panel-title">Geometría e hibridación de SF$_6$ y PCl$_5$</h1>
+      <div class="panel-meta">Resultado: SF$_6$: octaédrica, sp$^3$d$^2$. PCl$_5$: bipirámide trigonal, sp$^3$d.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Para las moléculas <b>SF$_6$</b> y <b>PCl$_5$</b>, determinar: (a) la estructura de Lewis; (b) la geometría VSEPR; (c) la hibridación del átomo central.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> SF$_6$: octaédrica, sp$^3$d$^2$. PCl$_5$: bipirámide trigonal, sp$^3$d.</p>
-      </div>
+    <div class="enunciado">
+      Para las moléculas <b>SF$_6$</b> y <b>PCl$_5$</b>, determinar: (a) la estructura de Lewis; (b) la geometría VSEPR; (c) la hibridación del átomo central.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>$e^-$ valencia S</td><td>6</td></tr>
             <tr><td>$e^-$ valencia P</td><td>5</td></tr>
             <tr><td>$e^-$ valencia F, Cl</td><td>7 (cada uno)</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Octeto expandido y hibridación con orbitales d <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Octeto expandido y hibridación con orbitales d</div>
-            
 <p>Los elementos del <b>tercer período en adelante</b> (P, S, Cl, Br, I…) pueden tener más de 8 e<sup>−</sup> en su capa de valencia ("octeto expandido") porque disponen de orbitales $d$ de su mismo nivel cuántico para acomodar electrones extra.</p>
 <p>La hibridación se obtiene mezclando 1 orbital $s$, 3 orbitales $p$ y los $d$ necesarios para alcanzar el número total de pares electrónicos:</p>
 <ul>
@@ -458,8 +536,12 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
   <li>6 pares ⟹ sp$^3$d$^2$ (1+3+2 = 6).</li>
 </ul>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — SF$_6$</div>
             <p class="porque"><b>¿Por qué?</b> S central, 6 enlaces S–F. Conteo: $6+6\cdot 7=48$ e<sup>−</sup> de valencia. 6 pares enlazantes en S.</p>
@@ -473,60 +555,43 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
 <p>Hibridación del P: 5 orbitales híbridos ⟹ <b>sp$^3$d</b>.</p>
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">SF$_6$: octaédrica · sp$^3$d$^2$. PCl$_5$: bipirámide trigonal · sp$^3$d.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">SF$_6$: octaédrica · sp$^3$d$^2$. PCl$_5$: bipirámide trigonal · sp$^3$d.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>En PCl$_5$ los enlaces axiales son ligeramente más largos (2,12 Å) que los ecuatoriales (2,02 Å), lo que se explica por la mayor repulsión de los enlaces axiales con los 3 ecuatoriales (90° vs 120°). ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex6">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 6</div>
-        <div class="ex-title">Polaridad de moléculas tetraédricas</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      En PCl$_5$ los enlaces axiales son ligeramente más largos (2,12 Å) que los ecuatoriales (2,02 Å), lo que se explica por la mayor repulsión de los enlaces axiales con los 3 ecuatoriales (90° vs 120°). ✓
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-6">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.6</div>
+      <h1 class="panel-title">Polaridad de moléculas tetraédricas</h1>
+      <div class="panel-meta">Resultado: Apolares: CH$_4$, CCl$_4$. Polares: CH$_3$Cl, CHCl$_3$.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>De las siguientes moléculas tetraédricas, determinar cuáles son <b>polares</b> y cuáles <b>apolares</b>: (a) CH$_4$; (b) CH$_3$Cl; (c) CCl$_4$; (d) CHCl$_3$.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> Apolares: CH$_4$, CCl$_4$. Polares: CH$_3$Cl, CHCl$_3$.</p>
-      </div>
+    <div class="enunciado">
+      De las siguientes moléculas tetraédricas, determinar cuáles son <b>polares</b> y cuáles <b>apolares</b>: (a) CH$_4$; (b) CH$_3$Cl; (c) CCl$_4$; (d) CHCl$_3$.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Geometría</td><td>Todas son tetraédricas</td></tr>
             <tr><td>Electronegatividades</td><td>$\chi_C=2{,}5$; $\chi_H=2{,}1$; $\chi_{Cl}=3{,}0$</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Cancelación vectorial de dipolos <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Cancelación vectorial de dipolos</div>
-            
 <p>En una molécula tetraédrica AX$_4$ con los 4 X iguales, los 4 vectores dipolo C→X tienen igual módulo y apuntan en direcciones simétricas, lo que da una <b>suma vectorial nula</b> ⟹ molécula <b>apolar</b>.</p>
 <p>Si uno o más X son distintos, la simetría se rompe y aparece un momento dipolar neto. La regla práctica:</p>
 <ul>
@@ -534,8 +599,12 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
   <li>AX$_3$Y, AX$_2$Y$_2$, AX Y$_3$ ⟹ polar.</li>
 </ul>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Análisis de cada molécula</div>
             <p class="porque"><b>¿Por qué?</b> Comparar átomos enlazados al carbono.</p>
@@ -548,67 +617,54 @@ $$U \approx -7{,}53\cdot 10^{5}\ \text{J/mol} = -753\ \text{kJ/mol}$$
 </table>
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">Apolares: <b>CH$_4$, CCl$_4$</b>. Polares: <b>CH$_3$Cl, CHCl$_3$</b>.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">Apolares: <b>CH$_4$, CCl$_4$</b>. Polares: <b>CH$_3$Cl, CHCl$_3$</b>.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Momentos dipolares medidos: CH$_4$ = 0 D, CH$_3$Cl = 1,87 D, CCl$_4$ = 0 D, CHCl$_3$ = 1,04 D. ✓ Coincide con la predicción.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex7">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 7</div>
-        <div class="ex-title">Energía de enlace en una reacción de combustión</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Momentos dipolares medidos: CH$_4$ = 0 D, CH$_3$Cl = 1,87 D, CCl$_4$ = 0 D, CHCl$_3$ = 1,04 D. ✓ Coincide con la predicción.
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-7">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.7</div>
+      <h1 class="panel-title">Energía de enlace en una reacción de combustión</h1>
+      <div class="panel-meta">Resultado: $\Delta H \approx -698$ kJ/mol — exotérmica.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Estimar el $\Delta H$ de la reacción $\text{CH}_4 + 2\,\text{O}_2 \to \text{CO}_2 + 2\,\text{H}_2\text{O}(g)$ usando energías de enlace medias (kJ/mol): $E(\text{C-H})=413$, $E(\text{O=O})=498$, $E(\text{C=O})=799$ (en CO$_2$), $E(\text{O-H})=463$.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\Delta H \approx -698$ kJ/mol — exotérmica.</p>
-      </div>
+    <div class="enunciado">
+      Estimar el $\Delta H$ de la reacción $\text{CH}_4 + 2\,\text{O}_2 \to \text{CO}_2 + 2\,\text{H}_2\text{O}(g)$ usando energías de enlace medias (kJ/mol): $E(\text{C-H})=413$, $E(\text{O=O})=498$, $E(\text{C=O})=799$ (en CO$_2$), $E(\text{O-H})=463$.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Enlaces rotos</td><td>4 C–H + 2 O=O</td></tr>
             <tr><td>Enlaces formados</td><td>2 C=O (en CO$_2$) + 4 O–H</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Romper consume, formar libera <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Romper consume, formar libera</div>
-            
 <p>Romper enlaces consume energía (entra al sistema) y formar enlaces libera energía (sale del sistema):</p>
 $$\Delta H \approx \sum E(\text{rotos}) - \sum E(\text{formados})$$
 <p>El signo se interpreta así: $\Delta H<0$ → la reacción libera calor (forma enlaces más fuertes que los rotos).</p>
 <p>Importante: las energías de enlace son <em>medias tabuladas</em>; el método da una <b>aproximación</b> con desviaciones de ~5-15 kJ/mol respecto al $\Delta H_f$ exacto.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Energía total de enlaces rotos</div>
             <p class="porque"><b>¿Por qué?</b> 4 C–H del metano + 2 O=O del oxígeno.</p>
@@ -625,71 +681,58 @@ $$\Delta H \approx \sum E(\text{rotos}) - \sum E(\text{formados})$$
             $$\Delta H = 2\,648 - 3\,450 = \boxed{-802\ \text{kJ/mol}}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$\Delta H \approx -802$ kJ/mol — combustión fuertemente exotérmica.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$\Delta H \approx -802$ kJ/mol — combustión fuertemente exotérmica.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Valor experimental con H$_2$O(g): $\Delta H = -802{,}3$ kJ/mol. La aproximación por energías de enlace ha sido casi exacta. ✓ (Para H$_2$O líquida hay que añadir el calor de condensación, $-44$ kJ/mol por mol de agua.)</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex8">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 8</div>
-        <div class="ex-title">Ciclo de Born-Haber simplificado para LiF</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Valor experimental con H$_2$O(g): $\Delta H = -802{,}3$ kJ/mol. La aproximación por energías de enlace ha sido casi exacta. ✓ (Para H$_2$O líquida hay que añadir el calor de condensación, $-44$ kJ/mol por mol de agua.)
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-8">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.8</div>
+      <h1 class="panel-title">Ciclo de Born-Haber simplificado para LiF</h1>
+      <div class="panel-meta">Resultado: $U = -1\,046$ kJ/mol.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Calcular la energía de red del LiF aplicando el ciclo de Born-Haber. Datos (kJ/mol): $\Delta H_f(\text{LiF})=-616$; sublimación Li(s)→Li(g) = $+159$; ionización Li(g)→Li$^+$(g) = $+520$; disociación ½ F$_2$(g)→F(g) = $+79$; afinidad electrónica F(g)→F$^-$(g) = $-328$.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $U = -1\,046$ kJ/mol.</p>
-      </div>
+    <div class="enunciado">
+      Calcular la energía de red del LiF aplicando el ciclo de Born-Haber. Datos (kJ/mol): $\Delta H_f(\text{LiF})=-616$; sublimación Li(s)→Li(g) = $+159$; ionización Li(g)→Li$^+$(g) = $+520$; disociación ½ F$_2$(g)→F(g) = $+79$; afinidad electrónica F(g)→F$^-$(g) = $-328$.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>$\Delta H_f(\text{LiF})$</td><td>$-616$ kJ/mol</td></tr>
             <tr><td>Sublimación Li</td><td>$+159$</td></tr>
             <tr><td>Ionización Li</td><td>$+520$</td></tr>
             <tr><td>Disociación ½F$_2$</td><td>$+79$</td></tr>
             <tr><td>Afinidad electrónica F</td><td>$-328$</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Ley de Hess aplicada al ciclo <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Ley de Hess aplicada al ciclo</div>
-            
 <p>El ciclo de Born-Haber descompone la formación del cristal iónico en pasos individuales medibles. Aplicando la ley de Hess al ciclo cerrado:</p>
 $$\Delta H_f = \Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE + U$$
 <p>Despejando la <b>energía de red</b> $U$ (única magnitud no medible directamente):</p>
 $$U = \Delta H_f - (\Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE)$$
 <p>$U$ es <em>siempre</em> negativa (la formación de la red es exotérmica).</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Suma de los pasos en fase gas</div>
             <p class="porque"><b>¿Por qué?</b> Sublimación + ionización + disociación + afinidad.</p>
@@ -701,59 +744,42 @@ $$U = \Delta H_f - (\Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE)$$
             $$U = -616 - 430 = \boxed{-1\,046\ \text{kJ/mol}}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$U(\text{LiF}) = -1\,046$ kJ/mol.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$U(\text{LiF}) = -1\,046$ kJ/mol.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Valor tabulado experimental: $U_{exp}(\text{LiF})=-1\,047$ kJ/mol. Coincidencia excelente. ✓ La alta energía de red confirma la fortaleza de la red iónica del LiF (el más estable de los haluros alcalinos).</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex9">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 9</div>
-        <div class="ex-title">Tipo de sólido y propiedades físicas</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Valor tabulado experimental: $U_{exp}(\text{LiF})=-1\,047$ kJ/mol. Coincidencia excelente. ✓ La alta energía de red confirma la fortaleza de la red iónica del LiF (el más estable de los haluros alcalinos).
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-9">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.9</div>
+      <h1 class="panel-title">Tipo de sólido y propiedades físicas</h1>
+      <div class="panel-meta">Resultado: Ver tabla.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Clasificar como sólido <b>iónico, molecular, covalente o metálico</b> a las siguientes sustancias y predecir si son: (i) buenos conductores eléctricos en estado sólido, (ii) solubles en agua. Sustancias: NaCl, diamante (C), cobre (Cu), hielo (H$_2$O), I$_2$.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> Ver tabla.</p>
-      </div>
+    <div class="enunciado">
+      Clasificar como sólido <b>iónico, molecular, covalente o metálico</b> a las siguientes sustancias y predecir si son: (i) buenos conductores eléctricos en estado sólido, (ii) solubles en agua. Sustancias: NaCl, diamante (C), cobre (Cu), hielo (H$_2$O), I$_2$.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Tipos posibles</td><td>iónico · molecular · covalente · metálico</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Propiedades macro a partir del enlace micro <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Propiedades macro a partir del enlace micro</div>
-            
 <p>El tipo de sólido determina sus propiedades:</p>
 <table class="tdatos">
 <tr><th>Tipo</th><th>Conductor sólido</th><th>Soluble en H$_2$O</th></tr>
@@ -763,8 +789,12 @@ $$U = \Delta H_f - (\Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE)$$
 <tr><td>Metálico</td><td>SÍ</td><td>NO (excepto reactivos)</td></tr>
 </table>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Análisis caso por caso</div>
             <p class="porque"><b>¿Por qué?</b> Identificar el tipo y aplicar la tabla.</p>
@@ -778,60 +808,43 @@ $$U = \Delta H_f - (\Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE)$$
 </table>
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">NaCl iónico · diamante covalente · Cu metálico · hielo molecular · I$_2$ molecular. Solo Cu conduce; solo NaCl es bien soluble en agua.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">NaCl iónico · diamante covalente · Cu metálico · hielo molecular · I$_2$ molecular. Solo Cu conduce; solo NaCl es bien soluble en agua.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Esta clasificación predice correctamente que el grafito (otro sólido covalente del C) es <em>conductor</em> por sus electrones π deslocalizados — la única excepción importante. ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex10">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 10</div>
-        <div class="ex-title">Comparación de fuerzas intermoleculares en isómeros</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Esta clasificación predice correctamente que el grafito (otro sólido covalente del C) es <em>conductor</em> por sus electrones π deslocalizados — la única excepción importante. ✓
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex3-10">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 3.10</div>
+      <h1 class="panel-title">Comparación de fuerzas intermoleculares en isómeros</h1>
+      <div class="panel-meta">Resultado: n-pentano: $T_{eb}=36$ °C. Neopentano: $T_{eb}=10$ °C. Mayor el lineal.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Predecir cuál tiene mayor punto de ebullición: <b>n-pentano</b> (C$_5$H$_{12}$, lineal) o <b>neopentano</b> (C(CH$_3$)$_4$, ramificado). Ambos tienen la misma masa molar (72 g/mol). Justificar.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> n-pentano: $T_{eb}=36$ °C. Neopentano: $T_{eb}=10$ °C. Mayor el lineal.</p>
-      </div>
+    <div class="enunciado">
+      Predecir cuál tiene mayor punto de ebullición: <b>n-pentano</b> (C$_5$H$_{12}$, lineal) o <b>neopentano</b> (C(CH$_3$)$_4$, ramificado). Ambos tienen la misma masa molar (72 g/mol). Justificar.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Masa molar</td><td>$M=72$ g/mol (ambos)</td></tr>
             <tr><td>$T_{eb}$ medidos</td><td>n-pentano: 36 °C; neopentano: 10 °C</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Forma molecular y fuerzas de London <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Forma molecular y fuerzas de London</div>
-            
 <p>Ambos compuestos son apolares: las únicas fuerzas intermoleculares disponibles son las <b>fuerzas de dispersión de London</b>. Su intensidad depende de:</p>
 <ul>
   <li>El número de electrones (≈ masa molar) — igual en ambos.</li>
@@ -839,8 +852,12 @@ $$U = \Delta H_f - (\Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE)$$
 </ul>
 <p>El neopentano es casi esférico y el n-pentano es alargado, por lo que el lineal interactúa más fuertemente.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Comparación geométrica</div>
             <p class="porque"><b>¿Por qué?</b> n-pentano = cadena recta, longitud ≈ 6 Å. Neopentano = cuasi-esférico, diámetro ≈ 5 Å.</p>
@@ -853,36 +870,71 @@ $$U = \Delta H_f - (\Delta H_{sub} + EI + \tfrac12 \Delta H_{dis} + AE)$$
 <p>$36$ °C > $10$ °C ✓</p>
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val"><b>n-pentano</b> ebulle a 36 °C (más alto) que el neopentano (10 °C), pese a tener idéntica masa molar — efecto puro de la forma molecular sobre las fuerzas de dispersión.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val"><b>n-pentano</b> ebulle a 36 °C (más alto) que el neopentano (10 °C), pese a tener idéntica masa molar — efecto puro de la forma molecular sobre las fuerzas de dispersión.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Resultado generalizable: en una serie de isómeros del mismo $C_n H_{2n+2}$, el más ramificado siempre tiene menor $T_{eb}$. ✓ Ej: 2-metilbutano (28 °C) intermedio entre n-pentano y neopentano.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Resultado generalizable: en una serie de isómeros del mismo $C_n H_{2n+2}$, el más ramificado siempre tiene menor $T_{eb}$. ✓ Ej: 2-metilbutano (28 °C) intermedio entre n-pentano y neopentano.
+    </div>
+  </div>
+  </main>
 </div>
 
-<footer class="qg-footer">
-  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
-</footer>
+<div class="footer">Química · 1.º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a></div>
 
 <script>
 function initKatex(){
-  if(typeof renderMathInElement === 'undefined') return;
+  if(typeof renderMathInElement==='undefined') return;
   renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
 }
-document.addEventListener('DOMContentLoaded',initKatex);
+
+document.addEventListener('DOMContentLoaded', function(){
+  initKatex();
+  var panels = document.querySelectorAll('.topic-panel');
+  if(panels.length>0) showEx(panels[0].id);
+});
+
+function showEx(id){
+  document.querySelectorAll('.topic-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.sb-item').forEach(function(b){b.classList.remove('active')});
+  var panel = document.getElementById(id);
+  if(panel) panel.classList.add('active');
+  var btn = document.querySelector('[data-id="'+id+'"]');
+  if(btn){
+    btn.classList.add('active');
+    var name = btn.querySelector('.sb-name');
+    var curr = document.getElementById('sbCurrent');
+    if(curr && name) curr.textContent = name.textContent;
+  }
+  window.scrollTo({top:0,behavior:'instant'});
+  updateProgress();
+}
+
+function toggleSec(btn){
+  var wrap = btn.closest('.section-wrap');
+  wrap.classList.toggle('sec-open');
+  if(wrap.classList.contains('sec-open') && typeof renderMathInElement!=='undefined'){
+    renderMathInElement(wrap,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+  }
+}
+
+function updateProgress(){
+  var bar = document.getElementById('readProgress');
+  if(!bar) return;
+  var scrolled = window.scrollY;
+  var total = document.body.scrollHeight - window.innerHeight;
+  bar.style.transform = 'scaleX('+(total>0?Math.min(scrolled/total,1):0)+')';
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
+
+document.addEventListener('click', function(e){
+  var picker = document.getElementById('temaPicker');
+  if(picker && !picker.contains(e.target)) picker.classList.remove('open');
+});
 </script>
 </body>
 </html>

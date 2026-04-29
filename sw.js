@@ -1,6 +1,6 @@
 // Service Worker · Química · Gorka
-// v3 — invalida ejercicios antiguos (3) y carga nuevos (10).
-const CACHE = 'quimica-gorka-v3';
+// v4 — formato exacto del proyecto upv-ehu (sidebar + topic-panels + paleta del usuario).
+const CACHE = 'quimica-gorka-v4';
 const ASSETS = [
   './',
   './index.html',

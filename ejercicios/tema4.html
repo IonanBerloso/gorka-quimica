@@ -3,142 +3,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0e1a">
-<title>T4 · Ejercicios · Estados de la materia</title>
+<meta name="theme-color" content="#131313">
+<title>T4 · Ejercicios · Química · Estados de la materia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
   onload="initKatex && initKatex()"></script>
-<link rel="stylesheet" href="../shared/quimica.css">
 <style>
-body{padding-top:52px;font-size:15px;line-height:1.65}
-.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
-@media(max-width:900px){.wrap{padding:18px 14px 40px}}
-.head{margin-bottom:22px;padding:18px 22px;background:linear-gradient(135deg,rgba(var(--vr),.08) 0%,transparent 60%);border:1px solid var(--line-v);border-left:3px solid var(--violet);border-radius:0 12px 12px 0}
-.head .tag{font-family:var(--mono);font-size:.66em;color:var(--violet);letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-.head h1{font-family:var(--ui);font-size:1.5em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em}
-.head .sub{font-family:var(--mono);font-size:.78em;color:var(--txt3);margin-top:6px}
-.jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
-.jl{font-family:var(--mono);font-size:.72em;font-weight:600;padding:5px 11px;border-radius:14px;background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.25);text-decoration:none;letter-spacing:.05em;transition:.15s}
-.jl:hover{background:rgba(var(--br),.24);text-decoration:none}
-.ex{background:var(--s1);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;overflow:hidden}
-.ex-head{padding:14px 18px;background:linear-gradient(135deg,rgba(var(--br),.08) 0%,transparent 70%);border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.ex-num{font-family:var(--mono);font-size:.62em;color:var(--blue);letter-spacing:.15em;font-weight:700;margin-bottom:4px}
-.ex-title{font-family:var(--ui);font-size:1.02em;font-weight:600;color:#f1f5f9;line-height:1.3}
-.ex-arrow{color:var(--violet);font-size:.9em;transition:.2s}
-.ex.open .ex-arrow{transform:rotate(180deg)}
-.ex-body{display:none;padding:16px 20px}
-.ex.open .ex-body{display:block}
-.sec-wrap{margin:12px 0;border-radius:8px;overflow:hidden}
-.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;cursor:pointer;font-size:.82em;font-weight:600;letter-spacing:.04em;font-family:var(--ui);display:flex;justify-content:space-between;align-items:center;border-radius:6px;transition:.15s}
-.sec-btn .sarr{transition:.2s}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#131313;
+  --surface:rgba(255,255,255,.04);
+  --surface2:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.08);
+  --border2:rgba(255,255,255,.12);
+  --text:#e2e8f0;
+  --text2:#94a3b8;
+  --text3:#64748b;
+  --accent:#c084fc;
+  --accent-dim:rgba(192,132,252,.12);
+  --accent-border:rgba(192,132,252,.28);
+  --gold:#f59e0b;
+  --gold-dim:rgba(245,158,11,.1);
+  --gold-border:rgba(245,158,11,.28);
+  --green:#10b981;
+  --blue:#38bdf8;
+  --orange:#fb923c;
+  --yellow:#ffd93d;
+  --ff:'Space Grotesk',system-ui,sans-serif;
+  --ff-mono:'JetBrains Mono',monospace;
+  --radius:10px;
+  --radius-sm:6px;
+  --topbar-h:52px;
+  --sidebar-w:280px;
+  --transition:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;font-size:15px;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+b,strong{color:#f1f5f9;font-weight:600}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(19,19,19,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;height:52px}
+.topbar-back{display:flex;align-items:center;gap:8px;padding:0 18px;height:100%;color:var(--text2);font-size:.82em;font-weight:500;border-right:1px solid var(--border);transition:color var(--transition);white-space:nowrap;text-decoration:none}
+.topbar-back:hover{color:var(--accent);text-decoration:none}
+.topbar-back svg{transition:transform var(--transition)}
+.topbar-back:hover svg{transform:translateX(-3px)}
+.topbar-title{padding:0 16px;flex:1;font-size:.88em;font-weight:600;color:#f1f5f9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.tema-picker{position:relative;margin-right:16px}
+.tema-picker-btn{background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:20px;padding:4px 13px;font-size:.72em;font-weight:700;color:var(--accent);cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:.15s;font-family:var(--ff)}
+.tema-picker-btn:hover{background:rgba(192,132,252,.2)}
+.tema-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);background:rgba(19,19,19,.98);border:1px solid var(--accent-border);border-radius:10px;padding:6px;min-width:240px;z-index:300;box-shadow:0 8px 32px rgba(0,0,0,.85)}
+.tema-picker.open .tema-dropdown{display:block}
+.td-item{display:block;padding:7px 11px;border-radius:6px;font-size:.79em;text-decoration:none;transition:.15s;white-space:nowrap;font-weight:500;color:#e2e8f0}
+.td-item:hover{background:var(--accent-dim);color:var(--accent)}
+.td-item.td-active{color:var(--accent);background:var(--accent-dim);font-weight:700;pointer-events:none}
+.td-num{display:inline-block;width:28px;font-weight:700;color:var(--accent)}
+
+.layout{display:flex;padding-top:52px;min-height:calc(100vh - 52px)}
+
+.sidebar{width:var(--sidebar-w);flex-shrink:0;position:fixed;top:52px;left:0;bottom:0;background:rgba(255,255,255,.025);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.sb-head{padding:12px 12px 8px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sb-subtitle{font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--text3);margin-bottom:3px}
+.sb-current{font-size:.74em;font-weight:600;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:1.1em}
+.sb-list{flex:1;overflow-y:auto;padding:5px 5px 16px}
+.sb-item{width:100%;display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:var(--radius-sm);background:none;border:1px solid transparent;color:var(--text2);font-family:var(--ff);font-size:.78em;cursor:pointer;text-align:left;transition:all var(--transition);margin-bottom:1px}
+.sb-item:hover{background:var(--surface);color:var(--text)}
+.sb-item.active{background:var(--accent-dim);color:var(--accent);border-color:var(--accent-border)}
+.sb-tag{font-family:var(--ff-mono);font-size:.68em;font-weight:700;min-width:30px;color:inherit;opacity:.75;flex-shrink:0}
+.sb-name{flex:1;font-weight:500;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-footer{padding:7px 10px;border-top:1px solid var(--border);flex-shrink:0;display:flex;flex-direction:column;gap:5px}
+.sb-link{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:var(--radius-sm);font-size:.76em;font-weight:600;text-decoration:none;transition:background var(--transition)}
+.sb-link-purple{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent)}
+.sb-link-purple:hover{background:rgba(192,132,252,.2)}
+.sb-link-gold{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:var(--gold)}
+.sb-link-gold:hover{background:rgba(245,158,11,.15)}
+
+.content{flex:1;margin-left:var(--sidebar-w);padding:28px 40px 60px;min-width:0}
+
+.topic-panel{display:none;max-width:860px}
+.topic-panel.active{display:block;animation:tpFadeIn .18s ease forwards}
+@keyframes tpFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.panel-header{margin-bottom:24px;padding:14px 18px 16px;background:linear-gradient(135deg,rgba(192,132,252,.06) 0%,transparent 60%);border:1px solid rgba(192,132,252,.18);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.panel-tag{font-family:var(--ff-mono);font-size:.68em;font-weight:700;color:var(--accent);opacity:.8;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.panel-title{font-size:1.3em;font-weight:700;color:#f1f5f9;letter-spacing:-.02em;line-height:1.3}
+.panel-meta{font-size:.78em;color:var(--text3);margin-top:5px}
+
+.read-progress{position:fixed;top:52px;left:var(--sidebar-w);right:0;height:2px;z-index:200;background:linear-gradient(90deg,var(--accent),var(--blue));transform-origin:left;transform:scaleX(0);transition:transform .08s linear}
+
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(192,132,252,.18);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(192,132,252,.35)}
+
+@media(max-width:768px){
+  body{font-size:17px}
+  .sidebar{position:static;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--border)}
+  .layout{flex-direction:column}
+  .content{margin-left:0;padding:20px 16px 40px}
+  .sb-list{max-height:200px}
+  .read-progress{left:0}
+  .katex{font-size:1.05em}
+}
+
+.section-wrap{margin-bottom:14px;border-radius:var(--radius-sm);overflow:hidden}
+.sec-btn{width:100%;text-align:left;padding:10px 13px;border:none;border-radius:var(--radius-sm);cursor:pointer;font-size:.86em;font-weight:600;letter-spacing:.3px;transition:var(--transition);display:flex;justify-content:space-between;align-items:center;font-family:var(--ff)}
+.sec-btn .sarr{transition:.2s;flex-shrink:0}
 .sec-open .sec-btn .sarr{transform:rotate(180deg)}
-.sec-body{display:none;padding:12px 16px;font-size:.94em;line-height:1.7}
+.sec-body{display:none;border-radius:0 0 var(--radius-sm) var(--radius-sm);padding:13px 15px;font-size:.86em;line-height:1.75}
 .sec-open .sec-body{display:block}
-.s-datos .sec-btn{background:rgba(var(--br),.12);color:var(--blue);border:1px solid rgba(var(--br),.22)}
-.s-datos .sec-body{background:rgba(var(--br),.04);border:1px solid rgba(var(--br),.18);border-top:none}
-.s-resol .sec-btn{background:rgba(var(--vr),.12);color:var(--violet);border:1px solid rgba(var(--vr),.22)}
-.s-resol .sec-body{background:rgba(var(--vr),.04);border:1px solid rgba(var(--vr),.18);border-top:none}
-.s-verif .sec-btn{background:rgba(var(--cr),.1);color:var(--cyan);border:1px solid rgba(var(--cr),.22)}
-.s-verif .sec-body{background:rgba(var(--cr),.04);border:1px solid rgba(var(--cr),.18);border-top:none}
-.enunciado{background:rgba(255,255,255,.025);border-left:3px solid rgba(var(--vr),.4);padding:11px 14px;border-radius:6px;margin-bottom:12px;font-size:.94em}
-.tdatos{width:100%;border-collapse:collapse;font-size:.88em;margin:6px 0}
-.tdatos th,.tdatos td{padding:6px 10px;border:1px solid var(--line)}
-.tdatos th{background:rgba(var(--br),.12);color:var(--blue)}
-.tdatos td{color:#cbd5e1}
-.paso{margin-bottom:12px;padding:10px 14px;background:rgba(var(--vr),.05);border-radius:6px;border-left:3px solid rgba(var(--vr),.4)}
-.paso-titulo{color:var(--violet);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
-.porque{font-size:.82em;color:#94a3b8;font-style:italic;margin-bottom:6px}
-.porque b{color:#fb923c;font-style:normal}
-.demo{border:2px solid #fb923c;border-radius:8px;padding:13px 16px;background:rgba(251,146,60,0.07);margin-bottom:14px}
-.demo-titulo{color:#fb923c;font-weight:700;font-size:.92em;margin-bottom:8px}
-.demo p{font-size:.88em;margin:6px 0;color:#cbd5e1}
-.demo .step{color:#fed7aa;margin-top:8px}
-.demo .step b{color:#fb923c}
-.resf{background:rgba(var(--vr),.08);border:1px solid rgba(var(--vr),.28);border-radius:6px;padding:10px 14px;margin-top:10px}
-.resf-lbl{font-family:var(--mono);font-size:.66em;color:var(--violet);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
-.resf-val{color:#e9d5ff;font-size:.96em;line-height:1.7}
-.nota{background:rgba(var(--ar),.07);border:1px solid rgba(var(--ar),.2);border-left:3px solid var(--amber);padding:8px 12px;border-radius:6px;font-size:.86em;color:#fde68a;font-style:italic;margin:8px 0}
+
+.s-datos .sec-btn{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+.s-datos .sec-body{background:rgba(192,132,252,.04);border:1px solid var(--accent-border);border-top:none}
+.s-teoria .sec-btn{background:rgba(251,146,60,.1);color:var(--orange);border:1px solid rgba(251,146,60,.25)}
+.s-teoria .sec-body{background:rgba(251,146,60,.05);border:1px solid rgba(251,146,60,.2);border-top:none}
+.s-resolucion .sec-btn{background:rgba(16,185,129,.1);color:var(--green);border:1px solid rgba(16,185,129,.25)}
+.s-resolucion .sec-body{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-top:none}
+
+.enunciado{background:var(--surface2);border-radius:var(--radius-sm);padding:13px 15px;font-size:.87em;line-height:1.75;margin-bottom:14px;border-left:3px solid var(--accent-border)}
+
+.t-datos{width:100%;border-collapse:collapse;font-size:.84em}
+.t-datos th{background:var(--accent-dim);color:var(--accent);padding:7px 10px;text-align:left;border:1px solid var(--accent-border)}
+.t-datos td{padding:7px 10px;border:1px solid var(--border);color:var(--text2)}
+.t-datos tr:nth-child(even) td{background:rgba(192,132,252,.04)}
+
+.paso{margin-bottom:13px;padding:10px 13px;background:rgba(16,185,129,.06);border-radius:var(--radius-sm);border-left:3px solid rgba(16,185,129,.4)}
+.paso-titulo{color:var(--green);font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.porque{font-size:.83em;color:#94a3b8;font-style:italic;margin-bottom:6px}
+.porque b{color:var(--orange);font-style:normal}
+
+.resultado-final{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);border-radius:var(--radius-sm);padding:11px 15px;margin-top:12px}
+.rf-label{font-size:.7em;color:var(--green);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;font-weight:700}
+.rf-val{color:#d1fae5;font-size:.9em;line-height:1.9}
+
+.verificacion{background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.25);border-left:3px solid #38bdf8;border-radius:var(--radius-sm);padding:10px 14px;margin-top:10px;font-size:.82em;color:#bae6fd}
+.verificacion .vlabel{font-family:var(--ff-mono);font-size:.7em;color:#38bdf8;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:4px;display:block}
+
+.katex{font-size:1.04em}
+.katex-display{overflow-x:auto;overflow-y:hidden}
+.footer{text-align:center;padding:40px 20px;color:var(--text3);font-size:.78em}
+
+.empty-state{text-align:center;padding:80px 20px;color:var(--text3)}
 </style>
 </head>
 <body>
 
 <nav class="topbar">
   <a class="topbar-back" href="index.html">
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-      <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Ejercicios
   </a>
-  <span class="topbar-title">Química · T4 <em>· Ejercicios resueltos</em></span>
+  <span class="topbar-title">Química · T4 <span style="color:var(--accent)">· Estados de la materia</span></span>
+  <div class="tema-picker" id="temaPicker">
+    <button class="tema-picker-btn" onclick="this.closest('.tema-picker').classList.toggle('open')">T4 ▾</button>
+    <div class="tema-dropdown">
+    <a class="td-item " href="tema1.html"><span class="td-num">T1</span> Conceptos generales</a>
+    <a class="td-item " href="tema2.html"><span class="td-num">T2</span> Estructura atómica</a>
+    <a class="td-item " href="tema3.html"><span class="td-num">T3</span> Enlace químico</a>
+    <a class="td-item td-active" href="tema4.html"><span class="td-num">T4</span> Estados de la materia</a>
+    <a class="td-item " href="tema5.html"><span class="td-num">T5</span> Termodinámica química</a>
+    <a class="td-item " href="tema6.html"><span class="td-num">T6</span> Termoquímica</a>
+    <a class="td-item " href="tema7.html"><span class="td-num">T7</span> Espontaneidad y energía libre</a>
+    <a class="td-item " href="tema8.html"><span class="td-num">T8</span> Cinética y equilibrio</a>
+    <a class="td-item " href="tema9.html"><span class="td-num">T9</span> Equilibrio ácido-base</a>
+    </div>
+  </div>
 </nav>
 
-<div class="wrap">
+<div class="read-progress" id="readProgress"></div>
 
-  <div class="head">
-    <div class="tag">📝 Tema 4 · Estados de la materia</div>
-    <h1>Ejercicios resueltos · Tema 4</h1>
-    <div class="sub">Sólidos · Líquidos · Gases · Cambios de estado · Diagramas de fases</div>
-  </div>
-
-  <div class="jump">
-    <a class="jl" href="#ex1">Ej 1 — Ley de los gases ideales: hallar volumen</a>
-    <a class="jl" href="#ex2">Ej 2 — Mezcla de gases: ley de Dalton</a>
-    <a class="jl" href="#ex3">Ej 3 — Calor para fundir y calentar hielo</a>
-    <a class="jl" href="#ex4">Ej 4 — Densidad de un gas ideal</a>
-    <a class="jl" href="#ex5">Ej 5 — Ley de Graham: efusión de gases</a>
-    <a class="jl" href="#ex6">Ej 6 — Gas real: comparación con la ecuación de van der Waals</a>
-    <a class="jl" href="#ex7">Ej 7 — Clausius-Clapeyron: presión de vapor a otra temperatura</a>
-    <a class="jl" href="#ex8">Ej 8 — Calor para vaporizar agua</a>
-    <a class="jl" href="#ex9">Ej 9 — Mezcla de gases húmedos: ley de Dalton con vapor de agua</a>
-    <a class="jl" href="#ex10">Ej 10 — Diagrama de fases: identificar la fase</a>
-  </div>
-
-  <article class="ex open" id="ex1">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 1</div>
-        <div class="ex-title">Ley de los gases ideales: hallar volumen</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sb-head">
+      <div class="sb-subtitle">T4 · Estados de la materia</div>
+      <div class="sb-current" id="sbCurrent"></div>
     </div>
-    <div class="ex-body">
+    <div class="sb-list">
+      <button class="sb-item" onclick="showEx('ex4-1')" data-id="ex4-1">
+        <span class="sb-tag">4.1</span>
+        <span class="sb-name">Ley de los gases ideales: hallar volumen</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-2')" data-id="ex4-2">
+        <span class="sb-tag">4.2</span>
+        <span class="sb-name">Mezcla de gases: ley de Dalton</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-3')" data-id="ex4-3">
+        <span class="sb-tag">4.3</span>
+        <span class="sb-name">Calor para fundir y calentar hielo</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-4')" data-id="ex4-4">
+        <span class="sb-tag">4.4</span>
+        <span class="sb-name">Densidad de un gas ideal</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-5')" data-id="ex4-5">
+        <span class="sb-tag">4.5</span>
+        <span class="sb-name">Ley de Graham: efusión de gases</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-6')" data-id="ex4-6">
+        <span class="sb-tag">4.6</span>
+        <span class="sb-name">Gas real: comparación con la ecuación de…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-7')" data-id="ex4-7">
+        <span class="sb-tag">4.7</span>
+        <span class="sb-name">Clausius-Clapeyron: presión de vapor a ot…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-8')" data-id="ex4-8">
+        <span class="sb-tag">4.8</span>
+        <span class="sb-name">Calor para vaporizar agua</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-9')" data-id="ex4-9">
+        <span class="sb-tag">4.9</span>
+        <span class="sb-name">Mezcla de gases húmedos: ley de Dalton co…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex4-10')" data-id="ex4-10">
+        <span class="sb-tag">4.10</span>
+        <span class="sb-name">Diagrama de fases: identificar la fase</span>
+      </button>
+    </div>
+    <div class="sb-footer">
+      <a class="sb-link sb-link-purple" href="../teoria/tema4.html">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Teoría
+      </a>
+      <a class="sb-link sb-link-gold" href="../formulario.html">📐 Formulario</a>
+    </div>
+  </aside>
 
-      <div class="enunciado">
-        <p>Calcular el volumen que ocupan <b>2,5 mol de N$_2$</b> a <b>27 °C</b> y <b>2 atm</b> de presión, suponiendo comportamiento ideal. ¿Cuál sería ese volumen en condiciones normales (0 °C, 1 atm)?</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $V_1=30{,}77$ L; $V_{CN}=56{,}0$ L.</p>
-      </div>
+  <main class="content">
+  <div class="topic-panel" id="ex4-1">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.1</div>
+      <h1 class="panel-title">Ley de los gases ideales: hallar volumen</h1>
+      <div class="panel-meta">Resultado: $V_1=30{,}77$ L; $V_{CN}=56{,}0$ L.</div>
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="enunciado">
+      Calcular el volumen que ocupan <b>2,5 mol de N$_2$</b> a <b>27 °C</b> y <b>2 atm</b> de presión, suponiendo comportamiento ideal. ¿Cuál sería ese volumen en condiciones normales (0 °C, 1 atm)?
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Moles</td><td>$n=2{,}5\ \text{mol}$</td></tr>
             <tr><td>Temperatura</td><td>$T_1=300\ \text{K}$ (27 °C)</td></tr>
             <tr><td>Presión</td><td>$p_1=2\ \text{atm}$</td></tr>
             <tr><td>$R$</td><td>$0{,}082\ \text{atm·L/(mol·K)}$</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — De $pV=nRT$ a las condiciones normales <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — De $pV=nRT$ a las condiciones normales</div>
-            
 <p>La ecuación $pV=nRT$ permite encontrar cualquier variable conocidas las otras tres. Para un proceso entre dos estados con $n$ constante:</p>
 $$\dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2}$$
 <p>En <b>condiciones normales (CN)</b>: $T=273{,}15$ K, $p=1$ atm. 1 mol de gas ideal ocupa <b>22,4 L</b>.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Volumen a 27 °C, 2 atm</div>
             <p class="porque"><b>¿Por qué?</b> Despejo $V$ de $pV=nRT$.</p>
@@ -150,68 +284,55 @@ $$\dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2}$$
             $$V_{CN} = 2{,}5\cdot 22{,}4 = 56{,}0\ \text{L}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$V_1 = 30{,}75$ L · $V_{CN}=56{,}0$ L.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$V_1 = 30{,}75$ L · $V_{CN}=56{,}0$ L.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Comprobación con $pV=nRT$ en CN: $V=2{,}5\cdot 0{,}082\cdot 273{,}15/1 = 56{,}0$ L. ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex2">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 2</div>
-        <div class="ex-title">Mezcla de gases: ley de Dalton</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Comprobación con $pV=nRT$ en CN: $V=2{,}5\cdot 0{,}082\cdot 273{,}15/1 = 56{,}0$ L. ✓
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-2">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.2</div>
+      <h1 class="panel-title">Mezcla de gases: ley de Dalton</h1>
+      <div class="panel-meta">Resultado: $p_{He}=2{,}46$ atm; $p_{N_2}=1{,}23$ atm; $p_{O_2}=2{,}46$ atm; $p_T=6{,}15$ atm.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>En un recipiente de <b>10 L</b> a <b>27 °C</b> se mezclan <b>4 g de He</b>, <b>14 g de N$_2$</b> y <b>32 g de O$_2$</b>. Calcular: (a) la presión parcial de cada gas; (b) la presión total. Datos: $M_{He}=4$, $M_{N_2}=28$, $M_{O_2}=32$ g/mol.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $p_{He}=2{,}46$ atm; $p_{N_2}=1{,}23$ atm; $p_{O_2}=2{,}46$ atm; $p_T=6{,}15$ atm.</p>
-      </div>
+    <div class="enunciado">
+      En un recipiente de <b>10 L</b> a <b>27 °C</b> se mezclan <b>4 g de He</b>, <b>14 g de N$_2$</b> y <b>32 g de O$_2$</b>. Calcular: (a) la presión parcial de cada gas; (b) la presión total. Datos: $M_{He}=4$, $M_{N_2}=28$, $M_{O_2}=32$ g/mol.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Volumen</td><td>$V=10\ \text{L}$</td></tr>
             <tr><td>Temperatura</td><td>$T=300\ \text{K}$</td></tr>
             <tr><td>Masas</td><td>He: 4 g · N$_2$: 14 g · O$_2$: 32 g</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Ley de Dalton de presiones parciales <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Ley de Dalton de presiones parciales</div>
-            
 <p>En una mezcla de gases ideales que no reaccionan, cada gas se comporta como si ocupara solo el recipiente. Su <b>presión parcial</b> es la que ejercería en solitario:</p>
 $$p_i = \dfrac{n_i RT}{V}$$
 <p>La <b>presión total</b> es la suma de las parciales:</p>
 $$p_T = \sum_i p_i = \dfrac{(\sum_i n_i)RT}{V} = \dfrac{n_T RT}{V}$$
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Moles de cada gas</div>
             <p class="porque"><b>¿Por qué?</b> $n=m/M$.</p>
@@ -230,64 +351,47 @@ $$p_{O_2}=1\cdot 2{,}46=2{,}46\ \text{atm}$$
             $$p_T = 2{,}46 + 1{,}23 + 2{,}46 = 6{,}15\ \text{atm}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$p_{He}=2{,}46$ atm · $p_{N_2}=1{,}23$ atm · $p_{O_2}=2{,}46$ atm · $p_T=6{,}15$ atm.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$p_{He}=2{,}46$ atm · $p_{N_2}=1{,}23$ atm · $p_{O_2}=2{,}46$ atm · $p_T=6{,}15$ atm.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>$n_T=2{,}5$ mol → $p_T=n_T RT/V = 2{,}5\cdot 0{,}082\cdot 300/10=6{,}15$ atm ✓.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex3">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 3</div>
-        <div class="ex-title">Calor para fundir y calentar hielo</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      $n_T=2{,}5$ mol → $p_T=n_T RT/V = 2{,}5\cdot 0{,}082\cdot 300/10=6{,}15$ atm ✓.
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-3">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.3</div>
+      <h1 class="panel-title">Calor para fundir y calentar hielo</h1>
+      <div class="panel-meta">Resultado: $Q\approx 22{,}0$ kJ.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Calcular el calor necesario para transformar <b>50 g de hielo a –10 °C</b> en <b>agua líquida a 25 °C</b>. Datos: $c_{hielo}=2{,}09$ J/(g·K), $c_{agua}=4{,}18$ J/(g·K), $L_f=334$ J/g.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $Q\approx 22{,}0$ kJ.</p>
-      </div>
+    <div class="enunciado">
+      Calcular el calor necesario para transformar <b>50 g de hielo a –10 °C</b> en <b>agua líquida a 25 °C</b>. Datos: $c_{hielo}=2{,}09$ J/(g·K), $c_{agua}=4{,}18$ J/(g·K), $L_f=334$ J/g.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Masa</td><td>$m=50\ \text{g}$</td></tr>
             <tr><td>Temperatura inicial</td><td>$T_1=-10$ °C</td></tr>
             <tr><td>Temperatura final</td><td>$T_2=25$ °C</td></tr>
             <tr><td>Calor específico hielo</td><td>$c_h=2{,}09$ J/(g·K)</td></tr>
             <tr><td>Calor específico agua</td><td>$c_a=4{,}18$ J/(g·K)</td></tr>
             <tr><td>Calor latente de fusión</td><td>$L_f=334$ J/g</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Tres etapas: calor sensible + cambio de fase + calor sensible <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Tres etapas: calor sensible + cambio de fase + calor sensible</div>
-            
 <p>El proceso <b>−10 °C hielo → 0 °C hielo → 0 °C agua → 25 °C agua</b> consta de tres etapas en las que el calor se invierte de forma distinta:</p>
 <ol>
   <li>Calentar el hielo de −10 a 0 °C: $Q_1=m\,c_h\,\Delta T$ (calor sensible).</li>
@@ -296,8 +400,12 @@ $$p_{O_2}=1\cdot 2{,}46=2{,}46\ \text{atm}$$
 </ol>
 <p>El calor total es $Q=Q_1+Q_2+Q_3$.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Calentar hielo</div>
             <p class="porque"><b>¿Por qué?</b> $\Delta T = 0-(-10)=10$ K.</p>
@@ -319,69 +427,56 @@ $$p_{O_2}=1\cdot 2{,}46=2{,}46\ \text{atm}$$
             $$Q = 1\,045 + 16\,700 + 5\,225 = 22\,970\ \text{J}\approx \boxed{23{,}0\ \text{kJ}}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$Q \approx 23{,}0$ kJ — la mayor parte del calor (16,7 kJ ≈ 73%) se gasta en <em>fundir</em> el hielo, no en calentarlo.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$Q \approx 23{,}0$ kJ — la mayor parte del calor (16,7 kJ ≈ 73%) se gasta en <em>fundir</em> el hielo, no en calentarlo.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Comprobación de proporción: con la misma masa, fundir hielo (16,7 kJ) equivale a calentar agua líquida 80 K, mucho más que los 35 K reales del proceso. Esto refleja el alto $L_f$ del agua. ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex4">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 4</div>
-        <div class="ex-title">Densidad de un gas ideal</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Comprobación de proporción: con la misma masa, fundir hielo (16,7 kJ) equivale a calentar agua líquida 80 K, mucho más que los 35 K reales del proceso. Esto refleja el alto $L_f$ del agua. ✓
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-4">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.4</div>
+      <h1 class="panel-title">Densidad de un gas ideal</h1>
+      <div class="panel-meta">Resultado: $\rho(25°\text{C})=1{,}308$ g/L; $\rho(100°\text{C})=1{,}045$ g/L.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Calcular la densidad del <b>O$_2$</b> a 25 °C y 1 atm. ¿Y a 100 °C? Datos: $M_{O_2}=32{,}0$ g/mol, $R=0{,}082$ atm·L/(mol·K).</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $\rho(25°\text{C})=1{,}308$ g/L; $\rho(100°\text{C})=1{,}045$ g/L.</p>
-      </div>
+    <div class="enunciado">
+      Calcular la densidad del <b>O$_2$</b> a 25 °C y 1 atm. ¿Y a 100 °C? Datos: $M_{O_2}=32{,}0$ g/mol, $R=0{,}082$ atm·L/(mol·K).
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>$M_{O_2}$</td><td>32,0 g/mol</td></tr>
             <tr><td>$T_1$, $T_2$</td><td>298 K; 373 K</td></tr>
             <tr><td>$p$</td><td>1 atm</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Densidad a partir de $pV=nRT$ <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Densidad a partir de $pV=nRT$</div>
-            
 <p>Para un gas ideal, $pV=nRT$. Si llamamos $m$ a la masa, $n=m/M$, así que:</p>
 $$pV = \dfrac{m}{M}RT \implies \dfrac{m}{V}=\dfrac{pM}{RT}$$
 <p>Pero $m/V=\rho$ es justamente la densidad:</p>
 $$\boxed{\;\rho=\dfrac{pM}{RT}\;}$$
 <p>Esto muestra que la densidad de un gas <b>aumenta</b> con la presión y disminuye con la temperatura, en contraste con sólidos y líquidos donde la dependencia es mucho más débil.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Densidad a 25 °C</div>
             <p class="porque"><b>¿Por qué?</b> Sustitución directa.</p>
@@ -393,68 +488,55 @@ $$\boxed{\;\rho=\dfrac{pM}{RT}\;}$$
             $$\rho_2 = \dfrac{32{,}0}{0{,}082\cdot 373}=\dfrac{32{,}0}{30{,}59}=1{,}045\ \text{g/L}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$\rho_{25°C}=1{,}308$ g/L · $\rho_{100°C}=1{,}045$ g/L. La densidad del gas baja al subir $T$.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$\rho_{25°C}=1{,}308$ g/L · $\rho_{100°C}=1{,}045$ g/L. La densidad del gas baja al subir $T$.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Razón inversa: $\rho_1/\rho_2=T_2/T_1=373/298=1{,}252$. Comprobación: $1{,}308/1{,}045=1{,}252$ ✓ — coincide exactamente.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex5">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 5</div>
-        <div class="ex-title">Ley de Graham: efusión de gases</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Razón inversa: $\rho_1/\rho_2=T_2/T_1=373/298=1{,}252$. Comprobación: $1{,}308/1{,}045=1{,}252$ ✓ — coincide exactamente.
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-5">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.5</div>
+      <h1 class="panel-title">Ley de Graham: efusión de gases</h1>
+      <div class="panel-meta">Resultado: Distancia desde el NH$_3$ ≈ 59 cm.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>El amoniaco (NH$_3$) y el cloruro de hidrógeno (HCl) se introducen simultáneamente en los extremos opuestos de un tubo de 1,00 m de largo. Determinar a qué distancia del extremo del NH$_3$ se forma el anillo blanco de NH$_4$Cl(s) cuando ambos gases se encuentran. Datos: $M_{NH_3}=17$, $M_{HCl}=36{,}5$ g/mol.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> Distancia desde el NH$_3$ ≈ 59 cm.</p>
-      </div>
+    <div class="enunciado">
+      El amoniaco (NH$_3$) y el cloruro de hidrógeno (HCl) se introducen simultáneamente en los extremos opuestos de un tubo de 1,00 m de largo. Determinar a qué distancia del extremo del NH$_3$ se forma el anillo blanco de NH$_4$Cl(s) cuando ambos gases se encuentran. Datos: $M_{NH_3}=17$, $M_{HCl}=36{,}5$ g/mol.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Longitud del tubo</td><td>$L=1{,}00$ m</td></tr>
             <tr><td>$M_{NH_3}$</td><td>17 g/mol</td></tr>
             <tr><td>$M_{HCl}$</td><td>36,5 g/mol</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Ley de Graham <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Ley de Graham</div>
-            
 <p>La <b>ley de Graham</b> establece que la velocidad de efusión (o difusión) de un gas es inversamente proporcional a la raíz cuadrada de su masa molar:</p>
 $$\dfrac{v_A}{v_B}=\sqrt{\dfrac{M_B}{M_A}}$$
 <p>Físicamente: a la misma temperatura, todos los gases tienen la misma energía cinética media $\tfrac12 M v^2$, así que el más ligero se mueve más rápido.</p>
 <p>Si dos gases parten al mismo tiempo desde extremos opuestos de un tubo de longitud $L$, se encontrarán cuando $d_A + d_B = L$, con $d_A/d_B = v_A/v_B$.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Razón de velocidades</div>
             <p class="porque"><b>¿Por qué?</b> Aplico Graham con $A=$NH$_3$, $B=$HCl.</p>
@@ -469,62 +551,45 @@ $$d_{HCl} = \dfrac{1{,}00}{2{,}465}=0{,}4057\ \text{m}$$
 $$d_{NH_3} = 1{,}00 - 0{,}406 = 0{,}594\ \text{m}\approx \boxed{59{,}4\ \text{cm}}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">El anillo blanco de NH$_4$Cl(s) aparece a <b>59,4 cm</b> del extremo del NH$_3$ (40,6 cm del extremo del HCl).</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">El anillo blanco de NH$_4$Cl(s) aparece a <b>59,4 cm</b> del extremo del NH$_3$ (40,6 cm del extremo del HCl).</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Razón experimental medida en laboratorio: $\sim 60$ cm. ✓ Pequeñas desviaciones por convección y geometría real del tubo.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex6">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 6</div>
-        <div class="ex-title">Gas real: comparación con la ecuación de van der Waals</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Razón experimental medida en laboratorio: $\sim 60$ cm. ✓ Pequeñas desviaciones por convección y geometría real del tubo.
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-6">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.6</div>
+      <h1 class="panel-title">Gas real: comparación con la ecuación de van der Waals</h1>
+      <div class="panel-meta">Resultado: (a) $p_{ideal}=49{,}2$ atm; (b) $p_{vdW}=39{,}3$ atm.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Calcular la presión de <b>2,0 mol</b> de CO$_2$ encerrados en <b>1,0 L</b> a <b>300 K</b>: (a) suponiendo gas ideal; (b) usando la ecuación de van der Waals. Constantes para CO$_2$: $a=3{,}59\ \text{atm·L}^2/\text{mol}^2$, $b=0{,}0427$ L/mol. $R=0{,}082$ atm·L/(mol·K).</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) $p_{ideal}=49{,}2$ atm; (b) $p_{vdW}=39{,}3$ atm.</p>
-      </div>
+    <div class="enunciado">
+      Calcular la presión de <b>2,0 mol</b> de CO$_2$ encerrados en <b>1,0 L</b> a <b>300 K</b>: (a) suponiendo gas ideal; (b) usando la ecuación de van der Waals. Constantes para CO$_2$: $a=3{,}59\ \text{atm·L}^2/\text{mol}^2$, $b=0{,}0427$ L/mol. $R=0{,}082$ atm·L/(mol·K).
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>$n$</td><td>2,0 mol</td></tr>
             <tr><td>$V$</td><td>1,0 L</td></tr>
             <tr><td>$T$</td><td>300 K</td></tr>
             <tr><td>$a, b$ (CO$_2$)</td><td>3,59 atm·L²/mol²; 0,0427 L/mol</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Por qué van der Waals corrige al ideal <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Por qué van der Waals corrige al ideal</div>
-            
 <p>La ecuación de gas ideal supone que las moléculas son puntos sin interacción. Van der Waals añade dos correcciones físicas:</p>
 <ul>
   <li><b>Volumen propio</b>: las moléculas ocupan espacio, así que el volumen "libre" disponible es $V-nb$ en vez de $V$.</li>
@@ -532,8 +597,12 @@ $$d_{NH_3} = 1{,}00 - 0{,}406 = 0{,}594\ \text{m}\approx \boxed{59{,}4\ \text{cm
 </ul>
 $$\left(p+\dfrac{an^2}{V^2}\right)(V-nb)=nRT \implies p=\dfrac{nRT}{V-nb}-\dfrac{an^2}{V^2}$$
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Presión ideal</div>
             <p class="porque"><b>¿Por qué?</b> $p=nRT/V$.</p>
@@ -552,68 +621,55 @@ $$p_{vdW}=\dfrac{49{,}2}{0{,}9146}-14{,}36=53{,}79-14{,}36=39{,}43\ \text{atm}$$
 <p>$Z<1$ ⟹ a esta densidad y $T$ <b>dominan las atracciones</b> sobre el efecto del volumen propio.</p>
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$p_{ideal}=49{,}2$ atm vs $p_{vdW}=39{,}3$ atm. Diferencia ≈ 20%.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$p_{ideal}=49{,}2$ atm vs $p_{vdW}=39{,}3$ atm. Diferencia ≈ 20%.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>A presiones más bajas ($p<5$ atm) y/o temperaturas más altas, $Z\to 1$ y los modelos coinciden. La discrepancia aquí es grande porque la densidad es alta (2 mol en 1 L = $\rho\approx 88$ g/L). ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex7">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 7</div>
-        <div class="ex-title">Clausius-Clapeyron: presión de vapor a otra temperatura</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      A presiones más bajas ($p<5$ atm) y/o temperaturas más altas, $Z\to 1$ y los modelos coinciden. La discrepancia aquí es grande porque la densidad es alta (2 mol en 1 L = $\rho\approx 88$ g/L). ✓
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-7">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.7</div>
+      <h1 class="panel-title">Clausius-Clapeyron: presión de vapor a otra temperatura</h1>
+      <div class="panel-meta">Resultado: $p_2 \approx 92{,}2$ mmHg.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>El agua tiene una presión de vapor de <b>23,8 mmHg a 25 °C</b>. Calcular su presión de vapor a <b>50 °C</b> usando la ecuación de Clausius-Clapeyron. $\Delta H_{vap}=44{,}0$ kJ/mol, $R=8{,}314$ J/(mol·K).</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $p_2 \approx 92{,}2$ mmHg.</p>
-      </div>
+    <div class="enunciado">
+      El agua tiene una presión de vapor de <b>23,8 mmHg a 25 °C</b>. Calcular su presión de vapor a <b>50 °C</b> usando la ecuación de Clausius-Clapeyron. $\Delta H_{vap}=44{,}0$ kJ/mol, $R=8{,}314$ J/(mol·K).
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>$T_1$</td><td>298 K</td></tr>
             <tr><td>$p_1$</td><td>23,8 mmHg</td></tr>
             <tr><td>$T_2$</td><td>323 K</td></tr>
             <tr><td>$\Delta H_{vap}$</td><td>44 000 J/mol</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Clausius-Clapeyron integrada <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Clausius-Clapeyron integrada</div>
-            
 <p>Integrando la ecuación diferencial de Clausius-Clapeyron entre dos temperaturas, suponiendo $\Delta H_{vap}$ constante en el rango:</p>
 $$\ln\!\dfrac{p_2}{p_1}=-\dfrac{\Delta H_{vap}}{R}\!\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)$$
 <p>Predice cómo crece exponencialmente la presión de vapor con $T$. Para el agua, una subida de 25 K casi cuatriplica $p_v$.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Diferencia $1/T$</div>
             <p class="porque"><b>¿Por qué?</b> Cuidado con el signo y unidades.</p>
@@ -631,59 +687,44 @@ $$\ln\!\dfrac{p_2}{p_1}=-\dfrac{\Delta H_{vap}}{R}\!\left(\dfrac{1}{T_2}-\dfrac{
 $$p_2 = 23{,}8\cdot 3{,}96=\boxed{94{,}2\ \text{mmHg}}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$p_2 \approx 94$ mmHg.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$p_2 \approx 94$ mmHg.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Valor experimental tabulado: 92,5 mmHg a 50 °C. La pequeña diferencia (~2%) viene de suponer $\Delta H_{vap}$ rigurosamente constante (en realidad disminuye un poco con $T$). ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex8">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 8</div>
-        <div class="ex-title">Calor para vaporizar agua</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Valor experimental tabulado: 92,5 mmHg a 50 °C. La pequeña diferencia (~2%) viene de suponer $\Delta H_{vap}$ rigurosamente constante (en realidad disminuye un poco con $T$). ✓
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-8">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.8</div>
+      <h1 class="panel-title">Calor para vaporizar agua</h1>
+      <div class="panel-meta">Resultado: $Q_{vap}=1\,130$ kJ. Es 5,4 veces más que calentarla de 0 a 100 °C.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Calcular el calor necesario para vaporizar <b>500 g de agua a 100 °C</b> a presión atmosférica. ¿Qué energía absorbe (en %) frente a la necesaria para calentar la misma agua de 0 °C a 100 °C? Datos: $L_v=2\,260$ J/g; $c_a=4{,}18$ J/(g·K).</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $Q_{vap}=1\,130$ kJ. Es 5,4 veces más que calentarla de 0 a 100 °C.</p>
-      </div>
+    <div class="enunciado">
+      Calcular el calor necesario para vaporizar <b>500 g de agua a 100 °C</b> a presión atmosférica. ¿Qué energía absorbe (en %) frente a la necesaria para calentar la misma agua de 0 °C a 100 °C? Datos: $L_v=2\,260$ J/g; $c_a=4{,}18$ J/(g·K).
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Masa</td><td>500 g</td></tr>
             <tr><td>$L_v$</td><td>2 260 J/g</td></tr>
             <tr><td>$c_a$</td><td>4,18 J/(g·K)</td></tr>
             <tr><td>$\Delta T_{0\to 100}$</td><td>100 K</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Calor de vaporización</div>
             <p class="porque"><b>¿Por qué?</b> $Q=m\,L_v$.</p>
@@ -700,68 +741,55 @@ $$p_2 = 23{,}8\cdot 3{,}96=\boxed{94{,}2\ \text{mmHg}}$$
             $$\dfrac{Q_{vap}}{Q_{calent}}=\dfrac{1\,130}{209}=5{,}41$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$Q_{vap}=1\,130$ kJ — <b>5,4 veces más</b> que calentar la misma agua de 0 a 100 °C.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$Q_{vap}=1\,130$ kJ — <b>5,4 veces más</b> que calentar la misma agua de 0 a 100 °C.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Esto explica por qué la transpiración es tan eficaz para refrigerar: vaporizar una pequeña cantidad de sudor disipa mucha más energía que calentar otros tantos gramos de agua corporal varios grados. ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex9">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 9</div>
-        <div class="ex-title">Mezcla de gases húmedos: ley de Dalton con vapor de agua</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Esto explica por qué la transpiración es tan eficaz para refrigerar: vaporizar una pequeña cantidad de sudor disipa mucha más energía que calentar otros tantos gramos de agua corporal varios grados. ✓
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-9">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.9</div>
+      <h1 class="panel-title">Mezcla de gases húmedos: ley de Dalton con vapor de agua</h1>
+      <div class="panel-meta">Resultado: $V_{seco,CN}=224$ mL.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Se recoge <b>O$_2$</b> sobre agua a <b>22 °C</b>. La presión total leída en el barómetro es <b>755 mmHg</b>. La presión de vapor del agua a 22 °C es <b>20 mmHg</b>. Calcular el volumen de O$_2$ <b>seco</b> en condiciones normales (0 °C, 760 mmHg) si el gas húmedo recogido ocupa 250 mL.</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> $V_{seco,CN}=224$ mL.</p>
-      </div>
+    <div class="enunciado">
+      Se recoge <b>O$_2$</b> sobre agua a <b>22 °C</b>. La presión total leída en el barómetro es <b>755 mmHg</b>. La presión de vapor del agua a 22 °C es <b>20 mmHg</b>. Calcular el volumen de O$_2$ <b>seco</b> en condiciones normales (0 °C, 760 mmHg) si el gas húmedo recogido ocupa 250 mL.
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>$V$ húmedo</td><td>250 mL</td></tr>
             <tr><td>$T$</td><td>22 °C = 295 K</td></tr>
             <tr><td>$p_{total}$</td><td>755 mmHg</td></tr>
             <tr><td>$p_{H_2O}$ a 22 °C</td><td>20 mmHg</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Recogida sobre agua <span class="sarr">▾</span></button>
+      <div class="sec-body">
 
-          <div class="demo">
-            <div class="demo-titulo">🟧 Demostración — Recogida sobre agua</div>
-            
 <p>Cuando se recoge un gas burbujeándolo a través de agua, el gas final es una <b>mezcla</b>: el O$_2$ original más el vapor de agua que se ha incorporado. Por la ley de Dalton:</p>
 $$p_{total} = p_{O_2}+p_{H_2O}\implies p_{O_2}=p_{total}-p_{H_2O}$$
 <p>Para hallar el volumen del gas seco en condiciones normales, aplicamos la ley general $p_1V_1/T_1=p_2V_2/T_2$ usando como $p_1$ la <em>presión parcial</em> del O$_2$.</p>
 
-          </div>
+      </div>
+    </div>
 
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Paso 1 — Presión parcial del O$_2$ seco</div>
             <p class="porque"><b>¿Por qué?</b> Restando la presión de vapor.</p>
@@ -774,58 +802,43 @@ $$p_{total} = p_{O_2}+p_{H_2O}\implies p_{O_2}=p_{total}-p_{H_2O}$$
 $$V_{CN}=250\cdot 0{,}9671\cdot 0{,}9254=\boxed{224\ \text{mL}}$$
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">$V_{O_2,\text{seco,CN}}\approx 224$ mL — el ~10% menor que el volumen húmedo medido por la presencia de vapor y diferencia de temperatura.</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$V_{O_2,\text{seco,CN}}\approx 224$ mL — el ~10% menor que el volumen húmedo medido por la presencia de vapor y diferencia de temperatura.</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>Coherencia: corregir la presión de vapor reduce un ~3%, y pasar de 22 °C a 0 °C reduce un ~7%. Producto $\approx 10\%$ ✓ — coincide con la diferencia entre 250 y 224 mL.</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-  <article class="ex" id="ex10">
-    <div class="ex-head" onclick="this.parentElement.classList.toggle('open')">
-      <div>
-        <div class="ex-num">EJERCICIO 10</div>
-        <div class="ex-title">Diagrama de fases: identificar la fase</div>
-      </div>
-      <span class="ex-arrow">▼</span>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Coherencia: corregir la presión de vapor reduce un ~3%, y pasar de 22 °C a 0 °C reduce un ~7%. Producto $\approx 10\%$ ✓ — coincide con la diferencia entre 250 y 224 mL.
     </div>
-    <div class="ex-body">
+  </div>
+  <div class="topic-panel" id="ex4-10">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 4.10</div>
+      <h1 class="panel-title">Diagrama de fases: identificar la fase</h1>
+      <div class="panel-meta">Resultado: (a) líquido; (b) punto triple (las 3 fases coexisten); (c) gas; (d) supercrítico.</div>
+    </div>
 
-      <div class="enunciado">
-        <p>Para el agua, indicar en qué fase (sólido, líquido, gas, supercrítico, equilibrio) se encuentra una muestra en cada uno de estos puntos: (a) 50 °C y 1 atm; (b) 0,01 °C y 4,58 mmHg; (c) 200 °C y 0,1 atm; (d) 400 °C y 250 atm. Datos: punto triple = (0,01 °C; 4,58 mmHg); punto crítico = (374 °C; 218 atm).</p>
-        <p style="margin-top:8px"><b>Respuesta esperada:</b> (a) líquido; (b) punto triple (las 3 fases coexisten); (c) gas; (d) supercrítico.</p>
-      </div>
+    <div class="enunciado">
+      Para el agua, indicar en qué fase (sólido, líquido, gas, supercrítico, equilibrio) se encuentra una muestra en cada uno de estos puntos: (a) 50 °C y 1 atm; (b) 0,01 °C y 4,58 mmHg; (c) 200 °C y 0,1 atm; (d) 400 °C y 250 atm. Datos: punto triple = (0,01 °C; 4,58 mmHg); punto crítico = (374 °C; 218 atm).
+    </div>
 
-      <div class="sec-wrap s-datos sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          📋 Datos &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <table class="tdatos">
-            <tr><th>Magnitud</th><th>Valor</th></tr>
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
             <tr><td>Punto triple</td><td>0,01 °C; 4,58 mmHg</td></tr>
             <tr><td>Punto crítico</td><td>374 °C; 218 atm</td></tr>
             <tr><td>$p$ atmosférica</td><td>1 atm = 760 mmHg</td></tr>
-          </table>
-        </div>
+        </table>
       </div>
+    </div>
 
-      <div class="sec-wrap s-resol sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ⚙️ Resolución &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
           <div class="paso">
             <div class="paso-titulo">Análisis caso por caso</div>
             <p class="porque"><b>¿Por qué?</b> Comparo $T$ y $p$ con los puntos clave.</p>
@@ -838,36 +851,71 @@ $$V_{CN}=250\cdot 0{,}9671\cdot 0{,}9254=\boxed{224\ \text{mL}}$$
 </table>
           </div>
 
-          <div class="resf">
-            <div class="resf-lbl">Resultado</div>
-            <div class="resf-val">(a) líquido · (b) <b>punto triple</b>: las tres fases coexisten en equilibrio · (c) gas · (d) <b>fluido supercrítico</b> (más allá del punto crítico, no se distingue líquido de gas).</div>
-          </div>
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) líquido · (b) <b>punto triple</b>: las tres fases coexisten en equilibrio · (c) gas · (d) <b>fluido supercrítico</b> (más allá del punto crítico, no se distingue líquido de gas).</div>
         </div>
       </div>
-      <div class="sec-wrap s-verif sec-open">
-        <button class="sec-btn" onclick="this.parentElement.classList.toggle('sec-open')">
-          ✓ Verificación &nbsp;<span class="sarr">▼</span>
-        </button>
-        <div class="sec-body">
-          <p>En (d), el agua supercrítica es un disolvente potente usado industrialmente para descafeinar café (con CO$_2$ supercrítico), oxidar residuos peligrosos y generación geotérmica. ✓</p>
-        </div>
-      </div>
-
     </div>
-  </article>
-
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      En (d), el agua supercrítica es un disolvente potente usado industrialmente para descafeinar café (con CO$_2$ supercrítico), oxidar residuos peligrosos y generación geotérmica. ✓
+    </div>
+  </div>
+  </main>
 </div>
 
-<footer class="qg-footer">
-  Química · 1º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a>
-</footer>
+<div class="footer">Química · 1.º Grado · 2025-26 &nbsp;·&nbsp; <a href="../index.html">Inicio</a></div>
 
 <script>
 function initKatex(){
-  if(typeof renderMathInElement === 'undefined') return;
+  if(typeof renderMathInElement==='undefined') return;
   renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
 }
-document.addEventListener('DOMContentLoaded',initKatex);
+
+document.addEventListener('DOMContentLoaded', function(){
+  initKatex();
+  var panels = document.querySelectorAll('.topic-panel');
+  if(panels.length>0) showEx(panels[0].id);
+});
+
+function showEx(id){
+  document.querySelectorAll('.topic-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.sb-item').forEach(function(b){b.classList.remove('active')});
+  var panel = document.getElementById(id);
+  if(panel) panel.classList.add('active');
+  var btn = document.querySelector('[data-id="'+id+'"]');
+  if(btn){
+    btn.classList.add('active');
+    var name = btn.querySelector('.sb-name');
+    var curr = document.getElementById('sbCurrent');
+    if(curr && name) curr.textContent = name.textContent;
+  }
+  window.scrollTo({top:0,behavior:'instant'});
+  updateProgress();
+}
+
+function toggleSec(btn){
+  var wrap = btn.closest('.section-wrap');
+  wrap.classList.toggle('sec-open');
+  if(wrap.classList.contains('sec-open') && typeof renderMathInElement!=='undefined'){
+    renderMathInElement(wrap,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}],throwOnError:false});
+  }
+}
+
+function updateProgress(){
+  var bar = document.getElementById('readProgress');
+  if(!bar) return;
+  var scrolled = window.scrollY;
+  var total = document.body.scrollHeight - window.innerHeight;
+  bar.style.transform = 'scaleX('+(total>0?Math.min(scrolled/total,1):0)+')';
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
+
+document.addEventListener('click', function(e){
+  var picker = document.getElementById('temaPicker');
+  if(picker && !picker.contains(e.target)) picker.classList.remove('open');
+});
 </script>
 </body>
 </html>
