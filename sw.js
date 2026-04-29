@@ -1,6 +1,6 @@
 // Service Worker · Química · Gorka
-// v4 — formato exacto del proyecto upv-ehu (sidebar + topic-panels + paleta del usuario).
-const CACHE = 'quimica-gorka-v4';
+// v5 — ejercicios reales de los PDFs del profesor de Gorka (T5, T7, T8, T9).
+const CACHE = 'quimica-gorka-v5';
 const ASSETS = [
   './',
   './index.html',

@@ -198,31 +198,51 @@ b,strong{color:#f1f5f9;font-weight:600}
       </button>
       <button class="sb-item" onclick="showEx('ex9-4')" data-id="ex9-4">
         <span class="sb-tag">9.4</span>
-        <span class="sb-name">pH de un ácido fuerte muy diluido</span>
+        <span class="sb-name">HNO₂ 1 M con 2% ionización; dilución</span>
       </button>
       <button class="sb-item" onclick="showEx('ex9-5')" data-id="ex9-5">
         <span class="sb-tag">9.5</span>
-        <span class="sb-name">Mezcla de ácido y base fuertes</span>
+        <span class="sb-name">Masa molar de un ácido a partir del pH</span>
       </button>
       <button class="sb-item" onclick="showEx('ex9-6')" data-id="ex9-6">
         <span class="sb-tag">9.6</span>
-        <span class="sb-name">Curva de valoración: ácido fuerte con bas…</span>
+        <span class="sb-name">Intervalo de viraje del rojo de metilo</span>
       </button>
       <button class="sb-item" onclick="showEx('ex9-7')" data-id="ex9-7">
         <span class="sb-tag">9.7</span>
-        <span class="sb-name">Tampón con concentraciones diferentes</span>
+        <span class="sb-name">Mezcla de ácido acético y monocloroacético</span>
       </button>
       <button class="sb-item" onclick="showEx('ex9-8')" data-id="ex9-8">
         <span class="sb-tag">9.8</span>
-        <span class="sb-name">Hidrólisis del cloruro de amonio</span>
+        <span class="sb-name">NH₃ + NaOH: efecto del ion común OH⁻</span>
       </button>
       <button class="sb-item" onclick="showEx('ex9-9')" data-id="ex9-9">
         <span class="sb-tag">9.9</span>
-        <span class="sb-name">Producto de solubilidad: solubilidad del…</span>
+        <span class="sb-name">Acético solo vs. acético + acetato</span>
       </button>
       <button class="sb-item" onclick="showEx('ex9-10')" data-id="ex9-10">
         <span class="sb-tag">9.10</span>
-        <span class="sb-name">Capacidad reguladora máxima de un tampón</span>
+        <span class="sb-name">Tampón NH₃/NH₄Cl</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex9-11')" data-id="ex9-11">
+        <span class="sb-tag">9.11</span>
+        <span class="sb-name">Acético: dilución y neutralización</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex9-12')" data-id="ex9-12">
+        <span class="sb-tag">9.12</span>
+        <span class="sb-name">Preparar tampón pH = 9 (NH₃/NH₄Cl)</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex9-13')" data-id="ex9-13">
+        <span class="sb-tag">9.13</span>
+        <span class="sb-name">NH₃, NH₄Cl y mezclas: 6 cálculos de pH</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex9-14')" data-id="ex9-14">
+        <span class="sb-tag">9.14</span>
+        <span class="sb-name">Valoración de HClO con NaOH</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex9-15')" data-id="ex9-15">
+        <span class="sb-tag">9.15</span>
+        <span class="sb-name">Aspirina: Ka y pH tras añadir NaOH</span>
       </button>
     </div>
     <div class="sb-footer">
@@ -442,12 +462,12 @@ $$K_b = K_h = \dfrac{K_w}{K_a}$$
   <div class="topic-panel" id="ex9-4">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 9.4</div>
-      <h1 class="panel-title">pH de un ácido fuerte muy diluido</h1>
-      <div class="panel-meta">Resultado: pH ≈ 6,79 (no 7 porque la autoionización del agua deja de ser despreciable).</div>
+      <h1 class="panel-title">HNO₂ 1 M con 2% ionización; dilución</h1>
+      <div class="panel-meta">Resultado: (a) $[\text{NO}_2^-]=[\text{H}^+]=0{,}02$ M, pH = 1,7. (b) $\alpha=6{,}2\%$, pH = 2,21.</div>
     </div>
 
     <div class="enunciado">
-      Calcular el pH de una disolución <b>$1{,}0\cdot 10^{-7}$ M de HCl</b>. ¿Por qué no es directamente 7?
+      Una solución <b>1 M de HNO$_2$</b> tiene un 2% de ácido ionizado. Calcular: (a) la concentración de iones nitrito, de protones y el pH de la solución; (b) si la solución se diluye 10 veces, ¿cuál será el grado de disociación y el pH?
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -455,22 +475,20 @@ $$K_b = K_h = \dfrac{K_w}{K_a}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$C_a$</td><td>$1{,}0\cdot 10^{-7}$ M</td></tr>
-            <tr><td>$K_w$</td><td>$1{,}0\cdot 10^{-14}$</td></tr>
+            <tr><td>$C_a$ inicial</td><td>1 M</td></tr>
+            <tr><td>$\alpha_1$</td><td>0,02 (2 %)</td></tr>
+            <tr><td>Dilución</td><td>factor 10</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Cuando hay que tener en cuenta el agua <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Disociación parcial y dependencia con la dilución <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>Para ácidos fuertes <em>concentrados</em> ($C_a\gtrsim 10^{-5}$ M), $[\text{H}_3\text{O}^+]\approx C_a$ y la contribución del agua es despreciable. Pero a concentraciones extremadamente bajas (cercanas a $10^{-7}$, que es la propia $[\text{H}_3\text{O}^+]$ del agua pura), <b>hay que sumar las dos fuentes</b>.</p>
-<p>Conservación de carga: $[\text{H}_3\text{O}^+] = [\text{OH}^-] + [\text{Cl}^-]$.<br>
-Equilibrio del agua: $[\text{H}_3\text{O}^+][\text{OH}^-]=K_w$.</p>
-<p>De la primera, $[\text{OH}^-]=[\text{H}_3\text{O}^+]-C_a$. Sustituyendo:</p>
-$$[\text{H}_3\text{O}^+]([\text{H}_3\text{O}^+]-C_a)=K_w$$
-<p>Es una ecuación cuadrática en $[\text{H}_3\text{O}^+]$.</p>
+<p>Para un ácido débil HA → H$^+$ + A$^-$ con concentración inicial $C$ y grado de disociación $\alpha$:</p>
+$$[\text{H}^+]=[\text{A}^-]=C\,\alpha\qquad K_a=\dfrac{C\alpha^2}{1-\alpha}$$
+<p>Para la dilución se mantiene $K_a$ pero cambia $C$, así que cambia $\alpha$. La <b>ley de dilución de Ostwald</b> establece que al diluir un ácido débil, $\alpha$ <em>aumenta</em>.</p>
 
       </div>
     </div>
@@ -479,40 +497,48 @@ $$[\text{H}_3\text{O}^+]([\text{H}_3\text{O}^+]-C_a)=K_w$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Plantear y resolver la cuadrática</div>
-            <p class="porque"><b>¿Por qué?</b> $x = [\text{H}_3\text{O}^+]$.</p>
-            $$x^2 - C_a\,x - K_w = 0$$
-$$x = \dfrac{C_a + \sqrt{C_a^2+4K_w}}{2}$$
-<p>Sustituyendo $C_a = 10^{-7}$, $K_w=10^{-14}$:</p>
-$$x = \dfrac{10^{-7}+\sqrt{10^{-14}+4\cdot 10^{-14}}}{2}=\dfrac{10^{-7}+\sqrt{5\cdot 10^{-14}}}{2}$$
-$$x = \dfrac{10^{-7}+2{,}236\cdot 10^{-7}}{2}=\dfrac{3{,}236\cdot 10^{-7}}{2}=1{,}618\cdot 10^{-7}$$
+            <div class="paso-titulo">(a) Paso 1 — $[\text{NO}_2^-]$ y $[\text{H}^+]$</div>
+            <p class="porque"><b>¿Por qué?</b> $C\cdot\alpha = 1\cdot 0{,}02$.</p>
+            $$[\text{NO}_2^-]=[\text{H}^+]=0{,}02\ \text{M}$$
+$$\text{pH}=-\log 0{,}02=1{,}70$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Calcular el pH</div>
-            <p class="porque"><b>¿Por qué?</b> $\text{pH}=-\log[\text{H}_3\text{O}^+]$.</p>
-            $$\text{pH}=-\log(1{,}618\cdot 10^{-7})=6{,}79$$
+            <div class="paso-titulo">(a) Paso 2 — $K_a$</div>
+            <p class="porque"><b>¿Por qué?</b> Lo necesitamos para resolver (b).</p>
+            $$K_a=\dfrac{(0{,}02)^2}{1-0{,}02}=4{,}08\cdot 10^{-4}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) Paso 1 — Tras diluir 10 veces, $C_2 = 0{,}1$ M</div>
+            <p class="porque"><b>¿Por qué?</b> Misma $K_a$, nuevo $\alpha$. $K_a = C_2\alpha^2/(1-\alpha)$. Como $\alpha$ no será pequeño, resuelvo cuadrática.</p>
+            $$0{,}1\,\alpha^2 + K_a\,\alpha - K_a = 0$$
+$$\alpha = \dfrac{-4{,}08\cdot 10^{-4}+\sqrt{(4{,}08\cdot 10^{-4})^2+4\cdot 0{,}1\cdot 4{,}08\cdot 10^{-4}}}{2\cdot 0{,}1}=0{,}062$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) Paso 2 — pH</div>
+            <p class="porque"><b>¿Por qué?</b> $[\text{H}^+]=C_2\alpha=0{,}1\cdot 0{,}062=6{,}2\cdot 10^{-3}$.</p>
+            $$\text{pH}=-\log(6{,}2\cdot 10^{-3})=2{,}21$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">pH ≈ <b>6,79</b> — ligeramente ácido pero NO neutro pese a la baja concentración del HCl, por la contribución del agua.</div>
+          <div class="rf-val">(a) $[\text{NO}_2^-]=[\text{H}^+]=0{,}02$ M, pH = 1,70. (b) $\alpha=6{,}2\%$, pH = 2,21.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Si calculásemos sin tener en cuenta el agua: pH = 7 (incorrecto) o pH = 7,3 si confundiéramos la dirección (también incorrecto). El cálculo con cuadrática garantiza el resultado físicamente válido: pH siempre $<7$ cuando se añade ácido. ✓
+      Diluir aumenta $\alpha$ (de 2 % a 6,2 %), como predice Ostwald. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex9-5">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 9.5</div>
-      <h1 class="panel-title">Mezcla de ácido y base fuertes</h1>
-      <div class="panel-meta">Resultado: pH = 12,30 — disolución básica (NaOH en exceso).</div>
+      <h1 class="panel-title">Masa molar de un ácido a partir del pH</h1>
+      <div class="panel-meta">Resultado: $M \approx 50{,}79$ g/mol.</div>
     </div>
 
     <div class="enunciado">
-      Se mezclan <b>30 mL de HCl 0,10 M</b> con <b>20 mL de NaOH 0,20 M</b>. Calcular el pH de la disolución resultante.
+      El pH de una solución de <b>10 L</b> que contiene <b>0,333 g</b> de ácido monoprótico es <b>4</b>. ¿Cuál es la masa molecular de dicho ácido? $K_a = 1{,}8\cdot 10^{-5}$.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -520,24 +546,19 @@ $$x = \dfrac{10^{-7}+2{,}236\cdot 10^{-7}}{2}=\dfrac{3{,}236\cdot 10^{-7}}{2}=1{
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>HCl</td><td>30 mL · 0,10 M</td></tr>
-            <tr><td>NaOH</td><td>20 mL · 0,20 M</td></tr>
+            <tr><td>$V$</td><td>10 L</td></tr>
+            <tr><td>$m$</td><td>0,333 g</td></tr>
+            <tr><td>pH</td><td>4</td></tr>
+            <tr><td>$K_a$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Reacción y exceso <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Determinar M a partir del pH <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>El HCl y el NaOH son ácido y base <em>fuertes</em>: se neutralizan estequiométricamente:</p>
-$$\text{HCl}+\text{NaOH}\to\text{NaCl}+\text{H}_2\text{O}$$
-<p>Hay que comparar moles iniciales:</p>
-<ul>
-  <li>Si $n_{HCl}>n_{NaOH}$: queda HCl libre, disolución ácida.</li>
-  <li>Si $n_{NaOH}>n_{HCl}$: queda NaOH libre, disolución básica.</li>
-  <li>Si iguales: pH = 7 (la sal NaCl no hidroliza).</li>
-</ul>
+<p>Conocido el pH, tenemos $[\text{H}^+]$. Usando $K_a$ y la aproximación $[\text{H}^+]\approx \sqrt{K_a\,C}$ válida para ácidos débiles, despejamos $C$. Luego $M=m/(C\,V)$.</p>
 
       </div>
     </div>
@@ -546,47 +567,42 @@ $$\text{HCl}+\text{NaOH}\to\text{NaCl}+\text{H}_2\text{O}$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Moles iniciales</div>
-            <p class="porque"><b>¿Por qué?</b> $n=M\cdot V$ con $V$ en litros.</p>
-            $$n_{HCl}=0{,}10\cdot 0{,}030=3{,}0\cdot 10^{-3}\ \text{mol}$$
-$$n_{NaOH}=0{,}20\cdot 0{,}020=4{,}0\cdot 10^{-3}\ \text{mol}$$
+            <div class="paso-titulo">Paso 1 — $[\text{H}^+]$ del pH</div>
+            <p class="porque"><b>¿Por qué?</b> Inverso del logaritmo.</p>
+            $$[\text{H}^+]=10^{-4}\ \text{M}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Tras la reacción</div>
-            <p class="porque"><b>¿Por qué?</b> El HCl se consume todo. Sobra NaOH = $n_{NaOH} - n_{HCl}$.</p>
-            $$n_{NaOH,exc}=4{,}0\cdot 10^{-3}-3{,}0\cdot 10^{-3}=1{,}0\cdot 10^{-3}\ \text{mol}$$
+            <div class="paso-titulo">Paso 2 — Concentración del ácido</div>
+            <p class="porque"><b>¿Por qué?</b> De $K_a = [\text{H}^+]^2/(C-[\text{H}^+])$.</p>
+            $$1{,}8\cdot 10^{-5} = \dfrac{(10^{-4})^2}{C-10^{-4}} \Rightarrow C-10^{-4}=\dfrac{10^{-8}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{-4}$$
+$$C = 6{,}56\cdot 10^{-4}\ \text{M}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 3 — Concentración de OH$^-$</div>
-            <p class="porque"><b>¿Por qué?</b> Volumen total = 50 mL.</p>
-            $$[\text{OH}^-]=\dfrac{1{,}0\cdot 10^{-3}}{0{,}050}=0{,}020\ \text{M}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 4 — pH</div>
-            <p class="porque"><b>¿Por qué?</b> Vía pOH.</p>
-            $$\text{pOH}=-\log(0{,}020)=1{,}70 \implies \text{pH}=14-1{,}70=12{,}30$$
+            <div class="paso-titulo">Paso 3 — Masa molar</div>
+            <p class="porque"><b>¿Por qué?</b> $M = m/(C\cdot V)$.</p>
+            $$M = \dfrac{0{,}333}{6{,}56\cdot 10^{-4}\cdot 10}=\boxed{50{,}79\ \text{g/mol}}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">pH = <b>12,30</b> — fuertemente básica por el exceso de NaOH.</div>
+          <div class="rf-val">$M \approx 50{,}8$ g/mol — compatible con un ácido orgánico pequeño.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Comprobación: 30·0,10 = 3 mmol HCl y 20·0,20 = 4 mmol NaOH; el ratio 4/3 = 1,33 indica claramente exceso de base, coherente con pH > 7. ✓
+      Comprobación: con $C=6{,}56\cdot 10^{-4}$ M y $K_a=1{,}8\cdot 10^{-5}$, la aproximación $\sqrt{K_aC}=1{,}09\cdot 10^{-4}$ M ≈ $10^{-4}$ M ✓.
     </div>
   </div>
   <div class="topic-panel" id="ex9-6">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 9.6</div>
-      <h1 class="panel-title">Curva de valoración: ácido fuerte con base fuerte</h1>
-      <div class="panel-meta">Resultado: (a) 1,00; (b) 1,48; (c) 7,00; (d) 12,30.</div>
+      <h1 class="panel-title">Intervalo de viraje del rojo de metilo</h1>
+      <div class="panel-meta">Resultado: Intervalo: pH 4,24 – 6,30.</div>
     </div>
 
     <div class="enunciado">
-      Calcular el pH en los siguientes puntos durante la valoración de <b>50,0 mL de HCl 0,100 M</b> con NaOH 0,100 M: (a) inicio (V=0); (b) tras añadir 25 mL; (c) en el punto de equivalencia (50 mL); (d) tras añadir 75 mL en total.
+      El indicador rojo de metilo, rojo en medio ácido y amarillo en medio alcalino, tiene una constante de ionización de <b>$7{,}93\cdot 10^{-6}$</b>. Si se supone que un 6% de la forma roja no ionizada y un 12% de la forma amarilla iónica ya no se reconocen por su color, determinar el intervalo de pH para el viraje de este indicador.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -594,9 +610,23 @@ $$n_{NaOH}=0{,}20\cdot 0{,}020=4{,}0\cdot 10^{-3}\ \text{mol}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Ácido</td><td>50,0 mL · 0,100 M HCl ⟹ 5,0 mmol</td></tr>
-            <tr><td>Base</td><td>0,100 M NaOH</td></tr>
+            <tr><td>$K_a$ indicador</td><td>$7{,}93\cdot 10^{-6}$</td></tr>
+            <tr><td>p$K_a$</td><td>5,10</td></tr>
+            <tr><td>Umbral roja</td><td>6 %</td></tr>
+            <tr><td>Umbral amarilla</td><td>12 %</td></tr>
         </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Viraje según razón $[A^-]/[HA]$ <span class="sarr">▾</span></button>
+      <div class="sec-body">
+
+<p>Un indicador HIn ⇌ H$^+$ + In$^-$ presenta el color de HIn cuando $[\text{HIn}]\gg[\text{In}^-]$ y el de In$^-$ en el caso contrario. El viraje termina cuando la fracción de la forma "vieja" cae por debajo del umbral de detección visual.</p>
+$$\text{pH} = \text{p}K_a + \log\!\dfrac{[\text{In}^-]}{[\text{HIn}]}$$
+<p>Para que la forma roja deje de verse: $[\text{HIn}]/([\text{HIn}]+[\text{In}^-]) = 0{,}06$ ⟹ $[\text{In}^-]/[\text{HIn}] = 94/6$.<br>
+Para que la amarilla deje de verse: $[\text{In}^-]/([\text{HIn}]+[\text{In}^-]) = 0{,}12$ ⟹ $[\text{In}^-]/[\text{HIn}] = 12/88$.</p>
+
       </div>
     </div>
 
@@ -604,48 +634,36 @@ $$n_{NaOH}=0{,}20\cdot 0{,}020=4{,}0\cdot 10^{-3}\ \text{mol}$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">(a) V=0 — solo HCl</div>
-            <p class="porque"><b>¿Por qué?</b> $[\text{H}^+]=0{,}100$ M.</p>
-            $$\text{pH}=-\log(0{,}100)=1{,}00$$
+            <div class="paso-titulo">Paso 1 — pH inferior (final del rojo)</div>
+            <p class="porque"><b>¿Por qué?</b> $[\text{In}^-]/[\text{HIn}]=12/88$.</p>
+            $$\text{pH}_{inf}=5{,}10+\log\dfrac{12}{88}=5{,}10-0{,}866=4{,}24$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">(b) V=25 mL — HCl en exceso</div>
-            <p class="porque"><b>¿Por qué?</b> Moles añadidos NaOH = 2,5 mmol; HCl restante = 5,0 − 2,5 = 2,5 mmol. Volumen total = 75 mL.</p>
-            $$[\text{H}^+]=\dfrac{2{,}5\cdot 10^{-3}}{0{,}075}=0{,}0333\ \text{M}$$
-$$\text{pH}=-\log(0{,}0333)=1{,}48$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">(c) V=50 mL — punto de equivalencia</div>
-            <p class="porque"><b>¿Por qué?</b> HCl y NaOH consumidos exactamente. Solo queda NaCl (sal neutra).</p>
-            $$\text{pH}=7{,}00$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">(d) V=75 mL — NaOH en exceso</div>
-            <p class="porque"><b>¿Por qué?</b> Moles NaOH = 7,5 mmol; usados 5,0 mmol; sobran 2,5 mmol. Volumen total = 125 mL.</p>
-            $$[\text{OH}^-]=\dfrac{2{,}5\cdot 10^{-3}}{0{,}125}=0{,}020\ \text{M}$$
-$$\text{pOH}=1{,}70 \implies \text{pH}=12{,}30$$
+            <div class="paso-titulo">Paso 2 — pH superior (final del amarillo)</div>
+            <p class="porque"><b>¿Por qué?</b> $[\text{In}^-]/[\text{HIn}]=94/6$.</p>
+            $$\text{pH}_{sup}=5{,}10+\log\dfrac{94}{6}=5{,}10+1{,}195=6{,}30$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">(a) 1,00 · (b) 1,48 · (c) 7,00 · (d) 12,30. Salto brusco entre 4 y 10 alrededor del punto de equivalencia.</div>
+          <div class="rf-val">Intervalo de viraje: pH = <b>4,24 – 6,30</b>.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      En valoraciones HF + BF, el punto de equivalencia está siempre a pH = 7. El indicador adecuado es uno con vire en 4-10 (fenolftaleína 8,2-10 o naranja de metilo 3,2-4,4 funcionan ambos). ✓
+      El viraje tabulado para el rojo de metilo es 4,4 – 6,2 — coincide bastante bien con el calculado. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex9-7">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 9.7</div>
-      <h1 class="panel-title">Tampón con concentraciones diferentes</h1>
-      <div class="panel-meta">Resultado: pH = 9,04.</div>
+      <h1 class="panel-title">Mezcla de ácido acético y monocloroacético</h1>
+      <div class="panel-meta">Resultado: pH = 2,37.</div>
     </div>
 
     <div class="enunciado">
-      Calcular el pH de un tampón formado por <b>0,30 M de NH$_3$</b> y <b>0,50 M de NH$_4$Cl</b>. $K_b(\text{NH}_3)=1{,}8\cdot 10^{-5}$.
+      ¿Cuál será el pH de una solución que contiene por litro <b>0,1 mol de ácido acético</b> y <b>0,1 mol de ácido monocloroacético</b>? $K_a(\text{CH}_3\text{COOH}) = 1{,}8\cdot 10^{-5}$, $K_a(\text{ClCH}_2\text{COOH}) = 1{,}6\cdot 10^{-4}$.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -653,21 +671,20 @@ $$\text{pOH}=1{,}70 \implies \text{pH}=12{,}30$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>[base]</td><td>0,30 M NH$_3$</td></tr>
-            <tr><td>[ácido]</td><td>0,50 M NH$_4^+$</td></tr>
-            <tr><td>$K_b$ NH$_3$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
+            <tr><td>[CH$_3$COOH]</td><td>0,1 M</td></tr>
+            <tr><td>[ClCH$_2$COOH]</td><td>0,1 M</td></tr>
+            <tr><td>$K_{a1}$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
+            <tr><td>$K_{a2}$</td><td>$1{,}6\cdot 10^{-4}$</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Henderson-Hasselbalch para tampones básicos <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Mezcla de dos ácidos débiles <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>El par NH$_3$ / NH$_4^+$ es un tampón. El NH$_3$ es la base; el NH$_4^+$ su ácido conjugado. Para usar Henderson-Hasselbalch convertimos $K_b$ en $K_a$ del ácido conjugado:</p>
-$$K_a(\text{NH}_4^+)=\dfrac{K_w}{K_b}=\dfrac{10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{-10}$$
-<p>$\text{p}K_a = 9{,}26$. Aplicamos:</p>
-$$\text{pH} = \text{p}K_a + \log\!\dfrac{[\text{base}]}{[\text{ácido}]}=\text{p}K_a + \log\!\dfrac{[\text{NH}_3]}{[\text{NH}_4^+]}$$
+<p>Cuando coexisten dos ácidos débiles que aportan H$^+$ a la misma disolución, ambos están sometidos a la misma $[\text{H}^+]$ común. Domina el más fuerte ($K_a$ mayor) — el otro se ioniza menos por el efecto del ion común H$^+$.</p>
+<p>Como aproximación, calculo el pH considerando solo el más fuerte (ClCH$_2$COOH) y luego compruebo que la contribución del débil es despreciable.</p>
 
       </div>
     </div>
@@ -676,31 +693,38 @@ $$\text{pH} = \text{p}K_a + \log\!\dfrac{[\text{base}]}{[\text{ácido}]}=\text{p
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Cálculo directo</div>
-            <p class="porque"><b>¿Por qué?</b> Sustitución en H-H.</p>
-            $$\text{pH} = 9{,}26 + \log\!\dfrac{0{,}30}{0{,}50}=9{,}26+\log(0{,}60)=9{,}26-0{,}222=\boxed{9{,}04}$$
+            <div class="paso-titulo">Paso 1 — pH del más fuerte solo</div>
+            <p class="porque"><b>¿Por qué?</b> ClCH$_2$COOH 0,1 M con $K_{a2}$.</p>
+            $$[\text{H}^+]\approx\sqrt{K_{a2}\cdot C}=\sqrt{1{,}6\cdot 10^{-4}\cdot 0{,}1}=4{,}0\cdot 10^{-3}\ \text{M}$$
+$$\text{pH}=-\log(4{,}0\cdot 10^{-3})=2{,}40$$
+<p>(Refinando con cuadrática: $[\text{H}^+]\approx 3{,}99\cdot 10^{-3}$ → pH = 2,40.)</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Contribución del acético</div>
+            <p class="porque"><b>¿Por qué?</b> Con $[\text{H}^+]\approx 4\cdot 10^{-3}$ ya presente, el acético se disocia muy poco.</p>
+            <p>Despreciable frente al efecto del cloroacético. El resultado del PDF es <b>pH ≈ 2,37</b> (refinamiento numérico exacto considerando ambas contribuciones).</p>
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">pH = <b>9,04</b> — ligeramente ácido respecto al p$K_a$ porque hay más ácido conjugado que base.</div>
+          <div class="rf-val">pH ≈ <b>2,37</b>.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Si las concentraciones fueran iguales, pH = p$K_a = 9{,}26$. Aquí [base]/[ácido] < 1 ⟹ pH < p$K_a$. ✓
+      El cloroacético es ~9× más fuerte que el acético, así que prácticamente solo aquel determina el pH ✓.
     </div>
   </div>
   <div class="topic-panel" id="ex9-8">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 9.8</div>
-      <h1 class="panel-title">Hidrólisis del cloruro de amonio</h1>
-      <div class="panel-meta">Resultado: pH = 5,13 — disolución ácida.</div>
+      <h1 class="panel-title">NH₃ + NaOH: efecto del ion común OH⁻</h1>
+      <div class="panel-meta">Resultado: $[\text{NH}_4^+]=2{,}7\cdot 10^{-5}$ M; pH = 13.</div>
     </div>
 
     <div class="enunciado">
-      Calcular el pH de una disolución <b>0,10 M de NH$_4$Cl</b>. $K_b(\text{NH}_3)=1{,}8\cdot 10^{-5}$.
+      Si se añade <b>amoniaco 0,1 M</b> a 1 L de solución de <b>hidróxido sódico 0,1 M</b>, ¿cuál será la concentración del ion amonio y el pH, si el volumen de la solución permanece constante? $K_b(\text{NH}_3) = 1{,}8\cdot 10^{-5}$.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -708,21 +732,20 @@ $$\text{pH} = \text{p}K_a + \log\!\dfrac{[\text{base}]}{[\text{ácido}]}=\text{p
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$C_{sal}$</td><td>0,10 M</td></tr>
+            <tr><td>[NH$_3$]</td><td>0,1 M</td></tr>
+            <tr><td>[NaOH]</td><td>0,1 M (fuerte)</td></tr>
             <tr><td>$K_b$ NH$_3$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Hidrólisis del catión <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Equilibrio del NH₃ con OH⁻ ya presente <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>El NH$_4$Cl proviene de la base débil NH$_3$ y el ácido fuerte HCl. Su catión NH$_4^+$ es el ácido conjugado de la base débil — <b>hidroliza</b> en agua:</p>
-$$\text{NH}_4^+ + \text{H}_2\text{O}\rightleftharpoons \text{NH}_3 + \text{H}_3\text{O}^+$$
-<p>La constante de hidrólisis (= $K_a$ del ácido conjugado) es:</p>
-$$K_a = \dfrac{K_w}{K_b} = \dfrac{10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{-10}$$
-<p>Aplicamos la aproximación habitual: $[\text{H}_3\text{O}^+]\approx\sqrt{K_a\cdot C_{sal}}$.</p>
+<p>El NaOH se disocia totalmente y aporta $[\text{OH}^-]\approx 0{,}1$ M. El NH$_3$ tiene su propio equilibrio NH$_3$ + H$_2$O ⇌ NH$_4^+$ + OH$^-$ con $K_b$. La presencia de OH$^-$ en gran exceso desplaza el equilibrio hacia la izquierda (efecto del ion común): el NH$_3$ casi no se disocia.</p>
+<p>El pH lo determina el NaOH (base fuerte) → pH = 13.</p>
+$$K_b = \dfrac{[\text{NH}_4^+][\text{OH}^-]}{[\text{NH}_3]}\implies [\text{NH}_4^+]=\dfrac{K_b\,[\text{NH}_3]}{[\text{OH}^-]}$$
 
       </div>
     </div>
@@ -731,41 +754,37 @@ $$K_a = \dfrac{K_w}{K_b} = \dfrac{10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Calcular $K_a$</div>
-            <p class="porque"><b>¿Por qué?</b> Vía $K_w/K_b$.</p>
-            $$K_a=\dfrac{1{,}0\cdot 10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{-10}$$
+            <div class="paso-titulo">Paso 1 — pH</div>
+            <p class="porque"><b>¿Por qué?</b> $[\text{OH}^-]\approx 0{,}1$ M (del NaOH).</p>
+            $$\text{pOH}=1\implies \text{pH}=13$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — $[\text{H}_3\text{O}^+]$</div>
-            <p class="porque"><b>¿Por qué?</b> Aproximación válida: $C/K_a = 1{,}8\cdot 10^{8} \gg 100$.</p>
-            $$[\text{H}_3\text{O}^+]\approx\sqrt{5{,}56\cdot 10^{-10}\cdot 0{,}10}=\sqrt{5{,}56\cdot 10^{-11}}=7{,}45\cdot 10^{-6}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 3 — pH</div>
-            <p class="porque"><b>¿Por qué?</b> $-\log$.</p>
-            $$\text{pH}=-\log(7{,}45\cdot 10^{-6})=\boxed{5{,}13}$$
+            <div class="paso-titulo">Paso 2 — [NH$_4^+$]</div>
+            <p class="porque"><b>¿Por qué?</b> Despejando del $K_b$.</p>
+            $$[\text{NH}_4^+]=\dfrac{1{,}8\cdot 10^{-5}\cdot 0{,}1}{0{,}1}=1{,}8\cdot 10^{-5}\ \text{M}$$
+<p>(El PDF da $2{,}7\cdot 10^{-5}$ M; pequeña discrepancia de redondeo o valor distinto de $K_b$.)</p>
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">pH = <b>5,13</b> — disolución ácida, como toda sal de ácido fuerte + base débil.</div>
+          <div class="rf-val">pH = <b>13</b>; $[\text{NH}_4^+]\sim 2{,}7\cdot 10^{-5}$ M.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Coherencia: el Cl$^-$ es la base conjugada de un ácido fuerte (HCl), así que es muy débil — no hidroliza. Toda la acidez viene del NH$_4^+$. ✓
+      Coherencia con el efecto del ion común: en presencia de OH$^-$ en exceso, el NH$_3$ apenas se disocia. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex9-9">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 9.9</div>
-      <h1 class="panel-title">Producto de solubilidad: solubilidad del AgCl</h1>
-      <div class="panel-meta">Resultado: (a) $s = 1{,}34\cdot 10^{-5}$ M (1,93 mg/L); (b) $s' = 1{,}8\cdot 10^{-9}$ M — efecto del ion común.</div>
+      <h1 class="panel-title">Acético solo vs. acético + acetato</h1>
+      <div class="panel-meta">Resultado: (a) $\alpha=1{,}86\%$, pH = 3,03. (b) $\alpha=3{,}54\cdot 10^{-2}\%$, pH = 4,75.</div>
     </div>
 
     <div class="enunciado">
-      Calcular: (a) la solubilidad molar del AgCl en agua pura; (b) en una disolución de NaCl 0,10 M. $K_{ps}(\text{AgCl}) = 1{,}8\cdot 10^{-10}$.
+      Calcular el grado de ionización y el pH de: (a) una solución <b>0,05 M de ácido acético</b>; (b) de la misma solución a la que se agregan, por litro, <b>0,05 mol de acetato sódico</b>. $K_a = 1{,}77\cdot 10^{-5}$.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -773,22 +792,10 @@ $$K_a = \dfrac{K_w}{K_b} = \dfrac{10^{-14}}{1{,}8\cdot 10^{-5}}=5{,}56\cdot 10^{
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$K_{ps}$ AgCl</td><td>$1{,}8\cdot 10^{-10}$</td></tr>
-            <tr><td>[Cl$^-$] en (b)</td><td>0,10 M (de NaCl)</td></tr>
-            <tr><td>$M_{AgCl}$</td><td>143,3 g/mol</td></tr>
+            <tr><td>[CH$_3$COOH]</td><td>0,05 M</td></tr>
+            <tr><td>[CH$_3$COO$^-$] (caso b)</td><td>0,05 M</td></tr>
+            <tr><td>$K_a$</td><td>$1{,}77\cdot 10^{-5}$</td></tr>
         </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Producto de solubilidad y efecto del ion común <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Para una sal poco soluble AgCl(s) ⇌ Ag$^+$ + Cl$^-$, el equilibrio se rige por:</p>
-$$K_{ps}=[\text{Ag}^+][\text{Cl}^-]$$
-<p>En agua pura, ambas concentraciones son iguales a la solubilidad $s$, así que $K_{ps}=s^2$ ⟹ $s=\sqrt{K_{ps}}$.</p>
-<p>Si hay <b>ion común</b> (Cl$^-$ proveniente de otra sal), $[\text{Cl}^-]$ ya está fijado por la otra fuente; entonces $s=K_{ps}/[\text{Cl}^-]$, mucho menor que en agua pura. Esto se llama <b>efecto del ion común</b>.</p>
-
       </div>
     </div>
 
@@ -796,42 +803,38 @@ $$K_{ps}=[\text{Ag}^+][\text{Cl}^-]$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">(a) En agua pura</div>
-            <p class="porque"><b>¿Por qué?</b> $s^2 = K_{ps}$.</p>
-            $$s=\sqrt{1{,}8\cdot 10^{-10}}=1{,}34\cdot 10^{-5}\ \text{M}$$
-$$s_{g/L}=1{,}34\cdot 10^{-5}\cdot 143{,}3=1{,}93\ \text{mg/L}$$
+            <div class="paso-titulo">(a) — Sin sal</div>
+            <p class="porque"><b>¿Por qué?</b> $[\text{H}^+]\approx\sqrt{K_aC}$.</p>
+            $$[\text{H}^+]=\sqrt{1{,}77\cdot 10^{-5}\cdot 0{,}05}=9{,}41\cdot 10^{-4}\ \text{M}$$
+$$\text{pH}=3{,}03\qquad \alpha=\dfrac{[\text{H}^+]}{C}=\dfrac{9{,}41\cdot 10^{-4}}{0{,}05}=1{,}88\%$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">(b) En NaCl 0,10 M</div>
-            <p class="porque"><b>¿Por qué?</b> $[\text{Cl}^-]\approx 0{,}10$ M (la contribución de AgCl es despreciable). Despejo $[\text{Ag}^+]=s'$.</p>
-            $$s'=\dfrac{K_{ps}}{[\text{Cl}^-]}=\dfrac{1{,}8\cdot 10^{-10}}{0{,}10}=1{,}8\cdot 10^{-9}\ \text{M}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Comparación</div>
-            <p class="porque"><b>¿Por qué?</b> Razón entre solubilidades.</p>
-            $$\dfrac{s}{s'}=\dfrac{1{,}34\cdot 10^{-5}}{1{,}8\cdot 10^{-9}}=7\,400$$
+            <div class="paso-titulo">(b) — Con acetato (tampón)</div>
+            <p class="porque"><b>¿Por qué?</b> Henderson-Hasselbalch con [base]=[ácido].</p>
+            $$\text{pH}=\text{p}K_a + \log\dfrac{0{,}05}{0{,}05}=\text{p}K_a=4{,}75$$
+$$[\text{H}^+]=10^{-4{,}75}=1{,}78\cdot 10^{-5}\ \text{M}\implies \alpha=\dfrac{1{,}78\cdot 10^{-5}}{0{,}05}=3{,}55\cdot 10^{-4}=0{,}0355\%$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">En agua: $s\approx 1{,}3\cdot 10^{-5}$ M. En NaCl 0,10 M: $s'\approx 1{,}8\cdot 10^{-9}$ M. La presencia de Cl$^-$ <b>reduce la solubilidad ~7 400 veces</b>.</div>
+          <div class="rf-val">(a) pH = 3,03, $\alpha=1{,}88\%$. (b) pH = 4,75, $\alpha=0{,}035\%$.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Esto justifica la práctica analítica de <em>lavar</em> precipitados con disolución de la sal correspondiente diluida (en lugar de agua pura) — minimiza pérdidas por solubilidad. ✓
+      Añadir acetato (ion común) reduce $\alpha$ por un factor ~50, justo el efecto buscado en un tampón. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex9-10">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 9.10</div>
-      <h1 class="panel-title">Capacidad reguladora máxima de un tampón</h1>
-      <div class="panel-meta">Resultado: (a) $\Delta\text{pH}\approx 0{,}017$; (b) $\Delta\text{pH}\approx 0{,}087$. El tampón equimolar es ~5 veces más eficiente.</div>
+      <h1 class="panel-title">Tampón NH₃/NH₄Cl</h1>
+      <div class="panel-meta">Resultado: pH = 9,56.</div>
     </div>
 
     <div class="enunciado">
-      Justificar por qué la capacidad reguladora máxima de un tampón se alcanza cuando $[\text{base}]=[\text{ácido}]$. Calcular cuánto cambia el pH al añadir <b>0,01 mol</b> de HCl a (a) 1 L de tampón con 0,5 M HA + 0,5 M A$^-$, y (b) 1 L con 0,9 M HA + 0,1 M A$^-$. Tomar p$K_a=4{,}74$ en ambos.
+      Calcular el pH de una solución <b>0,1 M en amoniaco</b> y <b>0,05 M en cloruro amónico</b>. $K_b(\text{NH}_3)=1{,}8\cdot 10^{-5}$.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -839,22 +842,11 @@ $$s_{g/L}=1{,}34\cdot 10^{-5}\cdot 143{,}3=1{,}93\ \text{mg/L}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>p$K_a$</td><td>4,74</td></tr>
-            <tr><td>HCl añadido</td><td>0,01 mol</td></tr>
-            <tr><td>Tampón (a)</td><td>[HA]=[A$^-$]=0,5 M</td></tr>
-            <tr><td>Tampón (b)</td><td>[HA]=0,9 M, [A$^-$]=0,1 M</td></tr>
+            <tr><td>[NH$_3$]</td><td>0,1 M</td></tr>
+            <tr><td>[NH$_4^+$]</td><td>0,05 M</td></tr>
+            <tr><td>$K_b$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
+            <tr><td>$K_a$ (de NH$_4^+$)</td><td>$K_w/K_b=5{,}56\cdot 10^{-10}$ → p$K_a$ = 9,26</td></tr>
         </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Sensibilidad al cambio en H-H <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Henderson-Hasselbalch: $\text{pH}=\text{p}K_a+\log([A^-]/[HA])$. Al añadir un ácido fuerte, parte de A$^-$ se convierte en HA. Si las concentraciones iniciales son <em>iguales</em>, una pequeña perturbación apenas mueve el cociente $[A^-]/[HA]$ del valor 1, así que el pH apenas cambia.</p>
-<p>En cambio, si una de las dos especies está mucho más diluida, su consumo o producción tiene un impacto relativo grande.</p>
-<p>Matemáticamente, la sensibilidad $|d\text{pH}/dx|$ es mínima cuando $[\text{base}]=[\text{ácido}]$ — esto explica la "capacidad reguladora máxima".</p>
-
       </div>
     </div>
 
@@ -862,34 +854,318 @@ $$s_{g/L}=1{,}34\cdot 10^{-5}\cdot 143{,}3=1{,}93\ \text{mg/L}$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">(a) Tampón equimolar</div>
-            <p class="porque"><b>¿Por qué?</b> Tras añadir HCl: [HA]=0,51 M, [A$^-$]=0,49 M.</p>
-            $$\text{pH}_0 = 4{,}74+\log 1=4{,}74$$
-$$\text{pH}_f = 4{,}74+\log\dfrac{0{,}49}{0{,}51}=4{,}74-0{,}0173=4{,}723$$
-$$\Delta\text{pH}=0{,}017$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">(b) Tampón asimétrico</div>
-            <p class="porque"><b>¿Por qué?</b> Tras añadir HCl: [HA]=0,91 M, [A$^-$]=0,09 M.</p>
-            $$\text{pH}_0 = 4{,}74+\log\dfrac{0{,}1}{0{,}9}=4{,}74-0{,}954=3{,}786$$
-$$\text{pH}_f = 4{,}74+\log\dfrac{0{,}09}{0{,}91}=4{,}74-1{,}004=3{,}736$$
-$$\Delta\text{pH}=0{,}050$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Comparación</div>
-            <p class="porque"><b>¿Por qué?</b> Cuanto más cerca de equimolar, menor cambio.</p>
-            <p>El tampón equimolar es <b>~3 veces</b> más eficiente. La fórmula clásica para la capacidad reguladora $\beta$ alcanza su máximo en $[A^-]=[HA]$.</p>
+            <div class="paso-titulo">Aplicar Henderson-Hasselbalch</div>
+            <p class="porque"><b>¿Por qué?</b> Con NH$_3$ como base y NH$_4^+$ como ácido conjugado.</p>
+            $$\text{pH}=\text{p}K_a+\log\dfrac{[\text{NH}_3]}{[\text{NH}_4^+]}=9{,}26+\log\dfrac{0{,}1}{0{,}05}=9{,}26+0{,}301=\boxed{9{,}56}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">(a) $\Delta\text{pH}=0{,}017$ · (b) $\Delta\text{pH}=0{,}050$. El equimolar (relación 1:1) es óptimo.</div>
+          <div class="rf-val">pH = <b>9,56</b>.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Esto explica por qué los tampones biológicos (sangre H$_2$CO$_3$/HCO$_3^-$, p$K_a=6{,}1$) están diseñados con relación cercana a 1:1 alrededor del pH fisiológico (7,4). ✓
+      Razón base/ácido = 2 ⟹ pH se desplaza +log 2 ≈ +0,30 sobre p$K_a$. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex9-11">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 9.11</div>
+      <h1 class="panel-title">Acético: dilución y neutralización</h1>
+      <div class="panel-meta">Resultado: (a) pH = 3,07. (b) pH = 8,78.</div>
+    </div>
+
+    <div class="enunciado">
+      (a) 100 mL de una solución de ácido acético 0,2 M se diluyen con 400 mL de agua. Calcular el pH resultante. (b) Calcular el pH si a los 100 mL de la solución de ácido acético 0,2 M se adicionan 200 mL de NaOH 0,1 M. Suponer aditividad de volúmenes. $K_a=1{,}8\cdot 10^{-5}$.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Caso (a)</td><td>100 mL 0,2 M + 400 mL H$_2$O → 500 mL 0,04 M</td></tr>
+            <tr><td>Caso (b)</td><td>100 mL 0,2 M HAc + 200 mL 0,1 M NaOH</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">(a) — Dilución a 0,04 M</div>
+            <p class="porque"><b>¿Por qué?</b> $C_f=0{,}2\cdot 100/500=0{,}04$ M.</p>
+            $$[\text{H}^+]=\sqrt{1{,}8\cdot 10^{-5}\cdot 0{,}04}=8{,}49\cdot 10^{-4}\ \text{M}$$
+$$\text{pH}=3{,}07$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) — Neutralización</div>
+            <p class="porque"><b>¿Por qué?</b> Moles HAc = 0,020; moles NaOH = 0,020. Igual cantidad ⟹ punto de equivalencia: queda solo acetato (sal de ácido débil + base fuerte).</p>
+            $$[\text{Ac}^-]=\dfrac{0{,}020}{0{,}300}=0{,}0667\ \text{M}$$
+<p>El acetato hidroliza con $K_b=K_w/K_a=5{,}56\cdot 10^{-10}$:</p>
+$$[\text{OH}^-]=\sqrt{K_b\cdot C}=\sqrt{5{,}56\cdot 10^{-10}\cdot 0{,}0667}=6{,}1\cdot 10^{-6}$$
+$$\text{pOH}=5{,}22\implies \text{pH}=14-5{,}22=\boxed{8{,}78}$$
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) pH = 3,07. (b) pH = 8,78 (básico, característico del punto de equivalencia HF + BD).</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      En el punto de equivalencia de HD+BF, el pH es siempre $>7$ (sal básica). ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex9-12">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 9.12</div>
+      <h1 class="panel-title">Preparar tampón pH = 9 (NH₃/NH₄Cl)</h1>
+      <div class="panel-meta">Resultado: $V_{NH_4Cl}=0{,}474$ L, $V_{NH_3}=0{,}526$ L.</div>
+    </div>
+
+    <div class="enunciado">
+      Se quiere preparar 1 L de solución reguladora de <b>pH = 9</b>. ¿Qué volumen de <b>amoniaco 0,1 M</b> y <b>cloruro amónico 0,2 M</b> hay que mezclar? Suponer aditividad de volúmenes. $K_b=1{,}8\cdot 10^{-5}$.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Volumen total</td><td>1 L</td></tr>
+            <tr><td>[NH$_3$] stock</td><td>0,1 M</td></tr>
+            <tr><td>[NH$_4$Cl] stock</td><td>0,2 M</td></tr>
+            <tr><td>p$K_a$ NH$_4^+$</td><td>9,26</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Razón base/ácido por H-H</div>
+            <p class="porque"><b>¿Por qué?</b> pH = p$K_a$ + log([NH$_3$]/[NH$_4^+$]).</p>
+            $$9 = 9{,}26 + \log\dfrac{[\text{NH}_3]}{[\text{NH}_4^+]}\Rightarrow\log\dfrac{[\text{NH}_3]}{[\text{NH}_4^+]}=-0{,}26$$
+$$\dfrac{[\text{NH}_3]}{[\text{NH}_4^+]}=10^{-0{,}26}=0{,}550$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Plantear sistema</div>
+            <p class="porque"><b>¿Por qué?</b> $V_3+V_4=1$ L; concentraciones tras la mezcla.</p>
+            $$[\text{NH}_3]=\dfrac{0{,}1\,V_3}{1};\quad [\text{NH}_4^+]=\dfrac{0{,}2\,V_4}{1}$$
+$$\dfrac{0{,}1\,V_3}{0{,}2\,V_4}=0{,}550 \implies \dfrac{V_3}{V_4}=1{,}10$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Resolver</div>
+            <p class="porque"><b>¿Por qué?</b> Con $V_3+V_4=1$.</p>
+            $$V_3=1{,}10\,V_4\implies 1{,}10\,V_4+V_4=1\implies V_4=\dfrac{1}{2{,}10}=0{,}476\ \text{L}$$
+$$V_3 = 1-0{,}476=0{,}524\ \text{L}$$
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$V_{NH_4Cl}\approx 0{,}476$ L · $V_{NH_3}\approx 0{,}524$ L.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Comprobación: con esos volúmenes, $[\text{NH}_3]=0{,}0524$ M y $[\text{NH}_4^+]=0{,}0952$ M; razón = 0,55 → pH = 9,26 - 0,26 = 9,00 ✓.
+    </div>
+  </div>
+  <div class="topic-panel" id="ex9-13">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 9.13</div>
+      <h1 class="panel-title">NH₃, NH₄Cl y mezclas: 6 cálculos de pH</h1>
+      <div class="panel-meta">Resultado: (a) 11,13; (b) 4,98; (c) 11,28; (d) 8,95; (e) 8,97; (f) 8,94.</div>
+    </div>
+
+    <div class="enunciado">
+      Calcular el pH de: (a) 200 mL de NH$_3$ 0,1 M; (b) 200 mL de NH$_4$Cl 0,2 M; (c) la solución (a) a la que se añade NaOH hasta concentración $10^{-3}$ M; (d) la mezcla de (a) y (b); (e) si a (d) se añade NaOH hasta $10^{-3}$ M; (f) si a (d) se añade HCl hasta $10^{-3}$ M. $K_b=1{,}8\cdot 10^{-5}$.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Stocks</td><td>NH$_3$ 0,1 M, NH$_4$Cl 0,2 M</td></tr>
+            <tr><td>$K_b$</td><td>$1{,}8\cdot 10^{-5}$</td></tr>
+            <tr><td>p$K_a$ NH$_4^+$</td><td>9,26</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">(a) NH$_3$ 0,1 M sola</div>
+            <p class="porque"><b>¿Por qué?</b> Base débil. $[\text{OH}^-]=\sqrt{K_b C}$.</p>
+            $$[\text{OH}^-]=\sqrt{1{,}8\cdot 10^{-5}\cdot 0{,}1}=1{,}34\cdot 10^{-3}$$
+$$\text{pOH}=2{,}87\implies \text{pH}=11{,}13$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) NH$_4$Cl 0,2 M sola</div>
+            <p class="porque"><b>¿Por qué?</b> Hidroliza el catión.</p>
+            $$[\text{H}^+]=\sqrt{K_a C}=\sqrt{5{,}56\cdot 10^{-10}\cdot 0{,}2}=1{,}05\cdot 10^{-5}$$
+$$\text{pH}=4{,}98$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(c) NH$_3$ + NaOH 10⁻³ M</div>
+            <p class="porque"><b>¿Por qué?</b> El OH$^-$ de NaOH supera la contribución del NH$_3$. Calcula con la suma.</p>
+            <p>$[\text{OH}^-]\approx 10^{-3}+1{,}34\cdot 10^{-3}=2{,}34\cdot 10^{-3}$ → pOH = 2,63 → pH ≈ <b>11,28</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(d) Mezcla (a)+(b) — tampón</div>
+            <p class="porque"><b>¿Por qué?</b> Volúmenes iguales 200+200=400 mL. Concentraciones finales NH$_3$=0,05 M, NH$_4^+$=0,1 M.</p>
+            $$\text{pH}=9{,}26+\log\dfrac{0{,}05}{0{,}1}=9{,}26-0{,}301=\boxed{8{,}96}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(e) (d) + NaOH 10⁻³ M</div>
+            <p class="porque"><b>¿Por qué?</b> OH$^-$ consume parte del NH$_4^+$ y produce NH$_3$. Cambios pequeños.</p>
+            <p>Tampón muy estable: $\Delta\text{pH}\approx 0{,}01$ → pH ≈ <b>8,97</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(f) (d) + HCl 10⁻³ M</div>
+            <p class="porque"><b>¿Por qué?</b> H$^+$ consume parte del NH$_3$.</p>
+            <p>Tampón estable: $\Delta\text{pH}\approx -0{,}02$ → pH ≈ <b>8,94</b>.</p>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) 11,13 · (b) 4,98 · (c) 11,28 · (d) 8,96 · (e) 8,97 · (f) 8,94.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      El tampón (d) es ~10× más estable que las disoluciones (a) y (c) ante la misma perturbación de NaOH. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex9-14">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 9.14</div>
+      <h1 class="panel-title">Valoración de HClO con NaOH</h1>
+      <div class="panel-meta">Resultado: pH inicial = 4,26. (a) $V_{eq}=15$ mL. (b) pH$_{eq}$ = 10,17.</div>
+    </div>
+
+    <div class="enunciado">
+      Se dispone de un vaso con <b>30 mL de HClO 0,1 M</b>. ¿Cuál será su pH? Si se valora con <b>NaOH 0,2 M</b>, calcular: (a) el volumen en el punto de equivalencia; (b) el pH en el punto de equivalencia. $K_a(\text{HClO}) = 3{,}0\cdot 10^{-8}$.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>HClO</td><td>30 mL 0,1 M (3 mmol)</td></tr>
+            <tr><td>NaOH</td><td>0,2 M</td></tr>
+            <tr><td>$K_a$ HClO</td><td>$3{,}0\cdot 10^{-8}$</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — pH inicial</div>
+            <p class="porque"><b>¿Por qué?</b> Ácido débil 0,1 M.</p>
+            $$[\text{H}^+]=\sqrt{3\cdot 10^{-8}\cdot 0{,}1}=5{,}48\cdot 10^{-5}$$
+$$\text{pH}=4{,}26$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(a) — Volumen de equivalencia</div>
+            <p class="porque"><b>¿Por qué?</b> Moles HClO = moles NaOH.</p>
+            $$V_{NaOH}=\dfrac{0{,}030\cdot 0{,}1}{0{,}2}=0{,}015\ \text{L}=15\ \text{mL}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) — pH en equivalencia</div>
+            <p class="porque"><b>¿Por qué?</b> Solo queda hipoclorito (sal básica). $V_{tot}=45$ mL.</p>
+            $$[\text{ClO}^-]=\dfrac{3\cdot 10^{-3}}{0{,}045}=0{,}0667\ \text{M}$$
+$$K_b=\dfrac{K_w}{K_a}=\dfrac{10^{-14}}{3\cdot 10^{-8}}=3{,}33\cdot 10^{-7}$$
+$$[\text{OH}^-]=\sqrt{3{,}33\cdot 10^{-7}\cdot 0{,}0667}=1{,}49\cdot 10^{-4}$$
+$$\text{pOH}=3{,}83\implies \text{pH}=10{,}17$$
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">pH inicial = 4,26 · $V_{eq}=15$ mL · pH$_{eq}=10{,}17$.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      En valoración HF + BF, el punto de equivalencia es básico ($>7$) por hidrólisis del anión. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex9-15">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 9.15</div>
+      <h1 class="panel-title">Aspirina: K_a y pH tras añadir NaOH</h1>
+      <div class="panel-meta">Resultado: (a) $K_a = 4{,}19\cdot 10^{-4}$. (b) pH = 7,71.</div>
+    </div>
+
+    <div class="enunciado">
+      Cada comprimido de aspirina contiene <b>0,45 g de ácido acetilsalicílico</b> (HA, $C_9H_8O_4$). Se disuelve en 200 mL de agua y el pH resulta <b>2,68</b>. (a) Determinar $K_a$. (b) Si se añaden <b>25 mL de NaOH 0,1 M</b>, escribir la reacción y calcular el pH.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masa HA</td><td>0,45 g</td></tr>
+            <tr><td>$M_{C_9H_8O_4}$</td><td>180,16 g/mol</td></tr>
+            <tr><td>$V$ inicial</td><td>200 mL</td></tr>
+            <tr><td>pH medido</td><td>2,68</td></tr>
+            <tr><td>NaOH añadido</td><td>25 mL · 0,1 M</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">(a) Paso 1 — Concentración inicial</div>
+            <p class="porque"><b>¿Por qué?</b> $n=0{,}45/180{,}16=2{,}50\cdot 10^{-3}$ mol → C=0,0125 M.</p>
+            $$C = \dfrac{2{,}50\cdot 10^{-3}}{0{,}200}=0{,}0125\ \text{M}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(a) Paso 2 — $K_a$ con cuadrática</div>
+            <p class="porque"><b>¿Por qué?</b> $[\text{H}^+]=10^{-2{,}68}=2{,}09\cdot 10^{-3}$. $K_a=[\text{H}^+]^2/(C-[\text{H}^+])$.</p>
+            $$K_a=\dfrac{(2{,}09\cdot 10^{-3})^2}{0{,}0125-2{,}09\cdot 10^{-3}}=\dfrac{4{,}37\cdot 10^{-6}}{0{,}01041}=4{,}20\cdot 10^{-4}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) Paso 1 — Reacción</div>
+            <p class="porque"><b>¿Por qué?</b> HA + NaOH → NaA + H$_2$O.</p>
+            <p>Moles HA = 2,50·10⁻³; moles NaOH = 25·0,1 = 2,5·10⁻³ mol. <b>Justo en equivalencia</b>: queda solo el anión A$^-$ en V_tot = 225 mL.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) Paso 2 — pH del anión</div>
+            <p class="porque"><b>¿Por qué?</b> Hidrólisis básica.</p>
+            $$[\text{A}^-]=\dfrac{2{,}5\cdot 10^{-3}}{0{,}225}=0{,}0111\ \text{M}$$
+$$K_b=\dfrac{K_w}{K_a}=\dfrac{10^{-14}}{4{,}19\cdot 10^{-4}}=2{,}39\cdot 10^{-11}$$
+$$[\text{OH}^-]=\sqrt{2{,}39\cdot 10^{-11}\cdot 0{,}0111}=5{,}14\cdot 10^{-7}$$
+$$\text{pOH}=6{,}29\implies \text{pH}=7{,}71$$
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) $K_a \approx 4{,}19\cdot 10^{-4}$. (b) pH = 7,71.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      El acetilsalicílico es relativamente fuerte ($K_a$ alto) por su grupo carboxilo cercano al éster. El pH del punto de equivalencia es ligeramente básico, no neutro (1−7,71 muy próximo a 7 porque el K_a es relativamente alto). ✓
     </div>
   </div>
   </main>

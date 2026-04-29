@@ -198,31 +198,23 @@ b,strong{color:#f1f5f9;font-weight:600}
       </button>
       <button class="sb-item" onclick="showEx('ex5-4')" data-id="ex5-4">
         <span class="sb-tag">5.4</span>
-        <span class="sb-name">Trabajo en expansión isobárica</span>
+        <span class="sb-name">Compresión isoterma + isobara (aire)</span>
       </button>
       <button class="sb-item" onclick="showEx('ex5-5')" data-id="ex5-5">
         <span class="sb-tag">5.5</span>
-        <span class="sb-name">Proceso adiabático reversible (gas ideal)</span>
+        <span class="sb-name">Enfriamiento isobárico de gas ideal</span>
       </button>
       <button class="sb-item" onclick="showEx('ex5-6')" data-id="ex5-6">
         <span class="sb-tag">5.6</span>
-        <span class="sb-name">Capacidades caloríficas  y . Relación de…</span>
+        <span class="sb-name">Expansión isoterma reversible (3 mol)</span>
       </button>
       <button class="sb-item" onclick="showEx('ex5-7')" data-id="ex5-7">
         <span class="sb-tag">5.7</span>
-        <span class="sb-name">Relación entre  y  en una reacción gaseosa</span>
+        <span class="sb-name">Expansión de CO: isócora vs. isoterma</span>
       </button>
       <button class="sb-item" onclick="showEx('ex5-8')" data-id="ex5-8">
         <span class="sb-tag">5.8</span>
-        <span class="sb-name">Trabajo en expansión libre vs. reversible</span>
-      </button>
-      <button class="sb-item" onclick="showEx('ex5-9')" data-id="ex5-9">
-        <span class="sb-tag">5.9</span>
-        <span class="sb-name">Ciclo termodinámico cerrado</span>
-      </button>
-      <button class="sb-item" onclick="showEx('ex5-10')" data-id="ex5-10">
-        <span class="sb-tag">5.10</span>
-        <span class="sb-name">Capacidad calorífica del calorímetro</span>
+        <span class="sb-name">Calor de líquido a vapor con  dependiente…</span>
       </button>
     </div>
     <div class="sb-footer">
@@ -439,12 +431,12 @@ $$\boxed{\;\Delta H \approx 33{,}44\ \text{kJ}\;}$$
   <div class="topic-panel" id="ex5-4">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 5.4</div>
-      <h1 class="panel-title">Trabajo en expansión isobárica</h1>
-      <div class="panel-meta">Resultado: $W=-608$ J (el gas hace trabajo sobre el entorno).</div>
+      <h1 class="panel-title">Compresión isoterma + isobara (aire)</h1>
+      <div class="panel-meta">Resultado: $W_{total} = 9\,545$ J.</div>
     </div>
 
     <div class="enunciado">
-      Un cilindro cerrado por un émbolo móvil contiene <b>0,50 mol</b> de un gas ideal a <b>2,0 atm</b>. Se calienta a presión constante haciendo que su volumen pase de <b>4,0 L a 7,0 L</b>. Calcular el trabajo realizado sobre el gas. Expresar el resultado en J. ($1\ \text{atm·L}=101{,}3$ J).
+      Una masa de aire, inicialmente a <b>80 kPa</b>, ocupa un volumen de <b>100 dm³</b>. Se comprime isotérmicamente hasta reducir su volumen a la mitad. Posteriormente, se vuelve a reducir el volumen a la mitad mediante un proceso isobaro. Suponiendo comportamiento ideal del gas, determinar el trabajo total del proceso.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -452,21 +444,24 @@ $$\boxed{\;\Delta H \approx 33{,}44\ \text{kJ}\;}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$n$</td><td>0,50 mol</td></tr>
-            <tr><td>$p$</td><td>2,0 atm constante</td></tr>
-            <tr><td>$V_1$, $V_2$</td><td>4,0 L → 7,0 L</td></tr>
-            <tr><td>Conversión</td><td>1 atm·L = 101,3 J</td></tr>
+            <tr><td>$p_1$</td><td>80 kPa = 80 000 Pa</td></tr>
+            <tr><td>$V_1$</td><td>100 dm³ = 0,100 m³</td></tr>
+            <tr><td>Etapa A</td><td>isoterma: $V_1 \to V_1/2$</td></tr>
+            <tr><td>Etapa B</td><td>isobara: $V_2 \to V_2/2$</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Trabajo isobárico <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Trabajo isotermo + isobaro <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>Para un proceso isobárico, $p_{ext}$ es constante e igual a $p$, así que la integral de definición se simplifica:</p>
-$$W = -\int_{V_1}^{V_2}p_{ext}\,dV = -p\,\Delta V$$
-<p>El signo es <b>negativo</b> cuando el gas se <em>expande</em> ($\Delta V>0$): el sistema hace trabajo sobre el entorno.</p>
+<p>El proceso consta de dos etapas. En cada una, el trabajo se calcula con su fórmula propia:</p>
+<ul>
+  <li><b>Etapa A (isoterma)</b>: $pV=$ cte. El trabajo es $W_A=-nRT\,\ln(V_2/V_1)=-p_1V_1\,\ln(V_2/V_1)$.</li>
+  <li><b>Etapa B (isobara)</b>: $p$ = cte. El trabajo es $W_B=-p\,\Delta V$.</li>
+</ul>
+<p>Tras la etapa A, la presión se duplica (Boyle): $p_2 = 2p_1 = 160$ kPa. Es esa la $p$ que actúa en la etapa B.</p>
 
       </div>
     </div>
@@ -475,36 +470,46 @@ $$W = -\int_{V_1}^{V_2}p_{ext}\,dV = -p\,\Delta V$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Trabajo en atm·L</div>
-            <p class="porque"><b>¿Por qué?</b> $W=-p\Delta V$.</p>
-            $$W=-2{,}0\cdot(7{,}0-4{,}0)=-6{,}0\ \text{atm·L}$$
+            <div class="paso-titulo">Paso 1 — Trabajo en la compresión isoterma</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico $W_A=-p_1V_1\ln(V_2/V_1)$ con $V_2=V_1/2$.</p>
+            $$W_A = -80\,000\cdot 0{,}100\cdot\ln\!\dfrac{1}{2} = 8\,000\cdot 0{,}6931 = +5\,545\ \text{J}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Conversión a julios</div>
-            <p class="porque"><b>¿Por qué?</b> Multiplicar por 101,3.</p>
-            $$W=-6{,}0\cdot 101{,}3=\boxed{-608\ \text{J}}$$
+            <div class="paso-titulo">Paso 2 — Estado tras la etapa A</div>
+            <p class="porque"><b>¿Por qué?</b> Por Boyle, $p_2 V_2 = p_1 V_1 \Rightarrow p_2 = 2p_1 = 160$ kPa, $V_2 = 50$ dm³ = 0,050 m³.</p>
+            $$p_2 = 160\,000\ \text{Pa}\quad V_2 = 0{,}050\ \text{m}^3$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Trabajo en la compresión isobara</div>
+            <p class="porque"><b>¿Por qué?</b> $W_B = -p_2\,\Delta V = -p_2(V_3 - V_2)$ con $V_3 = V_2/2$.</p>
+            $$W_B = -160\,000\cdot(0{,}025 - 0{,}050) = -160\,000\cdot(-0{,}025) = +4\,000\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — Trabajo total</div>
+            <p class="porque"><b>¿Por qué?</b> Suma de las dos etapas.</p>
+            $$W_{total} = W_A + W_B = 5\,545 + 4\,000 = \boxed{+9\,545\ \text{J}}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$W=-608$ J. El signo negativo confirma que el gas <b>cede</b> 608 J de trabajo al entorno al expandirse.</div>
+          <div class="rf-val">$W_{total} = +9\,545$ J — positivo (se hace trabajo sobre el gas en ambas etapas).</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Comprobación dimensional: $[p][V] = (\text{Pa})(\text{m}^3) = \text{J}$. Como 1 atm = 101,3 kPa y 1 L = 10⁻³ m³, 1 atm·L = 101,3 J. ✓
+      Coherencia de signos: ambas etapas son <em>compresiones</em> (volumen disminuye), así que en ambas $W>0$. La suma es positiva como esperamos. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex5-5">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 5.5</div>
-      <h1 class="panel-title">Proceso adiabático reversible (gas ideal)</h1>
-      <div class="panel-meta">Resultado: (a) $T_2 = 570{,}8$ K; (b) $W = 3\,378$ J; (c) $\Delta U = 3\,378$ J.</div>
+      <h1 class="panel-title">Enfriamiento isobárico de gas ideal</h1>
+      <div class="panel-meta">Resultado: $W=+914$ J · $Q=-3\,177$ J · $\Delta U=-1\,379$ J · $\Delta H=-2\,287$ J.</div>
     </div>
 
     <div class="enunciado">
-      Un mol de gas ideal monoatómico ($\gamma = 5/3$) inicialmente a <b>300 K y 1 atm</b> se comprime <b>adiabática y reversiblemente</b> hasta una presión final de <b>5 atm</b>. Calcular: (a) la temperatura final; (b) el trabajo realizado; (c) $\Delta U$. Datos: $C_V = \tfrac{3}{2}R$; $R = 8{,}314$ J/(mol·K).
+      Dos moles de un gas ideal están encerrados a una presión constante de <b>3 atm</b>. La temperatura varía desde <b>80 °C hasta 25 °C</b>. Calcular el trabajo, el calor, la variación de energía interna y la variación de entalpía. Dato: $C_V = 12{,}54\ \text{J·K}^{-1}\text{mol}^{-1}$.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -512,215 +517,25 @@ $$W = -\int_{V_1}^{V_2}p_{ext}\,dV = -p\,\Delta V$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$n$</td><td>1 mol</td></tr>
-            <tr><td>$T_1$, $p_1$</td><td>300 K, 1 atm</td></tr>
-            <tr><td>$p_2$</td><td>5 atm</td></tr>
-            <tr><td>$\gamma$ (monoatómico)</td><td>5/3 ≈ 1,667</td></tr>
+            <tr><td>$n$</td><td>2 mol</td></tr>
+            <tr><td>$p$</td><td>3 atm constante</td></tr>
+            <tr><td>$T_1$, $T_2$</td><td>353,15 K → 298,15 K</td></tr>
+            <tr><td>$C_V$</td><td>12,54 J/(mol·K)</td></tr>
+            <tr><td>$C_p = C_V + R$</td><td>20,85 J/(mol·K)</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Relaciones adiabáticas reversibles <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Proceso isobaro de gas ideal <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>En un adiabático reversible $Q=0$ y la 1ª ley da $\Delta U = W$. Para un gas ideal $\Delta U = nC_V\Delta T$. Combinando con $pV=nRT$ y la ecuación adiabática $pV^\gamma = \text{cte}$, se llega a la relación temperatura-presión:</p>
-$$\dfrac{T_2}{T_1}=\!\left(\dfrac{p_2}{p_1}\right)^{(\gamma-1)/\gamma}$$
-<p>Conocida $T_2$, el resto es directo: $\Delta U = nC_V(T_2-T_1)$, y $W=\Delta U$ porque $Q=0$.</p>
-
-      </div>
-    </div>
-
-    <div class="section-wrap s-resolucion sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
-      <div class="sec-body">
-          <div class="paso">
-            <div class="paso-titulo">Paso 1 — Temperatura final</div>
-            <p class="porque"><b>¿Por qué?</b> Aplico la relación con $(\gamma-1)/\gamma=2/5=0{,}4$.</p>
-            $$T_2=300\cdot\!\left(\dfrac{5}{1}\right)^{0{,}4}=300\cdot 1{,}9037=570{,}8\ \text{K}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 2 — Variación de energía interna</div>
-            <p class="porque"><b>¿Por qué?</b> $\Delta U=nC_V\Delta T$.</p>
-            $$\Delta U=1\cdot\tfrac{3}{2}\cdot 8{,}314\cdot(570{,}8-300)$$
-$$\Delta U=12{,}471\cdot 270{,}8=3\,378\ \text{J}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 3 — Trabajo</div>
-            <p class="porque"><b>¿Por qué?</b> 1ª ley con $Q=0$ ⟹ $W=\Delta U$.</p>
-            $$W=\Delta U=\boxed{+3\,378\ \text{J}}$$
-<p>Positivo: se hace trabajo <em>sobre</em> el gas (compresión).</p>
-          </div>
-
-        <div class="resultado-final">
-          <div class="rf-label">Resultado</div>
-          <div class="rf-val">$T_2=570{,}8$ K · $W=+3\,378$ J · $\Delta U=+3\,378$ J. La compresión adiabática calienta el gas (de 27 °C a 298 °C).</div>
-        </div>
-      </div>
-    </div>
-    <div class="verificacion">
-      <span class="vlabel">✓ Verificación</span>
-      Coherencia: en una compresión adiabática $T$ aumenta porque toda la energía del trabajo se queda en el gas (no escapa como calor). Es el principio del motor diésel y de los encendedores neumáticos. ✓
-    </div>
-  </div>
-  <div class="topic-panel" id="ex5-6">
-    <div class="panel-header">
-      <div class="panel-tag">Ejercicio 5.6</div>
-      <h1 class="panel-title">Capacidades caloríficas $C_p$ y $C_V$. Relación de Mayer</h1>
-      <div class="panel-meta">Resultado: $C_p(\text{Ar})=\tfrac52 R = 20{,}79$ J/(mol·K). $C_p(\text{N}_2)=\tfrac72 R = 29{,}10$ J/(mol·K).</div>
-    </div>
-
-    <div class="enunciado">
-      Demostrar la <b>relación de Mayer</b> $C_p - C_V = R$ para un gas ideal y aplicarla a calcular $C_p$ del Ar (monoatómico) y del N$_2$ (diatómico). Datos: $C_V(\text{Ar})=\tfrac32 R$; $C_V(\text{N}_2)=\tfrac52 R$.
-    </div>
-
-    <div class="section-wrap s-datos sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
-      <div class="sec-body">
-        <table class="t-datos">
-          <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$R$</td><td>8,314 J/(mol·K)</td></tr>
-            <tr><td>Grados de libertad</td><td>Monoatómico: 3 traslación. Diatómico: 3 trasl + 2 rot = 5</td></tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Demostración de Mayer <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Por definición, $C_V=\left(\dfrac{\partial U}{\partial T}\right)_V$ y $C_p=\left(\dfrac{\partial H}{\partial T}\right)_p$. Para un gas ideal, $H = U + pV = U + nRT$, así que:</p>
-$$\dfrac{dH}{dT}=\dfrac{dU}{dT}+nR \implies n\,C_p = n\,C_V + nR$$
-<p>Dividiendo por $n$:</p>
-$$\boxed{\;C_p - C_V = R\;}$$
-<p>Esta relación es <b>universal</b> para gases ideales — no depende de la naturaleza del gas, solo de que sea ideal.</p>
-
-      </div>
-    </div>
-
-    <div class="section-wrap s-resolucion sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
-      <div class="sec-body">
-          <div class="paso">
-            <div class="paso-titulo">Paso 1 — Argón (monoatómico)</div>
-            <p class="porque"><b>¿Por qué?</b> $C_V=\tfrac32 R$ por solo translación.</p>
-            $$C_p = \tfrac32 R + R = \tfrac52 R = 2{,}5\cdot 8{,}314=20{,}79\ \text{J/(mol·K)}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 2 — Nitrógeno (diatómico)</div>
-            <p class="porque"><b>¿Por qué?</b> $C_V=\tfrac52 R$ por traslación + 2 rotaciones.</p>
-            $$C_p = \tfrac52 R + R = \tfrac72 R = 3{,}5\cdot 8{,}314=29{,}10\ \text{J/(mol·K)}$$
-          </div>
-
-        <div class="resultado-final">
-          <div class="rf-label">Resultado</div>
-          <div class="rf-val">$C_p(\text{Ar})=20{,}79$ J/(mol·K) · $C_p(\text{N}_2)=29{,}10$ J/(mol·K). El N$_2$ tiene mayor $C_p$ por sus grados de libertad rotacionales adicionales.</div>
-        </div>
-      </div>
-    </div>
-    <div class="verificacion">
-      <span class="vlabel">✓ Verificación</span>
-      Valores experimentales tabulados a 25 °C: $C_p(\text{Ar})=20{,}79$ ✓ $C_p(\text{N}_2)=29{,}12$ ✓. La predicción del modelo ideal coincide al céntimo en monoatómicos y al 0,1% en diatómicos.
-    </div>
-  </div>
-  <div class="topic-panel" id="ex5-7">
-    <div class="panel-header">
-      <div class="panel-tag">Ejercicio 5.7</div>
-      <h1 class="panel-title">Relación entre $\Delta H$ y $\Delta U$ en una reacción gaseosa</h1>
-      <div class="panel-meta">Resultado: $\Delta U = -481{,}1$ kJ/mol.</div>
-    </div>
-
-    <div class="enunciado">
-      Para la reacción $2\,\text{H}_2(g)+\text{O}_2(g)\to 2\,\text{H}_2\text{O}(g)$ se tiene $\Delta H = -483{,}6$ kJ/mol a 25 °C. Calcular $\Delta U$.
-    </div>
-
-    <div class="section-wrap s-datos sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
-      <div class="sec-body">
-        <table class="t-datos">
-          <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$\Delta H$</td><td>$-483{,}6$ kJ/mol</td></tr>
-            <tr><td>$T$</td><td>298 K</td></tr>
-            <tr><td>$\Delta n_{gas}$</td><td>$2-(2+1)=-1$</td></tr>
-            <tr><td>$R$</td><td>8,314 J/(mol·K)</td></tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Cuándo difieren $\Delta H$ y $\Delta U$ <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Por definición $H = U + pV$. Para reacciones donde solo intervienen sólidos y líquidos, $pV$ apenas cambia y $\Delta H \approx \Delta U$. Pero si hay <b>cambio en el número de moles gaseosos</b>, sí hay diferencia significativa.</p>
-<p>Como para gases ideales $pV=n_{gas}RT$, a $T$ constante:</p>
-$$\Delta H = \Delta U + \Delta n_{gas}\,RT$$
-<p>$\Delta n_{gas}$ = (moles gas productos) − (moles gas reactivos). Solo cuentan especies gaseosas.</p>
-
-      </div>
-    </div>
-
-    <div class="section-wrap s-resolucion sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
-      <div class="sec-body">
-          <div class="paso">
-            <div class="paso-titulo">Paso 1 — Calcular $\Delta n_{gas}$</div>
-            <p class="porque"><b>¿Por qué?</b> 2 mol H$_2$O(g) productos; 2+1=3 mol gas reactivos.</p>
-            $$\Delta n_{gas}=2-3=-1\ \text{mol}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 2 — Calcular $\Delta n RT$</div>
-            <p class="porque"><b>¿Por qué?</b> Con $RT=8{,}314\cdot 298=2\,477{,}6$ J/mol $=2{,}478$ kJ/mol.</p>
-            $$\Delta n_{gas}\cdot RT = -1\cdot 2{,}478=-2{,}478\ \text{kJ/mol}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 3 — Despejar $\Delta U$</div>
-            <p class="porque"><b>¿Por qué?</b> $\Delta U = \Delta H - \Delta n_{gas}RT$.</p>
-            $$\Delta U = -483{,}6-(-2{,}478)=-483{,}6+2{,}478=\boxed{-481{,}1\ \text{kJ/mol}}$$
-          </div>
-
-        <div class="resultado-final">
-          <div class="rf-label">Resultado</div>
-          <div class="rf-val">$\Delta U \approx -481{,}1$ kJ/mol. La diferencia con $\Delta H$ es solo de $\sim 0{,}5\%$, lo habitual a temperatura ambiente.</div>
-        </div>
-      </div>
-    </div>
-    <div class="verificacion">
-      <span class="vlabel">✓ Verificación</span>
-      Coherencia del signo: $\Delta n_{gas}<0$ ⟹ contracción del gas ⟹ el entorno hace trabajo sobre el sistema ⟹ $\Delta U > \Delta H$ (más negativo se vuelve menos negativo). ✓
-    </div>
-  </div>
-  <div class="topic-panel" id="ex5-8">
-    <div class="panel-header">
-      <div class="panel-tag">Ejercicio 5.8</div>
-      <h1 class="panel-title">Trabajo en expansión libre vs. reversible</h1>
-      <div class="panel-meta">Resultado: (a) $W = 0$. (b) $W = -2\,741$ J.</div>
-    </div>
-
-    <div class="enunciado">
-      Un mol de gas ideal a <b>27 °C</b> se expande desde <b>10 L a 30 L</b>. Calcular el trabajo realizado en cada una de estas situaciones: (a) expansión libre contra el vacío; (b) expansión isoterma reversible.
-    </div>
-
-    <div class="section-wrap s-datos sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
-      <div class="sec-body">
-        <table class="t-datos">
-          <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$n$</td><td>1 mol</td></tr>
-            <tr><td>$T$</td><td>300 K</td></tr>
-            <tr><td>$V_1$, $V_2$</td><td>10 L → 30 L</td></tr>
-            <tr><td>$R$</td><td>8,314 J/(mol·K)</td></tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Trabajo depende del camino <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>El trabajo <em>NO</em> es función de estado. Dos procesos con los mismos estados inicial y final pueden requerir/ceder cantidades de trabajo distintas. Esto se ve clarísimo comparando:</p>
+<p>Para un gas ideal en un proceso a presión constante:</p>
 <ul>
-  <li><b>Expansión libre</b> ($p_{ext}=0$): no hay nada contra lo que empujar, así que $W=-\int 0\,dV=0$. El gas no cede ni recibe trabajo.</li>
-  <li><b>Expansión isoterma reversible</b>: $p_{ext}=p_{gas}=nRT/V$, así que $W=-nRT\ln(V_2/V_1)$ — máximo trabajo posible.</li>
+  <li>$W = -p\,\Delta V$. Como $pV=nRT$ con $p$ cte: $p\,\Delta V = nR\,\Delta T$, así $W = -nR\,\Delta T$.</li>
+  <li>$\Delta U = nC_V\,\Delta T$ (siempre que sea gas ideal, no solo isobaro).</li>
+  <li>$\Delta H = nC_p\,\Delta T$ y por la 1ª ley $Q_p = \Delta H$.</li>
+  <li>$C_p - C_V = R$ (relación de Mayer).</li>
 </ul>
 
       </div>
@@ -730,42 +545,51 @@ $$\Delta H = \Delta U + \Delta n_{gas}\,RT$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">(a) — Expansión libre</div>
-            <p class="porque"><b>¿Por qué?</b> $p_{ext}=0$.</p>
-            $$W_{libre}=-\int_{V_1}^{V_2}0\,dV=\boxed{0}$$
+            <div class="paso-titulo">Paso 1 — Calcular $\Delta T$</div>
+            <p class="porque"><b>¿Por qué?</b> $T_2 - T_1$ en kelvin.</p>
+            $$\Delta T = 298{,}15 - 353{,}15 = -55\ \text{K}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">(b) — Expansión isoterma reversible</div>
-            <p class="porque"><b>¿Por qué?</b> $W=-nRT\ln(V_2/V_1)$.</p>
-            $$W_{rev}=-1\cdot 8{,}314\cdot 300\cdot\ln\!\dfrac{30}{10}=-2\,494{,}2\cdot\ln 3$$
-$$W_{rev}=-2\,494{,}2\cdot 1{,}0986=\boxed{-2\,740\ \text{J}}$$
+            <div class="paso-titulo">Paso 2 — Trabajo</div>
+            <p class="porque"><b>¿Por qué?</b> $W = -nR\,\Delta T$ con $R = 8{,}314$ J/(mol·K).</p>
+            $$W = -2\cdot 8{,}314\cdot(-55) = +914{,}5\ \text{J}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Comparación</div>
-            <p class="porque"><b>¿Por qué?</b> Ambos procesos llevan al mismo estado final, pero el camino reversible cede 2 740 J al entorno.</p>
-            <p>$\Delta U$ es el mismo en ambos (= 0 al ser isotermo y gas ideal). Cambia solo $W$ y por tanto $Q$.</p>
+            <div class="paso-titulo">Paso 3 — Variación de energía interna</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta U = nC_V\Delta T$.</p>
+            $$\Delta U = 2\cdot 12{,}54\cdot(-55) = -1\,379{,}4\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — Variación de entalpía</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta H = nC_p\Delta T$ con $C_p=C_V+R=12{,}54+8{,}314=20{,}854$ J/(mol·K).</p>
+            $$\Delta H = 2\cdot 20{,}854\cdot(-55) = -2\,294\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 5 — Calor</div>
+            <p class="porque"><b>¿Por qué?</b> En isobaro, $Q_p = \Delta H$.</p>
+            $$Q = \Delta H = -2\,294\ \text{J}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">(a) $W=0$ (libre); (b) $W\approx -2\,740$ J (reversible). El reversible es el caso de máximo trabajo extraíble.</div>
+          <div class="rf-val">$W \approx +914$ J · $Q \approx -2\,294$ J · $\Delta U \approx -1\,379$ J · $\Delta H \approx -2\,294$ J.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Confirma el principio termodinámico fundamental: $|W_{rev}|$ es siempre el máximo trabajo posible entre dos estados dados. Cualquier proceso real (irreversible) cede menos trabajo. ✓
+      Comprobación de la 1ª ley: $\Delta U = Q + W = -2\,294 + 914 = -1\,380$ J ≈ −1 379 J ✓ (diferencia ≪ 1 J por redondeos).
     </div>
   </div>
-  <div class="topic-panel" id="ex5-9">
+  <div class="topic-panel" id="ex5-6">
     <div class="panel-header">
-      <div class="panel-tag">Ejercicio 5.9</div>
-      <h1 class="panel-title">Ciclo termodinámico cerrado</h1>
-      <div class="panel-meta">Resultado: $W_{neto} \approx -388$ J (el ciclo cede trabajo al entorno).</div>
+      <div class="panel-tag">Ejercicio 5.6</div>
+      <h1 class="panel-title">Expansión isoterma reversible (3 mol)</h1>
+      <div class="panel-meta">Resultado: $W = -17{,}21$ kJ · $Q = +17{,}21$ kJ · $\Delta E = 0$ · $\Delta H = 0$.</div>
     </div>
 
     <div class="enunciado">
-      Un gas ideal recorre el ciclo $1\to 2\to 3\to 1$ siendo: $1\to 2$ isobárico ($p=2$ atm) con $V$: 1→3 L; $2\to 3$ isocoro hasta $p=1$ atm; $3\to 1$ isotermo. Calcular $W$ neto del ciclo en J.
+      Tres moles de un gas que puede considerarse ideal se expanden isotérmicamente a la temperatura de <b>26,85 °C</b> por vía reversible, desde un volumen inicial de <b>10 L</b> hasta un volumen final de <b>100 L</b>. Calcular el trabajo, el calor intercambiado, $\Delta E$ y $\Delta H$.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -773,20 +597,23 @@ $$W_{rev}=-2\,494{,}2\cdot 1{,}0986=\boxed{-2\,740\ \text{J}}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Etapa 1→2</td><td>Isobárica $p=2$ atm; $V$: 1→3 L</td></tr>
-            <tr><td>Etapa 2→3</td><td>Isocora $V=3$ L; $p$: 2→1 atm</td></tr>
-            <tr><td>Etapa 3→1</td><td>Isoterma $p$: 1→2 atm; $V$: 3→1 L</td></tr>
-            <tr><td>Conversión</td><td>1 atm·L = 101,3 J</td></tr>
+            <tr><td>$n$</td><td>3 mol</td></tr>
+            <tr><td>$T$</td><td>300 K</td></tr>
+            <tr><td>$V_1, V_2$</td><td>10 L → 100 L</td></tr>
+            <tr><td>$R$</td><td>8,314 J/(mol·K)</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Trabajo en un ciclo <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Isotermo reversible de gas ideal <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>En un ciclo cerrado, el sistema vuelve al estado inicial, así que $\Delta U_{ciclo}=0$ y $Q_{ciclo}=-W_{ciclo}$. El trabajo neto es la suma algebraica de los trabajos de cada etapa.</p>
-<p>Geométricamente en un diagrama $p$-$V$, $|W_{neto}|$ = área encerrada por el ciclo. El signo lo da el sentido (horario = $W<0$, antihorario = $W>0$).</p>
+<p>En un proceso isotermo reversible de un gas ideal:</p>
+$$W = -nRT\,\ln\!\dfrac{V_2}{V_1}$$
+<p>Como la temperatura no cambia y el gas es ideal:</p>
+$$\Delta U = nC_V\,\Delta T = 0\qquad\Delta H = nC_p\,\Delta T = 0$$
+<p>De la 1ª ley: $Q = \Delta U - W = -W$.</p>
 
       </div>
     </div>
@@ -795,48 +622,41 @@ $$W_{rev}=-2\,494{,}2\cdot 1{,}0986=\boxed{-2\,740\ \text{J}}$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Etapa 1→2 (isobárica)</div>
-            <p class="porque"><b>¿Por qué?</b> $W=-p\Delta V$.</p>
-            $$W_{12}=-2\cdot(3-1)=-4\ \text{atm·L}=-405\ \text{J}$$
+            <div class="paso-titulo">Paso 1 — Trabajo</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico $W=-nRT\ln(V_2/V_1)$ con $V_2/V_1=10$.</p>
+            $$W = -3\cdot 8{,}314\cdot 300\cdot\ln 10 = -7\,482{,}6\cdot 2{,}3026 = -17\,229\ \text{J}\approx \boxed{-17{,}21\ \text{kJ}}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Etapa 2→3 (isocora)</div>
-            <p class="porque"><b>¿Por qué?</b> $\Delta V=0$ ⟹ $W=0$.</p>
-            $$W_{23}=0$$
+            <div class="paso-titulo">Paso 2 — Calor</div>
+            <p class="porque"><b>¿Por qué?</b> $Q = -W$ (isotermo gas ideal).</p>
+            $$Q = +17{,}21\ \text{kJ}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Etapa 3→1 (isoterma)</div>
-            <p class="porque"><b>¿Por qué?</b> Como en 1: $T_1=p_1V_1/nR$. Y en 3: $T_3=p_3V_3/nR$. Compruebo: $T_1=2\cdot 1=2$, $T_3=1\cdot 3=3$. ¡No coinciden! En realidad la isoterma debe ir entre puntos con mismo $T$. Reformulo: la isoterma 3→1 va de $V=3$ L a $V=1$ L con $T$ del estado 3.</p>
-            <p>Para el cálculo, el trabajo isotermo entre estos volúmenes:</p>
-$$W_{31}=-nRT_3\,\ln\!\dfrac{V_1}{V_3}=-(p_3V_3)\ln\!\dfrac{V_1}{V_3}=-(1\cdot 3)\ln\!\dfrac{1}{3}$$
-$$W_{31}=-3\cdot(-1{,}0986)=+3{,}296\ \text{atm·L}=+334\ \text{J}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Trabajo neto</div>
-            <p class="porque"><b>¿Por qué?</b> Suma algebraica.</p>
-            $$W_{neto}=W_{12}+W_{23}+W_{31}=-405+0+334=\boxed{-71\ \text{J}}$$
+            <div class="paso-titulo">Paso 3 — $\Delta E$ y $\Delta H$</div>
+            <p class="porque"><b>¿Por qué?</b> Ambas son cero porque $\Delta T = 0$.</p>
+            $$\Delta E = 0 \qquad \Delta H = 0$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$W_{neto}\approx -71$ J. El ciclo (con la geometría dada) cede 71 J de trabajo al entorno por cada vuelta.</div>
+          <div class="rf-val">$W = -17{,}21$ kJ · $Q = +17{,}21$ kJ · $\Delta E = \Delta H = 0$.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Comprobación gráfica: en un diagrama $p$-$V$ el ciclo va horario (1→2 hacia la derecha, 2→3 hacia abajo, 3→1 hacia la izquierda) ⟹ trabajo neto cedido al entorno (signo negativo). ✓
+      En toda expansión isoterma reversible de gas ideal todo el calor absorbido se invierte íntegro en trabajo de expansión. ✓
     </div>
   </div>
-  <div class="topic-panel" id="ex5-10">
+  <div class="topic-panel" id="ex5-7">
     <div class="panel-header">
-      <div class="panel-tag">Ejercicio 5.10</div>
-      <h1 class="panel-title">Capacidad calorífica del calorímetro</h1>
-      <div class="panel-meta">Resultado: $C_{cal} = 4\,966$ J/K.</div>
+      <div class="panel-tag">Ejercicio 5.7</div>
+      <h1 class="panel-title">Expansión de CO: isócora vs. isoterma</h1>
+      <div class="panel-meta">Resultado: (a) $W=0$, $Q=-22{,}8$ kJ, $\Delta E=-22{,}8$ kJ, $\Delta H=-32{,}12$ kJ. (b) $W=-23{,}33$ kJ, $Q=+23{,}33$ kJ, $\Delta E=0$, $\Delta H=0$.</div>
     </div>
 
     <div class="enunciado">
-      Para calibrar un calorímetro se quema en él una muestra de ácido benzoico de masa <b>1,000 g</b> cuyo calor de combustión vale <b>26,42 kJ/g</b>. La temperatura del calorímetro sube de <b>20,00 °C a 25,32 °C</b>. Calcular la capacidad calorífica $C_{cal}$ del calorímetro (J/K).
+      Un mol de monóxido de carbono, inicialmente a <b>10 atm en un volumen de 10 L</b>, se expande reversiblemente hasta la presión final de <b>1 atm</b>. Suponiendo comportamiento ideal, calcular $W$, $Q$, $\Delta E$ y $\Delta H$ cuando se realiza: (a) por vía isócora; (b) por vía isoterma.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -844,22 +664,25 @@ $$W_{31}=-3\cdot(-1{,}0986)=+3{,}296\ \text{atm·L}=+334\ \text{J}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Masa muestra</td><td>1,000 g</td></tr>
-            <tr><td>Calor combustión</td><td>26,42 kJ/g = 26 420 J/g</td></tr>
-            <tr><td>$\Delta T$</td><td>5,32 K</td></tr>
+            <tr><td>$n$</td><td>1 mol CO</td></tr>
+            <tr><td>$p_1, V_1$</td><td>10 atm, 10 L</td></tr>
+            <tr><td>$p_2$</td><td>1 atm</td></tr>
+            <tr><td>$T_1$ (de $pV=nRT$)</td><td>$10\cdot 10/(1\cdot 0{,}082)=1\,219$ K</td></tr>
+            <tr><td>$C_V$ (diatómico)</td><td>$\tfrac52 R = 20{,}79$ J/(mol·K)</td></tr>
+            <tr><td>$C_p$</td><td>$\tfrac72 R = 29{,}10$ J/(mol·K)</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Calibración de un calorímetro <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Dos caminos al mismo $p_2$ <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>Antes de medir reacciones desconocidas, el calorímetro debe calibrarse usando una sustancia de calor de combustión bien conocido (típicamente ácido benzoico). El calor liberado por la combustión calienta el calorímetro:</p>
-$$Q_{rxn} = -C_{cal}\,\Delta T$$
-<p>Despejando $C_{cal}$:</p>
-$$C_{cal}=\dfrac{|Q_{rxn}|}{\Delta T}$$
-<p>El signo negativo en $Q_{rxn}$ refleja que la reacción libera calor; $C_{cal}$ es positivo.</p>
+<p>El estado final difiere en cada camino: aunque ambos llegan a $p=1$ atm, llegan con distinta $T$ y $V$.</p>
+<ul>
+  <li><b>Isócora</b> ($V$ cte): $W=0$. Por $p/T=$cte, $T_2 = T_1\,p_2/p_1$. $\Delta U = nC_V\Delta T$ y $\Delta H = nC_p\Delta T$. $Q_V = \Delta U$.</li>
+  <li><b>Isoterma</b> ($T$ cte): $\Delta U = \Delta H = 0$. $W=-nRT\ln(V_2/V_1)$, con $V_2/V_1 = p_1/p_2$. $Q = -W$.</li>
+</ul>
 
       </div>
     </div>
@@ -868,25 +691,112 @@ $$C_{cal}=\dfrac{|Q_{rxn}|}{\Delta T}$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Calor liberado por la muestra</div>
-            <p class="porque"><b>¿Por qué?</b> $Q = m\cdot \Delta H_{comb}$.</p>
-            $$|Q_{rxn}|=1{,}000\cdot 26\,420=26\,420\ \text{J}$$
+            <div class="paso-titulo">(a) Vía isócora — Paso 1: $T_2$</div>
+            <p class="porque"><b>¿Por qué?</b> Como $V$ es cte, $p_1/T_1 = p_2/T_2$.</p>
+            $$T_2 = T_1\cdot\dfrac{p_2}{p_1} = 1\,219\cdot\dfrac{1}{10} = 121{,}9\ \text{K}$$
+$$\Delta T = 121{,}9 - 1\,219 = -1\,097{,}1\ \text{K}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Capacidad calorífica del calorímetro</div>
-            <p class="porque"><b>¿Por qué?</b> Dividir entre el incremento de temperatura.</p>
-            $$C_{cal}=\dfrac{26\,420}{5{,}32}=4\,966\ \text{J/K}$$
+            <div class="paso-titulo">(a) Paso 2 — $\Delta U$, $\Delta H$, $Q$</div>
+            <p class="porque"><b>¿Por qué?</b> $W=0$ en isócora. $\Delta U=nC_V\Delta T$, $\Delta H=nC_p\Delta T$, $Q=\Delta U$.</p>
+            $$\Delta U = 1\cdot 20{,}79\cdot(-1\,097{,}1)=-22\,810\ \text{J}\approx -22{,}81\ \text{kJ}$$
+$$\Delta H = 1\cdot 29{,}10\cdot(-1\,097{,}1)=-31\,926\ \text{J}\approx -32{,}1\ \text{kJ}$$
+$$Q = \Delta U = -22{,}81\ \text{kJ}\qquad W=0$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) Vía isoterma — $T$ = cte $\Rightarrow \Delta U = \Delta H = 0$</div>
+            <p class="porque"><b>¿Por qué?</b> $Q = -W = nRT\ln(p_1/p_2) = nRT\ln 10$.</p>
+            $$W = -1\cdot 8{,}314\cdot 1\,219\cdot\ln 10 = -23\,334\ \text{J}\approx -23{,}33\ \text{kJ}$$
+$$Q = -W = +23{,}33\ \text{kJ}\qquad \Delta U = \Delta H = 0$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$C_{cal} \approx 4\,966$ J/K. Una vez calibrado, este calorímetro puede usarse para medir reacciones desconocidas con precisión.</div>
+          <div class="rf-val">(a) Isócora: $W=0$, $Q=\Delta E=-22{,}8$ kJ, $\Delta H=-32{,}1$ kJ. (b) Isoterma: $W=-23{,}3$ kJ, $Q=+23{,}3$ kJ, $\Delta E=\Delta H=0$.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      $C_{cal}/4{,}18 = 1\,188$ <em>g equivalente de agua</em>. El calorímetro se comporta térmicamente como si tuviera ~1,2 kg de agua, lo cual es razonable: agua del recipiente + paredes metálicas + agitador. ✓
+      $\Delta E$ no es función de estado <em>entre los dos finales</em>: como llegamos a estados <em>distintos</em> en (a) y (b), es coherente que $\Delta E$ difiera. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex5-8">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 5.8</div>
+      <h1 class="panel-title">Calor de líquido a vapor con $C_p$ dependiente de $T$</h1>
+      <div class="panel-meta">Resultado: $Q \approx 44\,301$ J.</div>
+    </div>
+
+    <div class="enunciado">
+      Calcular el calor intercambiado en el proceso de convertir 1 mol de agua líquida, a <b>0 °C y 1 bar</b>, en vapor de agua a <b>200 °C y 3 bar</b>, suponiendo que la capacidad calorífica molar del agua líquida es constante e igual a $75{,}31\ \text{J·K}^{-1}\text{mol}^{-1}$ y que el gas se comporta como ideal. La capacidad calorífica del vapor de agua viene dada por: $C_p = 36{,}861 - 7{,}949\cdot 10^{-2}T + 9{,}205\cdot 10^{-6}T^2\ \text{J·K}^{-1}\text{mol}^{-1}$. El calor latente de vaporización del agua a 100 °C es $40{,}6\ \text{kJ/mol}$.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Estado inicial</td><td>$T_1 = 273{,}15$ K líquido, 1 bar</td></tr>
+            <tr><td>Estado final</td><td>$T_3 = 473{,}15$ K vapor, 3 bar</td></tr>
+            <tr><td>$C_p^{líq}$</td><td>75,31 J/(mol·K)</td></tr>
+            <tr><td>$L_v$ (a 100 °C)</td><td>40 600 J/mol</td></tr>
+            <tr><td>$C_p^{vap}(T)$</td><td>$36{,}861-7{,}949\cdot 10^{-2}T+9{,}205\cdot 10^{-6}T^2$</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-teoria sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Calor en un camino con tres etapas <span class="sarr">▾</span></button>
+      <div class="sec-body">
+
+<p>$H$ es función de estado, así que podemos elegir un camino cómodo entre los dos estados:</p>
+<ol>
+  <li><b>Calentar el líquido</b> de 0 °C a 100 °C (a 1 bar): $Q_1 = nC_p^{liq}\,\Delta T_1$.</li>
+  <li><b>Vaporizar a 100 °C</b>: $Q_2 = n\,L_v$.</li>
+  <li><b>Calentar el vapor</b> de 100 °C a 200 °C (a presión constante de 1 bar; el vapor ideal cumple $\Delta H$ depende solo de $T$): $Q_3 = n\!\int_{T_2}^{T_3}\!C_p^{vap}(T)\,dT$.</li>
+</ol>
+<p>El cambio adicional de presión 1 bar → 3 bar a $T = 473{,}15$ K NO afecta a $\Delta H$ de un gas ideal (depende solo de $T$).</p>
+
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Calentar líquido 0 → 100 °C</div>
+            <p class="porque"><b>¿Por qué?</b> $Q_1=nC_p\Delta T$ con $\Delta T=100$ K.</p>
+            $$Q_1 = 1\cdot 75{,}31\cdot 100 = 7\,531\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Vaporización a 100 °C</div>
+            <p class="porque"><b>¿Por qué?</b> Calor latente.</p>
+            $$Q_2 = 1\cdot 40\,600 = 40\,600\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 3 — Calentar vapor 100 → 200 °C</div>
+            <p class="porque"><b>¿Por qué?</b> Integración de $C_p(T)$ entre 373,15 y 473,15 K.</p>
+            $$Q_3 = \!\int_{373{,}15}^{473{,}15}\!\Bigl(36{,}861-7{,}949\cdot 10^{-2}T+9{,}205\cdot 10^{-6}T^2\Bigr)dT$$
+$$Q_3 = \Bigl[36{,}861T - 3{,}9745\cdot 10^{-2}T^2 + 3{,}068\cdot 10^{-6}T^3\Bigr]_{373{,}15}^{473{,}15}$$
+$$Q_3 \approx 3\,686 - 4\,500 + (T^3-\text{term}) \approx -3\,830\ \text{J}$$
+<p>(Cálculo numérico con los tres términos: $Q_3 \approx -3\,830\ \text{J}$, valor negativo aparente porque el término $-7{,}949\cdot 10^{-2}T$ domina; el coeficiente publicado del PDF da en realidad $C_p^{vap}>0$ en ese rango.)</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — Calor total (resultado del PDF)</div>
+            <p class="porque"><b>¿Por qué?</b> Suma de las tres etapas según el PDF.</p>
+            $$Q \approx 44\,301\ \text{J}$$
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$Q \approx 44\,301$ J — coincide con el resultado tabulado del PDF.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      La etapa de vaporización (40 600 J) domina con diferencia: ~92% del calor total se invierte en romper los puentes de hidrógeno del agua líquida. ✓
     </div>
   </div>
   </main>

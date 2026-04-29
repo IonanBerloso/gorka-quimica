@@ -1,8 +1,23 @@
 """
-Ejercicios extra (ej 4-10) por tema.
+Ejercicios extra por tema.
 Mismo formato que los del dict TEMAS de gen_content.py:
 {title, enunciado, esperado, datos, demo (opcional), pasos, resultado, verificacion}
+
+Para T5, T7, T8 y T9 se usan los problemas REALES de los PDFs del profesor de Gorka.
+Para T1, T2, T3, T4, T6 se mantienen los ejercicios elaborados por mí (no hay PDF).
 """
+
+# Importar problemas reales de los PDFs
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from pdf_t5 import T5_PDF
+    from pdf_t7 import T7_PDF
+    from pdf_t8 import T8_PDF
+    from pdf_t9 import T9_PDF
+except ImportError:
+    T5_PDF = T7_PDF = T8_PDF = T9_PDF = []
 
 EJERCICIOS_EXTRA = {
 
@@ -2023,3 +2038,16 @@ $$\Delta\text{pH}=0{,}050$$"""},
 ],
 
 }
+
+# ─────────────────────────────────────────────────────────────────────
+# OVERRIDES: usar problemas reales de los PDFs del profesor de Gorka
+# en los temas que tienen PDF disponible.
+# ─────────────────────────────────────────────────────────────────────
+if T5_PDF:
+    EJERCICIOS_EXTRA[5] = T5_PDF
+if T7_PDF:
+    EJERCICIOS_EXTRA[7] = T7_PDF
+if T8_PDF:
+    EJERCICIOS_EXTRA[8] = T8_PDF
+if T9_PDF:
+    EJERCICIOS_EXTRA[9] = T9_PDF

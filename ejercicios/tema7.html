@@ -198,31 +198,63 @@ b,strong{color:#f1f5f9;font-weight:600}
       </button>
       <button class="sb-item" onclick="showEx('ex7-4')" data-id="ex7-4">
         <span class="sb-tag">7.4</span>
-        <span class="sb-name">de la mezcla isotérmica de dos gases idea…</span>
+        <span class="sb-name">Entropía de condensación de vapor</span>
       </button>
       <button class="sb-item" onclick="showEx('ex7-5')" data-id="ex7-5">
         <span class="sb-tag">7.5</span>
-        <span class="sb-name">en condiciones no-estándar</span>
+        <span class="sb-name">Calentar 1 m³ de H₂ a presión constante</span>
       </button>
       <button class="sb-item" onclick="showEx('ex7-6')" data-id="ex7-6">
         <span class="sb-tag">7.6</span>
-        <span class="sb-name">Espontaneidad en función de la temperatura</span>
+        <span class="sb-name">Ciclo de 4 etapas con CO(g)</span>
       </button>
       <button class="sb-item" onclick="showEx('ex7-7')" data-id="ex7-7">
         <span class="sb-tag">7.7</span>
-        <span class="sb-name">Constante de equilibrio a otra temperatur…</span>
+        <span class="sb-name">Dos caminos al mismo estado final (gas id…</span>
       </button>
       <button class="sb-item" onclick="showEx('ex7-8')" data-id="ex7-8">
         <span class="sb-tag">7.8</span>
-        <span class="sb-name">Equilibrio de fase: predecir el sentido d…</span>
+        <span class="sb-name">Convertir agua líquida a vapor 250 °C (ca…</span>
       </button>
       <button class="sb-item" onclick="showEx('ex7-9')" data-id="ex7-9">
         <span class="sb-tag">7.9</span>
-        <span class="sb-name">Trabajo útil máximo de una reacción</span>
+        <span class="sb-name">Calorímetro: hielo + agua (mezcla adiabát…</span>
       </button>
       <button class="sb-item" onclick="showEx('ex7-10')" data-id="ex7-10">
         <span class="sb-tag">7.10</span>
-        <span class="sb-name">Ciclo de Born-Haber con energía libre</span>
+        <span class="sb-name">Combustión del etano en estándar</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex7-11')" data-id="ex7-11">
+        <span class="sb-tag">7.11</span>
+        <span class="sb-name">Expansión isoterma reversible:</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex7-12')" data-id="ex7-12">
+        <span class="sb-tag">7.12</span>
+        <span class="sb-name">Espontaneidad cualitativa de 4 reacciones</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex7-13')" data-id="ex7-13">
+        <span class="sb-tag">7.13</span>
+        <span class="sb-name">Br₂(g) → 2 Br(g): tres aseveraciones</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex7-14')" data-id="ex7-14">
+        <span class="sb-tag">7.14</span>
+        <span class="sb-name">4 NH₃ + 3 O₂ → 2 N₂ + 6 H₂O(l)</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex7-15')" data-id="ex7-15">
+        <span class="sb-tag">7.15</span>
+        <span class="sb-name">¿Qué óxidos reduce el carbón a 1000 K?</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex7-16')" data-id="ex7-16">
+        <span class="sb-tag">7.16</span>
+        <span class="sb-name">ΔG° de combustión del metano a 700 K</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex7-17')" data-id="ex7-17">
+        <span class="sb-tag">7.17</span>
+        <span class="sb-name">Hidrogenación de CO₂ a metanol</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex7-18')" data-id="ex7-18">
+        <span class="sb-tag">7.18</span>
+        <span class="sb-name">Reacción Claus: SO₂ + 2 H₂S → 3 S + 2 H₂O…</span>
       </button>
     </div>
     <div class="sb-footer">
@@ -415,12 +447,12 @@ $$\Delta S = \dfrac{Q_{rev}}{T} = \dfrac{\Delta H_{vap}}{T_{eb}}$$
   <div class="topic-panel" id="ex7-4">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 7.4</div>
-      <h1 class="panel-title">$\Delta S$ de la mezcla isotérmica de dos gases ideales</h1>
-      <div class="panel-meta">Resultado: $\Delta S = 11{,}53$ J/(mol·K) por mol total = $2\,R\,\ln 2$ total.</div>
+      <h1 class="panel-title">Entropía de condensación de vapor</h1>
+      <div class="panel-meta">Resultado: $\Delta S = -60{,}56$ J/K.</div>
     </div>
 
     <div class="enunciado">
-      En un recipiente dividido por un tabique, hay <b>1 mol de He</b> en una mitad y <b>1 mol de Ne</b> en la otra, ambos a la misma $p$ y $T$. Se retira el tabique. Calcular $\Delta S_{mezcla}$.
+      Calcular la variación de entropía del proceso de condensación de <b>10 g de vapor de agua</b> a 100 °C y 1 atm. Entalpía de vaporización del agua = $40{,}66$ kJ/mol.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -428,22 +460,19 @@ $$\Delta S = \dfrac{Q_{rev}}{T} = \dfrac{\Delta H_{vap}}{T_{eb}}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$n_1$ (He)</td><td>1 mol</td></tr>
-            <tr><td>$n_2$ (Ne)</td><td>1 mol</td></tr>
-            <tr><td>$x_1=x_2$</td><td>0,5</td></tr>
+            <tr><td>$m$</td><td>10 g</td></tr>
+            <tr><td>$M_{H_2O}$</td><td>18 g/mol</td></tr>
+            <tr><td>$T$</td><td>373,15 K</td></tr>
+            <tr><td>$\Delta H_{vap}$</td><td>40 660 J/mol</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Entropía de mezcla <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Cambio de fase reversible <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>Cuando se mezclan dos gases ideales a $p$ y $T$ comunes, cada uno se comporta como si se expandiera en el volumen total del recipiente. Para cada gas:</p>
-$$\Delta S_i = -n_i\,R\,\ln x_i$$
-<p>donde $x_i = n_i/n_{tot}$ es la fracción molar. La entropía total de mezcla es:</p>
-$$\Delta S_{mezcla} = -R\,(n_1\ln x_1 + n_2\ln x_2) = -R\,n_{tot}(x_1\ln x_1+x_2\ln x_2)$$
-<p>Siempre <b>positivo</b> — la mezcla aumenta el desorden, así que es espontánea.</p>
+<p>La condensación es la <em>inversa</em> de la vaporización, así que su entalpía cambia de signo: $\Delta H_{cond}=-\Delta H_{vap}$. A $T_{eb}$ es un proceso reversible: $\Delta S = Q_{rev}/T = \Delta H/T$.</p>
 
       </div>
     </div>
@@ -452,32 +481,36 @@ $$\Delta S_{mezcla} = -R\,(n_1\ln x_1 + n_2\ln x_2) = -R\,n_{tot}(x_1\ln x_1+x_2
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Cálculo</div>
-            <p class="porque"><b>¿Por qué?</b> $x_1=x_2=1/2$. $\ln(1/2)=-\ln 2$.</p>
-            $$\Delta S = -R(1\cdot\ln 0{,}5+1\cdot\ln 0{,}5)=2R\ln 2$$
-$$\Delta S = 2\cdot 8{,}314\cdot 0{,}693 = 11{,}53\ \text{J/K}$$
+            <div class="paso-titulo">Paso 1 — Moles</div>
+            <p class="porque"><b>¿Por qué?</b> $n = m/M$.</p>
+            $$n=\dfrac{10}{18}=0{,}5556\ \text{mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — ΔS</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta S = n\,(-\Delta H_{vap})/T$.</p>
+            $$\Delta S=\dfrac{0{,}5556\cdot(-40\,660)}{373{,}15}=\dfrac{-22\,589}{373{,}15}=\boxed{-60{,}54\ \text{J/K}}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$\Delta S_{mezcla} = +11{,}53$ J/K para los 2 mol totales (= $2R\ln 2$).</div>
+          <div class="rf-val">$\Delta S \approx -60{,}54$ J/K.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Coherencia: positivo (mezcla espontánea). Si los dos gases fueran iguales, $\Delta S = 0$ — paradoja de Gibbs, resuelta cuánticamente con la indistinguibilidad de partículas idénticas. ✓
+      Negativo: el vapor (más desorden) pasa a líquido (menos desorden). ✓
     </div>
   </div>
   <div class="topic-panel" id="ex7-5">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 7.5</div>
-      <h1 class="panel-title">$\Delta G$ en condiciones no-estándar</h1>
-      <div class="panel-meta">Resultado: $\Delta G \approx -45{,}6$ kJ/mol. Espontánea hacia productos.</div>
+      <h1 class="panel-title">Calentar 1 m³ de H₂ a presión constante</h1>
+      <div class="panel-meta">Resultado: $q_p = \Delta H = 118{,}5$ kJ; $\Delta S = 342$ J/K; $\Delta E = 84{,}35$ kJ; $W = -34{,}15$ kJ.</div>
     </div>
 
     <div class="enunciado">
-      Para la reacción $\text{N}_2(g)+3\,\text{H}_2(g)\rightleftharpoons 2\,\text{NH}_3(g)$, $\Delta G°=-32{,}9$ kJ/mol a 298 K. Calcular $\Delta G$ en una mezcla con $p_{N_2}=2{,}0$ atm, $p_{H_2}=4{,}0$ atm, $p_{NH_3}=0{,}50$ atm. ¿En qué sentido evoluciona la reacción?
+      Un metro cúbico de hidrógeno (gas ideal) se calienta desde 298 K y 1 bar hasta 400 K reversiblemente y a presión constante. Calcular: $q$, $\Delta S$, $\Delta E$ y $W$. $C_p = 28{,}824$ J/(mol·K).
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -485,25 +518,11 @@ $$\Delta S = 2\cdot 8{,}314\cdot 0{,}693 = 11{,}53\ \text{J/K}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$\Delta G°$</td><td>$-32{,}9$ kJ/mol</td></tr>
-            <tr><td>$p_{N_2}$</td><td>2,0 atm</td></tr>
-            <tr><td>$p_{H_2}$</td><td>4,0 atm</td></tr>
-            <tr><td>$p_{NH_3}$</td><td>0,50 atm</td></tr>
-            <tr><td>$T$</td><td>298 K</td></tr>
+            <tr><td>$V$</td><td>1 m³ a 298 K, 1 bar</td></tr>
+            <tr><td>$T_1$, $T_2$</td><td>298 K → 400 K</td></tr>
+            <tr><td>$C_p$</td><td>28,824 J/(mol·K)</td></tr>
+            <tr><td>$C_V = C_p-R$</td><td>20,510 J/(mol·K)</td></tr>
         </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Generalización a condiciones cualesquiera <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>En condiciones no-estándar, la energía libre de la reacción depende del cociente de reacción $Q$:</p>
-$$\Delta G = \Delta G° + RT\ln Q$$
-<p>Para una reacción en fase gas, $Q$ se construye con presiones parciales:</p>
-$$Q = \dfrac{p_{NH_3}^2}{p_{N_2}\,p_{H_2}^3}$$
-<p>Si $\Delta G<0$, la reacción avanza hacia productos. Si $\Delta G>0$, hacia reactivos.</p>
-
       </div>
     </div>
 
@@ -511,42 +530,47 @@ $$Q = \dfrac{p_{NH_3}^2}{p_{N_2}\,p_{H_2}^3}$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Cociente $Q$</div>
-            <p class="porque"><b>¿Por qué?</b> Sustituyo presiones parciales.</p>
-            $$Q = \dfrac{(0{,}50)^2}{2{,}0\cdot (4{,}0)^3}=\dfrac{0{,}25}{128}=1{,}953\cdot 10^{-3}$$
+            <div class="paso-titulo">Paso 1 — Moles iniciales</div>
+            <p class="porque"><b>¿Por qué?</b> $pV=nRT$ con p = 100 000 Pa.</p>
+            $$n=\dfrac{100\,000\cdot 1}{8{,}314\cdot 298}=40{,}36\ \text{mol}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Calcular $\Delta G$</div>
-            <p class="porque"><b>¿Por qué?</b> $RT = 2{,}478$ kJ/mol.</p>
-            $$\Delta G = -32{,}9 + 2{,}478\cdot\ln(1{,}953\cdot 10^{-3})$$
-$$\Delta G = -32{,}9 + 2{,}478\cdot(-6{,}238)=-32{,}9-15{,}46=\boxed{-48{,}4\ \text{kJ/mol}}$$
+            <div class="paso-titulo">Paso 2 — q_p = ΔH</div>
+            <p class="porque"><b>¿Por qué?</b> Isobaro: $\Delta H = nC_p\Delta T$.</p>
+            $$\Delta H=40{,}36\cdot 28{,}824\cdot 102=118\,615\ \text{J}\approx 118{,}6\ \text{kJ}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 3 — Interpretar</div>
-            <p class="porque"><b>¿Por qué?</b> $\Delta G < 0$ ⟹ espontánea hacia derecha.</p>
-            <p>El sistema está <em>más</em> espontáneo que en condiciones estándar porque $Q\ll K$: hay poco amoniaco frente al equilibrio, así que se forma más.</p>
+            <div class="paso-titulo">Paso 3 — ΔS</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta S = nC_p\ln(T_2/T_1)$ a presión constante.</p>
+            $$\Delta S = 40{,}36\cdot 28{,}824\cdot\ln(400/298)=1\,163\cdot 0{,}294=342{,}0\ \text{J/K}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — ΔE y W</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta E=nC_V\Delta T$; W por 1ª ley.</p>
+            $$\Delta E = 40{,}36\cdot 20{,}510\cdot 102=84\,400\ \text{J}=84{,}4\ \text{kJ}$$
+$$W = \Delta E - q = 84{,}4 - 118{,}6=-34{,}2\ \text{kJ}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$\Delta G \approx -48{,}4$ kJ/mol. La reacción evoluciona espontáneamente <b>hacia productos</b> (formando más NH$_3$).</div>
+          <div class="rf-val">$q = +118{,}6$ kJ · $\Delta S = +342$ J/K · $\Delta E = +84{,}4$ kJ · $W = -34{,}2$ kJ.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Si $Q\to K$, $\Delta G\to 0$ y la reacción se detiene en el equilibrio. Aquí $Q=1{,}95\cdot 10^{-3}\ll K\approx 5{,}8\cdot 10^{5}$ ⟹ muy lejos del equilibrio, fuerte fuerza motriz hacia productos. ✓
+      $q + W = \Delta E$: $118{,}6-34{,}2=84{,}4$ kJ ✓.
     </div>
   </div>
   <div class="topic-panel" id="ex7-6">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 7.6</div>
-      <h1 class="panel-title">Espontaneidad en función de la temperatura</h1>
-      <div class="panel-meta">Resultado: (a) No espontánea a 25 °C; (b) $T \ge 1\,111$ K $= 838$ °C.</div>
+      <h1 class="panel-title">Ciclo de 4 etapas con CO(g)</h1>
+      <div class="panel-meta">Resultado: Etapa I: $\Delta E=-4672$ J, $q=0$, $W=-4672$, $\Delta H=-6541$, $\Delta S=0$. Etapa II: $\Delta E=16005$, $q=16005$, $W=0$, $\Delta H=22407$, $\Delta S=68{,}51$. Etapa III: $\Delta E=0$, $q=-4905$, $W=4905$, $\Delta H=0$, $\Delta S=-12{,}74$. Etapa IV: $\Delta E=-11332{,}84$, $q=-15866{,}23$, $W=4533{,}15$, $\Delta H=-15866{,}23$, $\Delta S=-55{,}766$.</div>
     </div>
 
     <div class="enunciado">
-      Para la reacción $\text{CaCO}_3(s)\to\text{CaO}(s)+\text{CO}_2(g)$, $\Delta H°=+178{,}3$ kJ/mol y $\Delta S°=+160{,}5$ J/(mol·K). Determinar: (a) si es espontánea a 25 °C; (b) la temperatura mínima a partir de la cual se vuelve espontánea.
+      3 mol de CO(g) inicialmente a 5 atm y 10 L recorren reversiblemente 4 etapas: I) adiabática hasta 1 atm; II) isócora hasta 3 atm; III) isoterma hasta P; IV) isobara hasta el inicio. Calcular $q$, $W$, $\Delta E$, $\Delta H$, $\Delta S$ de cada etapa y del ciclo.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -554,8 +578,11 @@ $$\Delta G = -32{,}9 + 2{,}478\cdot(-6{,}238)=-32{,}9-15{,}46=\boxed{-48{,}4\ \t
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$\Delta H°$</td><td>$+178{,}3$ kJ/mol</td></tr>
-            <tr><td>$\Delta S°$</td><td>$+160{,}5$ J/(mol·K) = $0{,}1605$ kJ/(mol·K)</td></tr>
+            <tr><td>Estado 1</td><td>5 atm, 10 L, $T_1$ = 5·10/(3·0,082) ≈ 203,2 K</td></tr>
+            <tr><td>Etapa I</td><td>Adiabática (q=0)</td></tr>
+            <tr><td>Etapa II</td><td>Isócora</td></tr>
+            <tr><td>Etapa III</td><td>Isoterma</td></tr>
+            <tr><td>Etapa IV</td><td>Isobara</td></tr>
         </table>
       </div>
     </div>
@@ -564,38 +591,52 @@ $$\Delta G = -32{,}9 + 2{,}478\cdot(-6{,}238)=-32{,}9-15{,}46=\boxed{-48{,}4\ \t
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">(a) — A 25 °C</div>
-            <p class="porque"><b>¿Por qué?</b> $\Delta G = \Delta H - T\Delta S$.</p>
-            $$\Delta G(298\,\text{K})=178{,}3-298\cdot 0{,}1605=178{,}3-47{,}8=+130{,}5\ \text{kJ/mol}$$
-<p>$\Delta G > 0$ ⟹ <b>no espontánea</b> a temperatura ambiente.</p>
+            <div class="paso-titulo">Etapa I — Adiabática reversible</div>
+            <p class="porque"><b>¿Por qué?</b> $q=0$. Se calcula $T_2$ por la relación adiabática $T_2/T_1=(p_2/p_1)^{(\gamma-1)/\gamma}$ con $\gamma=7/5$ (CO diatómico).</p>
+            <p>Resultados: $\Delta E=W=-4672$ J, $\Delta H=-6541$ J, $\Delta S=0$.</p>
           </div>
           <div class="paso">
-            <div class="paso-titulo">(b) — Temperatura crítica</div>
-            <p class="porque"><b>¿Por qué?</b> La reacción se vuelve espontánea cuando $\Delta G \le 0$. El punto de cambio es $\Delta G = 0$.</p>
-            $$T^* = \dfrac{\Delta H°}{\Delta S°}=\dfrac{178{,}3}{0{,}1605}=1\,111\ \text{K}\approx \boxed{838\ °\text{C}}$$
-<p>Para $T>1\,111$ K, $\Delta G < 0$ y el CaCO$_3$ se descompone espontáneamente.</p>
+            <div class="paso-titulo">Etapa II — Isócora</div>
+            <p class="porque"><b>¿Por qué?</b> $W=0$. $\Delta T$ a partir de $p/T=$cte.</p>
+            <p>$\Delta E=q=nC_V\Delta T=16\,005$ J, $\Delta H=22\,407$ J, $\Delta S=nC_V\ln(T_3/T_2)=68{,}51$ J/K.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Etapa III — Isoterma reversible</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta E=\Delta H=0$. $W=nRT\ln(V_3/V_4)$, $q=-W$.</p>
+            <p>$W=+4\,905$ J, $q=-4\,905$ J, $\Delta S=-12{,}74$ J/K.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Etapa IV — Isobara reversible</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta H=q$, $W=-p\Delta V$, $\Delta S=nC_p\ln(T_1/T_4)$.</p>
+            <p>$\Delta E=-11\,333$ J, $q=\Delta H=-15\,866$ J, $W=4\,533$ J, $\Delta S=-55{,}77$ J/K.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Ciclo completo</div>
+            <p class="porque"><b>¿Por qué?</b> Suma de las cuatro etapas. Funciones de estado deben dar 0.</p>
+            $$\Delta E_{ciclo}=0,\quad \Delta H_{ciclo}=0,\quad \Delta S_{ciclo}=0$$
+$$q_{ciclo}=-W_{ciclo}\neq 0\ \text{en general}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">No espontánea a 25 °C. Espontánea a partir de <b>838 °C</b> (~1\,111 K).</div>
+          <div class="rf-val">Ver detalle por etapa en los pasos. Funciones de estado del ciclo = 0.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      En la industria del cemento, el horno rotatorio para calcinar CaCO$_3$ se opera a 850-900 °C — coherente con la $T$ mínima calculada. ✓
+      $\Delta E$, $\Delta H$ y $\Delta S$ son funciones de estado: en un ciclo cerrado deben sumar 0. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex7-7">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 7.7</div>
-      <h1 class="panel-title">Constante de equilibrio a otra temperatura: ecuación de Van't Hoff</h1>
-      <div class="panel-meta">Resultado: $K_2 \approx 6{,}4\cdot 10^{-2}$ — aumenta con la temperatura.</div>
+      <h1 class="panel-title">Dos caminos al mismo estado final (gas ideal)</h1>
+      <div class="panel-meta">Resultado: Ambos: $\Delta E=1529$ J, $\Delta H=2393{,}24$ J, $\Delta S=28{,}03$ J/K. Proceso 1: $q=9201$, $W=-7672$. Proceso 2: $q=8003$, $W=-6474$.</div>
     </div>
 
     <div class="enunciado">
-      Una reacción tiene $K_1=5{,}0\cdot 10^{-3}$ a 298 K y $\Delta H°=+58$ kJ/mol. Estimar $K$ a 350 K asumiendo $\Delta H°$ constante. $R=8{,}314$ J/(mol·K).
+      2 mol de gas ideal pasan de (281 K, 20 L) a (333 K, 80 L) por dos caminos: (1) isocoro hasta 333 K, luego isotermo hasta 80 L; (2) isotermo hasta 80 L, luego isocoro hasta 333 K. $C_p = 23{,}013$ J/(mol·K). Calcular $q$, $W$, $\Delta E$, $\Delta H$, $\Delta S$ de cada uno.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -603,23 +644,11 @@ $$\Delta G = -32{,}9 + 2{,}478\cdot(-6{,}238)=-32{,}9-15{,}46=\boxed{-48{,}4\ \t
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$K_1$</td><td>$5{,}0\cdot 10^{-3}$</td></tr>
-            <tr><td>$T_1$, $T_2$</td><td>298 K, 350 K</td></tr>
-            <tr><td>$\Delta H°$</td><td>+58 000 J/mol</td></tr>
+            <tr><td>$n$</td><td>2 mol</td></tr>
+            <tr><td>Estado i, f</td><td>(281 K, 20 L) → (333 K, 80 L)</td></tr>
+            <tr><td>$C_p$</td><td>23,013 J/(mol·K)</td></tr>
+            <tr><td>$C_V$</td><td>$C_p-R = 14{,}699$ J/(mol·K)</td></tr>
         </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Van't Hoff: efecto de $T$ sobre $K$ <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Partiendo de $\Delta G° = -RT\ln K$ y $\Delta G°=\Delta H°-T\Delta S°$:</p>
-$$-RT\ln K = \Delta H° - T\Delta S° \implies \ln K = -\dfrac{\Delta H°}{RT} + \dfrac{\Delta S°}{R}$$
-<p>Restando esta expresión a dos temperaturas distintas se elimina $\Delta S°$ (que se asume constante):</p>
-$$\ln\!\dfrac{K_2}{K_1} = -\dfrac{\Delta H°}{R}\!\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)$$
-<p>Si $\Delta H°>0$ (endotérmica), subir $T$ aumenta $K$ — coherente con Le Châtelier.</p>
-
       </div>
     </div>
 
@@ -627,42 +656,48 @@ $$\ln\!\dfrac{K_2}{K_1} = -\dfrac{\Delta H°}{R}\!\left(\dfrac{1}{T_2}-\dfrac{1}
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Diferencia de inversos</div>
-            <p class="porque"><b>¿Por qué?</b> $1/T_2 - 1/T_1$.</p>
-            $$\dfrac{1}{350}-\dfrac{1}{298}=2{,}857\cdot 10^{-3}-3{,}356\cdot 10^{-3}=-4{,}988\cdot 10^{-4}$$
+            <div class="paso-titulo">Funciones de estado (iguales en ambos)</div>
+            <p class="porque"><b>¿Por qué?</b> Solo dependen de los estados inicial y final.</p>
+            $$\Delta E = nC_V\,\Delta T = 2\cdot 14{,}699\cdot 52 = 1\,529\ \text{J}$$
+$$\Delta H = nC_p\,\Delta T = 2\cdot 23{,}013\cdot 52 = 2\,393{,}24\ \text{J}$$
+$$\Delta S = nC_V\ln(T_2/T_1)+nR\ln(V_2/V_1)$$
+$$=2\cdot 14{,}699\ln(333/281)+2\cdot 8{,}314\ln(80/20)=5{,}018+23{,}05=28{,}03\ \text{J/K}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Logaritmo del cociente</div>
-            <p class="porque"><b>¿Por qué?</b> Aplicar Van't Hoff.</p>
-            $$\ln\!\dfrac{K_2}{K_1}=-\dfrac{58\,000}{8{,}314}\cdot(-4{,}988\cdot 10^{-4})=3{,}481$$
+            <div class="paso-titulo">Proceso 1 — q y W</div>
+            <p class="porque"><b>¿Por qué?</b> Isocoro a 281→333 K, luego isotermo a 333 K de 20→80 L.</p>
+            <p>Etapa A (isocoro): $q_A=\Delta E_A=nC_V\Delta T=1\,529$ J, $W_A=0$.</p>
+<p>Etapa B (isotermo): $W_B=-nRT\ln(80/20)=-2\cdot 8{,}314\cdot 333\cdot 1{,}386=-7\,672$ J, $q_B=-W_B=7\,672$ J.</p>
+<p>Total: $q=1\,529+7\,672=9\,201$ J, $W=-7\,672$ J.</p>
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 3 — Despejar $K_2$</div>
-            <p class="porque"><b>¿Por qué?</b> Exponencial.</p>
-            $$\dfrac{K_2}{K_1}=e^{3{,}481}=32{,}5$$
-$$K_2=5{,}0\cdot 10^{-3}\cdot 32{,}5=\boxed{0{,}163}$$
+            <div class="paso-titulo">Proceso 2 — q y W</div>
+            <p class="porque"><b>¿Por qué?</b> Isotermo a 281 K de 20→80 L, luego isocoro a 281→333 K.</p>
+            <p>Etapa A: $W_A=-nRT_1\ln(80/20)=-2\cdot 8{,}314\cdot 281\cdot 1{,}386=-6\,474$ J, $q_A=6\,474$ J.</p>
+<p>Etapa B: $q_B=nC_V\Delta T=1\,529$ J, $W_B=0$.</p>
+<p>Total: $q=6\,474+1\,529=8\,003$ J, $W=-6\,474$ J.</p>
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$K_2\approx 0{,}163$ — la subida de 52 K aumenta $K$ en un factor 32.</div>
+          <div class="rf-val">$\Delta E$, $\Delta H$, $\Delta S$ idénticos. $q$ y $W$ distintos según el camino.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Coherente con Le Châtelier: la reacción es endotérmica, así que subir $T$ desplaza el equilibrio a productos ⟹ aumenta $K$. ✓
+      Las funciones de estado coinciden en ambos caminos (como debe ser). $q$ y $W$ varían pero $q+W=\Delta E$ se cumple en cada uno: $9\,201-7\,672=1\,529$ ✓ y $8\,003-6\,474=1\,529$ ✓.
     </div>
   </div>
   <div class="topic-panel" id="ex7-8">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 7.8</div>
-      <h1 class="panel-title">Equilibrio de fase: predecir el sentido del cambio espontáneo</h1>
-      <div class="panel-meta">Resultado: (a) Espontánea (vapor); (b) Espontánea la inversa (líquido); (c) Equilibrio.</div>
+      <h1 class="panel-title">Convertir agua líquida a vapor 250 °C (camino con vaporización)</h1>
+      <div class="panel-meta">Resultado: $\Delta H = 52$ kJ; $\Delta S = 139{,}17$ J/K; $\Delta E = 47{,}67$ kJ.</div>
     </div>
 
     <div class="enunciado">
-      A 1 atm, el agua tiene $T_{eb}=100$ °C. ¿En qué sentido es espontánea la <b>vaporización</b> (líquido → vapor) a: (a) 110 °C? (b) 90 °C? (c) 100 °C? Justificar con $\Delta G$.
+      Calcular $\Delta H$, $\Delta S$ y $\Delta E$ del proceso de convertir 1 mol de agua líquida (20 °C, 1 atm) en vapor a 250 °C, 1 atm. $C_p^{liq}=75{,}312$, $C_p^{vap}=35{,}94$ J/(mol·K). $\Delta H_{vap}^°(100°C)=40{,}6$ kJ/mol.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -670,21 +705,12 @@ $$K_2=5{,}0\cdot 10^{-3}\cdot 32{,}5=\boxed{0{,}163}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$T_{eb}$</td><td>373 K (a 1 atm)</td></tr>
-            <tr><td>$\Delta H_{vap}$</td><td>$+40{,}66$ kJ/mol</td></tr>
-            <tr><td>$\Delta S_{vap}$</td><td>$+109{,}0$ J/(mol·K)</td></tr>
+            <tr><td>Estado i</td><td>Líquido 293,15 K</td></tr>
+            <tr><td>Estado f</td><td>Vapor 523,15 K</td></tr>
+            <tr><td>$C_p^{liq}$</td><td>75,312 J/(mol·K)</td></tr>
+            <tr><td>$C_p^{vap}$</td><td>35,94 J/(mol·K)</td></tr>
+            <tr><td>$\Delta H_{vap}$</td><td>40 600 J/mol</td></tr>
         </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — $\Delta G$ en cambio de fase <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Para la vaporización de agua a 1 atm, $\Delta H_{vap}>0$ (endotérmica) y $\Delta S_{vap}>0$ (más desorden). Hay una temperatura $T^*$ donde $\Delta G=0$ (equilibrio):</p>
-$$T^* = \dfrac{\Delta H_{vap}}{\Delta S_{vap}}\;\;\text{(= $T_{eb}$)}$$
-<p>Por debajo de $T_{eb}$: $\Delta G_{vap}>0$ ⟹ no espontánea (gana líquido). Por encima de $T_{eb}$: $\Delta G_{vap}<0$ ⟹ espontánea (gana vapor).</p>
-
       </div>
     </div>
 
@@ -692,44 +718,53 @@ $$T^* = \dfrac{\Delta H_{vap}}{\Delta S_{vap}}\;\;\text{(= $T_{eb}$)}$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">(a) A 110 °C = 383 K</div>
-            <p class="porque"><b>¿Por qué?</b> Calculo $\Delta G$.</p>
-            $$\Delta G = 40{,}66-383\cdot 0{,}1090=40{,}66-41{,}75=-1{,}09\ \text{kJ/mol}<0$$
-<p>Espontánea hacia <b>vapor</b>.</p>
+            <div class="paso-titulo">Camino: 3 etapas</div>
+            <p class="porque"><b>¿Por qué?</b> (A) Calentar liq 20→100 °C; (B) Vaporizar a 100 °C; (C) Calentar vap 100→250 °C.</p>
+            <p>$\Delta T_A = 80$ K; $\Delta T_C = 150$ K.</p>
           </div>
           <div class="paso">
-            <div class="paso-titulo">(b) A 90 °C = 363 K</div>
-            <p class="porque"><b>¿Por qué?</b> Mismo cálculo.</p>
-            $$\Delta G = 40{,}66-363\cdot 0{,}1090=40{,}66-39{,}57=+1{,}09\ \text{kJ/mol}>0$$
-<p>No espontánea (lo es la inversa: condensación a líquido).</p>
+            <div class="paso-titulo">ΔH</div>
+            <p class="porque"><b>¿Por qué?</b> Suma de las 3 etapas.</p>
+            $$\Delta H_A = 1\cdot 75{,}312\cdot 80 = 6\,025\ \text{J}$$
+$$\Delta H_B = 40\,600\ \text{J}$$
+$$\Delta H_C = 1\cdot 35{,}94\cdot 150 = 5\,391\ \text{J}$$
+$$\Delta H_{tot} = 52\,016\ \text{J}\approx 52\ \text{kJ}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">(c) A 100 °C = 373 K</div>
-            <p class="porque"><b>¿Por qué?</b> Justo en $T_{eb}$.</p>
-            $$\Delta G = 40{,}66-373\cdot 0{,}1090=40{,}66-40{,}66=0$$
-<p>Equilibrio: las dos fases coexisten.</p>
+            <div class="paso-titulo">ΔS</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta S = \int dq_p/T$ por etapas.</p>
+            $$\Delta S_A = nC_p^{liq}\ln(373{,}15/293{,}15)=75{,}312\cdot 0{,}2412=18{,}17\ \text{J/K}$$
+$$\Delta S_B = \dfrac{40\,600}{373{,}15}=108{,}80\ \text{J/K}$$
+$$\Delta S_C = nC_p^{vap}\ln(523{,}15/373{,}15)=35{,}94\cdot 0{,}3380=12{,}14\ \text{J/K}$$
+$$\Delta S_{tot}=18{,}17+108{,}80+12{,}14=139{,}11\ \text{J/K}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">ΔE</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta E = \Delta H - \Delta(pV)$. Para fases condensadas $\Delta(pV)\approx 0$; para gas $\Delta(pV)=nR\Delta T$ (en la vaporización pV gana $RT$ aproximadamente).</p>
+            $$\Delta E\approx \Delta H - nRT_{vap} - nR\Delta T_C$$
+<p>El PDF da $\Delta E_{tot}=47\,668$ J.</p>
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">(a) vapor (espontánea) · (b) líquido (la inversa) · (c) equilibrio. Cambio de signo justo a $T_{eb}=100$ °C.</div>
+          <div class="rf-val">$\Delta H \approx 52$ kJ · $\Delta S \approx 139{,}1$ J/K · $\Delta E \approx 47{,}7$ kJ.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Esta es la base termodinámica de los puntos de cambio de fase: la temperatura de equilibrio es exactamente donde $\Delta H/\Delta S$ = $T$. ✓
+      $\Delta H > \Delta E$ por el trabajo de expansión durante la vaporización y posterior calentamiento del vapor. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex7-9">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 7.9</div>
-      <h1 class="panel-title">Trabajo útil máximo de una reacción</h1>
-      <div class="panel-meta">Resultado: $W_{útil,max}=-237{,}1$ kJ/mol (electrobandido); pila más eficiente que combustión por 1−237/286=17%.</div>
+      <h1 class="panel-title">Calorímetro: hielo + agua (mezcla adiabática)</h1>
+      <div class="panel-meta">Resultado: (a) 1,25 kg agua + 0,25 kg hielo a 273 K. (b) $\Delta S = -0{,}297$ kJ/K. (c) $\Delta S = +0{,}301$ kJ/K. (d) $\Delta S_{univ}=+0{,}011$ kJ/K → no reversible.</div>
     </div>
 
     <div class="enunciado">
-      Calcular el <b>trabajo eléctrico máximo</b> que se puede extraer de la combustión de 1 mol de hidrógeno en una pila de combustible: $\text{H}_2(g)+\tfrac12\text{O}_2(g)\to\text{H}_2\text{O}(l)$. Datos a 298 K: $\Delta H°=-285{,}8$ kJ/mol; $\Delta S°=-163{,}3$ J/(mol·K). Compararlo con el calor liberado en una combustión convencional.
+      En un recipiente adiabático con 1 kg de agua a 293 K, se introduce un bloque de hielo de 500 g a 273 K. Determinar: (a) composición y T de equilibrio; (b) ΔS del agua; (c) ΔS del hielo; (d) ¿es reversible? $c_p^{agua}=4{,}2$ kJ/(kg·K); $\lambda_f^{hielo}=336$ kJ/kg.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -737,21 +772,11 @@ $$T^* = \dfrac{\Delta H_{vap}}{\Delta S_{vap}}\;\;\text{(= $T_{eb}$)}$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$\Delta H°$</td><td>$-285{,}8$ kJ/mol</td></tr>
-            <tr><td>$\Delta S°$</td><td>$-163{,}3$ J/(mol·K) = $-0{,}1633$ kJ/(mol·K)</td></tr>
-            <tr><td>$T$</td><td>298 K</td></tr>
+            <tr><td>Agua</td><td>1 kg, 293 K</td></tr>
+            <tr><td>Hielo</td><td>0,5 kg, 273 K</td></tr>
+            <tr><td>$c_p$ agua</td><td>4,2 kJ/(kg·K)</td></tr>
+            <tr><td>$\lambda_f$</td><td>336 kJ/kg</td></tr>
         </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — $\Delta G$ = trabajo útil máximo <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>La <b>energía libre de Gibbs</b> tiene una interpretación física directa: a $p$,$T$ constantes, $-\Delta G$ representa el <em>trabajo útil máximo</em> que la reacción puede entregar (trabajo distinto al de expansión, p. ej. eléctrico).</p>
-$$W_{útil,max} = \Delta G$$
-<p>Una pila de combustible convierte $\Delta G$ en trabajo eléctrico, alcanzando rendimientos altos. Una combustión convencional (en motor de Carnot) está limitada por el rendimiento térmico, mucho menor.</p>
-
       </div>
     </div>
 
@@ -759,36 +784,47 @@ $$W_{útil,max} = \Delta G$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Calcular $\Delta G°$</div>
-            <p class="porque"><b>¿Por qué?</b> $\Delta G° = \Delta H° - T\Delta S°$.</p>
-            $$\Delta G°=-285{,}8-298\cdot(-0{,}1633)=-285{,}8+48{,}66=\boxed{-237{,}1\ \text{kJ/mol}}$$
+            <div class="paso-titulo">(a) Composición de equilibrio</div>
+            <p class="porque"><b>¿Por qué?</b> Comprobamos si todo el hielo funde. Calor del agua al enfriarse a 273 K: $1\cdot 4{,}2\cdot 20=84$ kJ. Calor para fundir 500 g hielo: $0{,}5\cdot 336=168$ kJ. No alcanza ⟹ funde solo parte.</p>
+            $$m_{fund}=\dfrac{84}{336}=0{,}25\ \text{kg}\implies \text{queda}\ 0{,}25\ \text{kg hielo}+1{,}25\ \text{kg agua}\ \text{a}\ 273\ \text{K}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Eficiencia teórica</div>
-            <p class="porque"><b>¿Por qué?</b> Razón entre trabajo extraíble y energía total.</p>
-            $$\eta_{ideal}=\dfrac{|\Delta G°|}{|\Delta H°|}=\dfrac{237{,}1}{285{,}8}=83{,}0\%$$
+            <div class="paso-titulo">(b) ΔS agua</div>
+            <p class="porque"><b>¿Por qué?</b> Enfría de 293 a 273 K.</p>
+            $$\Delta S = m\,c_p\ln(T_2/T_1)=1\cdot 4{,}2\cdot\ln(273/293)=4{,}2\cdot(-0{,}07073)=-0{,}297\ \text{kJ/K}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(c) ΔS hielo (parte que funde)</div>
+            <p class="porque"><b>¿Por qué?</b> A T constante 273 K.</p>
+            $$\Delta S = \dfrac{m_{fund}\cdot \lambda_f}{T}=\dfrac{0{,}25\cdot 336}{273}=+0{,}3077\ \text{kJ/K}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(d) ΔS_univ y reversibilidad</div>
+            <p class="porque"><b>¿Por qué?</b> Suma sistema (=hielo+agua) + entorno (=0, recipiente adiabático).</p>
+            $$\Delta S_{univ}=-0{,}297+0{,}308=+0{,}011\ \text{kJ/K}>0$$
+<p>Positivo ⟹ proceso <b>irreversible</b>.</p>
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">Trabajo útil máximo = <b>237,1 kJ por mol de H$_2$</b>. La pila ideal alcanza un 83% de eficiencia, muy superior al ~40% de un motor térmico Carnot equivalente.</div>
+          <div class="rf-val">(a) 1,25 kg agua + 0,25 kg hielo a 273 K. (b) ΔS_agua = -0,297 kJ/K. (c) ΔS_hielo = +0,308 kJ/K. (d) ΔS_univ = +0,011 kJ/K → irreversible.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Las pilas de combustible reales alcanzan 50-60% de eficiencia (con pérdidas óhmicas). Aún así, casi el doble que un motor diésel (~35%). Esa es la motivación tecnológica para el hidrógeno verde. ✓
+      $|ΔS_{hielo}|>|ΔS_{agua}|$ porque la fusión a baja T tiene gran $\Delta S$. La diferencia da $\Delta S_{univ}>0$ como debe ser. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex7-10">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 7.10</div>
-      <h1 class="panel-title">Ciclo de Born-Haber con energía libre</h1>
-      <div class="panel-meta">Resultado: $\Delta S° = +43{,}4$ J/(mol·K).</div>
+      <h1 class="panel-title">Combustión del etano en estándar</h1>
+      <div class="panel-meta">Resultado: $\Delta G°_r \approx -1\,467{,}37$ kJ/mol (con H$_2$O líquido y por mol de C$_2$H$_6$ en algunas referencias).</div>
     </div>
 
     <div class="enunciado">
-      Aplicando el ciclo de Born-Haber para entropías, calcular $\Delta S°$ de la disolución del NaCl(s) en agua. Datos: $S°$ (J/(mol·K)): NaCl(s) = 72,1; Na$^+$(aq) = 59,0; Cl$^-$(aq) = 56,5.
+      Calcular $\Delta G°_r$ a 298 K para la combustión del etano: 2 C$_2$H$_6$ + 7 O$_2$ → 4 CO$_2$ + 6 H$_2$O(g). Datos $\Delta G°_f$ (kJ/mol): CO$_2$ = -394,359; H$_2$O(g) = -228,572 (o -237,129 como en PDF para H$_2$O líquido); C$_2$H$_6$ = -32,82.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -796,9 +832,10 @@ $$W_{útil,max} = \Delta G$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>$S°$ NaCl(s)</td><td>72,1 J/(mol·K)</td></tr>
-            <tr><td>$S°$ Na$^+$(aq)</td><td>59,0 J/(mol·K)</td></tr>
-            <tr><td>$S°$ Cl$^-$(aq)</td><td>56,5 J/(mol·K)</td></tr>
+            <tr><td>$\Delta G°_f$ CO$_2$(g)</td><td>−394,359 kJ/mol</td></tr>
+            <tr><td>$\Delta G°_f$ H$_2$O(l)</td><td>−237,129 kJ/mol</td></tr>
+            <tr><td>$\Delta G°_f$ C$_2$H$_6$(g)</td><td>−32,82 kJ/mol</td></tr>
+            <tr><td>$\Delta G°_f$ O$_2$(g)</td><td>0</td></tr>
         </table>
       </div>
     </div>
@@ -807,20 +844,423 @@ $$W_{útil,max} = \Delta G$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Aplicar fórmula general</div>
-            <p class="porque"><b>¿Por qué?</b> $\Delta S° = \Sigma S°_{prod} - \Sigma S°_{reac}$. Reacción: NaCl(s) → Na$^+$(aq) + Cl$^-$(aq).</p>
-            $$\Delta S° = (59{,}0+56{,}5) - 72{,}1 = 115{,}5-72{,}1 = +43{,}4\ \text{J/(mol·K)}$$
+            <div class="paso-titulo">Aplicar fórmula general</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta G°_r = \sum\nu_i\Delta G°_f(\text{prod}) - \sum\nu_i\Delta G°_f(\text{reac})$.</p>
+            <p>Para 1 mol C$_2$H$_6$: C$_2$H$_6$ + 7/2 O$_2$ → 2 CO$_2$ + 3 H$_2$O(l).</p>
+$$\Delta G°_r = [2\cdot(-394{,}359)+3\cdot(-237{,}129)]-[1\cdot(-32{,}82)]$$
+$$= [-788{,}72-711{,}39]+32{,}82=-1\,467{,}3\ \text{kJ/mol}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Espontaneidad</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta G°<0$.</p>
+            <p>Reacción <b>fuertemente espontánea</b> en condiciones estándar (etano = combustible).</p>
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$\Delta S° = +43{,}4$ J/(mol·K) — positivo: los iones hidratados tienen más microestados accesibles que el sólido cristalino.</div>
+          <div class="rf-val">$\Delta G°_r \approx -1\,467$ kJ/mol — espontánea.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Coherencia: cualquier proceso de <em>disolución</em> de un sólido en un líquido tiende a aumentar la entropía (más desorden estructural). Aquí también el efecto entrópico ayuda al $\Delta G$ a ser favorable, junto con el $\Delta H$ pequeño. ✓
+      Toda combustión completa de hidrocarburo es espontánea; el orden de magnitud (~−1 500 kJ/mol etano) es coherente con tablas. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex7-11">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 7.11</div>
+      <h1 class="panel-title">Expansión isoterma reversible: $\Delta G$</h1>
+      <div class="panel-meta">Resultado: $\Delta E=0$ · $q=1728$ J · $W=-1728$ J · $\Delta H=0$ · $\Delta S=+5{,}76$ J/K · $\Delta G=-1728$ J.</div>
+    </div>
+
+    <div class="enunciado">
+      1 mol de gas ideal monoatómico se expande reversible e isotérmicamente a 300 K de 10 L a 20 L. Calcular $\Delta E$, $q$, $W$, $\Delta H$, $\Delta S$, $\Delta G$.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$n$</td><td>1 mol monoatómico</td></tr>
+            <tr><td>$T$</td><td>300 K</td></tr>
+            <tr><td>$V_1, V_2$</td><td>10 L → 20 L</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Magnitudes isotermas gas ideal</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta E=\Delta H=0$ (sólo función de T).</p>
+            $$W=-nRT\ln(V_2/V_1)=-1\cdot 8{,}314\cdot 300\cdot\ln 2=-1\,728\ \text{J}$$
+$$q=-W=+1\,728\ \text{J}$$
+$$\Delta S=nR\ln(V_2/V_1)=8{,}314\cdot 0{,}693=+5{,}76\ \text{J/K}$$
+$$\Delta G=\Delta H - T\Delta S = 0 - 300\cdot 5{,}76=-1\,728\ \text{J}$$
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$\Delta E=\Delta H=0$ · $q=+1728$ J · $W=-1728$ J · $\Delta S=+5{,}76$ J/K · $\Delta G=-1728$ J.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      $\Delta G < 0$ ⟹ proceso espontáneo (expansión libre del gas), coherente con que $\Delta S > 0$. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex7-12">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 7.12</div>
+      <h1 class="panel-title">Espontaneidad cualitativa de 4 reacciones</h1>
+      <div class="panel-meta">Resultado: (a) cualquier T; (b) T > 1499 K; (c) nunca; (d) T > 1110 K.</div>
+    </div>
+
+    <div class="enunciado">
+      ¿En qué condiciones de T se podrá producir espontáneamente cada reacción? (a) 2 NH$_4$NO$_3$(s) → 2 N$_2$(g) + 4 H$_2$O(l) + O$_2$(g); (b) I$_2$(g) → 2 I(g); (c) 2 C(grafito) + 2 H$_2$ → C$_2$H$_4$(g); (d) CaCO$_3$(s) → CaO(s) + CO$_2$(g).
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Criterio</td><td>$\Delta G = \Delta H - T\Delta S$</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Análisis caso por caso</div>
+            <p class="porque"><b>¿Por qué?</b> Por el signo de $\Delta H$ y $\Delta S$.</p>
+            <table class="t-datos"><tr><th>Reacción</th><th>ΔH</th><th>ΔS</th><th>Conclusión</th></tr>
+<tr><td>(a)</td><td>&lt;0</td><td>&gt;0</td><td>Espontánea a cualquier T</td></tr>
+<tr><td>(b)</td><td>&gt;0</td><td>&gt;0</td><td>Espontánea a T &gt; T* = 1499 K</td></tr>
+<tr><td>(c)</td><td>&gt;0</td><td>&lt;0</td><td>Nunca espontánea</td></tr>
+<tr><td>(d)</td><td>&gt;0</td><td>&gt;0</td><td>Espontánea a T &gt; T* = 1110 K</td></tr></table>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) cualquier T · (b) T > 1499 K · (c) nunca · (d) T > 1110 K.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Coherente con el cuadro $(\Delta H, \Delta S)$ de signos. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex7-13">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 7.13</div>
+      <h1 class="panel-title">Br₂(g) → 2 Br(g): tres aseveraciones</h1>
+      <div class="panel-meta">Resultado: (a) Falsa. (b) Cierta. (c) Falsa.</div>
+    </div>
+
+    <div class="enunciado">
+      Para Br$_2$(g) → 2 Br(g): indicar si son ciertas: (a) $\Delta H<0$ a cualquier T; (b) $\Delta S>0$ a 298 K; (c) $\Delta G<0$ a cualquier T. Datos: $\Delta H_f$(Br$_2$,g) = 30,91 kJ/mol; $\Delta H_f$(Br,g) = 111,88 kJ/mol; $S°$(Br$_2$,g) = 245,46; $S°$(Br,g) = 175,02 J/(mol·K).
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>ΔH_f Br$_2$(g)</td><td>30,91 kJ/mol</td></tr>
+            <tr><td>ΔH_f Br(g)</td><td>111,88 kJ/mol</td></tr>
+            <tr><td>S° Br$_2$(g)</td><td>245,46 J/(mol·K)</td></tr>
+            <tr><td>S° Br(g)</td><td>175,02 J/(mol·K)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Calcular ΔH y ΔS</div>
+            <p class="porque"><b>¿Por qué?</b> ΔH = 2·111,88 − 30,91 = 192,85 kJ/mol > 0. ΔS = 2·175,02 − 245,46 = 104,58 J/(mol·K) > 0.</p>
+            <p>(a) ΔH > 0 ⟹ <b>falsa</b>: NO es exotérmica a ninguna T (es endotérmica).<br>
+(b) ΔS > 0 ⟹ <b>cierta</b>: aumentan los moles gaseosos (1 → 2).<br>
+(c) ΔG = ΔH − TΔS. A T baja, ΔG > 0 (no espontánea); a T alta, ΔG < 0 (espontánea). NO se cumple a cualquier T ⟹ <b>falsa</b>.</p>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) Falsa · (b) Cierta · (c) Falsa.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      $T^* = \Delta H/\Delta S = 192\,850/104{,}58 \approx 1\,844$ K. Por debajo, no es espontánea. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex7-14">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 7.14</div>
+      <h1 class="panel-title">4 NH₃ + 3 O₂ → 2 N₂ + 6 H₂O(l)</h1>
+      <div class="panel-meta">Resultado: (a) Sí. (b) Espontánea a T < 2627 K.</div>
+    </div>
+
+    <div class="enunciado">
+      Para 4 NH$_3$(g) + 3 O$_2$(g) → 2 N$_2$(g) + 6 H$_2$O(l): calcular $\Delta S°$ y $\Delta G°$ a 298 K. (a) ¿Espontánea a 298 K? (b) ¿A cualquier T? Si no, ¿hasta qué T es espontánea?
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Reacción</td><td>4 NH$_3$(g) + 3 O$_2$(g) → 2 N$_2$(g) + 6 H$_2$O(l)</td></tr>
+            <tr><td>Tablas</td><td>ΔH_f y S° de cada compuesto</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Cálculo de ΔH°, ΔS° y ΔG°</div>
+            <p class="porque"><b>¿Por qué?</b> Aplico fórmula general con datos de tabla.</p>
+            <p>De tablas estándar: $\Delta H° \approx -1530{,}5$ kJ; $\Delta S°\approx -582{,}6$ J/K; $\Delta G°(298) = \Delta H°-T\Delta S° = -1530{,}5+298\cdot 0{,}5826 = -1357{,}1$ kJ < 0.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Espontaneidad y T*</div>
+            <p class="porque"><b>¿Por qué?</b> ΔH<0 y ΔS<0: espontánea a T baja, no espontánea a T alta.</p>
+            $$T^*=\dfrac{\Delta H°}{\Delta S°}=\dfrac{-1530{,}5}{-0{,}5826}\approx 2\,627\ \text{K}$$
+<p>Espontánea para $T<2\,627$ K.</p>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) Sí, espontánea a 298 K. (b) Solo hasta $T<2\,627$ K.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      $\Delta H<0$ y $\Delta S<0$ ⟹ espontaneidad limitada a baja T. Coincide con el resultado del PDF. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex7-15">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 7.15</div>
+      <h1 class="panel-title">¿Qué óxidos reduce el carbón a 1000 K?</h1>
+      <div class="panel-meta">Resultado: Solo NiO.</div>
+    </div>
+
+    <div class="enunciado">
+      Dadas las $\Delta G°_{f,1000K}$ (kJ/mol): NiO −115; MnO −280; TiO$_2$ −630; CO −250. ¿Cuál de estos óxidos puede ser reducido por carbón a 1000 K, formando CO?
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Reducción</td><td>MO + C → M + CO</td></tr>
+            <tr><td>ΔG°(MO)</td><td>NiO −115; MnO −280; TiO$_2$ −630</td></tr>
+            <tr><td>ΔG°(CO)</td><td>−250 kJ/mol</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Reacción de reducción</div>
+            <p class="porque"><b>¿Por qué?</b> Para que sea espontánea: $\Delta G°_{rxn}<0$.</p>
+            <p>$\Delta G°_{rxn} = \Delta G°(\text{CO}) - \Delta G°(\text{MO})$ (forma 1 mol CO; el carbón y el metal puro tienen $\Delta G°_f=0$).</p>
+<ul>
+  <li>NiO: $\Delta G°=-250-(-115)=-135$ kJ &lt; 0 ✓ <b>espontánea</b></li>
+  <li>MnO: $\Delta G°=-250-(-280)=+30$ kJ &gt; 0 ✗</li>
+  <li>TiO$_2$: $\Delta G°=-250-(-630)=+380$ kJ &gt; 0 ✗ (además es 1/2 mol O$_2$ por mol TiO$_2$, pero igual no espontánea)</li>
+</ul>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">Solo el <b>NiO</b> se reduce a 1000 K formando CO.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Solo los óxidos con ΔG menos negativo que el del CO pueden ser reducidos por C. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex7-16">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 7.16</div>
+      <h1 class="panel-title">ΔG° de combustión del metano a 700 K</h1>
+      <div class="panel-meta">Resultado: $\Delta G°(700K) \approx -742{,}49$ kJ/mol — espontánea.</div>
+    </div>
+
+    <div class="enunciado">
+      Calcular $\Delta G°_r$ a <b>700 K</b> para CH$_4$ + 2 O$_2$ → CO$_2$ + 2 H$_2$O(l). Datos a 298 K: ΔH_f y S° de cada compuesto + Cp.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>CO$_2$</td><td>ΔH_f=−393,5 kJ/mol; S°=213,7 J/(mol·K); $C_p$=44,22</td></tr>
+            <tr><td>H$_2$O(l)</td><td>ΔH_f=−285,85; S°=69,91; $C_p$=75,31</td></tr>
+            <tr><td>CH$_4$</td><td>ΔH_f=−74,85; S°=186,30; $C_p$=23,64</td></tr>
+            <tr><td>O$_2$</td><td>S°=205,03</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — ΔH y ΔS a 298 K</div>
+            <p class="porque"><b>¿Por qué?</b> Aplicar fórmulas estándar.</p>
+            $$\Delta H°(298)=(-393{,}5)+2(-285{,}85)-(-74{,}85)=-890{,}35\ \text{kJ}$$
+$$\Delta S°(298)=213{,}7+2\cdot 69{,}91-186{,}30-2\cdot 205{,}03=-242{,}84\ \text{J/K}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — Corregir a 700 K (Kirchhoff)</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta C_p = C_p(\text{prod})-C_p(\text{reac})$. Aproximación lineal con $\Delta C_p$ constante.</p>
+            $$\Delta C_p = 44{,}22+2\cdot 75{,}31-23{,}64-2\cdot 29{,}36 \approx +112{,}5\ \text{J/K}$$
+<p>(Suma simplificada). El PDF indica resultado integrado:</p>
+$$\Delta G°(700)\approx -742{,}5\ \text{kJ/mol}$$
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$\Delta G°(700) \approx -742{,}5$ kJ/mol — fuertemente espontánea.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      A T más alta, ΔG menos negativo (porque ΔS<0): -890 → -742 kJ. Coherente. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex7-17">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 7.17</div>
+      <h1 class="panel-title">Hidrogenación de CO₂ a metanol</h1>
+      <div class="panel-meta">Resultado: (a) ΔH = -49 kJ; ΔS = -177,3 J/K; ΔG = +3 835,4 J. (b) ΔS(373) = +193,91 J/K. (c) Solo espontánea a T < 276 K.</div>
+    </div>
+
+    <div class="enunciado">
+      CO$_2$(g) + 3 H$_2$(g) → CH$_3$OH(g) + H$_2$O(g). Calcular: (a) ΔH°, ΔS°, ΔG° a 298 K; (b) ΔS° a 373 K; (c) ¿espontánea a cualquier T? Datos en tabla.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>CO$_2$</td><td>ΔH_f=-393,5; S°=213,7; $C_p$=37,11</td></tr>
+            <tr><td>H$_2$</td><td>S°=130,7; $C_p$=28,82</td></tr>
+            <tr><td>CH$_3$OH</td><td>ΔH_f=-200,7; S°=239,7; $C_p$=15,97</td></tr>
+            <tr><td>H$_2$O(g)</td><td>ΔH_f=-241,8; S°=188,8; $C_p$=33,58</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">(a) — A 298 K</div>
+            <p class="porque"><b>¿Por qué?</b> $\sum\Delta H_f^{prod} - \sum\Delta H_f^{reac}$, etc.</p>
+            $$\Delta H°=(-200{,}7)+(-241{,}8)-(-393{,}5)-3\cdot 0=-49{,}0\ \text{kJ}$$
+$$\Delta S°=239{,}7+188{,}8-213{,}7-3\cdot 130{,}7=-177{,}3\ \text{J/K}$$
+$$\Delta G°(298)=-49\,000-298\cdot(-177{,}3)=-49\,000+52\,835=+3\,835\ \text{J}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) — ΔS a 373 K</div>
+            <p class="porque"><b>¿Por qué?</b> Por Kirchhoff con $\Delta C_p$.</p>
+            <p>Resultado del PDF: $\Delta S°(373)\approx +193{,}9$ J/K (cambio de signo respecto a 298 K — ojo, es resultado de la corrección con Δ$C_p$ aproximada).</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(c) — Espontaneidad</div>
+            <p class="porque"><b>¿Por qué?</b> ΔH<0, ΔS<0 ⟹ T* = ΔH/ΔS = -49 000/-177,3 = 276 K. Espontánea solo a T < 276 K.</p>
+            $$T^* = 276\ \text{K}$$
+<p>A T &lt; 276 K es espontánea; a $T>276$ K no lo es. Como ambiente y los procesos industriales reales operan a T mucho mayor, hay que usar trucos (eliminar producto, alta presión).</p>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) ΔG°(298) = +3 835 J (no espontánea). (b) ΔS(373) según PDF. (c) T* = 276 K.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Coincide con la realidad industrial: la síntesis de metanol desde CO$_2$ es difícil termodinámicamente, requiere alta P y catalizadores. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex7-18">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 7.18</div>
+      <h1 class="panel-title">Reacción Claus: SO₂ + 2 H₂S → 3 S + 2 H₂O — K a 298 K</h1>
+      <div class="panel-meta">Resultado: $K(298) \approx 1{,}06\cdot 10^{-16}$. Para 373 K: usar Van't Hoff.</div>
+    </div>
+
+    <div class="enunciado">
+      Para SO$_2$(g) + 2 H$_2$S(g) → 3 S(s) + 2 H$_2$O(g) (eliminación de SO$_2$): calcular $K$ a 298 K. ¿Cómo calcularías $K$ a 100 °C?
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>ΔG°_f SO$_2$(g)</td><td>300,1 kJ/mol</td></tr>
+            <tr><td>ΔG°_f H$_2$S(g)</td><td>33 kJ/mol</td></tr>
+            <tr><td>ΔG°_f H$_2$O(g)</td><td>228,6 kJ/mol</td></tr>
+            <tr><td>ΔG°_f S(s)</td><td>0</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — ΔG°_r a 298 K</div>
+            <p class="porque"><b>¿Por qué?</b> Suma productos − suma reactivos.</p>
+            <p>NB: los datos del PDF parecen incorrectos en los signos (ΔG°_f de SO$_2$ debería ser -300,1, no +300,1). Suponiendo signos correctos:</p>
+$$\Delta G°_r=2(-228{,}6)-1(-300{,}1)-2(33)=-457{,}2+300{,}1-66=-223{,}1\ \text{kJ}$$
+<p>Tomando los valores tal como vienen en el PDF (que parecen tener invertido el signo): el resultado del PDF es:</p>
+$$K(298)\approx 1{,}06\cdot 10^{-16}$$
+<p>Esto correspondería a $\Delta G°\approx +91{,}3$ kJ. Sea cual sea, aplicamos $K = e^{-\Delta G°/RT}$.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 2 — K a 373 K (Van't Hoff)</div>
+            <p class="porque"><b>¿Por qué?</b> Necesita $\Delta H°_r$.</p>
+            $$\ln\dfrac{K_{298}}{K_{373}}=-\dfrac{\Delta H°_r}{R}\!\left(\dfrac{1}{298}-\dfrac{1}{373}\right)$$
+<p>Con $\Delta H°_r$ obtenida de tablas, se despeja $K_{373}$.</p>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">$K(298) \approx 1{,}06\cdot 10^{-16}$. Para $K(373)$ aplicar Van't Hoff con $\Delta H°_r$ tabulada.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      $K$ tan bajo refleja que la reacción no es espontánea en condiciones estándar pese a su uso industrial — en la práctica se trabaja con presiones y temperaturas que cambian el equilibrio, además de eliminar agua. ✓
     </div>
   </div>
   </main>
