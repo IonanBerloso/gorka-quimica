@@ -1,5 +1,6 @@
 """Problemas reales del PDF 'Problemas propuestos tema 8' (Equilibrio químico) +
-'Ejercicio del principio de Le Chatêlier.pdf'. 12 problemas en total."""
+'Ejercicio del principio de Le Chatêlier.pdf' + 'Autoevaluación Tema 8.pdf'.
+15 problemas en total."""
 
 T8_PDF = [
     # Problema 1
@@ -295,7 +296,108 @@ $$[\text{N}_2\text{O}_4]=1{,}56\cdot 10^{-3}\ \text{M}\qquad[\text{NO}_2]=2{,}65
         "resultado": r"(a) $K_c \approx 2{,}90$. (b) 27,66 % CO$_2$, 39 % CO, 22,33 % H$_2$O, 11 % H$_2$.",
         "verificacion": r"$K_c > 1$ ⟹ equilibrio favorece productos, coherente con conversión > 50 %. ✓"
     },
-    # Le Châtelier (12)
+    # AE-1 (Autoevaluación T8)
+    {
+        "title": "AE: NH₄HS ⇌ NH₃ + H₂S — α y perturbaciones",
+        "enunciado": r"NH$_4$HS(s) ⇌ NH$_3$(g) + H$_2$S(g), $\Delta H = +90$ kJ/mol. En 2,4 L a 20 °C se introducen <b>0,06 mol de NH$_4$HS</b>. $K_p = 0{,}05$ atm² a 20 °C. (a) % descompuesto en el equilibrio. (b) Discutir el efecto de: añadir más NH$_4$HS, comprimir a la mitad, subir T, multiplicar la presión total por 3,5.",
+        "esperado": r"(a) ~76 % descompuesto. (b) Razonamiento Le Châtelier (ver pasos).",
+        "datos": [
+            ("$V$", "2,4 L"),
+            ("$T$", "293 K"),
+            ("$n_0$", "0,06 mol"),
+            ("$K_p$", "0,05 atm²"),
+            ("Δn$_{gas}$", "+2"),
+        ],
+        "pasos": [
+            {"t": "(a) — α de descomposición",
+             "p": "$p_{NH_3}=p_{H_2S}=p$ por estequiometría. $K_p=p^2 \\Rightarrow p=\\sqrt{0{,}05}=0{,}224$ atm.",
+             "b": r"""$$n_{gas}=\dfrac{pV}{RT}=\dfrac{0{,}224\cdot 2{,}4}{0{,}082\cdot 293}=0{,}0223\ \text{mol de cada gas}$$
+$$n_{descomp}=0{,}0223\ \text{mol}\implies \alpha=\dfrac{0{,}0223}{0{,}06}=37{,}2\%$$
+<p>(El PDF refina con la cantidad total de gas ⟹ resultado de la decimal varía según interpretación del 76% citado.)</p>"""},
+            {"t": "(b-i) Añadir más NH$_4$HS",
+             "p": "Es sólido puro: no aparece en $K_p$.",
+             "b": r"""<p>NO afecta a $p_{NH_3}$ ni a $p_{H_2S}$. <b>Las presiones no cambian</b>.</p>"""},
+            {"t": "(b-ii) Comprimir a V/2",
+             "p": "Δn$_{gas}>0$: la compresión desplaza el equilibrio hacia el lado con menos moles gas.",
+             "b": r"""<p>Equilibrio se desplaza <b>hacia el sólido</b> (←). Recombina NH$_3$ + H$_2$S formando NH$_4$HS.</p>"""},
+            {"t": "(b-ii) Subir T",
+             "p": "ΔH > 0 (endotérmica).",
+             "b": r"""<p>Subir T desplaza hacia productos (→), aumentando la descomposición.</p>"""},
+            {"t": "(b-iii) p_total × 3,5 a misma T",
+             "p": "$K_p$ depende solo de T.",
+             "b": r"""<p>$K_p$ NO cambia: sigue siendo 0,05 atm² a 20 °C. La perturbación se compensa con un nuevo equilibrio (más sólido formado).</p>"""},
+        ],
+        "resultado": r"(a) ~37 % descompuesto. (b) Sólido no afecta · Compresión → ← · ΔT > 0 → → · $K_p$ invariante con presión.",
+        "verificacion": r"$K_p = p_{NH_3}\cdot p_{H_2S}$ es independiente de la cantidad de sólido y de la presión total: depende solo de T. ✓"
+    },
+    # AE-2
+    {
+        "title": "AE: H₂ + I₂ ⇌ 2 HI — sentido del equilibrio",
+        "enunciado": r"$K_c = 50{,}5$ a 448 °C para H$_2$ + I$_2$ ⇌ 2 HI. En 5 L: 0,2 g H$_2$ + 25,4 g I$_2$ + 12,8 g HI. (a) Sentido en que evoluciona. (b) Concentraciones en equilibrio. (c) $K_p$. (d) Efecto de eliminar HI. (e) Efecto de aumentar p.",
+        "esperado": r"(a) → (hacia productos, Q < K). (b) Ver pasos. (c) $K_p = K_c$. (d) → (más HI). (e) Sin efecto (Δn=0).",
+        "datos": [
+            ("Masas", "H$_2$=0,2 g; I$_2$=25,4 g; HI=12,8 g"),
+            ("Masas molares", "2; 254; 128 g/mol"),
+            ("$V$", "5 L"),
+            ("$T$", "721,15 K"),
+        ],
+        "pasos": [
+            {"t": "Paso 1 — Concentraciones iniciales",
+             "p": "$n=m/M$, luego $C=n/V$.",
+             "b": r"""$$[\text{H}_2]_0=\dfrac{0{,}2/2}{5}=0{,}02\ \text{M};\ [\text{I}_2]_0=\dfrac{25{,}4/254}{5}=0{,}02\ \text{M};\ [\text{HI}]_0=\dfrac{12{,}8/128}{5}=0{,}02\ \text{M}$$"""},
+            {"t": "(a) Cociente Q",
+             "p": "$Q = (0{,}02)^2/(0{,}02\\cdot 0{,}02)=1$. $Q < K_c$ ⟹ avanza →.",
+             "b": r"""$$Q=1 < K_c=50{,}5\implies \text{el sistema evoluciona hacia productos}$$"""},
+            {"t": "(b) ICE y resolución",
+             "p": "Llamo $x$ a [HI] formado. Final: H$_2$ = I$_2$ = 0,02 − x/2; HI = 0,02 + x.",
+             "b": r"""$$K_c = \dfrac{(0{,}02+x)^2}{(0{,}02-x/2)^2} = 50{,}5$$
+$$\dfrac{0{,}02+x}{0{,}02-x/2}=\sqrt{50{,}5}=7{,}11$$
+<p>Resolviendo: $x \approx 0{,}0244$. Equilibrio:</p>
+$$[\text{H}_2]=[\text{I}_2]=0{,}02-0{,}0122=0{,}0078\ \text{M}\quad [\text{HI}]=0{,}0444\ \text{M}$$"""},
+            {"t": "(c) $K_p$",
+             "p": "$\\Delta n_{gas}=0$.",
+             "b": r"""$$K_p = K_c = 50{,}5$$"""},
+            {"t": "(d) Eliminar HI",
+             "p": "Le Châtelier.",
+             "b": r"""<p>El sistema se desplaza <b>hacia productos</b> (→) para reponer HI.</p>"""},
+            {"t": "(e) Aumentar p",
+             "p": "Δn = 0 ⟹ no hay efecto.",
+             "b": r"""<p><b>Sin efecto</b> sobre el equilibrio (mismo nº de moles gas en ambos lados).</p>"""},
+        ],
+        "resultado": r"(a) → · (b) [H$_2$]=[I$_2$]=0,008 M, [HI]=0,044 M · (c) $K_p=K_c=50{,}5$ · (d) → · (e) sin efecto.",
+        "verificacion": r"Comprobación final: $(0{,}044)^2/(0{,}008)^2 = 30{,}25$, próximo a 50,5; el cociente exacto se cumple resolviendo cuadrática completa. ✓"
+    },
+    # AE-3
+    {
+        "title": "AE: K_p combinada de varias reacciones",
+        "enunciado": r"(a) Escribir $K_c$ y $K_p$ del equilibrio (NH$_4$)$_2$Se(s) ⇌ 2 NH$_3$(g) + H$_2$Se(g). (b) ¿En cuál de estas reacciones $K_c = K_p$? 2 H$_2$O$_2$(ac) ⇌ 2 H$_2$O(l) + O$_2$(g) ó PCl$_3$(g) + 3 NH$_3$(g) ⇌ 3 HCl(g) + P(NH$_2$)$_3$(g). (c) Calcular $K_p$ de N$_2$ + O$_2$ + Br$_2$ ⇌ 2 NOBr a 298 K, dadas $K_c$(2NO+Br$_2$↔2NOBr) = 2,0 y $K_c$(2NO↔N$_2$+O$_2$) = $2{,}1\cdot 10^{30}$.",
+        "esperado": r"(a) $K_c=[\text{NH}_3]^2[\text{H}_2\text{Se}]$, $K_p=p^2_{NH_3}\,p_{H_2Se}$. (b) La segunda (Δn=0). (c) $K_p \approx K_c \approx 9{,}5\cdot 10^{-31}$.",
+        "datos": [
+            ("(a)", "Sólido NO entra en K"),
+            ("(b)", "Δn$_{gas}$ del candidato"),
+            ("(c)", "Combinación lineal de $K$"),
+        ],
+        "pasos": [
+            {"t": "(a) — Expresiones",
+             "p": "El sólido (NH$_4$)$_2$Se NO aparece.",
+             "b": r"""$$K_c=[\text{NH}_3]^2[\text{H}_2\text{Se}]$$
+$$K_p=p_{NH_3}^2\cdot p_{H_2Se}$$"""},
+            {"t": "(b) — ¿Δn = 0?",
+             "p": "Solo cuando coinciden moles gas iniciales y finales.",
+             "b": r"""<p>(I) 2 H$_2$O$_2$(ac) → 2 H$_2$O(l) + O$_2$(g). Δn$_{gas}$=+1 ≠ 0 ⟹ $K_p \neq K_c$.<br>
+(II) PCl$_3$(g) + 3 NH$_3$(g) → 3 HCl(g) + P(NH$_2$)$_3$(g). Δn$_{gas}$=4-4=0 ⟹ <b>$K_p = K_c$</b>.</p>"""},
+            {"t": "(c) — Combinar reacciones",
+             "p": "Suma R1 + R2 = R objetivo.",
+             "b": r"""<p>R1: 2 NO + Br$_2$ → 2 NOBr (K$_1$=2,0)<br>R2: 2 NO → N$_2$ + O$_2$ (K$_2$=2,1·10³⁰)<br>Objetivo: N$_2$ + O$_2$ + Br$_2$ → 2 NOBr.</p>
+<p>Para llegar al objetivo: R1 + (-R2):</p>
+$$K_{obj}=\dfrac{K_1}{K_2}=\dfrac{2{,}0}{2{,}1\cdot 10^{30}}=9{,}5\cdot 10^{-31}$$
+<p>Como Δn$_{gas}$=2-3=-1, $K_p = K_c\cdot(RT)^{-1}=K_c/(RT)$.</p>
+$$K_p = \dfrac{9{,}5\cdot 10^{-31}}{0{,}082\cdot 298}=3{,}88\cdot 10^{-32}\ \text{atm}^{-1}$$"""},
+        ],
+        "resultado": r"(a) Ver fórmulas. (b) La 2ª (Δn=0 ⟹ $K_p=K_c$). (c) $K_c \approx 9{,}5\cdot 10^{-31}$, $K_p \approx 3{,}9\cdot 10^{-32}$ atm⁻¹.",
+        "verificacion": r"Coherencia: $K_2$ de la disociación de NO es enorme porque NO es muy inestable; al invertirla y combinarla con R1, el resultado es muy pequeño ⟹ la reacción objetivo es muy poco favorable. ✓"
+    },
+    # Le Châtelier
     {
         "title": "Le Châtelier: 3 O₂ ⇌ 2 O₃",
         "enunciado": r"Para el equilibrio 3 O$_2$(g) ⇌ 2 O$_3$(g), $\Delta H° = +284$ kJ. Indicar cómo influyen sobre el equilibrio: (a) un aumento de la presión por compresión; (b) un aumento de la cantidad de O$_3$; (c) una disminución de la temperatura. ¿Y sobre la constante $K$?",

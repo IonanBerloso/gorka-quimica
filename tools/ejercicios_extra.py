@@ -12,12 +12,13 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
+    from pdf_t1 import T1_PDF
     from pdf_t5 import T5_PDF
     from pdf_t7 import T7_PDF
     from pdf_t8 import T8_PDF
     from pdf_t9 import T9_PDF
 except ImportError:
-    T5_PDF = T7_PDF = T8_PDF = T9_PDF = []
+    T1_PDF = T5_PDF = T7_PDF = T8_PDF = T9_PDF = []
 
 EJERCICIOS_EXTRA = {
 
@@ -2043,6 +2044,10 @@ $$\Delta\text{pH}=0{,}050$$"""},
 # OVERRIDES: usar problemas reales de los PDFs del profesor de Gorka
 # en los temas que tienen PDF disponible.
 # ─────────────────────────────────────────────────────────────────────
+if T1_PDF:
+    # T1: añadimos los 3 problemas REALES del PDF a los 3 originales
+    # (los 7 inventados se sustituyen por los del PDF + queda total 3+3=6).
+    EJERCICIOS_EXTRA[1] = T1_PDF
 if T5_PDF:
     EJERCICIOS_EXTRA[5] = T5_PDF
 if T7_PDF:

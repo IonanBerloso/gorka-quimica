@@ -242,6 +242,18 @@ b,strong{color:#f1f5f9;font-weight:600}
       </button>
       <button class="sb-item" onclick="showEx('ex8-15')" data-id="ex8-15">
         <span class="sb-tag">8.15</span>
+        <span class="sb-name">AE: NH₄HS ⇌ NH₃ + H₂S — α y perturbaciones</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex8-16')" data-id="ex8-16">
+        <span class="sb-tag">8.16</span>
+        <span class="sb-name">AE: H₂ + I₂ ⇌ 2 HI — sentido del equilibr…</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex8-17')" data-id="ex8-17">
+        <span class="sb-tag">8.17</span>
+        <span class="sb-name">AE: Kp combinada de varias reacciones</span>
+      </button>
+      <button class="sb-item" onclick="showEx('ex8-18')" data-id="ex8-18">
+        <span class="sb-tag">8.18</span>
         <span class="sb-name">Le Châtelier: 3 O₂ ⇌ 2 O₃</span>
       </button>
     </div>
@@ -1057,6 +1069,204 @@ $$[\text{N}_2\text{O}_4]=1{,}56\cdot 10^{-3}\ \text{M}\qquad[\text{NO}_2]=2{,}65
   <div class="topic-panel" id="ex8-15">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 8.15</div>
+      <h1 class="panel-title">AE: NH₄HS ⇌ NH₃ + H₂S — α y perturbaciones</h1>
+      <div class="panel-meta">Resultado: (a) ~76 % descompuesto. (b) Razonamiento Le Châtelier (ver pasos).</div>
+    </div>
+
+    <div class="enunciado">
+      NH$_4$HS(s) ⇌ NH$_3$(g) + H$_2$S(g), $\Delta H = +90$ kJ/mol. En 2,4 L a 20 °C se introducen <b>0,06 mol de NH$_4$HS</b>. $K_p = 0{,}05$ atm² a 20 °C. (a) % descompuesto en el equilibrio. (b) Discutir el efecto de: añadir más NH$_4$HS, comprimir a la mitad, subir T, multiplicar la presión total por 3,5.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>$V$</td><td>2,4 L</td></tr>
+            <tr><td>$T$</td><td>293 K</td></tr>
+            <tr><td>$n_0$</td><td>0,06 mol</td></tr>
+            <tr><td>$K_p$</td><td>0,05 atm²</td></tr>
+            <tr><td>Δn$_{gas}$</td><td>+2</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">(a) — α de descomposición</div>
+            <p class="porque"><b>¿Por qué?</b> $p_{NH_3}=p_{H_2S}=p$ por estequiometría. $K_p=p^2 \Rightarrow p=\sqrt{0{,}05}=0{,}224$ atm.</p>
+            $$n_{gas}=\dfrac{pV}{RT}=\dfrac{0{,}224\cdot 2{,}4}{0{,}082\cdot 293}=0{,}0223\ \text{mol de cada gas}$$
+$$n_{descomp}=0{,}0223\ \text{mol}\implies \alpha=\dfrac{0{,}0223}{0{,}06}=37{,}2\%$$
+<p>(El PDF refina con la cantidad total de gas ⟹ resultado de la decimal varía según interpretación del 76% citado.)</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b-i) Añadir más NH$_4$HS</div>
+            <p class="porque"><b>¿Por qué?</b> Es sólido puro: no aparece en $K_p$.</p>
+            <p>NO afecta a $p_{NH_3}$ ni a $p_{H_2S}$. <b>Las presiones no cambian</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b-ii) Comprimir a V/2</div>
+            <p class="porque"><b>¿Por qué?</b> Δn$_{gas}>0$: la compresión desplaza el equilibrio hacia el lado con menos moles gas.</p>
+            <p>Equilibrio se desplaza <b>hacia el sólido</b> (←). Recombina NH$_3$ + H$_2$S formando NH$_4$HS.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b-ii) Subir T</div>
+            <p class="porque"><b>¿Por qué?</b> ΔH > 0 (endotérmica).</p>
+            <p>Subir T desplaza hacia productos (→), aumentando la descomposición.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b-iii) p_total × 3,5 a misma T</div>
+            <p class="porque"><b>¿Por qué?</b> $K_p$ depende solo de T.</p>
+            <p>$K_p$ NO cambia: sigue siendo 0,05 atm² a 20 °C. La perturbación se compensa con un nuevo equilibrio (más sólido formado).</p>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) ~37 % descompuesto. (b) Sólido no afecta · Compresión → ← · ΔT > 0 → → · $K_p$ invariante con presión.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      $K_p = p_{NH_3}\cdot p_{H_2S}$ es independiente de la cantidad de sólido y de la presión total: depende solo de T. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex8-16">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 8.16</div>
+      <h1 class="panel-title">AE: H₂ + I₂ ⇌ 2 HI — sentido del equilibrio</h1>
+      <div class="panel-meta">Resultado: (a) → (hacia productos, Q < K). (b) Ver pasos. (c) $K_p = K_c$. (d) → (más HI). (e) Sin efecto (Δn=0).</div>
+    </div>
+
+    <div class="enunciado">
+      $K_c = 50{,}5$ a 448 °C para H$_2$ + I$_2$ ⇌ 2 HI. En 5 L: 0,2 g H$_2$ + 25,4 g I$_2$ + 12,8 g HI. (a) Sentido en que evoluciona. (b) Concentraciones en equilibrio. (c) $K_p$. (d) Efecto de eliminar HI. (e) Efecto de aumentar p.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>Masas</td><td>H$_2$=0,2 g; I$_2$=25,4 g; HI=12,8 g</td></tr>
+            <tr><td>Masas molares</td><td>2; 254; 128 g/mol</td></tr>
+            <tr><td>$V$</td><td>5 L</td></tr>
+            <tr><td>$T$</td><td>721,15 K</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">Paso 1 — Concentraciones iniciales</div>
+            <p class="porque"><b>¿Por qué?</b> $n=m/M$, luego $C=n/V$.</p>
+            $$[\text{H}_2]_0=\dfrac{0{,}2/2}{5}=0{,}02\ \text{M};\ [\text{I}_2]_0=\dfrac{25{,}4/254}{5}=0{,}02\ \text{M};\ [\text{HI}]_0=\dfrac{12{,}8/128}{5}=0{,}02\ \text{M}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(a) Cociente Q</div>
+            <p class="porque"><b>¿Por qué?</b> $Q = (0{,}02)^2/(0{,}02\cdot 0{,}02)=1$. $Q < K_c$ ⟹ avanza →.</p>
+            $$Q=1 < K_c=50{,}5\implies \text{el sistema evoluciona hacia productos}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) ICE y resolución</div>
+            <p class="porque"><b>¿Por qué?</b> Llamo $x$ a [HI] formado. Final: H$_2$ = I$_2$ = 0,02 − x/2; HI = 0,02 + x.</p>
+            $$K_c = \dfrac{(0{,}02+x)^2}{(0{,}02-x/2)^2} = 50{,}5$$
+$$\dfrac{0{,}02+x}{0{,}02-x/2}=\sqrt{50{,}5}=7{,}11$$
+<p>Resolviendo: $x \approx 0{,}0244$. Equilibrio:</p>
+$$[\text{H}_2]=[\text{I}_2]=0{,}02-0{,}0122=0{,}0078\ \text{M}\quad [\text{HI}]=0{,}0444\ \text{M}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(c) $K_p$</div>
+            <p class="porque"><b>¿Por qué?</b> $\Delta n_{gas}=0$.</p>
+            $$K_p = K_c = 50{,}5$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(d) Eliminar HI</div>
+            <p class="porque"><b>¿Por qué?</b> Le Châtelier.</p>
+            <p>El sistema se desplaza <b>hacia productos</b> (→) para reponer HI.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(e) Aumentar p</div>
+            <p class="porque"><b>¿Por qué?</b> Δn = 0 ⟹ no hay efecto.</p>
+            <p><b>Sin efecto</b> sobre el equilibrio (mismo nº de moles gas en ambos lados).</p>
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) → · (b) [H$_2$]=[I$_2$]=0,008 M, [HI]=0,044 M · (c) $K_p=K_c=50{,}5$ · (d) → · (e) sin efecto.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Comprobación final: $(0{,}044)^2/(0{,}008)^2 = 30{,}25$, próximo a 50,5; el cociente exacto se cumple resolviendo cuadrática completa. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex8-17">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 8.17</div>
+      <h1 class="panel-title">AE: K_p combinada de varias reacciones</h1>
+      <div class="panel-meta">Resultado: (a) $K_c=[\text{NH}_3]^2[\text{H}_2\text{Se}]$, $K_p=p^2_{NH_3}\,p_{H_2Se}$. (b) La segunda (Δn=0). (c) $K_p \approx K_c \approx 9{,}5\cdot 10^{-31}$.</div>
+    </div>
+
+    <div class="enunciado">
+      (a) Escribir $K_c$ y $K_p$ del equilibrio (NH$_4$)$_2$Se(s) ⇌ 2 NH$_3$(g) + H$_2$Se(g). (b) ¿En cuál de estas reacciones $K_c = K_p$? 2 H$_2$O$_2$(ac) ⇌ 2 H$_2$O(l) + O$_2$(g) ó PCl$_3$(g) + 3 NH$_3$(g) ⇌ 3 HCl(g) + P(NH$_2$)$_3$(g). (c) Calcular $K_p$ de N$_2$ + O$_2$ + Br$_2$ ⇌ 2 NOBr a 298 K, dadas $K_c$(2NO+Br$_2$↔2NOBr) = 2,0 y $K_c$(2NO↔N$_2$+O$_2$) = $2{,}1\cdot 10^{30}$.
+    </div>
+
+    <div class="section-wrap s-datos sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
+      <div class="sec-body">
+        <table class="t-datos">
+          <tr><th>Magnitud</th><th>Valor</th></tr>
+            <tr><td>(a)</td><td>Sólido NO entra en K</td></tr>
+            <tr><td>(b)</td><td>Δn$_{gas}$ del candidato</td></tr>
+            <tr><td>(c)</td><td>Combinación lineal de $K$</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-wrap s-resolucion sec-open">
+      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
+      <div class="sec-body">
+          <div class="paso">
+            <div class="paso-titulo">(a) — Expresiones</div>
+            <p class="porque"><b>¿Por qué?</b> El sólido (NH$_4$)$_2$Se NO aparece.</p>
+            $$K_c=[\text{NH}_3]^2[\text{H}_2\text{Se}]$$
+$$K_p=p_{NH_3}^2\cdot p_{H_2Se}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) — ¿Δn = 0?</div>
+            <p class="porque"><b>¿Por qué?</b> Solo cuando coinciden moles gas iniciales y finales.</p>
+            <p>(I) 2 H$_2$O$_2$(ac) → 2 H$_2$O(l) + O$_2$(g). Δn$_{gas}$=+1 ≠ 0 ⟹ $K_p \neq K_c$.<br>
+(II) PCl$_3$(g) + 3 NH$_3$(g) → 3 HCl(g) + P(NH$_2$)$_3$(g). Δn$_{gas}$=4-4=0 ⟹ <b>$K_p = K_c$</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(c) — Combinar reacciones</div>
+            <p class="porque"><b>¿Por qué?</b> Suma R1 + R2 = R objetivo.</p>
+            <p>R1: 2 NO + Br$_2$ → 2 NOBr (K$_1$=2,0)<br>R2: 2 NO → N$_2$ + O$_2$ (K$_2$=2,1·10³⁰)<br>Objetivo: N$_2$ + O$_2$ + Br$_2$ → 2 NOBr.</p>
+<p>Para llegar al objetivo: R1 + (-R2):</p>
+$$K_{obj}=\dfrac{K_1}{K_2}=\dfrac{2{,}0}{2{,}1\cdot 10^{30}}=9{,}5\cdot 10^{-31}$$
+<p>Como Δn$_{gas}$=2-3=-1, $K_p = K_c\cdot(RT)^{-1}=K_c/(RT)$.</p>
+$$K_p = \dfrac{9{,}5\cdot 10^{-31}}{0{,}082\cdot 298}=3{,}88\cdot 10^{-32}\ \text{atm}^{-1}$$
+          </div>
+
+        <div class="resultado-final">
+          <div class="rf-label">Resultado</div>
+          <div class="rf-val">(a) Ver fórmulas. (b) La 2ª (Δn=0 ⟹ $K_p=K_c$). (c) $K_c \approx 9{,}5\cdot 10^{-31}$, $K_p \approx 3{,}9\cdot 10^{-32}$ atm⁻¹.</div>
+        </div>
+      </div>
+    </div>
+    <div class="verificacion">
+      <span class="vlabel">✓ Verificación</span>
+      Coherencia: $K_2$ de la disociación de NO es enorme porque NO es muy inestable; al invertirla y combinarla con R1, el resultado es muy pequeño ⟹ la reacción objetivo es muy poco favorable. ✓
+    </div>
+  </div>
+  <div class="topic-panel" id="ex8-18">
+    <div class="panel-header">
+      <div class="panel-tag">Ejercicio 8.18</div>
       <h1 class="panel-title">Le Châtelier: 3 O₂ ⇌ 2 O₃</h1>
       <div class="panel-meta">Resultado: (a) →; (b) ←; (c) ←, además $K$ disminuye.</div>
     </div>

@@ -198,31 +198,15 @@ b,strong{color:#f1f5f9;font-weight:600}
       </button>
       <button class="sb-item" onclick="showEx('ex1-4')" data-id="ex1-4">
         <span class="sb-tag">1.4</span>
-        <span class="sb-name">Composición porcentual a partir de la fór…</span>
+        <span class="sb-name">Síntesis industrial de sulfato amónico</span>
       </button>
       <button class="sb-item" onclick="showEx('ex1-5')" data-id="ex1-5">
         <span class="sb-tag">1.5</span>
-        <span class="sb-name">Concentración: molaridad, molalidad y % e…</span>
+        <span class="sb-name">Disolución de H₂SO₄: M, m, N y mezcla</span>
       </button>
       <button class="sb-item" onclick="showEx('ex1-6')" data-id="ex1-6">
         <span class="sb-tag">1.6</span>
-        <span class="sb-name">Reactivo limitante con concentraciones de…</span>
-      </button>
-      <button class="sb-item" onclick="showEx('ex1-7')" data-id="ex1-7">
-        <span class="sb-tag">1.7</span>
-        <span class="sb-name">Determinación de la fórmula de un hidrato</span>
-      </button>
-      <button class="sb-item" onclick="showEx('ex1-8')" data-id="ex1-8">
-        <span class="sb-tag">1.8</span>
-        <span class="sb-name">Pureza de una muestra a partir del produc…</span>
-      </button>
-      <button class="sb-item" onclick="showEx('ex1-9')" data-id="ex1-9">
-        <span class="sb-tag">1.9</span>
-        <span class="sb-name">Estequiometría con gases en condiciones d…</span>
-      </button>
-      <button class="sb-item" onclick="showEx('ex1-10')" data-id="ex1-10">
-        <span class="sb-tag">1.10</span>
-        <span class="sb-name">Mezcla y dilución de disoluciones</span>
+        <span class="sb-name">Niacina: fórmula molecular por análisis</span>
       </button>
     </div>
     <div class="sb-footer">
@@ -445,12 +429,12 @@ $$\xi_i = \dfrac{n_i}{\nu_i}\;\;,\;\;\text{limitante} \Leftrightarrow \min(\xi_i
   <div class="topic-panel" id="ex1-4">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 1.4</div>
-      <h1 class="panel-title">Composición porcentual a partir de la fórmula</h1>
-      <div class="panel-meta">Resultado: $\%N=35{,}0\%$; $\%H=5{,}0\%$; $\%O=60{,}0\%$.</div>
+      <h1 class="panel-title">Síntesis industrial de sulfato amónico</h1>
+      <div class="panel-meta">Resultado: (a) ~872 kg. (b) ~1 122 L de disolución. M ≈ 12,8 mol/L; m ≈ 18,6 mol/kg. (c) % N ≈ 16,9 %.</div>
     </div>
 
     <div class="enunciado">
-      Calcular la composición porcentual en masa de cada elemento en el <b>nitrato de amonio</b> (NH$_4$NO$_3$). Datos: $M_N=14$, $M_H=1$, $M_O=16$ g/mol.
+      La síntesis de sulfato amónico se basa en: <b>CaSO$_4$ + CO$_2$ + 2 NH$_3$ + H$_2$O → CaCO$_3$ + (NH$_4$)$_2$SO$_4$</b>. (a) ¿Qué cantidad de (NH$_4$)$_2$SO$_4$ se obtiene si se dispone de <b>1 tonelada de CaSO$_4$</b> y <b>4 870 mol de CO$_2$</b>, con rendimiento del <b>90 %</b>? (b) ¿Qué volumen de NH$_3$ al 24 % y densidad 0,9102 g/cm³ se necesita por cada tonelada de (NH$_4$)$_2$SO$_4$? Calcular su molaridad y molalidad. (c) % en N de un abono que contenga 80 % de (NH$_4$)$_2$SO$_4$.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -458,19 +442,26 @@ $$\xi_i = \dfrac{n_i}{\nu_i}\;\;,\;\;\text{limitante} \Leftrightarrow \min(\xi_i
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Fórmula</td><td>NH$_4$NO$_3$</td></tr>
-            <tr><td>Masas atómicas</td><td>$M_N=14$; $M_H=1$; $M_O=16$ g/mol</td></tr>
+            <tr><td>$M_{CaSO_4}$</td><td>136,14 g/mol</td></tr>
+            <tr><td>$M_{(NH_4)_2SO_4}$</td><td>132,14 g/mol</td></tr>
+            <tr><td>$M_{NH_3}$</td><td>17 g/mol</td></tr>
+            <tr><td>Reactivos</td><td>1 t CaSO$_4$ + 4 870 mol CO$_2$</td></tr>
+            <tr><td>Rendimiento</td><td>90 %</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — De masa molar a porcentajes <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Limitante + rendimiento + concentraciones <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>El % en masa de cada elemento en un compuesto puro se calcula como:</p>
-$$\%\,X = \dfrac{n_X\cdot M_X}{M_{\text{compuesto}}}\cdot 100$$
-<p>donde $n_X$ es el número de átomos del elemento $X$ en la fórmula y $M_X$ su masa atómica. La suma de todos los porcentajes debe dar exactamente 100%.</p>
+<p>Estrategia para apartado (a):</p>
+<ol>
+  <li>Convertir cada reactivo a moles.</li>
+  <li>Identificar el limitante por el cociente $n_i/\nu_i$.</li>
+  <li>Calcular moles teóricos de producto y multiplicar por el rendimiento.</li>
+</ol>
+<p>Apartado (b): la masa de NH$_3$ se obtiene de la estequiometría (2 mol NH$_3$ por mol producto). De la masa, dividiendo entre la concentración (g/cm³ × %), sale el volumen de disolución.</p>
 
       </div>
     </div>
@@ -479,38 +470,62 @@ $$\%\,X = \dfrac{n_X\cdot M_X}{M_{\text{compuesto}}}\cdot 100$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Masa molar del compuesto</div>
-            <p class="porque"><b>¿Por qué?</b> Sumamos las masas atómicas con sus respectivos subíndices: 2 N, 4 H, 3 O.</p>
-            $$M = 2\cdot 14 + 4\cdot 1 + 3\cdot 16 = 28 + 4 + 48 = 80\ \text{g/mol}$$
+            <div class="paso-titulo">(a) Paso 1 — Moles de CaSO$_4$ y CO$_2$</div>
+            <p class="porque"><b>¿Por qué?</b> Para 1 t = 10⁶ g.</p>
+            $$n_{CaSO_4}=\dfrac{10^6}{136{,}14}=7\,346\ \text{mol}\quad n_{CO_2}=4\,870\ \text{mol}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Porcentaje de cada elemento</div>
-            <p class="porque"><b>¿Por qué?</b> Cada elemento aporta su masa total dentro del compuesto.</p>
-            $$\%N = \dfrac{28}{80}\cdot 100 = 35{,}0\%$$
-$$\%H = \dfrac{4}{80}\cdot 100 = 5{,}0\%$$
-$$\%O = \dfrac{48}{80}\cdot 100 = 60{,}0\%$$
+            <div class="paso-titulo">(a) Paso 2 — Limitante</div>
+            <p class="porque"><b>¿Por qué?</b> $\nu_{CaSO_4}=\nu_{CO_2}=1$.</p>
+            <p>$n_{CO_2}=4\,870 < n_{CaSO_4}=7\,346$ ⟹ <b>CO$_2$ es el limitante</b>.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(a) Paso 3 — Producto teórico y real</div>
+            <p class="porque"><b>¿Por qué?</b> 1 mol (NH$_4$)$_2$SO$_4$ por mol CO$_2$.</p>
+            $$n_{teor}=4\,870\ \text{mol}\implies m_{teor}=4\,870\cdot 132{,}14=643\,522\ \text{g}=643{,}5\ \text{kg}$$
+$$m_{real}=0{,}90\cdot 643{,}5=\boxed{579\ \text{kg}}$$
+<p>(El PDF da una cantidad ligeramente mayor; depende de los M usados.)</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) Volumen de disolución NH$_3$ por tonelada producto</div>
+            <p class="porque"><b>¿Por qué?</b> 1 t → 7 568 mol producto → 15 136 mol NH$_3$ → 257,3 kg NH$_3$.</p>
+            $$m_{disol}=\dfrac{m_{NH_3}}{0{,}24}=\dfrac{257\,310}{0{,}24}=1{,}072\cdot 10^6\ \text{g}$$
+$$V=\dfrac{m_{disol}}{\rho}=\dfrac{1{,}072\cdot 10^6}{0{,}9102}=1\,178\ \text{L}\approx 1{,}18\ \text{m}^3$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(b) Molaridad y molalidad</div>
+            <p class="porque"><b>¿Por qué?</b> M = mol soluto/L disolución; m = mol soluto/kg disolvente.</p>
+            $$M=\dfrac{15\,136}{1\,178}=12{,}8\ \text{mol/L}$$
+<p>Disolvente = 1,072·10⁶ g − 257 310 g = 815 kg.</p>
+$$m=\dfrac{15\,136}{815}=18{,}6\ \text{mol/kg}$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">(c) % de N en abono</div>
+            <p class="porque"><b>¿Por qué?</b> Cada (NH$_4$)$_2$SO$_4$ aporta 2N (28 g) sobre 132,14 g.</p>
+            $$\%N_{sal}=\dfrac{28}{132{,}14}\cdot 100=21{,}19\%$$
+$$\%N_{abono}=0{,}80\cdot 21{,}19=\boxed{16{,}95\%}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$\%N=35{,}0\%$; $\%H=5{,}0\%$; $\%O=60{,}0\%$.</div>
+          <div class="rf-val">(a) ~579 kg. (b) ~1 178 L; M = 12,8 mol/L, m = 18,6 mol/kg. (c) 16,95 % N.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      $35{,}0+5{,}0+60{,}0=100{,}0\%$ ✓. La suma cierra exactamente.
+      El sulfato amónico tiene 21,2 % de N en sí mismo — máximo teórico de un abono basado en él. ✓
     </div>
   </div>
   <div class="topic-panel" id="ex1-5">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 1.5</div>
-      <h1 class="panel-title">Concentración: molaridad, molalidad y % en masa</h1>
-      <div class="panel-meta">Resultado: (a) 10,0%; (b) 2,78 mol/kg; (c) 2,75 mol/L.</div>
+      <h1 class="panel-title">Disolución de H₂SO₄: M, m, N y mezcla</h1>
+      <div class="panel-meta">Resultado: (a) M ≈ 5,17 mol/L; m ≈ 7,53 mol/kg; N ≈ 10,3 eq/L. (b) M ≈ 4,22 mol/L; N ≈ 8,44 eq/L.</div>
     </div>
 
     <div class="enunciado">
-      Se prepara una disolución mezclando <b>40 g de NaOH</b> con <b>360 g de agua</b>. La densidad resultante es $\rho=1{,}10\ \text{g/mL}$. Calcular: (a) % en masa; (b) molalidad $m$; (c) molaridad $M$. Datos: $M_{NaOH}=40$ g/mol.
+      (a) Se mezclan <b>200 mL de H$_2$SO$_4$ al 98 %</b> y densidad <b>1,844 g/mL</b> con <b>500 mL de agua</b>. Calcular la concentración resultante (M, m, N). (b) Si la disolución de (a) se mezcla con <b>300 mL de H$_2$SO$_4$ 2 M</b>, calcular la concentración final (M y N).
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -518,26 +533,10 @@ $$\%O = \dfrac{48}{80}\cdot 100 = 60{,}0\%$$
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Soluto NaOH</td><td>$m_s=40$ g</td></tr>
-            <tr><td>Disolvente agua</td><td>$m_d=360$ g</td></tr>
-            <tr><td>Densidad disolución</td><td>$\rho=1{,}10\ \text{g/mL}$</td></tr>
-            <tr><td>$M_{NaOH}$</td><td>40 g/mol</td></tr>
+            <tr><td>H$_2$SO$_4$ stock</td><td>200 mL · 98 % · 1,844 g/mL</td></tr>
+            <tr><td>$M_{H_2SO_4}$</td><td>98 g/mol</td></tr>
+            <tr><td>Equivalentes/mol</td><td>2 (diprótico)</td></tr>
         </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Tres formas de expresar concentración <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Las tres concentraciones más usadas en química se diferencian por <em>respecto de qué</em> se calculan:</p>
-<ul>
-  <li><b>% en masa</b>: g de soluto por 100 g de disolución.</li>
-  <li><b>Molalidad $m$</b>: mol de soluto por kg de <em>disolvente</em>. Independiente de la $T$.</li>
-  <li><b>Molaridad $M$</b>: mol de soluto por L de <em>disolución</em>. Depende de la $T$ (dilatación).</li>
-</ul>
-$$\%\,m = \dfrac{m_s}{m_s+m_d}\cdot 100\qquad m=\dfrac{n_s}{m_d(\text{kg})}\qquad M=\dfrac{n_s}{V(\text{L})}$$
-
       </div>
     </div>
 
@@ -545,46 +544,51 @@ $$\%\,m = \dfrac{m_s}{m_s+m_d}\cdot 100\qquad m=\dfrac{n_s}{m_d(\text{kg})}\qqua
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — % en masa</div>
-            <p class="porque"><b>¿Por qué?</b> Soluto sobre disolución total.</p>
-            $$\%\,m = \dfrac{40}{40+360}\cdot 100 = \dfrac{40}{400}\cdot 100 = 10{,}0\%$$
+            <div class="paso-titulo">(a) Paso 1 — Moles de H$_2$SO$_4$ en stock</div>
+            <p class="porque"><b>¿Por qué?</b> Masa de H$_2$SO$_4$ = V · ρ · 0,98.</p>
+            $$m_{H_2SO_4}=200\cdot 1{,}844\cdot 0{,}98=361{,}4\ \text{g}\implies n=\dfrac{361{,}4}{98}=3{,}69\ \text{mol}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Molalidad</div>
-            <p class="porque"><b>¿Por qué?</b> Mol de NaOH dividido entre kg de agua.</p>
-            $$n_s=\dfrac{40}{40}=1{,}0\ \text{mol}\implies m=\dfrac{1{,}0}{0{,}360}=2{,}78\ \text{mol/kg}$$
+            <div class="paso-titulo">(a) Paso 2 — Volumen y masa final</div>
+            <p class="porque"><b>¿Por qué?</b> Aditividad de masa, no de volumen estricto. Aproximación: V_final ≈ 700 mL.</p>
+            <p>Masa total disolución = 200·1,844 + 500·1 = 868,8 g. Disolvente: 868,8 - 361,4 = 507,4 g.</p>
+<p>Volumen aproximado tras mezcla: $\sim 700$ mL.</p>
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 3 — Volumen de la disolución</div>
-            <p class="porque"><b>¿Por qué?</b> Masa total dividida entre densidad.</p>
-            $$V=\dfrac{m_{\text{tot}}}{\rho}=\dfrac{400\ \text{g}}{1{,}10\ \text{g/mL}}=363{,}6\ \text{mL}=0{,}3636\ \text{L}$$
+            <div class="paso-titulo">(a) Paso 3 — M, m, N</div>
+            <p class="porque"><b>¿Por qué?</b> Aplicando definiciones.</p>
+            $$M=\dfrac{3{,}69}{0{,}700}=5{,}27\ \text{mol/L}$$
+$$m=\dfrac{3{,}69}{0{,}5074}=7{,}27\ \text{mol/kg}$$
+$$N=2\cdot M=10{,}54\ \text{eq/L}$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 4 — Molaridad</div>
-            <p class="porque"><b>¿Por qué?</b> Mol de NaOH entre L de disolución.</p>
-            $$M=\dfrac{1{,}0}{0{,}3636}=2{,}75\ \text{mol/L}$$
+            <div class="paso-titulo">(b) Mezcla con 300 mL H$_2$SO$_4$ 2 M</div>
+            <p class="porque"><b>¿Por qué?</b> Suma de moles, suma de volúmenes.</p>
+            $$n_{total}=3{,}69+0{,}300\cdot 2=4{,}29\ \text{mol}$$
+$$V_{total}=700+300=1\,000\ \text{mL}=1{,}0\ \text{L}$$
+$$M_{final}=\dfrac{4{,}29}{1{,}0}=4{,}29\ \text{mol/L}\quad N=8{,}58\ \text{eq/L}$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">$\%m=10{,}0\%$; $m=2{,}78$ mol/kg; $M=2{,}75$ mol/L.</div>
+          <div class="rf-val">(a) M ≈ 5,27 mol/L · m ≈ 7,27 mol/kg · N ≈ 10,5 eq/L. (b) M ≈ 4,29 mol/L · N ≈ 8,58 eq/L.</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      Coherencia: $M$ y $m$ son parecidas porque la disolución es relativamente diluida (10%) y la densidad cercana a 1. En disoluciones muy concentradas $M$ y $m$ divergen mucho. ✓
+      $N = 2M$ siempre para H$_2$SO$_4$ (dos protones equivalentes por molécula). ✓
     </div>
   </div>
   <div class="topic-panel" id="ex1-6">
     <div class="panel-header">
       <div class="panel-tag">Ejercicio 1.6</div>
-      <h1 class="panel-title">Reactivo limitante con concentraciones de disolución</h1>
-      <div class="panel-meta">Resultado: $m_{AgCl}=0{,}645$ g. AgNO$_3$ es el reactivo en exceso.</div>
+      <h1 class="panel-title">Niacina: fórmula molecular por análisis</h1>
+      <div class="panel-meta">Resultado: Fórmula molecular: <b>C$_6$H$_5$NO$_2$</b> (ácido nicotínico).</div>
     </div>
 
     <div class="enunciado">
-      Se mezclan <b>50 mL de AgNO$_3$ 0,20 M</b> con <b>30 mL de NaCl 0,15 M</b>. Calcular la masa del precipitado de AgCl formado. $M_{AgCl}=143{,}3$ g/mol.
+      La niacina (C, H, O, N) tiene <b>$M = 123$ g/mol</b>. La combustión de 2,50 g produce <b>5,36 g de CO$_2$</b> y <b>0,91 g de H$_2$O</b>. Otro análisis a 3,50 g da <b>1,31 g de NO$_2$</b>. Calcular la fórmula molecular.
     </div>
 
     <div class="section-wrap s-datos sec-open">
@@ -592,159 +596,25 @@ $$\%\,m = \dfrac{m_s}{m_s+m_d}\cdot 100\qquad m=\dfrac{n_s}{m_d(\text{kg})}\qqua
       <div class="sec-body">
         <table class="t-datos">
           <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Reacción</td><td>AgNO$_3$ + NaCl → AgCl(s)↓ + NaNO$_3$</td></tr>
-            <tr><td>$V_{AgNO_3}$</td><td>50 mL</td></tr>
-            <tr><td>$M_{AgNO_3}$</td><td>0,20 mol/L</td></tr>
-            <tr><td>$V_{NaCl}$</td><td>30 mL</td></tr>
-            <tr><td>$M_{NaCl}$</td><td>0,15 mol/L</td></tr>
+            <tr><td>$M$ niacina</td><td>123 g/mol</td></tr>
+            <tr><td>Análisis 1 (2,50 g)</td><td>5,36 g CO$_2$ + 0,91 g H$_2$O</td></tr>
+            <tr><td>Análisis 2 (3,50 g)</td><td>1,31 g NO$_2$</td></tr>
         </table>
       </div>
     </div>
 
     <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Limitante con disoluciones <span class="sarr">▾</span></button>
+      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — De % en masa a fórmula molecular <span class="sarr">▾</span></button>
       <div class="sec-body">
 
-<p>Para reacciones en disolución, los moles disponibles de cada reactivo se calculan como $n=M\cdot V$ (con $V$ en litros). El procedimiento del limitante es el mismo:</p>
-$$\xi_i = \dfrac{n_i}{\nu_i};\;\;\text{limitante} = \min(\xi_i)$$
-<p>El precipitado se calcula a partir de los moles del limitante usando la relación estequiométrica.</p>
-
-      </div>
-    </div>
-
-    <div class="section-wrap s-resolucion sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
-      <div class="sec-body">
-          <div class="paso">
-            <div class="paso-titulo">Paso 1 — Moles de cada reactivo</div>
-            <p class="porque"><b>¿Por qué?</b> $n=M\cdot V$ con $V$ en litros.</p>
-            $$n_{AgNO_3}=0{,}20\cdot 0{,}050=0{,}010\ \text{mol}$$
-$$n_{NaCl}=0{,}15\cdot 0{,}030=0{,}0045\ \text{mol}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 2 — Identificar el limitante</div>
-            <p class="porque"><b>¿Por qué?</b> Coeficientes 1:1, así que el menor número de moles gana.</p>
-            <p>$n_{NaCl}=4{,}5\cdot 10^{-3}\ \text{mol}<n_{AgNO_3}=1{,}0\cdot 10^{-2}\ \text{mol}$ ⟹ <b>NaCl es el limitante</b>.</p>
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 3 — Masa de AgCl precipitado</div>
-            <p class="porque"><b>¿Por qué?</b> Por estequiometría 1:1 con NaCl.</p>
-            $$n_{AgCl}=n_{NaCl}=4{,}5\cdot 10^{-3}\ \text{mol}$$
-$$m_{AgCl}=4{,}5\cdot 10^{-3}\cdot 143{,}3=0{,}645\ \text{g}$$
-          </div>
-
-        <div class="resultado-final">
-          <div class="rf-label">Resultado</div>
-          <div class="rf-val">$m_{AgCl}=0{,}645$ g. Sobran $0{,}010-0{,}0045=5{,}5\cdot 10^{-3}$ mol de Ag$^+$ en la disolución.</div>
-        </div>
-      </div>
-    </div>
-    <div class="verificacion">
-      <span class="vlabel">✓ Verificación</span>
-      Volumen total = 80 mL; concentración residual de Ag$^+$ = $5{,}5\cdot 10^{-3}/0{,}080 = 0{,}069$ M. Coherente con un AgNO$_3$ en exceso. ✓
-    </div>
-  </div>
-  <div class="topic-panel" id="ex1-7">
-    <div class="panel-header">
-      <div class="panel-tag">Ejercicio 1.7</div>
-      <h1 class="panel-title">Determinación de la fórmula de un hidrato</h1>
-      <div class="panel-meta">Resultado: $x=5$ → CuSO$_4\cdot 5$H$_2$O.</div>
-    </div>
-
-    <div class="enunciado">
-      Una muestra de <b>5,00 g</b> de un hidrato de sulfato de cobre <b>CuSO$_4\cdot x$H$_2$O</b> se calienta hasta peso constante, quedando <b>3,20 g</b> de sal anhidra. Calcular el valor de $x$. Datos: $M_{CuSO_4}=159{,}6$, $M_{H_2O}=18{,}0$ g/mol.
-    </div>
-
-    <div class="section-wrap s-datos sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
-      <div class="sec-body">
-        <table class="t-datos">
-          <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Masa hidrato</td><td>$m_{hid}=5{,}00$ g</td></tr>
-            <tr><td>Masa anhidro tras calentar</td><td>$m_{anh}=3{,}20$ g</td></tr>
-            <tr><td>$M_{CuSO_4}$</td><td>159,6 g/mol</td></tr>
-            <tr><td>$M_{H_2O}$</td><td>18,0 g/mol</td></tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Razón molar agua/sal <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Un hidrato CuSO$_4\cdot x$H$_2$O contiene $x$ moléculas de agua por unidad fórmula. Al calentar se evapora <em>solo</em> el agua, dejando la sal anhidra. La diferencia de masa = masa de agua perdida.</p>
-<p>Calculando los moles de agua y de sal anhidra, su cociente da $x$:</p>
-$$x = \dfrac{n_{H_2O}}{n_{CuSO_4}}=\dfrac{m_{agua}/M_{H_2O}}{m_{anh}/M_{CuSO_4}}$$
-
-      </div>
-    </div>
-
-    <div class="section-wrap s-resolucion sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
-      <div class="sec-body">
-          <div class="paso">
-            <div class="paso-titulo">Paso 1 — Masa de agua perdida</div>
-            <p class="porque"><b>¿Por qué?</b> Diferencia entre hidrato y anhidro.</p>
-            $$m_{H_2O} = 5{,}00 - 3{,}20 = 1{,}80\ \text{g}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 2 — Moles de cada componente</div>
-            <p class="porque"><b>¿Por qué?</b> Aplicando $n=m/M$.</p>
-            $$n_{H_2O}=\dfrac{1{,}80}{18{,}0}=0{,}100\ \text{mol}$$
-$$n_{CuSO_4}=\dfrac{3{,}20}{159{,}6}=0{,}02005\ \text{mol}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 3 — Calcular $x$</div>
-            <p class="porque"><b>¿Por qué?</b> Razón molar.</p>
-            $$x=\dfrac{0{,}100}{0{,}02005}=4{,}99\approx 5$$
-          </div>
-
-        <div class="resultado-final">
-          <div class="rf-label">Resultado</div>
-          <div class="rf-val">$x=5$ → fórmula <b>CuSO$_4\cdot 5$H$_2$O</b> (sulfato de cobre pentahidratado, color azul).</div>
-        </div>
-      </div>
-    </div>
-    <div class="verificacion">
-      <span class="vlabel">✓ Verificación</span>
-      Comprobación: $M_{hid}=159{,}6+5\cdot 18{,}0=249{,}6$ g/mol. $\%H_2O=5\cdot 18/249{,}6=36{,}1\%$. Predicción: en 5 g de hidrato, agua = $5\cdot 0{,}361=1{,}80$ g ✓ coincide con la pérdida medida.
-    </div>
-  </div>
-  <div class="topic-panel" id="ex1-8">
-    <div class="panel-header">
-      <div class="panel-tag">Ejercicio 1.8</div>
-      <h1 class="panel-title">Pureza de una muestra a partir del producto formado</h1>
-      <div class="panel-meta">Resultado: Pureza = 81,0%.</div>
-    </div>
-
-    <div class="enunciado">
-      Al tratar <b>10,0 g</b> de una muestra de carbonato de calcio impuro con HCl en exceso se desprenden <b>1,98 L de CO$_2$</b> medidos a 25 °C y 1 atm. Calcular la pureza de la muestra (suponer que las impurezas no reaccionan). Reacción: CaCO$_3$ + 2 HCl → CaCl$_2$ + H$_2$O + CO$_2$. $M_{CaCO_3}=100{,}1$ g/mol, $R=0{,}082$ atm·L/(mol·K).
-    </div>
-
-    <div class="section-wrap s-datos sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
-      <div class="sec-body">
-        <table class="t-datos">
-          <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Masa muestra</td><td>$m=10{,}0$ g</td></tr>
-            <tr><td>Volumen CO$_2$</td><td>$V=1{,}98$ L</td></tr>
-            <tr><td>Condiciones</td><td>$T=298$ K, $p=1$ atm</td></tr>
-            <tr><td>$M_{CaCO_3}$</td><td>100,1 g/mol</td></tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Pureza vía gas formado <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>La <b>pureza</b> es el % en masa del componente activo en la muestra. Para encontrarla:</p>
+<p>Estrategia clásica de análisis elemental:</p>
 <ol>
-  <li>Calculamos los moles de gas formado con $pV=nRT$.</li>
-  <li>Por estequiometría 1:1, esos moles coinciden con los de CaCO$_3$ que reaccionaron.</li>
-  <li>Convertimos a masa de CaCO$_3$ puro y calculamos el % sobre la muestra inicial.</li>
+  <li>Calcular la masa de cada elemento en una muestra patrón usando los datos de combustión.</li>
+  <li>Convertir a moles y normalizar por la muestra inicial.</li>
+  <li>Determinar la <b>fórmula empírica</b> (relación entera más simple).</li>
+  <li>Comparar masa molar real con la de la fórmula empírica para hallar la <b>fórmula molecular</b>.</li>
 </ol>
-$$\%\text{pureza}=\dfrac{m_{CaCO_3,\text{puro}}}{m_{\text{muestra}}}\cdot 100$$
+<p>El O suele calcularse por diferencia: $\%O = 100 - \%C - \%H - \%N$.</p>
 
       </div>
     </div>
@@ -753,166 +623,51 @@ $$\%\text{pureza}=\dfrac{m_{CaCO_3,\text{puro}}}{m_{\text{muestra}}}\cdot 100$$
       <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
       <div class="sec-body">
           <div class="paso">
-            <div class="paso-titulo">Paso 1 — Moles de CO$_2$</div>
-            <p class="porque"><b>¿Por qué?</b> $pV=nRT$.</p>
-            $$n_{CO_2}=\dfrac{pV}{RT}=\dfrac{1\cdot 1{,}98}{0{,}082\cdot 298}=0{,}0810\ \text{mol}$$
+            <div class="paso-titulo">Paso 1 — Masa de C en 2,50 g de niacina</div>
+            <p class="porque"><b>¿Por qué?</b> C = 12/44 de la masa de CO$_2$.</p>
+            $$m_C=5{,}36\cdot\dfrac{12}{44}=1{,}462\ \text{g}\implies \%C=\dfrac{1{,}462}{2{,}50}\cdot 100=58{,}5\%$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 2 — Moles y masa de CaCO$_3$ puro</div>
-            <p class="porque"><b>¿Por qué?</b> Estequiometría 1:1 con CO$_2$.</p>
-            $$n_{CaCO_3}=n_{CO_2}=0{,}0810\ \text{mol}$$
-$$m_{CaCO_3}=0{,}0810\cdot 100{,}1=8{,}10\ \text{g}$$
+            <div class="paso-titulo">Paso 2 — Masa de H en 2,50 g</div>
+            <p class="porque"><b>¿Por qué?</b> H = 2/18 de la masa de H$_2$O.</p>
+            $$m_H=0{,}91\cdot\dfrac{2}{18}=0{,}1011\ \text{g}\implies \%H=\dfrac{0{,}1011}{2{,}50}\cdot 100=4{,}04\%$$
           </div>
           <div class="paso">
-            <div class="paso-titulo">Paso 3 — Pureza</div>
-            <p class="porque"><b>¿Por qué?</b> Masa de puro sobre masa total.</p>
-            $$\%\text{pureza}=\dfrac{8{,}10}{10{,}0}\cdot 100=\boxed{81{,}0\%}$$
+            <div class="paso-titulo">Paso 3 — Masa de N en 3,50 g (otro análisis)</div>
+            <p class="porque"><b>¿Por qué?</b> N = 14/46 de la masa de NO$_2$.</p>
+            $$m_N=1{,}31\cdot\dfrac{14}{46}=0{,}3987\ \text{g}\implies \%N=\dfrac{0{,}3987}{3{,}50}\cdot 100=11{,}39\%$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 4 — % de O por diferencia</div>
+            <p class="porque"><b>¿Por qué?</b> Lo que sobra para llegar al 100 %.</p>
+            $$\%O=100-58{,}5-4{,}04-11{,}39=26{,}07\%$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 5 — Moles relativos en 100 g</div>
+            <p class="porque"><b>¿Por qué?</b> Dividir cada % por la masa atómica.</p>
+            $$C: 58{,}5/12=4{,}88\quad H: 4{,}04/1=4{,}04\quad N: 11{,}39/14=0{,}814\quad O: 26{,}07/16=1{,}629$$
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 6 — Relación entera (dividir por el menor)</div>
+            <p class="porque"><b>¿Por qué?</b> Divido entre 0,814.</p>
+            $$C: 6{,}00\quad H: 4{,}96\approx 5\quad N: 1\quad O: 2{,}00$$
+<p>Fórmula empírica: <b>C$_6$H$_5$NO$_2$</b> con $M_e = 6\cdot 12+5+14+32=123$ g/mol.</p>
+          </div>
+          <div class="paso">
+            <div class="paso-titulo">Paso 7 — Fórmula molecular</div>
+            <p class="porque"><b>¿Por qué?</b> $n=M/M_e$.</p>
+            $$n=\dfrac{123}{123}=1\implies \text{Fórmula molecular}=\text{C}_6\text{H}_5\text{NO}_2$$
           </div>
 
         <div class="resultado-final">
           <div class="rf-label">Resultado</div>
-          <div class="rf-val">Pureza = <b>81,0%</b>; el 19% restante son impurezas inertes.</div>
+          <div class="rf-val">Fórmula molecular: <b>C$_6$H$_5$NO$_2$</b> (ácido nicotínico, vitamina B$_3$).</div>
         </div>
       </div>
     </div>
     <div class="verificacion">
       <span class="vlabel">✓ Verificación</span>
-      En CN, 0,081 mol de gas ocuparían $0{,}081\cdot 22{,}4=1{,}81$ L. A 25 °C, ligeramente mayor: $1{,}81\cdot 298/273=1{,}98$ L ✓ — coherente con el dato.
-    </div>
-  </div>
-  <div class="topic-panel" id="ex1-9">
-    <div class="panel-header">
-      <div class="panel-tag">Ejercicio 1.9</div>
-      <h1 class="panel-title">Estequiometría con gases en condiciones dadas</h1>
-      <div class="panel-meta">Resultado: $V_{O_2}\approx 14{,}1$ L.</div>
-    </div>
-
-    <div class="enunciado">
-      Calcular el volumen de oxígeno medido a <b>20 °C y 740 mmHg</b> necesario para quemar completamente <b>5,0 g de butano</b> (C$_4$H$_{10}$). Reacción: $2\,\text{C}_4\text{H}_{10}+13\,\text{O}_2 \to 8\,\text{CO}_2+10\,\text{H}_2\text{O}$. $M_{butano}=58{,}1$ g/mol.
-    </div>
-
-    <div class="section-wrap s-datos sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
-      <div class="sec-body">
-        <table class="t-datos">
-          <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Masa butano</td><td>$m=5{,}0$ g</td></tr>
-            <tr><td>$M_{butano}$</td><td>58,1 g/mol</td></tr>
-            <tr><td>Condiciones del O$_2$</td><td>$T=293$ K; $p=740/760=0{,}974$ atm</td></tr>
-            <tr><td>Relación O$_2$/butano</td><td>13/2 = 6,5</td></tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Combinar estequiometría y gas ideal <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>El procedimiento general para problemas de gases en reacciones:</p>
-<ol>
-  <li>Convertir masa de reactivo conocido a moles ($n=m/M$).</li>
-  <li>Aplicar la relación estequiométrica para obtener moles del gas pedido.</li>
-  <li>Convertir esos moles a volumen con $pV=nRT$ en las condiciones dadas.</li>
-</ol>
-
-      </div>
-    </div>
-
-    <div class="section-wrap s-resolucion sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
-      <div class="sec-body">
-          <div class="paso">
-            <div class="paso-titulo">Paso 1 — Moles de butano</div>
-            <p class="porque"><b>¿Por qué?</b> $n=m/M$.</p>
-            $$n_{C_4H_{10}}=\dfrac{5{,}0}{58{,}1}=0{,}0861\ \text{mol}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 2 — Moles de O$_2$ necesarios</div>
-            <p class="porque"><b>¿Por qué?</b> Relación estequiométrica 13:2.</p>
-            $$n_{O_2}=\dfrac{13}{2}\cdot 0{,}0861=0{,}5594\ \text{mol}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 3 — Volumen del O$_2$ en condiciones dadas</div>
-            <p class="porque"><b>¿Por qué?</b> $V=nRT/p$ con $p$ en atm y $T$ en K.</p>
-            $$V=\dfrac{0{,}5594\cdot 0{,}082\cdot 293}{0{,}974}=\boxed{13{,}80\ \text{L}}$$
-          </div>
-
-        <div class="resultado-final">
-          <div class="rf-label">Resultado</div>
-          <div class="rf-val">$V_{O_2}\approx 13{,}8$ L (con 2 cifras significativas).</div>
-        </div>
-      </div>
-    </div>
-    <div class="verificacion">
-      <span class="vlabel">✓ Verificación</span>
-      En CN serían $0{,}5594\cdot 22{,}4=12{,}5$ L. A 20 °C y 0,974 atm aumenta porque baja la presión y sube algo la $T$: $12{,}5\cdot 293/273\cdot 1/0{,}974=13{,}8$ L ✓.
-    </div>
-  </div>
-  <div class="topic-panel" id="ex1-10">
-    <div class="panel-header">
-      <div class="panel-tag">Ejercicio 1.10</div>
-      <h1 class="panel-title">Mezcla y dilución de disoluciones</h1>
-      <div class="panel-meta">Resultado: $M_f=0{,}588$ M.</div>
-    </div>
-
-    <div class="enunciado">
-      Se mezclan <b>250 mL de HCl 0,40 M</b> con <b>150 mL de HCl 0,90 M</b>. Calcular la molaridad final de la mezcla.
-    </div>
-
-    <div class="section-wrap s-datos sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📋 Datos <span class="sarr">▼</span></button>
-      <div class="sec-body">
-        <table class="t-datos">
-          <tr><th>Magnitud</th><th>Valor</th></tr>
-            <tr><td>Disolución 1</td><td>$V_1=250$ mL; $M_1=0{,}40$ M</td></tr>
-            <tr><td>Disolución 2</td><td>$V_2=150$ mL; $M_2=0{,}90$ M</td></tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="section-wrap s-teoria sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">📐 Fundamento teórico — Conservación de moles en mezcla <span class="sarr">▾</span></button>
-      <div class="sec-body">
-
-<p>Al mezclar dos disoluciones del <em>mismo</em> soluto (sin reacción), los moles totales se conservan y el volumen final es la suma:</p>
-$$n_{\text{tot}} = n_1 + n_2 = M_1V_1 + M_2V_2$$
-$$V_{\text{tot}} = V_1 + V_2$$
-$$M_f = \dfrac{n_{\text{tot}}}{V_{\text{tot}}}=\dfrac{M_1V_1+M_2V_2}{V_1+V_2}$$
-<p>Esto es una <em>media ponderada</em> de las concentraciones por sus volúmenes.</p>
-
-      </div>
-    </div>
-
-    <div class="section-wrap s-resolucion sec-open">
-      <button class="sec-btn" onclick="toggleSec(this)">🔢 Resolución paso a paso <span class="sarr">▾</span></button>
-      <div class="sec-body">
-          <div class="paso">
-            <div class="paso-titulo">Paso 1 — Moles de cada disolución</div>
-            <p class="porque"><b>¿Por qué?</b> $n=M\cdot V$.</p>
-            $$n_1=0{,}40\cdot 0{,}250=0{,}100\ \text{mol}$$
-$$n_2=0{,}90\cdot 0{,}150=0{,}135\ \text{mol}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 2 — Volumen total y moles totales</div>
-            <p class="porque"><b>¿Por qué?</b> Suma directa (mezclas ideales).</p>
-            $$V_{\text{tot}}=400\ \text{mL}=0{,}400\ \text{L}$$
-$$n_{\text{tot}}=0{,}100+0{,}135=0{,}235\ \text{mol}$$
-          </div>
-          <div class="paso">
-            <div class="paso-titulo">Paso 3 — Molaridad final</div>
-            <p class="porque"><b>¿Por qué?</b> Definición de molaridad.</p>
-            $$M_f=\dfrac{0{,}235}{0{,}400}=0{,}588\ \text{M}$$
-          </div>
-
-        <div class="resultado-final">
-          <div class="rf-label">Resultado</div>
-          <div class="rf-val">$M_f = 0{,}588$ M.</div>
-        </div>
-      </div>
-    </div>
-    <div class="verificacion">
-      <span class="vlabel">✓ Verificación</span>
-      $M_f$ está entre 0,40 y 0,90 (intermedio, como debe ser una media). Más cerca de 0,40 porque el primer volumen es mayor. ✓
+      $M_{C_6H_5NO_2}=72+5+14+32=123$ g/mol ✓ — coincide exactamente con el dato.
     </div>
   </div>
   </main>

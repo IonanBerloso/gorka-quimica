@@ -1,6 +1,6 @@
 // Service Worker · Química · Gorka
-// v5 — ejercicios reales de los PDFs del profesor de Gorka (T5, T7, T8, T9).
-const CACHE = 'quimica-gorka-v5';
+// v6 — añadidos T1 (autoeval 4.2) y 3 más en T8 (autoeval T8).
+const CACHE = 'quimica-gorka-v6';
 const ASSETS = [
   './',
   './index.html',
